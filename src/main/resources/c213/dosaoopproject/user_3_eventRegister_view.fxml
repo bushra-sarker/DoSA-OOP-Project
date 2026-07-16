@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="1008.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.controller.user_03.User_3_DashboardView_Controller">
+   <top>
+      <HBox prefHeight="62.0" prefWidth="942.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Button minWidth="51.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="51.0" style="-fx-background-color: #083C57;">
+               <HBox.margin>
+                  <Insets left="7.0" top="8.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/menuicon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow height="210.5" radius="115.875" width="255.0" />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" prefHeight="58.0" prefWidth="206.0" style="-fx-text-fill: white;" text="Volunteer Dashboard" textAlignment="CENTER" textFill="#e5e1e1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Region prefHeight="58.0" prefWidth="411.0" />
+            <Button minWidth="37.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="37.0" style="-fx-background-color: #083C57;">
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/BellWhiteIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow height="188.3" radius="104.0375" spread="0.33" width="229.85">
+                     <color>
+                        <Color opacity="0.5114678740501404" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <ImageView fx:id="ppImageView" fitHeight="42.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/images.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" top="12.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="209.0">
+               <children>
+                  <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="User Name" />
+                  <Label fx:id="userIdLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="ID :" />
+               </children>
+               <HBox.margin>
+                  <Insets left="7.0" />
+               </HBox.margin>
+            </VBox>
+            <Button minWidth="51.0" mnemonicParsing="false" onAction="#menuBarOA" prefHeight="48.0" prefWidth="51.0" style="-fx-background-color: #083C57;" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="513.0" prefWidth="186.0" style="-fx-background-color: #004675;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Dashboard" />
+            <Button mnemonicParsing="false" onAction="#registerViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #003F75; -fx-text-fill: white;" text="Event Registration" />
+            <Button mnemonicParsing="false" onAction="#teamViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Join Team" />
+            <Button mnemonicParsing="false" onAction="#contributionViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Contribution" />
+            <Button mnemonicParsing="false" onAction="#reportViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Report Issue" />
+            <Button mnemonicParsing="false" onAction="#leaveRqstViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Leave Request" />
+            <Button mnemonicParsing="false" onAction="#campaignsViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Campaigns" />
+            <Button mnemonicParsing="false" onAction="#certificateApplyOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Apply For Certificate" />
+            <Button mnemonicParsing="false" onAction="#feedbackShareOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Share Feedback" />
+            <Separator prefHeight="6.0" prefWidth="186.0" />
+            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="logOut" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="822.0" style="-fx-background-color: #ECF3F9;">
+               <children>
+                  <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/speakericon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT" prefHeight="114.0" prefWidth="298.0">
+                     <children>
+                        <Label prefHeight="90.0" prefWidth="263.0" style="-fx-text-fill: #28547B;" text="Register  Event">
+                           <font>
+                              <Font name="Candara Bold" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="12.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <Region prefHeight="100.0" prefWidth="260.0" />
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #07579C; -fx-background-radius: 6; -fx-border-color: snow; -fx-border-radius: 6; -fx-text-fill: white;" text="+ Register New">
+                     <font>
+                        <Font name="Cambria Math" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefHeight="15.0" prefWidth="822.0">
+               <effect>
+                  <Glow />
+               </effect>
+            </Separator>
+            <Label prefHeight="54.0" prefWidth="811.0" text="Registered Events">
+               <font>
+                  <Font name="Cambria Math" size="17.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets left="12.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <TableView prefHeight="275.0" prefWidth="822.0">
+              <columns>
+                <TableColumn prefWidth="136.00002133846283" text="Registration ID" />
+                <TableColumn prefWidth="264.79998779296875" text="Club Name" />
+                  <TableColumn prefWidth="200.79995727539062" text="Event Name" />
+                  <TableColumn prefWidth="112.79998779296875" text="Date" />
+                  <TableColumn prefWidth="108.0" text="Status" />
+              </columns>
+            </TableView>
+            <VBox prefHeight="76.0" prefWidth="822.0">
+               <children>
+                  <Separator prefHeight="10.0" prefWidth="822.0" />
+                  <Button mnemonicParsing="false" mouseTransparent="true" prefHeight="37.0" prefWidth="99.0" style="-fx-border-color: RoyalBlue; -fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6;" text="Back">
+                     <font>
+                        <Font name="Californian FB Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" top="8.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="3.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

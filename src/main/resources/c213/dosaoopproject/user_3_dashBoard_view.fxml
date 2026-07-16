@@ -25,7 +25,7 @@
                   <Insets left="7.0" top="8.0" />
                </HBox.margin>
                <graphic>
-                  <ImageView disable="true" fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/menuicon.png" />
                      </image>
@@ -43,7 +43,7 @@
                   <Insets top="15.0" />
                </HBox.margin>
                <graphic>
-                  <ImageView disable="true" fitHeight="50.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/BellWhiteIcon.png" />
                      </image>
@@ -76,17 +76,17 @@
    <left>
       <VBox prefHeight="513.0" prefWidth="186.0" style="-fx-background-color: #004675;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Dashboard" />
-            <Button mnemonicParsing="false" onAction="#registerViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Event Registration" />
-            <Button mnemonicParsing="false" onAction="#teamViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Join Team" />
-            <Button mnemonicParsing="false" onAction="#contributionViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Contribution" />
-            <Button mnemonicParsing="false" onAction="#reportViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Report Issue" />
-            <Button mnemonicParsing="false" onAction="#leaveRqstViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Leave Request" />
-            <Button mnemonicParsing="false" onAction="#campaignsViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Campaigns" />
-            <Button mnemonicParsing="false" onAction="#certificateApplyOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Apply For Certificate" />
-            <Button mnemonicParsing="false" onAction="#feedbackShareOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Share Feedback" />
+            <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Dashboard" />
+            <Button mnemonicParsing="false" onAction="#registerViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Event Registration" />
+            <Button mnemonicParsing="false" onAction="#teamViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Join Team" />
+            <Button mnemonicParsing="false" onAction="#contributionViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Contribution" />
+            <Button mnemonicParsing="false" onAction="#reportViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Report Issue" />
+            <Button mnemonicParsing="false" onAction="#leaveRqstViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Leave Request" />
+            <Button mnemonicParsing="false" onAction="#campaignsViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Campaigns" />
+            <Button mnemonicParsing="false" onAction="#certificateApplyOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Apply For Certificate" />
+            <Button mnemonicParsing="false" onAction="#feedbackShareOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Share Feedback" />
             <Separator prefHeight="6.0" prefWidth="186.0" />
-            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="logOut" />
+            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut" />
          </children>
       </VBox>
    </left>
