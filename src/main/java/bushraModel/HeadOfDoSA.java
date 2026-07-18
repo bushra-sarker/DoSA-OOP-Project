@@ -1,4 +1,4 @@
-package bushra;
+package bushraModel;
 
 import commonClass.User;
 
