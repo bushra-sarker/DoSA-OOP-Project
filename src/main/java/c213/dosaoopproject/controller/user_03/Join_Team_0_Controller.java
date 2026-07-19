@@ -5,47 +5,34 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DashboardView_Controller
+public class Join_Team_0_Controller
 {
     @javafx.fxml.FXML
-    private Label pendingCardLabel;
+    private Label approvedRqstLBL;
     @javafx.fxml.FXML
-    private Label recent_FourLabel;
+    private TableView rqstTableView;
     @javafx.fxml.FXML
-    private Label msgWelcomeLabel;
+    private Label totalRequestLBL;
     @javafx.fxml.FXML
-    private Label recentTime_TwoLabel;
+    private TableColumn dateCOL;
     @javafx.fxml.FXML
-    private Label recentTime_ThreeLabel;
+    private TableColumn statusCOL;
     @javafx.fxml.FXML
-    private Label hoursCardLabel;
-    @javafx.fxml.FXML
-    private Label recentTime_OneLabel;
-    @javafx.fxml.FXML
-    private Hyperlink viewAllHyperLink;
+    private TableColumn rqstIdCOL;
     @javafx.fxml.FXML
     private ImageView ppImageView;
     @javafx.fxml.FXML
-    private Label titleWelcomeLabel;
+    private TableColumn teamNameCOL;
     @javafx.fxml.FXML
-    private Label crtfStatusCardLabel;
-    @javafx.fxml.FXML
-    private Label participationCardLabel;
-    @javafx.fxml.FXML
-    private Label recent_ThreeLabel;
-    @javafx.fxml.FXML
-    private Label recent_OneLabel;
-    @javafx.fxml.FXML
-    private Label recent_TwoLabel;
-    @javafx.fxml.FXML
-    private Label recentTime_FourLabel;
+    private Label pendingRqstLBL;
     @javafx.fxml.FXML
     private Label nameLabel;
     @javafx.fxml.FXML
@@ -53,6 +40,16 @@ public class DashboardView_Controller
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void backToDashOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_dashBoard_view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("DoSA Management Simulation");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
@@ -72,7 +69,13 @@ public class DashboardView_Controller
     }
 
     @javafx.fxml.FXML
-    public void menuBarOA(ActionEvent actionEvent) {
+    public void goToNextOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_JoinTeam_1_view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("DoSA Management Simulation");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
@@ -114,11 +117,6 @@ public class DashboardView_Controller
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");
         stage.setScene(scene);
-        stage.show();
-    }
-
-    @javafx.fxml.FXML
-    public void viewAllNotificationLinkOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

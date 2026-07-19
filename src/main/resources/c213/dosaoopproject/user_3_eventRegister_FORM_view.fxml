@@ -25,21 +25,6 @@
    <top>
       <HBox prefHeight="69.0" prefWidth="1008.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
          <children>
-            <Button minWidth="51.0" mnemonicParsing="false" onAction="#menuBarOA" prefHeight="48.0" prefWidth="51.0" style="-fx-background-color: #083C57;">
-               <HBox.margin>
-                  <Insets left="7.0" top="8.0" />
-               </HBox.margin>
-               <graphic>
-                  <ImageView fitHeight="45.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/menuicon.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <effect>
-                  <DropShadow height="210.5" radius="115.875" width="255.0" />
-               </effect>
-            </Button>
             <VBox prefHeight="65.0" prefWidth="283.0">
                <children>
                   <Label alignment="CENTER" prefHeight="51.0" prefWidth="266.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA)" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
@@ -60,7 +45,7 @@
                   </Label>
                </children>
             </VBox>
-            <Region prefHeight="65.0" prefWidth="358.0" />
+            <Region prefHeight="65.0" prefWidth="412.0" />
             <Button minWidth="30.0" mnemonicParsing="false" onAction="#notificationOA" prefHeight="38.0" prefWidth="55.0" style="-fx-background-color: #083C57;">
                <HBox.margin>
                   <Insets top="15.0" />
@@ -108,44 +93,47 @@
          <children>
             <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Dashboard">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#registerViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #36649B; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Event Registration">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#teamViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Join Team">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#contributionViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Contribution">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#reportViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Report Issue">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#leaveRqstViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Leave Request">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#campaignsViewOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Campaigns">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#certificateApplyOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Apply For Certificate">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
             <Button mnemonicParsing="false" onAction="#feedbackShareOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Share Feedback">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="3.0" />
                </VBox.margin></Button>
-            <Separator prefHeight="6.0" prefWidth="186.0" />
+            <Separator prefHeight="6.0" prefWidth="186.0">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin></Separator>
             <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="52.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="logOut">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets bottom="4.0" top="3.0" />
                </VBox.margin></Button>
          </children>
       </VBox>

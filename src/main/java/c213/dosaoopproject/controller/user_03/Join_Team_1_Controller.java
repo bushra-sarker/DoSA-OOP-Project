@@ -1,10 +1,17 @@
 package c213.dosaoopproject.controller.user_03;
 
+import c213.dosaoopproject.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Join_Team_1_Controller
 {
@@ -52,11 +59,22 @@ public class Join_Team_1_Controller
     }
 
     @javafx.fxml.FXML
-    public void continueScreenButtonOA(ActionEvent actionEvent) {
+    public void continueScreenButtonOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_JoinTeam_2_form_view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("DoSA Management Simulation");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void registerViewOA(ActionEvent actionEvent) {
+    public void registerViewOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_eventRegister_view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("DoSA Management Simulation");
+        stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
@@ -72,20 +90,27 @@ public class Join_Team_1_Controller
     }
 
     @javafx.fxml.FXML
-    public void dashboardViewOA(ActionEvent actionEvent) {
+    public void dashboardViewOA(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_dashBoard_view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("DoSA Management Simulation");
+        stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
-    public void backButtonOA(ActionEvent actionEvent) {
+    public void backButtonOA(ActionEvent actionEvent) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_JoinTeam_0_view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("DoSA Management Simulation");
+            stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void contributionViewOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
-    public void menuBarOA(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void logOutOA(ActionEvent actionEvent) {
