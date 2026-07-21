@@ -32,7 +32,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="16.0" prefWidth="164.0" style="-fx-text-fill: white;" text="Volunteer  Panel" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="16.0" prefWidth="123.0" style="-fx-text-fill: white;" text="Volunteer  Panel" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
                      <font>
                         <Font size="11.0" />
                      </font>
