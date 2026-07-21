@@ -50,6 +50,10 @@ public class DashboardView_Controller
     private Label nameLabel;
     @javafx.fxml.FXML
     private Label userIdLabel;
+    @javafx.fxml.FXML
+    private Label recentTime_FourLabel1;
+    @javafx.fxml.FXML
+    private Label recent_FourLabel1;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -71,7 +75,7 @@ public class DashboardView_Controller
     public void contributionViewOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void menuBarOA(ActionEvent actionEvent) {
     }
 
@@ -81,7 +85,7 @@ public class DashboardView_Controller
 
     @javafx.fxml.FXML
     public void registerViewOA(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_eventRegister_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Fiha/display/user_3_eventRegister_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");
@@ -91,7 +95,7 @@ public class DashboardView_Controller
 
     @javafx.fxml.FXML
     public void teamViewOA(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_JoinTeam_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Fiha/display/user_3_JoinTeam_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");
@@ -109,7 +113,7 @@ public class DashboardView_Controller
 
     @javafx.fxml.FXML
     public void dashboardViewOA(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_dashBoard_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Fiha/display/user_3_dashBoard_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");

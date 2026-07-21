@@ -15,6 +15,12 @@ import java.io.IOException;
 public class Join_Team_View_Controller
 {
     @javafx.fxml.FXML
+    private ImageView ppImageView;
+    @javafx.fxml.FXML
+    private Label nameLabel;
+    @javafx.fxml.FXML
+    private Label userIdLabel;
+    @javafx.fxml.FXML
     private TextField userIDTF;
     @javafx.fxml.FXML
     private RadioButton decorationRD;
@@ -26,8 +32,6 @@ public class Join_Team_View_Controller
     private VBox panel_3;
     @javafx.fxml.FXML
     private VBox panel_2;
-    @javafx.fxml.FXML
-    private ImageView ppImageView;
     @javafx.fxml.FXML
     private VBox panel_1;
     @javafx.fxml.FXML
@@ -42,8 +46,6 @@ public class Join_Team_View_Controller
     private TextArea experienceTXTAREA;
     @javafx.fxml.FXML
     private TableColumn teamNameCOL;
-    @javafx.fxml.FXML
-    private Label nameLabel;
     @javafx.fxml.FXML
     private TableView rqstTableView;
     @javafx.fxml.FXML
@@ -64,8 +66,6 @@ public class Join_Team_View_Controller
     private RadioButton eventRRD;
     @javafx.fxml.FXML
     private Label pendingRqstLBL;
-    @javafx.fxml.FXML
-    private Label userIdLabel;
     @javafx.fxml.FXML
     private Label regIDLabeL;
 
@@ -115,7 +115,7 @@ public class Join_Team_View_Controller
 
     @javafx.fxml.FXML
     public void registerViewOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_eventRegister_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Fiha/display/user_3_eventRegister_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");
@@ -137,7 +137,7 @@ public class Join_Team_View_Controller
 
     @javafx.fxml.FXML
     public void dashboardViewOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_dashBoard_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Fiha/display/user_3_dashBoard_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");
@@ -147,7 +147,7 @@ public class Join_Team_View_Controller
 
     @javafx.fxml.FXML
     public void backToDashOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("user_3_dashBoard_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Fiha/display/user_3_dashBoard_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");
