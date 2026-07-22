@@ -1,4 +1,4 @@
-package bushraModel;
+package c213.dosaoopproject.bushraModel;
 
 import commonClass.User;
 
