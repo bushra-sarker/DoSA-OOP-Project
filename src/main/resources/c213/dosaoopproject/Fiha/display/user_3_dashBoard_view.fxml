@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1131.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.controller.user_03.DashboardView_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1131.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Fiha.controller.user_03.DashboardView_Controller">
    <top>
       <HBox prefHeight="82.0" prefWidth="1131.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
          <children>
@@ -32,7 +32,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="16.0" prefWidth="164.0" style="-fx-text-fill: white;" text="Volunteer  Panel" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="16.0" prefWidth="123.0" style="-fx-text-fill: white;" text="Volunteer  Panel" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
                      <font>
                         <Font size="11.0" />
                      </font>
@@ -47,7 +47,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../images/BellWhiteIcon.png" />
+                        <Image url="@../images/BellWhiteIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -64,7 +64,7 @@
             </Button>
             <ImageView fx:id="ppImageView" fitHeight="42.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/images.png" />
+                  <Image url="@../images/images.png" />
                </image>
                <HBox.margin>
                   <Insets left="10.0" right="10.0" top="18.0" />
