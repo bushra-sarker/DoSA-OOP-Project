@@ -17,11 +17,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1131.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Fiha.controller.user_03.contribution_View_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Fiha.controller.user_03.contribution_View_Controller">
    <top>
-      <HBox prefHeight="82.0" prefWidth="1131.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="65.0" prefWidth="283.0">
+            <VBox prefHeight="78.0" prefWidth="354.0">
                <children>
                   <Label alignment="CENTER" prefHeight="51.0" prefWidth="266.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA)" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
                      <font>
@@ -41,12 +41,12 @@
                   </Label>
                </children>
             </VBox>
-            <Region prefHeight="78.0" prefWidth="494.0" />
-            <Button minWidth="30.0" mnemonicParsing="false" onAction="#notificationOA" prefHeight="38.0" prefWidth="30.0" style="-fx-background-color: #083C57;">
+            <Region prefHeight="78.0" prefWidth="330.0" />
+            <Button maxHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#notificationOA" prefHeight="33.0" prefWidth="30.0" style="-fx-background-color: #083C57;">
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/BellWhiteIcon.png" />
+                        <Image url="@../../../../images/BellIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -63,7 +63,7 @@
             </Button>
             <ImageView fx:id="ppImageView" fitHeight="42.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/images.png" />
+                  <Image url="@../../../../images/images.png" />
                </image>
                <HBox.margin>
                   <Insets left="10.0" right="10.0" top="18.0" />
@@ -85,7 +85,7 @@
       </HBox>
    </top>
    <left>
-      <VBox alignment="TOP_CENTER" minWidth="-Infinity" prefHeight="447.0" prefWidth="198.0" style="-fx-background-color: #004675;" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="518.0" prefWidth="183.0" style="-fx-background-color: #004675;" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Dashboard">
                <VBox.margin>
@@ -141,7 +141,7 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox prefHeight="574.0" prefWidth="931.0">
+            <VBox prefHeight="518.0" prefWidth="714.0">
                <children>
                   <Label alignment="CENTER" prefHeight="14.0" prefWidth="211.0" text="VOLUNTEER / CONTRIBUTION HOURS" textFill="#00000098">
                      <font>
@@ -151,16 +151,16 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox prefHeight="76.0" prefWidth="931.0">
+                  <HBox prefHeight="60.0" prefWidth="714.0">
                      <children>
-                        <VBox prefHeight="93.0" prefWidth="871.0">
+                        <VBox maxWidth="-Infinity" minHeight="-Infinity" prefHeight="52.0" prefWidth="680.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="39.0" prefWidth="329.0" text="Contribution History">
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="320.0" text="Contribution History">
                                  <font>
-                                    <Font name="Cambria Math" size="34.0" />
+                                    <Font name="Cambria Math" size="33.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets top="7.0" />
+                                    <Insets />
                                  </VBox.margin>
                               </Label>
                               <Label alignment="CENTER" prefHeight="15.0" prefWidth="293.0" text="A read only summery of your volunteering activity" textFill="#00000091">
@@ -181,25 +181,25 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
-                  <Separator prefHeight="0.0" prefWidth="931.0">
+                  <Separator prefHeight="14.0" prefWidth="714.0">
                      <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
+                        <Insets bottom="7.0" top="4.0" />
                      </VBox.margin></Separator>
-                  <StackPane prefHeight="478.0" prefWidth="931.0">
+                  <StackPane prefHeight="373.0" prefWidth="714.0">
                      <children>
-                        <VBox fx:id="pane_1" prefHeight="320.0" prefWidth="931.0" spacing="16.0" visible="false">
+                        <VBox fx:id="pane_1" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="385.0" prefWidth="714.0" spacing="16.0" visible="false">
                            <children>
-                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="96.0" prefWidth="901.0" style="-fx-background-color: #024074; -fx-background-radius: 10; -fx-border-radius: 10;">
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="78.0" prefWidth="690.0" style="-fx-background-color: #024074; -fx-background-radius: 10; -fx-border-radius: 10;">
                                  <children>
-                                    <VBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="522.0">
+                                    <VBox alignment="CENTER_LEFT" prefHeight="109.0" prefWidth="295.0">
                                        <children>
                                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="170.0" style="-fx-text-fill: white;" text="Total Volunteer Hours">
                                              <VBox.margin>
                                                 <Insets top="15.0" />
                                              </VBox.margin></Label>
-                                          <Label fx:id="hourCardLabel" alignment="TOP_CENTER" prefHeight="24.0" prefWidth="127.0" style="-fx-text-fill: white;" text="128 ">
+                                          <Label fx:id="hourCardLabel" alignment="TOP_CENTER" prefHeight="55.0" prefWidth="122.0" style="-fx-text-fill: white;" text="128 ">
                                              <font>
-                                                <Font size="44.0" />
+                                                <Font size="38.0" />
                                              </font>
                                              <VBox.margin>
                                                 <Insets bottom="10.0" />
@@ -224,13 +224,13 @@
                                     <Insets left="15.0" right="15.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="86.0" prefWidth="931.0" spacing="16.0">
+                              <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="83.0" prefWidth="714.0" spacing="12.0">
                                  <children>
-                                    <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="463.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;" HBox.hgrow="ALWAYS">
+                                    <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="334.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;" HBox.hgrow="ALWAYS">
                                        <children>
                                           <Label fx:id="participationCARDLabel" alignment="BOTTOM_LEFT" prefHeight="51.0" prefWidth="283.0" text="14">
                                              <font>
-                                                <Font size="35.0" />
+                                                <Font size="32.0" />
                                              </font>
                                              <VBox.margin>
                                                 <Insets left="16.0" />
@@ -244,11 +244,11 @@
                                           <Insets left="15.0" />
                                        </HBox.margin>
                                     </VBox>
-                                    <VBox prefHeight="86.0" prefWidth="420.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;">
+                                    <VBox prefHeight="72.0" prefWidth="334.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;">
                                        <children>
-                                          <Label fx:id="completedCARDLabel" alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="356.0" text="31">
+                                          <Label fx:id="completedCARDLabel" alignment="BOTTOM_LEFT" prefHeight="32.0" prefWidth="317.0" text="31">
                                              <font>
-                                                <Font size="35.0" />
+                                                <Font size="32.0" />
                                              </font>
                                              <VBox.margin>
                                                 <Insets left="16.0" />
@@ -261,7 +261,7 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                              <VBox prefHeight="216.0" prefWidth="901.0" style="-fx-background-radius: 10; -fx-border-color: lightgray; -fx-border-radius: 10;">
+                              <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="193.0" prefWidth="682.0" style="-fx-background-radius: 10; -fx-border-color: lightgray; -fx-border-radius: 10;">
                                  <children>
                                     <Label prefHeight="41.0" prefWidth="328.0" text="Summary Details" textFill="#66a8ff">
                                        <VBox.margin>
@@ -270,40 +270,40 @@
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                        <children>
                                           <Label text="Volunteer ID" textFill="#000000a8" />
-                                          <Region prefHeight="36.0" prefWidth="671.0" />
-                                          <Label fx:id="volIDLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="136.0" text="V2213052" textFill="#000000a8" />
+                                          <Region prefHeight="34.0" prefWidth="457.0" />
+                                          <Label fx:id="volIDLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="125.0" text="V2213052" textFill="#000000a8" />
                                        </children>
                                     </HBox>
                                     <Separator opacity="0.59" prefWidth="200.0" />
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                        <children>
                                           <Label text="Total Event Participated" textFill="#000000a8" />
-                                          <Region prefHeight="36.0" prefWidth="606.0" />
-                                          <Label fx:id="participationLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="137.0" text="14" textFill="#000000a8" />
+                                          <Region prefHeight="34.0" prefWidth="398.0" />
+                                          <Label fx:id="participationLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="128.0" text="14" textFill="#000000a8" />
                                        </children>
                                     </HBox>
                                     <Separator opacity="0.59" prefWidth="200.0" />
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                        <children>
                                           <Label text="Total Task Completed" textFill="#000000a8" />
-                                          <Region prefHeight="36.0" prefWidth="624.0" />
-                                          <Label fx:id="totalTaskLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="137.0" text="31" textFill="#000000a8" />
+                                          <Region prefHeight="34.0" prefWidth="432.0" />
+                                          <Label fx:id="totalTaskLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="104.0" text="31" textFill="#000000a8" />
                                        </children>
                                     </HBox>
                                     <Separator opacity="0.59" prefWidth="200.0" />
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                        <children>
                                           <Label text="Total Volunteer Hours" textFill="#000000a8" />
-                                          <Region prefHeight="36.0" prefWidth="622.0" />
-                                          <Label fx:id="hourLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="138.0" text="128 hrs" textFill="#000000a8" />
+                                          <Region prefHeight="34.0" prefWidth="406.0" />
+                                          <Label fx:id="hourLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="130.0" text="128 hrs" textFill="#000000a8" />
                                        </children>
                                     </HBox>
                                     <Separator opacity="0.59" prefWidth="200.0" />
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                        <children>
                                           <Label text="Current Status" textFill="#000000a8" />
-                                          <Region prefHeight="37.0" prefWidth="664.0" />
-                                          <Label fx:id="statusLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="138.0" text="Active" textFill="#000000a8" />
+                                          <Region prefHeight="26.0" prefWidth="446.0" />
+                                          <Label fx:id="statusLBL" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="130.0" text="Active" textFill="#000000a8" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -313,11 +313,11 @@
                               </VBox>
                            </children>
                         </VBox>
-                        <VBox fx:id="pane_2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="699.0" spacing="14.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray; -fx-background-color: snow;">
+                        <VBox fx:id="pane_2" alignment="CENTER" maxWidth="-Infinity" prefHeight="342.0" prefWidth="502.0" spacing="14.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray; -fx-background-color: snow;">
                            <children>
                               <ImageView fitHeight="38.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/Alert_Icon.png" />
+                                    <Image url="@../../../../images/Alert_Icon.png" />
                                  </image>
                               </ImageView>
                               <Label alignment="CENTER" prefHeight="43.0" prefWidth="298.0" text="No Volunteering Activity Found">
@@ -335,6 +335,9 @@
                            <padding>
                               <Insets bottom="64.0" left="40.0" right="40.0" top="64.0" />
                            </padding>
+                           <StackPane.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </StackPane.margin>
                         </VBox>
                      </children>
                   </StackPane>

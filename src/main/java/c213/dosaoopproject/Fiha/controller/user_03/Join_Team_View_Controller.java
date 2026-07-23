@@ -1,7 +1,7 @@
 package c213.dosaoopproject.Fiha.controller.user_03;
 
 import c213.dosaoopproject.Fiha.controller.BaseSideBarController;
-import c213.dosaoopproject.HelloApplication;
+import c213.dosaoopproject.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -97,7 +97,7 @@ public class Join_Team_View_Controller extends BaseSideBarController
 
     @javafx.fxml.FXML
     public void backToDashOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Fiha/display/user_3_dashBoard_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("Fiha/display/user_3_dashBoard_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");

@@ -1,7 +1,6 @@
 package c213.dosaoopproject.Fiha.controller.user_03;
 
 import c213.dosaoopproject.Fiha.controller.BaseSideBarController;
-import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
@@ -30,6 +29,7 @@ public class contribution_View_Controller extends BaseSideBarController
     @javafx.fxml.FXML
     private VBox pane_1;
 
+
     @javafx.fxml.FXML
     public void initialize() {
         boolean hasContribution = checkIfUserHasContribution();
@@ -52,7 +52,4 @@ public class contribution_View_Controller extends BaseSideBarController
         return false;
     }
 
-    @javafx.fxml.FXML
-    public void contributionViewOA(ActionEvent actionEvent) {
-    }
 }
