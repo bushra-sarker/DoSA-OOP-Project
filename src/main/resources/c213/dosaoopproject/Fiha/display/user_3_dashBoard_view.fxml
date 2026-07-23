@@ -2,365 +2,50 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="1131.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Fiha.controller.user_03.DashboardView_Controller">
-   <top>
-      <HBox prefHeight="82.0" prefWidth="1131.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
-         <children>
-            <VBox prefHeight="65.0" prefWidth="283.0">
-               <children>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="266.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA)" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="16.0" prefWidth="123.0" style="-fx-text-fill: white;" text="Volunteer  Panel" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="12.0" />
-                     </VBox.margin>
-                  </Label>
-               </children>
-            </VBox>
-            <Region prefHeight="78.0" prefWidth="494.0" />
-            <Button minWidth="30.0" mnemonicParsing="false" onAction="#notificationOA" prefHeight="38.0" prefWidth="30.0" style="-fx-background-color: #083C57;">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/BellWhiteIcon.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <effect>
-                  <DropShadow height="209.08" radius="109.2325" spread="0.33" width="229.85">
-                     <color>
-                        <Color opacity="0.5114678740501404" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <HBox.margin>
-                  <Insets top="20.0" />
-               </HBox.margin>
-            </Button>
-            <ImageView fx:id="ppImageView" fitHeight="42.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/images.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" top="18.0" />
-               </HBox.margin>
-            </ImageView>
-            <VBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="217.0">
-               <children>
-                  <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="User Name" />
-                  <Label fx:id="userIdLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="ID :" />
-               </children>
-               <HBox.margin>
-                  <Insets left="7.0" />
-               </HBox.margin>
-            </VBox>
-         </children>
-         <padding>
-            <Insets bottom="5.0" />
-         </padding>
-      </HBox>
-   </top>
-   <left>
-      <VBox alignment="TOP_CENTER" minWidth="-Infinity" prefHeight="520.0" prefWidth="202.0" style="-fx-background-color: #004975;" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #36649B; -fx-text-fill: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Dashboard">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#registerViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Event Registration">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#teamViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Join Team">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#contributionViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Contribution">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#reportViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Report Issue">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#leaveRqstViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Leave Request">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#campaignsViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Campaigns">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#certificateApplyOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Apply For Certificate">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#feedbackShareOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Share Feedback">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Button>
-            <Separator prefHeight="6.0" prefWidth="186.0">
-               <VBox.margin>
-                  <Insets top="3.0" />
-               </VBox.margin></Separator>
-            <Region prefHeight="118.0" prefWidth="198.0" />
-            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
-               <VBox.margin>
-                  <Insets bottom="4.0" top="3.0" />
-               </VBox.margin></Button>
-         </children>
-      </VBox>
-   </left>
-   <center>
-      <ScrollPane prefHeight="519.0" prefWidth="792.0" BorderPane.alignment="CENTER">
-         <content>
-            <VBox prefHeight="574.0" prefWidth="922.0">
-               <children>
-                  <AnchorPane maxWidth="-Infinity" prefHeight="139.0" prefWidth="927.0">
-                     <children>
-                        <VBox prefHeight="114.0" prefWidth="919.0" style="-fx-border-color: lightGray; -fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="5.0">
-                           <children>
-                              <Label fx:id="titleWelcomeLabel" prefHeight="62.0" prefWidth="514.0" text="Welcome, USER NAME!">
-                                 <VBox.margin>
-                                    <Insets left="20.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font name="Book Antiqua Bold" size="26.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="msgWelcomeLabel" prefHeight="14.0" prefWidth="519.0" text="Keep up the good work!">
-                                 <VBox.margin>
-                                    <Insets left="20.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font name="Calibri" size="13.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="6.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="925.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="116.0" prefWidth="227.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="98.0" text="Total Hours" textAlignment="CENTER">
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="hoursCardLabel" alignment="TOP_CENTER" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="106.0" style="-fx-text-fill: navy;" text="45" textAlignment="CENTER" textFill="#3050b9">
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="4.0" left="5.0" right="5.0" top="4.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="116.0" prefWidth="227.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="130.0" text="Event Participation" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="participationCardLabel" alignment="TOP_CENTER" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="102.0" style="-fx-text-fill: #755000;" text="6" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="4.0" right="5.0" top="4.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="116.0" prefWidth="227.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="138.0" text="Pending Requests" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="pendingCardLabel" alignment="TOP_CENTER" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="102.0" style="-fx-text-fill: #750000;" text="2" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="4.0" right="5.0" top="4.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="116.0" prefWidth="227.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="122.0" text="Certificate Status" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="crtfStatusCardLabel" alignment="TOP_CENTER" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="102.0" style="-fx-text-fill: #660075;" text="Eligible" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="4.0" right="5.0" top="4.0" />
-                           </HBox.margin>
-                        </VBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="927.0">
-                     <children>
-                        <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="62.0" prefWidth="956.0">
-                           <children>
-                              <Label prefHeight="50.0" prefWidth="180.0" text="Recent" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="Book Antiqua Bold" size="18.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="12.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Region prefHeight="62.0" prefWidth="649.0" />
-                              <Hyperlink fx:id="viewAllHyperLink" alignment="CENTER" contentDisplay="CENTER" onAction="#viewAllNotificationLinkOA" prefHeight="26.0" prefWidth="85.0" text="viewAll" underline="true" />
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin></Separator>
-                        <HBox prefHeight="42.0" prefWidth="752.0">
-                           <children>
-                              <Circle fill="#7cd1ff" radius="6.0" stroke="BLACK" strokeType="INSIDE">
-                                 <HBox.margin>
-                                    <Insets left="14.0" top="5.0" />
-                                 </HBox.margin>
-                              </Circle>
-                              <Label fx:id="recent_OneLabel" prefHeight="18.0" prefWidth="504.0" text="Your team assignment has been approved">
-                                 <HBox.margin>
-                                    <Insets left="9.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Region prefHeight="42.0" prefWidth="330.0" />
-                              <Label fx:id="recentTime_OneLabel" prefHeight="18.0" prefWidth="130.0" style="-fx-text-fill: gray;" text="2 hours ago" />
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0" />
-                        <HBox prefHeight="44.0" prefWidth="752.0">
-                           <children>
-                              <Circle fill="#e3d5ff" radius="6.0" stroke="BLACK" strokeType="INSIDE">
-                                 <HBox.margin>
-                                    <Insets left="14.0" top="5.0" />
-                                 </HBox.margin>
-                              </Circle>
-                              <Label fx:id="recent_TwoLabel" prefHeight="18.0" prefWidth="464.0" text="Your campaign registration is pending">
-                                 <HBox.margin>
-                                    <Insets left="9.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Region prefHeight="44.0" prefWidth="368.0" />
-                              <Label fx:id="recentTime_TwoLabel" prefHeight="18.0" prefWidth="127.0" style="-fx-text-fill: gray;" text="3 days ago" />
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0" />
-                        <HBox prefHeight="42.0" prefWidth="752.0">
-                           <children>
-                              <Circle fill="#d2e7b0" radius="6.0" stroke="BLACK" strokeType="INSIDE">
-                                 <HBox.margin>
-                                    <Insets left="14.0" top="5.0" />
-                                 </HBox.margin>
-                              </Circle>
-                              <Label fx:id="recent_ThreeLabel" prefHeight="18.0" prefWidth="462.0" text="You are eligible to apply for certificate">
-                                 <HBox.margin>
-                                    <Insets left="9.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Region prefHeight="42.0" prefWidth="365.0" />
-                              <Label fx:id="recentTime_ThreeLabel" prefHeight="18.0" prefWidth="126.0" style="-fx-text-fill: gray;" text="1 day ago" />
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0" />
-                        <HBox prefHeight="42.0" prefWidth="927.0">
-                           <children>
-                              <Circle fill="#ffe6c8" radius="6.0" stroke="BLACK" strokeType="INSIDE">
-                                 <HBox.margin>
-                                    <Insets left="14.0" top="5.0" />
-                                 </HBox.margin>
-                              </Circle>
-                              <Label fx:id="recent_FourLabel" prefHeight="18.0" prefWidth="464.0" text="New event has been announced">
-                                 <HBox.margin>
-                                    <Insets left="9.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Region prefHeight="42.0" prefWidth="363.0" />
-                              <Label fx:id="recentTime_FourLabel" prefHeight="18.0" prefWidth="124.0" style="-fx-text-fill: gray;" text="2 days ago" />
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0" />
-                        <HBox prefHeight="42.0" prefWidth="927.0">
-                           <children>
-                              <Circle fill="#d4fff9" radius="6.0" stroke="BLACK" strokeType="INSIDE">
-                                 <HBox.margin>
-                                    <Insets left="14.0" top="5.0" />
-                                 </HBox.margin>
-                              </Circle>
-                              <Label fx:id="recent_FourLabel1" prefHeight="18.0" prefWidth="464.0" text="New notification">
-                                 <HBox.margin>
-                                    <Insets left="9.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Region prefHeight="42.0" prefWidth="363.0" />
-                              <Label fx:id="recentTime_FourLabel1" prefHeight="18.0" prefWidth="124.0" style="-fx-text-fill: gray;" text="2 days ago" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-         </content>
-      </ScrollPane>
-   </center>
+<BorderPane prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.bushraController.HeadOfDoSAViewController">
+
+    <!-- Top Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #003366; -fx-padding: 15px;" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="DoSA Portal | Head of DoSA Dashboard" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Left Sidebar Navigation -->
+    <left>
+        <VBox prefWidth="220.0" spacing="10.0" style="-fx-background-color: #004675; -fx-padding: 15px;" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="NAVIGATION" textFill="#b0c4de">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+
+                <Button fx:id="btnDashboard" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#dashboardViewOA" style="-fx-background-color: #36649B; -fx-text-fill: white; -fx-alignment: CENTER-LEFT;" text="Dashboard Overview" />
+                <Button fx:id="btnPendingEvents" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#majorEventViewOA" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-alignment: CENTER-LEFT;" text="Major Event Approvals" />
+                <Button fx:id="btnBudget" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#budgetManagementOA" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-alignment: CENTER-LEFT;" text="Budget Requests" />
+            </children>
+        </VBox>
+    </left>
+
+    <!-- Dynamic Center Content Area -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #F4F6F9;" BorderPane.alignment="CENTER" />
+    </center>
 </BorderPane>

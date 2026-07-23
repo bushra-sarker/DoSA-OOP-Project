@@ -1,6 +1,6 @@
 package c213.dosaoopproject.bushraModel;
 
-import commonClass.User;
+import c213.dosaoopproject.commonClass.User;
 
 public class HeadOfDoSA extends User {
     private int headId;

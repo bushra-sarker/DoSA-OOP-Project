@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #EAF1F7;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bushraController.LoginViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #EAF1F7;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.commonClass.LoginController">
     <center>
         <StackPane BorderPane.alignment="CENTER">
             <children>
@@ -49,7 +49,7 @@
                                 <Insets left="40.0" />
                             </VBox.margin>
                         </Label>
-                        <TextField fx:id="txtUserID" prefHeight="38.0" prefWidth="340.0" promptText="Enter 7-digit Student/Faculty ID or 4-digit Staff ID">
+                        <TextField fx:id="txtUserID" prefHeight="38.0" prefWidth="340.0" promptText="Enter User ID">
                             <VBox.margin>
                                 <Insets left="40.0" right="40.0" top="4.0" />
                             </VBox.margin>

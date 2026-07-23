@@ -8,12 +8,19 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class bushraApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(bushraApplication.class.getResource("/bushraView/HeadOfDoSADashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("DoSA Management Simulation");
+        // Start at the common Login Screen
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/commonFXML/Login.fxmlsl"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
+
+        stage.setTitle("DoSA Management System - Login");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
     }
 }
