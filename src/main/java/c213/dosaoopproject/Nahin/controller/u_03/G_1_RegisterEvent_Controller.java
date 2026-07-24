@@ -1,6 +1,6 @@
-package c213.dosaoopproject.Fiha.controller.user_03;
+package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Fiha.controller.BaseSideBarController;
+import c213.dosaoopproject.Nahin.controller.User3BaseSideBarController;
 import c213.dosaoopproject.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegisterEvent_Controller extends BaseSideBarController
+public class G_1_RegisterEvent_Controller extends User3BaseSideBarController
 {
 
     @javafx.fxml.FXML
@@ -72,7 +72,7 @@ public class RegisterEvent_Controller extends BaseSideBarController
 
     @javafx.fxml.FXML
     public void backDashOA(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("Fiha/display/user_3_dashBoard_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("Fiha/display/u3_dashBoard_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");

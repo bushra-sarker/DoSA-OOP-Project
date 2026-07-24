@@ -17,7 +17,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Fiha.controller.user_03.contribution_View_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_03.G_3_Contribution_View_Controller">
    <top>
       <HBox prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
          <children>
@@ -46,7 +46,7 @@
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../images/BellIcon.png" />
+                        <Image url="@../../../images/BellIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -63,7 +63,7 @@
             </Button>
             <ImageView fx:id="ppImageView" fitHeight="42.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../images/images.png" />
+                  <Image url="@../../../images/images.png" />
                </image>
                <HBox.margin>
                   <Insets left="10.0" right="10.0" top="18.0" />
@@ -317,7 +317,7 @@
                            <children>
                               <ImageView fitHeight="38.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../images/Alert_Icon.png" />
+                                    <Image url="@../../../images/Alert_Icon.png" />
                                  </image>
                               </ImageView>
                               <Label alignment="CENTER" prefHeight="43.0" prefWidth="298.0" text="No Volunteering Activity Found">
