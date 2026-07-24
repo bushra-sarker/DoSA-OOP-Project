@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefWidth="922.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="c213.dosaoopproject.Bushra.bushraController.U08.U08_StudentWelfareOfficerViewController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <children>
+        <Label text="Scholarship Management" textFill="#083c57">
+            <font><Font name="System Bold" size="22.0" /></font>
+        </Label>
+
+        <!-- TAB PANE FOR ACTIVE VS PENDING -->
+        <TabPane prefHeight="480.0" prefWidth="892.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <!-- TAB 1: ACTIVE SCHOLARSHIPS -->
+                <Tab text="Active Scholarships">
+                    <content>
+                        <VBox spacing="10.0" style="-fx-padding: 10px;">
+                            <children>
+                                <TableView fx:id="tvActiveScholarships" prefHeight="400.0" prefWidth="872.0">
+                                    <columns>
+                                        <TableColumn fx:id="colScholarshipName" prefWidth="250.0" text="Scholarship Name" />
+                                        <TableColumn fx:id="colDeadline" prefWidth="180.0" text="Deadline" />
+                                        <TableColumn fx:id="colTotalFund" prefWidth="200.0" text="Total Fund (BDT)" />
+                                        <TableColumn fx:id="colSlotsLeft" prefWidth="180.0" text="Slots Left" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+
+                <!-- TAB 2: PENDING APPLICATIONS -->
+                <Tab text="Pending Applications">
+                    <content>
+                        <VBox spacing="10.0" style="-fx-padding: 10px;">
+                            <children>
+                                <TableView fx:id="tvPendingApplications" prefHeight="400.0" prefWidth="872.0">
+                                    <columns>
+                                        <TableColumn fx:id="colStudentName" prefWidth="160.0" text="Student Name" />
+                                        <TableColumn fx:id="colStudentID" prefWidth="120.0" text="Student ID" />
+                                        <TableColumn fx:id="colScholarshipType" prefWidth="180.0" text="Scholarship Type" />
+                                        <TableColumn fx:id="colCgpa" prefWidth="100.0" text="CGPA" />
+                                        <TableColumn fx:id="colApplicationDate" prefWidth="140.0" text="Application Date" />
+                                        <TableColumn fx:id="colAction" prefWidth="150.0" text="Action" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+
+        <!-- REVIEW DETAIL SECTION (EVENT 5, 6, 7 & 8 CONTAINER) -->
+        <VBox fx:id="reviewDetailPane" prefWidth="892.0" spacing="12.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 15px;" visible="false">
+            <children>
+                <Label text="Application Review &amp; Evaluation" textFill="#083c57">
+                    <font><Font name="System Bold" size="18.0" /></font>
+                </Label>
+                <Separator />
+
+                <!-- STUDENT DETAILS SUMMARY -->
+                <HBox spacing="20.0">
+                    <children>
+                        <Label fx:id="lblStudentName" text="Name: N/A" /><Separator orientation="VERTICAL" />
+                        <Label fx:id="lblStudentID" text="ID: N/A" /><Separator orientation="VERTICAL" />
+                        <Label fx:id="lblDepartment" text="Dept: N/A" /><Separator orientation="VERTICAL" />
+                        <Label fx:id="lblSemester" text="Semester: N/A" />
+                    </children>
+                </HBox>
+
+                <!-- AUTOMATIC ELIGIBILITY SCORE BREAKDOWN (EVENT 6) -->
+                <VBox spacing="5.0" style="-fx-background-color: #F8F9FA; -fx-padding: 10px; -fx-background-radius: 5;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Calculated Eligibility Score: " font="$null"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                <Label fx:id="lblEligibilityScore" text="0 / 100" textFill="#083c57"><font><Font name="System Bold" size="14.0" /></font></Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="150.0" text="CGPA Weight (40%):" />
+                                <ProgressBar fx:id="pbCgpaWeight" prefWidth="200.0" progress="0.0" />
+                                <Label prefWidth="180.0" text="Financial Need Weight (40%):" />
+                                <ProgressBar fx:id="pbNeedWeight" prefWidth="200.0" progress="0.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="150.0" text="Extra-Curricular (20%):" />
+                                <ProgressBar fx:id="pbActivityWeight" prefWidth="200.0" progress="0.0" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- PERSONAL STATEMENT & ATTACHMENTS -->
+                <HBox spacing="15.0">
+                    <children>
+                        <VBox prefWidth="420.0" spacing="5.0">
+                            <children>
+                                <Label text="Personal Statement (Max 1000 chars):" />
+                                <TextArea fx:id="txtPersonalStatement" editable="false" prefHeight="100.0" wrapText="true" />
+                            </children>
+                        </VBox>
+                        <VBox prefWidth="420.0" spacing="8.0">
+                            <children>
+                                <Button fx:id="btnDownloadIncomeProof" mnemonicParsing="false" style="-fx-background-color: #004675; -fx-text-fill: white;" text="Download Income Proof PDF" />
+                                <Label text="Recommendation Letters:" />
+                                <ListView fx:id="lvRecommendations" prefHeight="60.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- DECISION FORM (EVENT 7) -->
+                <VBox spacing="8.0">
+                    <children>
+                        <Label text="Reviewer Decision &amp; Mandatory Comments:" font="$null"><font><Font name="System Bold" size="13.0" /></font></Label>
+                        <TextArea fx:id="txtReviewComments" prefHeight="70.0" promptText="Enter detailed assessment comments (mandatory, max 500 chars)..." wrapText="true" />
+                        <HBox spacing="20.0">
+                            <children>
+                                <RadioButton fx:id="rbRecommended" mnemonicParsing="false" text="Recommended">
+                                    <toggleGroup><ToggleGroup fx:id="decisionGroup" /></toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="rbNeedMoreInfo" mnemonicParsing="false" text="Need More Info" toggleGroup="$decisionGroup" />
+                                <RadioButton fx:id="rbNotEligible" mnemonicParsing="false" text="Not Eligible" toggleGroup="$decisionGroup" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- SUBMIT ACTIONS (EVENT 8) -->
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="btnSubmit" disable="true" mnemonicParsing="false" style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-weight: bold;" text="Submit Assessment" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

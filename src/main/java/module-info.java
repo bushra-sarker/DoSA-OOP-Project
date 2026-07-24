@@ -1,19 +1,30 @@
 module c213.dosaoopproject {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.desktop;
 
-    opens c213.dosaoopproject.Fiha.controller.user_03 to javafx.fxml;
-    opens c213.dosaoopproject.Fiha.controller to javafx.fxml;
+    // Export & Open Root Packages
+    exports c213.dosaoopproject;
+    opens c213.dosaoopproject to javafx.fxml;
 
-    // 1. ALLOW JAVAFX FXML TO REFLECTIVELY ACCESS CONTROLLERS
-    opens c213.dosaoopproject.bushraController to javafx.fxml;
-    opens c213.dosaoopproject.commonClass to javafx.fxml;
+    // Fiha's project part
+    exports c213.dosaoopproject.Nahin.controller.u_03;
+    opens c213.dosaoopproject.Nahin.controller.u_03 to javafx.fxml;
 
-    // 2. ALLOW TABLEVIEW TO READ YOUR MODEL PROPERTIES (If you use TableView in subviews)
-    opens c213.dosaoopproject.bushraModel to javafx.base;
+    // Export & Open Common Classes
+    exports commonClass;
+    opens commonClass to javafx.fxml;
 
-    // 3. EXPORT PACKAGES
-    exports c213.dosaoopproject.bushraController;
-    exports c213.dosaoopproject.commonClass;
+    // Export & Open Bushra's Controllers
+    exports c213.dosaoopproject.Bushra.bushraController;
+    opens c213.dosaoopproject.Bushra.bushraController to javafx.fxml;
+
+    exports c213.dosaoopproject.Bushra.bushraController.U07;
+    opens c213.dosaoopproject.Bushra.bushraController.U07 to javafx.fxml;
+
+    exports c213.dosaoopproject.Bushra.bushraController.U08;
+    opens c213.dosaoopproject.Bushra.bushraController.U08 to javafx.fxml;
+
+    // Export Bushra's Models
+    exports c213.dosaoopproject.Bushra.bushraModel.U07;
+    exports c213.dosaoopproject.Bushra.bushraModel.U08;
 }
