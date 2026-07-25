@@ -1,4 +1,4 @@
-package c213.dosaoopproject.Bushra.bushraController.U07;
+package c213.dosaoopproject.Bushra.Controller.U07;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

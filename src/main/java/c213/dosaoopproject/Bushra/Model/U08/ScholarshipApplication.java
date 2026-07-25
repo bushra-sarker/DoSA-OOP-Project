@@ -1,4 +1,4 @@
-package c213.dosaoopproject.Bushra.bushraModel.U08;
+package c213.dosaoopproject.Bushra.Model.U08;
 
 import java.time.LocalDate;
 

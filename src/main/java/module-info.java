@@ -12,18 +12,18 @@ module c213.dosaoopproject {
     opens commonClass to javafx.fxml;
 
     // --- Bushra: Controllers ---
-    exports c213.dosaoopproject.Bushra.bushraController.U07;
-    opens c213.dosaoopproject.Bushra.bushraController.U07 to javafx.fxml;
+    exports c213.dosaoopproject.Bushra.Controller.U07;
+    opens c213.dosaoopproject.Bushra.Controller.U07 to javafx.fxml;
 
-    exports c213.dosaoopproject.Bushra.bushraController.U08;
-    opens c213.dosaoopproject.Bushra.bushraController.U08 to javafx.fxml;
+    exports c213.dosaoopproject.Bushra.Controller.U08;
+    opens c213.dosaoopproject.Bushra.Controller.U08 to javafx.fxml;
 
     // --- Bushra: Models ---
-    exports c213.dosaoopproject.Bushra.bushraModel.U07;
-    opens c213.dosaoopproject.Bushra.bushraModel.U07 to javafx.base;
+    exports c213.dosaoopproject.Bushra.Model.U07;
+    opens c213.dosaoopproject.Bushra.Model.U07 to javafx.base;
 
-    exports c213.dosaoopproject.Bushra.bushraModel.U08;
-    opens c213.dosaoopproject.Bushra.bushraModel.U08 to javafx.base;
+    exports c213.dosaoopproject.Bushra.Model.U08;
+    opens c213.dosaoopproject.Bushra.Model.U08 to javafx.base;
 
     // --- Nahin: Controllers & Models ---
     exports c213.dosaoopproject.Nahin.controller.u_03;
