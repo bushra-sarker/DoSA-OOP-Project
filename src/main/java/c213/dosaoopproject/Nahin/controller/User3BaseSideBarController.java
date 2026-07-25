@@ -43,7 +43,7 @@ public class User3BaseSideBarController {
 
     @javafx.fxml.FXML
     public void contributionViewOA(ActionEvent actionEvent) throws Exception{
-        navigate(actionEvent,"Fiha/display/u3G3_contribution_view.fxml");
+        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G3_contribution_view.fxml");
     }
 
     @javafx.fxml.FXML
@@ -52,12 +52,12 @@ public class User3BaseSideBarController {
 
     @javafx.fxml.FXML
     public void registerViewOA(ActionEvent actionEvent) throws IOException{
-        navigate(actionEvent,"Fiha/display/u3G1_eventRegister_view.fxml");
+        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G1_eventRegister_view.fxml");
     }
 
     @javafx.fxml.FXML
     public void teamViewOA(ActionEvent actionEvent) throws IOException{
-        navigate(actionEvent,"Fiha/display/u3G2_JoinTeam_view.fxml");
+        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G2_JoinTeam_view.fxml");
     }
 
     @javafx.fxml.FXML
@@ -70,11 +70,11 @@ public class User3BaseSideBarController {
 
     @javafx.fxml.FXML
     public void dashboardViewOA(ActionEvent actionEvent) throws IOException{
-        navigate(actionEvent,"Fiha/display/u3_dashBoard_view.fxml");
+        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml");
     }
 
     @javafx.fxml.FXML
     public void reportViewOA(ActionEvent actionEvent) throws IOException{
-        navigate(actionEvent,"Fiha/display/u3G4_issueReporting_view.fxml");
+        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G4_issueReporting_view.fxml");
     }
 }

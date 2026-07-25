@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.DashBoardView_Controller">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <VBox prefHeight="66.0" prefWidth="210.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="214.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA) " textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                     <font>
+                        <Font name="Constantia" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="14.0" prefWidth="88.0" style="-fx-text-fill: white;" text="Officer Portal" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                     <font>
+                        <Font name="Calibri Light" size="11.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="12.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <Region prefHeight="66.0" prefWidth="34.0" />
+            <TextField fx:id="searchOFCRTF" prefHeight="26.0" prefWidth="480.0" promptText="Search clubs, events ....." style="-fx-background-color: transparent; -fx-border-color: #E5E1D8; -fx-border-width: 0.3; -fx-background-radius: 6; -fx-border-radius: 6;">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Region prefHeight="66.0" prefWidth="74.0" />
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#notificationOA" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: #083C57;">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/BellIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow height="188.3" radius="104.0375" spread="0.33" width="229.85">
+                     <color>
+                        <Color opacity="0.5114678740501404" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="518.0" prefWidth="183.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#dashboardVwOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Dashboard">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#registerCLUBViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Club Registration">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#complaintsOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Complaints">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#announcementsOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Announcement">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#oversightCLUBOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Oversights">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#suspendClubOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Club Suspension">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#venueRqstOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Venue Requests">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#resourcesOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Resources">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#eventCalenderOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Event Calendar">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin></Button>
+            <Separator prefHeight="23.0" prefWidth="183.0">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin></Separator>
+            <Region prefHeight="117.0" prefWidth="183.0" />
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="183.0">
+               <children>
+                  <ImageView fx:id="ppImageView" fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/images.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="35.0" prefWidth="139.0">
+                     <children>
+                        <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="User Name">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Corbel" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userIdLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="ID :">
+                           <font>
+                              <Font name="Corbel" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="6.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="529.0" prefWidth="716.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
