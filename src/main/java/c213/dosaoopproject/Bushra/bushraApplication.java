@@ -1,4 +1,4 @@
-package c213.dosaoopproject.Bushra.bushraController;
+package c213.dosaoopproject.Bushra;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

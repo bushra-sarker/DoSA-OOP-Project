@@ -1,30 +1,34 @@
 module c213.dosaoopproject {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.base;
 
-    // Export & Open Root Packages
+    // --- Main Application Entry Point ---
     exports c213.dosaoopproject;
     opens c213.dosaoopproject to javafx.fxml;
 
-    // Fiha's project part
-    exports c213.dosaoopproject.Nahin.controller.u_03;
-    opens c213.dosaoopproject.Nahin.controller.u_03 to javafx.fxml;
-
-    // Export & Open Common Classes
+    // --- Common Package ---
     exports commonClass;
     opens commonClass to javafx.fxml;
 
-    // Export & Open Bushra's Controllers
-    exports c213.dosaoopproject.Bushra.bushraController;
-    opens c213.dosaoopproject.Bushra.bushraController to javafx.fxml;
-
+    // --- Bushra: Controllers ---
     exports c213.dosaoopproject.Bushra.bushraController.U07;
     opens c213.dosaoopproject.Bushra.bushraController.U07 to javafx.fxml;
 
     exports c213.dosaoopproject.Bushra.bushraController.U08;
     opens c213.dosaoopproject.Bushra.bushraController.U08 to javafx.fxml;
 
-    // Export Bushra's Models
+    // --- Bushra: Models ---
     exports c213.dosaoopproject.Bushra.bushraModel.U07;
+    opens c213.dosaoopproject.Bushra.bushraModel.U07 to javafx.base;
+
     exports c213.dosaoopproject.Bushra.bushraModel.U08;
+    opens c213.dosaoopproject.Bushra.bushraModel.U08 to javafx.base;
+
+    // --- Nahin: Controllers & Models ---
+    exports c213.dosaoopproject.Nahin.controller.u_03;
+    opens c213.dosaoopproject.Nahin.controller.u_03 to javafx.fxml;
+
+    exports c213.dosaoopproject.Nahin.model;
+    opens c213.dosaoopproject.Nahin.model to javafx.base;
 }
