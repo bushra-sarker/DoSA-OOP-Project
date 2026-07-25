@@ -109,12 +109,12 @@ public class LoginController {
         // 7. Head of DoSA (Bushra - User 07)
         else if (userId.equalsIgnoreCase("HOD07") && password.equals("2411837")) {
             resetFailedAttempts();
-            navigateToDashboard(event, "/c213/dosaoopproject/bushraView/U07/U07_HeadOfDoSADashboard.fxml", "Head of DoSA Dashboard");
+            navigateToDashboard(event, "/c213/dosaoopproject/bushra/U07/U07_HeadOfDoSADashboard.fxml", "Head of DoSA Dashboard");
         }
         // 8. Student Welfare Officer (Bushra - User 08)
         else if (userId.equalsIgnoreCase("SWO08") && password.equals("2411837")) {
             resetFailedAttempts();
-            navigateToDashboard(event, "/c213/dosaoopproject/bushraView/U08/U08_StudentWelfareOfficerDashboard.fxml", "Student Welfare Officer Dashboard");
+            navigateToDashboard(event, "/c213/dosaoopproject/bushra/U08/U08_StudentWelfareOfficerDashboard.fxml", "Student Welfare Officer Dashboard");
         }
         // Event-5 & 7: Credential Mismatch & Attempt Handling
         else {
