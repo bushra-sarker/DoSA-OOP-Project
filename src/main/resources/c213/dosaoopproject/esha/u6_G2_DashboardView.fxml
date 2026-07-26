@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.esha.controller.u6_G2_DashboardView">
+   <children>
+      <VBox spacing="15">
+      
+          <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+         </padding>
+      
+          <Label style="-fx-font-size:20px; -fx-font-weight:bold;" text="Assign Volunteers" />
+      
+          <GridPane hgap="12" vgap="12">
+              <Label text="Event:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+              <ComboBox fx:id="eventCombo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+              <Label text="Volunteer:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+              <ComboBox fx:id="volunteerCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+              <Label text="Shift:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+              <TextField fx:id="shiftField" promptText="e.g. Morning, 9am-1pm" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      
+              <Label text="Team:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+              <TextField fx:id="teamField" promptText="e.g. Logistics" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+          </GridPane>
+      
+          <Label fx:id="statusLabel" />
+      
+          <Button fx:id="confirmAssignmentBtn" onAction="#handleConfirmAssignment" text="Confirm Assignment" />
+      
+      </VBox>
+   </children>
+</AnchorPane>
