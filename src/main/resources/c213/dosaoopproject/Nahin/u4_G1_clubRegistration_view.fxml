@@ -19,11 +19,11 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_1_clubRegistration_Controller">
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
          <children>
-            <VBox prefHeight="66.0" prefWidth="210.0">
+            <VBox prefHeight="66.0" prefWidth="256.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="214.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA) " textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="210.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA) " textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
                      <font>
                         <Font name="Constantia" size="12.0" />
                      </font>
@@ -41,8 +41,8 @@
                   </Label>
                </children>
             </VBox>
-            <Region prefHeight="66.0" prefWidth="34.0" />
-            <TextField fx:id="searchOFCRTF" prefHeight="26.0" prefWidth="480.0" promptText="Search clubs, events ....." style="-fx-background-color: transparent; -fx-border-color: #E5E1D8; -fx-border-width: 0.3; -fx-background-radius: 6; -fx-border-radius: 6;">
+            <Region prefHeight="66.0" prefWidth="46.0" />
+            <TextField fx:id="searchOFCRTF" prefHeight="26.0" prefWidth="325.0" promptText="Search clubs, events ....." style="-fx-background-color: transparent; -fx-border-color: #E5E1D8; -fx-border-width: 0.3; -fx-background-radius: 6; -fx-border-radius: 6;">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
@@ -50,7 +50,7 @@
                   <Insets top="10.0" />
                </HBox.margin>
             </TextField>
-            <Region prefHeight="66.0" prefWidth="74.0" />
+            <Region prefHeight="66.0" prefWidth="70.0" />
             <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#notificationOA" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: #083C57;">
                <HBox.margin>
                   <Insets />
@@ -70,10 +70,38 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin></Button>
+            <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="66.0" prefWidth="181.0">
+               <children>
+                  <ImageView fx:id="ppImageView11" fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/images.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="66.0" prefWidth="138.0">
+                     <children>
+                        <Label fx:id="nameLabel11" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="User Name">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Corbel" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userIdLabel11" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="ID :">
+                           <font>
+                              <Font name="Corbel" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
          <padding>
             <Insets bottom="5.0" />
@@ -123,42 +151,11 @@
                <VBox.margin>
                   <Insets top="3.0" />
                </VBox.margin></Separator>
-            <Region prefHeight="117.0" prefWidth="183.0" />
-            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="183.0">
-               <children>
-                  <ImageView fx:id="ppImageView" fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/images.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <VBox alignment="CENTER" prefHeight="35.0" prefWidth="139.0">
-                     <children>
-                        <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="User Name">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                           <font>
-                              <Font name="Corbel" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="userIdLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="ID :">
-                           <font>
-                              <Font name="Corbel" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="7.0" />
-                     </HBox.margin>
-                  </VBox>
-               </children>
+            <Region prefHeight="114.0" prefWidth="183.0" />
+            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="36.0" prefWidth="183.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
                <VBox.margin>
                   <Insets bottom="6.0" />
-               </VBox.margin>
-            </HBox>
+               </VBox.margin></Button>
          </children>
       </VBox>
    </left>

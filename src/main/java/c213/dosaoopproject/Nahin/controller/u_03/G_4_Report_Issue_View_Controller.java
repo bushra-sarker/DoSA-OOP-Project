@@ -15,32 +15,33 @@ public class G_4_Report_Issue_View_Controller extends User3BaseSideBarController
 {
 
     @javafx.fxml.FXML
-    private Label complaintIDlbl;
+    private TableColumn dateCOL;
     @javafx.fxml.FXML
-    private TextField userIDTF;
+    private TableColumn statusCOL;
     @javafx.fxml.FXML
-    private TextField eventnameTF;
+    private TableColumn complaintIDCOL;
     @javafx.fxml.FXML
-    private TextField timrTF;
+    private TableColumn categoryCOL;
     @javafx.fxml.FXML
-    private ComboBox categoryCOMBO;
+    private TextField searchTF;
     @javafx.fxml.FXML
-    private TextArea detailsTXTAR;
-
+    private TableView reportViewTABLE;
+    @javafx.fxml.FXML
+    private TableColumn eventNameCOL;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void refreshTableOA(ActionEvent actionEvent) {
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void searchOA(ActionEvent actionEvent) {
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void backOA(ActionEvent actionEvent) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load());
@@ -51,16 +52,16 @@ public class G_4_Report_Issue_View_Controller extends User3BaseSideBarController
         navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml");
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void createReportOA(ActionEvent actionEvent) throws IOException{
         navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G4_issueReporting_Form_view.fxml");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void submitOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backFRONTOA(ActionEvent actionEvent) throws IOException{
         navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G4_issueReporting_view.fxml");
     }

@@ -38,5 +38,4 @@ public class G_1_clubRegistration_Controller extends User4BaseSideBarController
     @javafx.fxml.FXML
     public void backTodashOA(ActionEvent actionEvent) {
     }
-
 }

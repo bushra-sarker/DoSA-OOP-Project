@@ -51,5 +51,4 @@ public class G_3_Contribution_View_Controller extends User3BaseSideBarController
     private boolean checkIfUserHasContribution(){
         return false;
     }
-
 }
