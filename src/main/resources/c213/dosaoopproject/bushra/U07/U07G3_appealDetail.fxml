@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="650.0" prefWidth="717.0" spacing="12.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.Controller.U07.U07G3_AppealDetailController">
+<VBox prefHeight="650.0" prefWidth="717.0" spacing="12.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.Controller.U07.U07G3_AppealDetailController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -77,13 +77,13 @@
                 <Label style="-fx-font-weight: bold; -fx-text-fill: #083C57;" text="Select Determination Decision:" />
                 <HBox alignment="CENTER_LEFT" spacing="20.0">
                     <children>
-                        <RadioButton fx:id="upholdOriginalButton" mnemonicParsing="false" onAction="#upholdOriginalButton" text="Uphold Original">
+                        <RadioButton mnemonicParsing="false" onAction="#upholdOriginalButton" text="Uphold Original">
                             <toggleGroup>
                                 <ToggleGroup fx:id="decisionGroup" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="reducePenaltyButton" mnemonicParsing="false" onAction="#reducePenaltyButton" text="Reduce Penalty" toggleGroup="$decisionGroup" />
-                        <RadioButton fx:id="dismissChargesButton" mnemonicParsing="false" onAction="#dismissChargesButton" text="Dismiss Charges" toggleGroup="$decisionGroup" />
+                        <RadioButton mnemonicParsing="false" onAction="#reducePenaltyButton" text="Reduce Penalty" toggleGroup="$decisionGroup" />
+                        <RadioButton mnemonicParsing="false" onAction="#dismissChargesButton" text="Dismiss Charges" toggleGroup="$decisionGroup" />
                     </children>
                 </HBox>
 
@@ -117,7 +117,7 @@
         <HBox alignment="CENTER_RIGHT" spacing="10.0">
             <children>
                 <Region HBox.hgrow="ALWAYS" />
-                <Button fx:id="finalizeButton" disable="true" mnemonicParsing="false" onAction="#finalizeButton" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #2E7D32; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;" text="Finalize Appeal Decision" />
+                <Button disable="true" mnemonicParsing="false" onAction="#finalizeButton" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: #2E7D32; -fx-text-fill: white; -fx-background-radius: 6; -fx-font-weight: bold;" text="Finalize Appeal Decision" />
             </children>
         </HBox>
     </children>
