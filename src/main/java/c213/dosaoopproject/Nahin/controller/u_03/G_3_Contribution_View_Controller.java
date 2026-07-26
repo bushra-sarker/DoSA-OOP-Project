@@ -1,10 +1,10 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.controller.User3BaseSideBarController;
+import c213.dosaoopproject.Nahin.controller.U_03_NavigationController;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-public class G_3_Contribution_View_Controller extends User3BaseSideBarController
+public class G_3_Contribution_View_Controller extends U_03_NavigationController
 {
     @javafx.fxml.FXML
     private Label participationLBL;

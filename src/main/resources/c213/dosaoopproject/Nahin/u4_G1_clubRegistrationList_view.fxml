@@ -164,7 +164,7 @@
          <children>
             <VBox prefHeight="61.0" prefWidth="702.0" style="-fx-background-radius: 7; -fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 7;">
                <children>
-                  <Label alignment="CENTER" prefHeight="61.0" prefWidth="240.0" text="New Club Proposals">
+                  <Label alignment="CENTER" prefHeight="61.0" prefWidth="326.0" text="Club Registration Approvals">
                      <font>
                         <Font name="Cambria Math" size="26.0" />
                      </font>
@@ -177,7 +177,7 @@
             <Separator prefHeight="18.0" prefWidth="717.0" />
             <VBox prefHeight="366.0" prefWidth="717.0" style="-fx-background-radius: 7; -fx-border-color: lightgray; -fx-background-color: white; -fx-border-radius: 7;">
                <children>
-                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="269.0" text="Pending Club Registration Applications" textFill="#003673">
+                  <Label alignment="CENTER" prefHeight="29.0" prefWidth="270.0" text="Pending Club Registration Applications" textFill="#003673">
                      <font>
                         <Font name="Calibri" size="16.0" />
                      </font>

@@ -1,12 +1,18 @@
 package c213.dosaoopproject.Nahin.controller.u_04;
 
-import c213.dosaoopproject.Nahin.controller.User4BaseSideBarController;
+import c213.dosaoopproject.Application;
+import c213.dosaoopproject.Nahin.controller.U_04_NavigationController;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class G_1_clubRegistration_Controller extends User4BaseSideBarController
+import java.io.IOException;
+
+public class G_1_clubRegistration_Controller extends U_04_NavigationController
 {
     @javafx.fxml.FXML
     private TableColumn dateCOL;
@@ -33,9 +39,20 @@ public class G_1_clubRegistration_Controller extends User4BaseSideBarController
 
     @javafx.fxml.FXML
     public void detailsViewOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/c213/dosaoopproject/Nahin/u4_G1_clubRegistrationDetails_view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("Reject Application");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
-    public void backTodashOA(ActionEvent actionEvent) {
+    public void backTodashOA(ActionEvent actionEvent) throws IOException {
+        navigateTo(actionEvent,"/c213/dosaoopproject/Nahin/u4_dashboard_view.fxml");
     }
 }

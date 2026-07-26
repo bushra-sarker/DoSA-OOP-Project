@@ -1,10 +1,10 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.controller.User3BaseSideBarController;
+import c213.dosaoopproject.Nahin.controller.U_03_NavigationController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
-public class DashBoardView_Controller extends User3BaseSideBarController
+public class DashBoardView_Controller extends U_03_NavigationController
 {
     @javafx.fxml.FXML
     private Label recentONElbl;

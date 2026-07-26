@@ -1,18 +1,13 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.controller.User3BaseSideBarController;
-import c213.dosaoopproject.Application;
+import c213.dosaoopproject.Nahin.controller.U_03_NavigationController;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class G_2_Join_Team_View_Controller extends User3BaseSideBarController
+public class G_2_Join_Team_View_Controller extends U_03_NavigationController
 {
     @javafx.fxml.FXML
     private TextField userIDTF;

@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class User3BaseSideBarController {
+public class U_03_NavigationController {
 
     @javafx.fxml.FXML
     protected ImageView ppImageView;
