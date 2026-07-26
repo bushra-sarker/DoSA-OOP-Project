@@ -1,6 +1,6 @@
 package c213.dosaoopproject.Nahin.controller;
 
-import c213.dosaoopproject.Nahin.nahinApplication;
+import c213.dosaoopproject.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -21,7 +21,7 @@ public class User3BaseSideBarController {
     protected Label userIdLabel;
 
     public void navigate(ActionEvent actionEvent, String fxml) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(nahinApplication.class.getResource(fxml));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setTitle("DoSA Management Simulation");

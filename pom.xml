@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>c213.dosaoopproject/c213.dosaoopproject.DoSAJavaFXapplication</mainClass>
+                            <mainClass>c213.dosaoopproject/c213.dosaoopproject.Application</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
