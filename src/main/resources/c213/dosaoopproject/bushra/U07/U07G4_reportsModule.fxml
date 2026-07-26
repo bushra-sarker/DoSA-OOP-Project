@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="717.0" spacing="15.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.Controller.U07.U07G4_ReportsModuleController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <VBox spacing="4.0">
+            <children>
+                <Label style="-fx-text-fill: #083C57; -fx-font-weight: bold;" text="Reports &amp; Analytics Module">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label style="-fx-text-fill: #555555;" text="Select a report template to configure and generate institutional analytics." />
+            </children>
+        </VBox>
+
+        <!-- Template Selection Cards Grid -->
+        <GridPane hgap="15.0" vgap="15.0" VBox.vgrow="ALWAYS">
+            <children>
+                <!-- Card 1: Semester Activity Report -->
+                <VBox fx:id="cardSemesterActivity" onMouseClicked="#cardSemesterActivityClick" prefHeight="150.0" prefWidth="330.0" style="-fx-background-color: white; -fx-border-color: #083C57; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand; -fx-padding: 15;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                        <Label style="-fx-text-fill: #083C57; -fx-font-weight: bold;" text="Semester Activity Report">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label prefHeight="60.0" prefWidth="300.0" style="-fx-text-fill: #666666;" text="Generate comprehensive leadership summary of student involvement, events, and club performance." wrapText="true">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Card 2: Budget Utilization -->
+                <VBox fx:id="cardBudgetUtilization" onMouseClicked="#cardBudgetUtilizationClick" prefHeight="150.0" prefWidth="330.0" style="-fx-background-color: white; -fx-border-color: #cccccc; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand; -fx-padding: 15;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <children>
+                        <Label style="-fx-text-fill: #083C57; -fx-font-weight: bold;" text="Budget Utilization Report">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label prefHeight="60.0" prefWidth="300.0" style="-fx-text-fill: #666666;" text="Analyze DoSA grant allocations, club expenditures, and financial efficiencies." wrapText="true">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Card 3: Student Participation -->
+                <VBox fx:id="cardStudentParticipation" onMouseClicked="#cardStudentParticipationClick" prefHeight="150.0" prefWidth="330.0" style="-fx-background-color: white; -fx-border-color: #cccccc; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand; -fx-padding: 15;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <children>
+                        <Label style="-fx-text-fill: #083C57; -fx-font-weight: bold;" text="Student Participation Analytics">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label prefHeight="60.0" prefWidth="300.0" style="-fx-text-fill: #666666;" text="Review co-curricular involvement trends across departments and terms." wrapText="true">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Card 4: Event Success Rate -->
+                <VBox fx:id="cardEventSuccess" onMouseClicked="#cardEventSuccessClick" prefHeight="150.0" prefWidth="330.0" style="-fx-background-color: white; -fx-border-color: #cccccc; -fx-border-radius: 8; -fx-background-radius: 8; -fx-cursor: hand; -fx-padding: 15;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label style="-fx-text-fill: #083C57; -fx-font-weight: bold;" text="Event Success &amp; Risk Audit">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label prefHeight="60.0" prefWidth="300.0" style="-fx-text-fill: #666666;" text="Assess compliance, safety, venue utilization, and post-event feedback ratings." wrapText="true">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+    </children>
+</VBox>
