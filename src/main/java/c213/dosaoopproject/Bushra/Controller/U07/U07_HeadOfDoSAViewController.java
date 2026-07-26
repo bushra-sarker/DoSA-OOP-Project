@@ -26,7 +26,7 @@ public class U07_HeadOfDoSAViewController {
     @FXML
     public void initialize() {
         // Load the Dashboard Overview sub-view on app launch
-        loadSubView("/c213/dosaoopproject/bushra/U07/U07HOD_DashboardOverview.fxml", btnDashboard);
+        loadSubView("/c213/dosaoopproject/bushra/U07/U07G1_dashboardOverview.fxml", btnDashboard);
     }
 
     private void loadSubView(String fxmlPath, Button activeBtn) {
@@ -62,7 +62,7 @@ public class U07_HeadOfDoSAViewController {
     // Nav Handlers
     @FXML
     private void dashboardViewOA(ActionEvent event) {
-        loadSubView("/c213/dosaoopproject/bushra/U07/U07HOD_DashboardOverview.fxml", btnDashboard);
+        loadSubView("/c213/dosaoopproject/bushra/U07/U07G1_dashboardOverview.fxml", btnDashboard);
     }
 
     @FXML
