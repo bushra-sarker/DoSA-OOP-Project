@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="565.0" style="-fx-border-color: lihtgray; -fx-background-color: #F0F0F0;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_1_clubRegistrationDETAILS_Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_1_clubRegistrationDETAILS_Controller">
    <children>
       <Label prefHeight="16.0" prefWidth="514.0" style="-fx-background-color: #FFFCF5;" text="Application Details">
          <font>
@@ -20,110 +20,102 @@
          </VBox.margin>
       </Label>
       <Separator prefWidth="200.0" />
-      <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="528.0" style="-fx-border-color: lightgray;">
+      <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="714.0" style="-fx-border-color: lightgray;">
          <children>
-            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="494.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="652.0" spacing="15.0">
                <children>
-                  <Label prefHeight="43.0" prefWidth="142.0" text="Application ID :">
+                  <Label prefHeight="43.0" prefWidth="142.0" text="Application ID :" textFill="#6e6e6e">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="showAPPLidLBL" prefHeight="26.0" prefWidth="233.0" style="-fx-border-color: #E8E8E8; -fx-background-color: #F2F2F2;">
+                  <Label fx:id="showAPPLidLBL" prefHeight="35.0" prefWidth="186.0" style="-fx-border-color: lightgray;">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
                </children>
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="494.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="652.0" spacing="12.0">
                <children>
-                  <Label prefHeight="43.0" prefWidth="142.0" text="Proposed Club Name :">
+                  <Label prefHeight="43.0" prefWidth="142.0" text="Proposed Club Name :" textFill="#6e6e6e">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="setClubNmLBL" prefHeight="26.0" prefWidth="233.0" style="-fx-border-color: #E8E8E8; -fx-background-color: #F2F2F2;">
+                  <Label fx:id="setClubNmLBL" prefHeight="35.0" prefWidth="186.0" style="-fx-border-color: lightgray;" wrapText="true">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="43.0" prefWidth="95.0" text="Category :" textFill="#6e6e6e">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="setCategoryLBL" prefHeight="35.0" prefWidth="186.0" style="-fx-border-color: lightgray;">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="67.0" prefWidth="510.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="652.0" spacing="12.0">
                <children>
-                  <Label prefHeight="43.0" prefWidth="142.0" text="Category :">
+                  <Label prefHeight="43.0" prefWidth="142.0" text="Contact Number :" textFill="#6e6e6e">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="setCategoryLBL" prefHeight="26.0" prefWidth="233.0" style="-fx-border-color: #E8E8E8; -fx-background-color: #F2F2F2;">
+                  <Label fx:id="setContactLBL" prefHeight="35.0" prefWidth="186.0" style="-fx-border-color: lightgray;">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="43.0" prefWidth="96.0" text="Founder Name :" textFill="#6e6e6e">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="setFounderLBL" prefHeight="35.0" prefWidth="186.0" style="-fx-border-color: lightgray;" wrapText="true">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="510.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="652.0" spacing="15.0">
                <children>
-                  <Label prefHeight="43.0" prefWidth="142.0" text="Contact Number :">
-                     <font>
-                        <Font name="Cambria Math" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="setContactLBL" prefHeight="26.0" prefWidth="233.0" style="-fx-border-color: #E8E8E8; -fx-background-color: #F2F2F2;">
-                     <font>
-                        <Font name="Cambria Math" size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="510.0">
-               <children>
-                  <Label prefHeight="43.0" prefWidth="142.0" text="Founder Name :">
-                     <font>
-                        <Font name="Cambria Math" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="setFounderLBL" prefHeight="26.0" prefWidth="233.0" style="-fx-border-color: #E8E8E8; -fx-background-color: #F2F2F2;">
-                     <font>
-                        <Font name="Cambria Math" size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="494.0">
-               <children>
-                  <Label prefHeight="43.0" prefWidth="480.0" text="Purpose :">
+                  <Label prefHeight="43.0" prefWidth="480.0" text="Purpose :" textFill="#6e6e6e">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="75.0" />
+                        <Insets />
                      </HBox.margin>
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="522.0">
+            <HBox prefHeight="74.0" prefWidth="652.0">
                <children>
-                  <Label fx:id="setPurposeLBL" prefHeight="54.0" prefWidth="369.0" style="-fx-border-color: #E8E8E8; -fx-background-color: #F2F2F2;">
+                  <Label fx:id="setPurposeLBL" prefHeight="75.0" prefWidth="652.0" style="-fx-border-color: lightgray;" wrapText="true">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="73.0" prefWidth="494.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="68.0" prefWidth="652.0" spacing="15.0">
                <children>
-                  <Label prefHeight="43.0" prefWidth="142.0" text="Submission Date :">
+                  <Label prefHeight="43.0" prefWidth="142.0" text="Submission Date :" textFill="#6e6e6e">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="setDateLBL" prefHeight="26.0" prefWidth="233.0" style="-fx-border-color: #E8E8E8; -fx-background-color: #F2F2F2;">
+                  <Label fx:id="setDateLBL" prefHeight="35.0" prefWidth="233.0" style="-fx-border-color: lightgray;">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>
@@ -132,18 +124,21 @@
             </HBox>
          </children>
          <VBox.margin>
-            <Insets left="20.0" top="10.0" />
+            <Insets left="30.0" right="30.0" top="10.0" />
          </VBox.margin>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
       </VBox>
       <Separator prefHeight="36.0" prefWidth="566.0" />
-      <HBox alignment="TOP_RIGHT" prefHeight="49.0" prefWidth="566.0" spacing="30.0">
+      <HBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="775.0" spacing="30.0">
          <children>
             <Button mnemonicParsing="false" onAction="#closeDetailsOA" prefHeight="30.0" prefWidth="94.0" text="Close">
                <font>
                   <Font name="Constantia" size="14.0" />
                </font>
             </Button>
-            <Region prefHeight="50.0" prefWidth="132.0" />
+            <Region prefHeight="46.0" prefWidth="340.0" />
             <Button mnemonicParsing="false" onAction="#approveButtonOA" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #C9EED2; -fx-border-color: #79B488;" text="Approve" textFill="#004618">
                <font>
                   <Font name="Constantia" size="14.0" />

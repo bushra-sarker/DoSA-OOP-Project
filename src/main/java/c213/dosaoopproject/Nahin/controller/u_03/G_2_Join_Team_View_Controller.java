@@ -1,13 +1,12 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.controller.U_03_NavigationController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
+import static commonClass.Navigation.navigate;
 
-public class G_2_Join_Team_View_Controller extends U_03_NavigationController
+public class G_2_Join_Team_View_Controller
 {
     @javafx.fxml.FXML
     private TextField userIDTF;
@@ -92,13 +91,7 @@ public class G_2_Join_Team_View_Controller extends U_03_NavigationController
 
     @javafx.fxml.FXML
     public void backToDashOA(ActionEvent actionEvent) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load());
-//        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-//        stage.setTitle("DoSA Management Simulation");
-//        stage.setScene(scene);
-//        stage.show();
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml");
+        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G1_Register_view.fxml");
     }
 
     @javafx.fxml.FXML

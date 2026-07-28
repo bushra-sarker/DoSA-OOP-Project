@@ -2,7 +2,9 @@ package c213.dosaoopproject.Nahin.model;
 
 import c213.dosaoopproject.Application;
 import commonClass.User;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -22,14 +24,14 @@ public class Volunteer extends User {
 
     @Override
     public void loadDashboard() {
-        try{
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("u3_dashBoard_view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
             stage.setTitle("DoSA Management Simulation");
             stage.setScene(scene);
             stage.show();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.getStackTrace();
         }
 

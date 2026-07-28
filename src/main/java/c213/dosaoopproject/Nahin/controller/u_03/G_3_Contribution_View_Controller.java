@@ -1,10 +1,12 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.controller.U_03_NavigationController;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import java.io.IOException;
+import static commonClass.Navigation.navigate;
 
-public class G_3_Contribution_View_Controller extends U_03_NavigationController
+public class G_3_Contribution_View_Controller
 {
     @javafx.fxml.FXML
     private Label participationLBL;
@@ -49,6 +51,11 @@ public class G_3_Contribution_View_Controller extends U_03_NavigationController
     }
 
     private boolean checkIfUserHasContribution(){
-        return false;
+        return true;
+    }
+
+    @javafx.fxml.FXML
+    public void exploreTeamOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G2_JoinTeam_view.fxml");
     }
 }
