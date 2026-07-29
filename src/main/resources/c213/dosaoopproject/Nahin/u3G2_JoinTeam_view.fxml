@@ -62,7 +62,7 @@
                            </children>
                         </VBox>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="74.0" stroke="#ffffff00" strokeType="INSIDE" width="265.0" />
-                        <Button fx:id="joinButtonFXiD" mnemonicParsing="false" onAction="#goToNextOA" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #004675; -fx-text-fill: snow;" text="+ Join New Team">
+                        <Button fx:id="joinButtonFXiD" mnemonicParsing="false" onAction="#goToNextOA" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #004675; -fx-text-fill: snow;" text="+ Join New Team">
                            <font>
                               <Font name="Calisto MT" size="14.0" />
                            </font>
@@ -84,7 +84,7 @@
                   <Separator minHeight="-Infinity" prefHeight="17.0" prefWidth="714.0" />
                   <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="732.0">
                      <children>
-                        <VBox fx:id="panel_1" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="730.0">
+                        <VBox fx:id="panel_1" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="730.0" visible="false">
                            <children>
                               <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="726.0">
                                  <children>
@@ -270,7 +270,7 @@
                                           </FlowPane>
                                           <HBox alignment="BOTTOM_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="55.0" prefWidth="562.0" spacing="12.0">
                                              <children>
-                                                <Button mnemonicParsing="false" onAction="#backButtonOA" prefHeight="43.0" prefWidth="86.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Back">
+                                                <Button mnemonicParsing="false" onAction="#backButtonOA" prefHeight="30.0" prefWidth="90.0" text="Back">
                                                    <HBox.margin>
                                                       <Insets top="15.0" />
                                                    </HBox.margin>
@@ -280,7 +280,7 @@
                                                       <Insets top="15.0" />
                                                    </HBox.margin>
                                                 </Region>
-                                                <Button mnemonicParsing="false" onAction="#continueScreenButtonOA" prefHeight="43.0" prefWidth="86.0" style="-fx-background-color: #2A4D78; -fx-background-radius: 10; -fx-border-radius: 10; -fx-text-fill: white;" text="Continue">
+                                                <Button mnemonicParsing="false" onAction="#continueScreenButtonOA" prefHeight="30.0" prefWidth="90.0" text="Continue" textFill="#001c79">
                                                    <HBox.margin>
                                                       <Insets top="15.0" />
                                                    </HBox.margin>
@@ -302,7 +302,7 @@
                               </ScrollPane>
                            </children>
                         </VBox>
-                        <VBox fx:id="panel_3" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="690.0" visible="false">
+                        <VBox fx:id="panel_3" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="690.0">
                            <children>
                               <Separator prefHeight="9.0" prefWidth="810.0" />
                               <Label alignment="CENTER" prefHeight="14.0" prefWidth="162.0" text="Tell us a bit more about yourself">
@@ -356,15 +356,15 @@
                                     </VBox>
                                     <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="39.0" prefWidth="494.0" spacing="12.0">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#backOA" prefHeight="3.0" prefWidth="92.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Back">
+                                          <Button mnemonicParsing="false" onAction="#backOA" prefHeight="30.0" prefWidth="90.0" text="Back">
                                              <font>
-                                                <Font name="Californian FB" size="18.0" />
+                                                <Font name="Californian FB" size="14.0" />
                                              </font>
                                           </Button>
                                           <Region prefHeight="29.0" prefWidth="278.0" />
-                                          <Button mnemonicParsing="false" onAction="#submitOA" prefHeight="3.0" prefWidth="92.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Submit">
+                                          <Button mnemonicParsing="false" onAction="#submitOA" prefHeight="30.0" prefWidth="90.0" text="Submit" textFill="#001076">
                                              <font>
-                                                <Font name="Californian FB" size="18.0" />
+                                                <Font name="Californian FB Bold" size="14.0" />
                                              </font>
                                           </Button>
                                        </children>

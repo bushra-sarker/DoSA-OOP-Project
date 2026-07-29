@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_03.G6_campaign_register_Controller">
+   <top><fx:include source="u3_head.fxml" /></top>
+   <left><fx:include source="u3_sideMenuBar_view.fxml" /></left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="pane_1" prefHeight="530.0" prefWidth="740.0">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="66.0" prefWidth="722.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="290.0">
+                           <children>
+                              <Label alignment="BOTTOM_LEFT" prefHeight="90.0" prefWidth="263.0" text="Upcoming Campaigns" textFill="#6b6b6b">
+                                 <font>
+                                    <Font name="Cambria Math" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="7.0" right="7.0" top="4.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefHeight="27.0" prefWidth="736.0">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Separator>
+                  <TableView fx:id="campaignsTABLEVIEW" prefHeight="272.0" prefWidth="720.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
+                     <columns>
+                        <TableColumn fx:id="campaignNameCol" prefWidth="236.000018119812" text="Campaign Name" />
+                        <TableColumn fx:id="datECOL" prefWidth="159.1999969482422" text="Date" />
+                        <TableColumn fx:id="locationCOL" prefWidth="216.800048828125" text="Location" />
+                        <TableColumn fx:id="statusCOL" prefWidth="108.800048828125" text="Status" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets left="8.0" right="8.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <VBox prefHeight="106.0" prefWidth="736.0">
+                     <children>
+                        <Separator prefHeight="37.0" prefWidth="736.0" />
+                        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="736.0">
+                           <children>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#backDashBoardOA" prefHeight="9.0" prefWidth="106.0" text="Back">
+                                 <font>
+                                    <Font name="Constantia" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Region prefHeight="32.0" prefWidth="23.0" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#refreshTable" prefHeight="13.0" prefWidth="98.0" text="Refresh">
+                                 <font>
+                                    <Font name="Constantia" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Region prefHeight="32.0" prefWidth="362.0" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#joinCampaignOA" prefHeight="0.0" prefWidth="119.0" style="-fx-background-color: #07579C; -fx-border-color: snow; -fx-text-fill: white;" text="+ Join Now">
+                                 <font>
+                                    <Font name="Constantia" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

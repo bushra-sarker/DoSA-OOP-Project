@@ -2,23 +2,32 @@ package c213.dosaoopproject.Nahin.controller.u_03;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class G5_leave_request_FORM_Controller
+public class G6_campaigns_FORM_Controller
 {
     @javafx.fxml.FXML
     private TextField userIdTF;
     @javafx.fxml.FXML
-    private TextField activityNameTF;
+    private VBox mailTF;
     @javafx.fxml.FXML
-    private TextArea detailsTXTAR;
+    private TextField phoneTF;
     @javafx.fxml.FXML
-    private Label rqstIdLBL;
+    private Label registerIDLBL;
     @javafx.fxml.FXML
-    private DatePicker dateDP;
+    private TextField userIdTF1;
     @javafx.fxml.FXML
-    private ComboBox leaveReasonCOMBO;
+    private TextField userNameTF;
+    @javafx.fxml.FXML
+    private Label campaignNameLBL;
+    @javafx.fxml.FXML
+    private Label dateLBL;
+    @javafx.fxml.FXML
+    private TextArea notesTXTAR;
 
     @javafx.fxml.FXML
     public void initialize() {

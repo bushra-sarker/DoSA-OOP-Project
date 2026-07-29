@@ -64,9 +64,8 @@
             <Separator prefHeight="39.0" prefWidth="740.0" />
             <HBox alignment="CENTER" prefHeight="58.0" prefWidth="740.0" spacing="30.0">
                <children>
-                  <Region prefHeight="58.0" prefWidth="413.0" />
+                  <Region prefHeight="58.0" prefWidth="566.0" />
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#refreshTableOA" prefHeight="30.0" prefWidth="94.0" text="Refresh" />
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#detailsButtonOA" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="View details" />
                </children>
             </HBox>
          </children>

@@ -18,4 +18,13 @@ public class Navigation {
         stage.setScene(scene);
         stage.show();
     }
+
+
+    public static void newStage(ActionEvent actionEvent,String fxml) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

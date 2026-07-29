@@ -41,6 +41,10 @@ public class G_1_Club_RegisterEvent_Controller
     private TableColumn eventNameCol;
     @javafx.fxml.FXML
     private TableColumn clubNameCOL;
+    @javafx.fxml.FXML
+    private Label registerIDLABEL11;
+    @javafx.fxml.FXML
+    private Label registerIDLABEL1;
 
     @javafx.fxml.FXML
     public void initialize() {
