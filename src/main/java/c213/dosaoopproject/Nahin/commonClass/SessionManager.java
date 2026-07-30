@@ -1,4 +1,4 @@
-package commonClass;
+package c213.dosaoopproject.Nahin.commonClass;
 
 public class SessionManager {
     private static User currentUser;

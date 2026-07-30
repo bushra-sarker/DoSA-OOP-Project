@@ -6,40 +6,22 @@ import javafx.scene.control.Label;
 public class DashBoardView_Controller
 {
     @javafx.fxml.FXML
-    private Label recentONElbl;
-    @javafx.fxml.FXML
-    private Label recentTHREElbl;
-    @javafx.fxml.FXML
-    private Label tIMErecentONElbl;
-    @javafx.fxml.FXML
-    private Label recentFIVElbl;
-    @javafx.fxml.FXML
-    private Label pendingCardLBL;
-    @javafx.fxml.FXML
-    private Label tIMErecentFOURlbl;
-    @javafx.fxml.FXML
-    private Label recentTWOlbl;
-    @javafx.fxml.FXML
-    private Label recentFOURlbl;
-    @javafx.fxml.FXML
     private Label hoursCardLBL;
-    @javafx.fxml.FXML
-    private Label tIMErecentTWOlbl;
-    @javafx.fxml.FXML
-    private Label eligibleCardLBL;
     @javafx.fxml.FXML
     private Label participationCardLBL;
     @javafx.fxml.FXML
-    private Label tIMErecentTHREElbl;
+    private Label titleUserNameLBL;
     @javafx.fxml.FXML
-    private Label tIMErecentFIVElbl;
+    private Label eligibleCardLBL1;
+    @javafx.fxml.FXML
+    private Label pendingCardLBL1;
 
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void viewNOTIficationLINKOA(ActionEvent actionEvent) {
     }
 

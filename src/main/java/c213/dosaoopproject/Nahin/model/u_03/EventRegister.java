@@ -1,7 +1,7 @@
 package c213.dosaoopproject.Nahin.model.u_03;
 
-import commonClass.Registration;
-import utility.Validation;
+import c213.dosaoopproject.Nahin.commonClass.Registration;
+import c213.dosaoopproject.Nahin.utility.Validation;
 
 import java.time.LocalDate;
 
@@ -9,8 +9,8 @@ public class EventRegister extends Registration {
     private final String clubName, eventName;
     private String experience;
 
-    public EventRegister(int registrationId, String userId, String userName, int phonNumbr, String email, String status, LocalDate date, String clubName, String eventName, String experience) {
-        super(registrationId, userId, userName, phonNumbr, email, status, date);
+    public EventRegister(int registrationId, String userId, String userName, String phonNumbr, String email, LocalDate date, String clubName, String eventName, String experience) {
+        super(registrationId, userId, userName, phonNumbr, email, date);
         this.clubName = clubName;
         this.eventName = eventName;
         this.experience = experience;
@@ -36,7 +36,7 @@ public class EventRegister extends Registration {
             return false;
         if(email==null||email.isEmpty())
             return false;
-        if(phonNumbr==0)
+        if (phonNumbr==null)
             return false;
         if(date==null)
             return false;

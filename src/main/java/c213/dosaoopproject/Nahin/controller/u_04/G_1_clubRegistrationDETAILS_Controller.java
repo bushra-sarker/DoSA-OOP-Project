@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import static commonClass.Navigation.newStage;
+import static c213.dosaoopproject.Nahin.utility.Navigation.newStage;
 
 public class G_1_clubRegistrationDETAILS_Controller
 {
@@ -31,7 +31,7 @@ public class G_1_clubRegistrationDETAILS_Controller
 
     @javafx.fxml.FXML
     public void rejectButtonOA(ActionEvent actionEvent) throws IOException{
-        newStage(actionEvent,"/c213/dosaoopproject/Nahin/remarks_dialogView.fxml");
+        newStage(actionEvent, "/Nahin/fxmlView/remarks_dialogView.fxml");
     }
 
     @javafx.fxml.FXML

@@ -41,7 +41,7 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/teamicon.png" />
+                              <Image url="@../images/teamicon.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" top="8.0" />

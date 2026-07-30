@@ -5,8 +5,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
-import static commonClass.Navigation.navigate;
-import static commonClass.Navigation.newStage;
+import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.Navigation.newStage;
 
 public class G_1_clubRegistration_Controller
 {
@@ -35,11 +35,11 @@ public class G_1_clubRegistration_Controller
 
     @javafx.fxml.FXML
     public void detailsViewOA(ActionEvent actionEvent) throws IOException{
-        newStage(actionEvent,"/c213/dosaoopproject/Nahin/u4_G1_clubRegistrationDetails_view.fxml");
+        newStage(actionEvent, "/Nahin/fxmlView/u4_G1_clubRegistrationDetails_view.fxml");
     }
 
     @javafx.fxml.FXML
     public void backTodashOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent, "/c213/dosaoopproject/Nahin/u4_dashBoard.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u4_dashBoard.fxml");
     }
 }

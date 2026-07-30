@@ -25,7 +25,7 @@
                <children>
                   <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/rprt.png" />
+                        <Image url="@../images/rprt.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="20.0" left="8.0" right="8.0" />
@@ -64,7 +64,7 @@
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="22.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/i3kvlpusd9rv8diq849o468brk.png" />
+                              <Image url="@../images/i3kvlpusd9rv8diq849o468brk.png" />
                            </image>
                         </ImageView>
                      </graphic>

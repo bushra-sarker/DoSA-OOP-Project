@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 
-import static commonClass.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 
 public class G_4_Report_Issue_View_Controller
 {
@@ -38,11 +38,11 @@ public class G_4_Report_Issue_View_Controller
 
     @javafx.fxml.FXML
     public void backOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3_dashBoard_view.fxml");
     }
 
     @javafx.fxml.FXML
     public void createReportOA(ActionEvent actionEvent) throws IOException{
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G4_issueReporting_Form_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G4_issueReporting_Form_view.fxml");
     }
 }

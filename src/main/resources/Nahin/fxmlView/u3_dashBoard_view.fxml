@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_03.DashBoardView_Controller">
+   <top><fx:include source="u3_head.fxml" /></top>
+   <left><fx:include source="u3_sideMenuBar_view.fxml" /></left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="538.0" prefWidth="742.0">
+               <children>
+                  <HBox prefHeight="94.0" prefWidth="742.0" style="-fx-background-radius: 7; -fx-border-radius: 7;">
+                     <children>
+                        <VBox prefHeight="83.0" prefWidth="731.0">
+                           <children>
+                              <Label fx:id="titleUserNameLBL" alignment="CENTER" prefHeight="178.0" prefWidth="712.0" text="Welcome, User Name">
+                                 <font>
+                                    <Font name="Cambria Math" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefHeight="106.0" prefWidth="725.0">
+                                 <VBox.margin>
+                                    <Insets left="3.0" right="3.0" />
+                                 </VBox.margin>
+                              </Separator>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="614.0" spacing="30.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="113.0" prefWidth="742.0">
+                           <children>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox prefHeight="114.0" prefWidth="205.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="36.0" prefWidth="103.0" text="Total Hours" />
+                                    <Label fx:id="hoursCardLBL" alignment="CENTER" prefHeight="49.0" prefWidth="178.0" text="12" textFill="#664400">
+                                       <font>
+                                          <Font name="Cambria Math" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox prefHeight="114.0" prefWidth="202.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="38.0" prefWidth="124.0" text="Total Participation" />
+                                    <Label fx:id="participationCardLBL" alignment="CENTER" prefHeight="43.0" prefWidth="177.0" text="34" textFill="#56008c">
+                                       <font>
+                                          <Font name="Cambria Math" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="127.0" prefWidth="742.0">
+                           <children>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox prefHeight="127.0" prefWidth="204.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="38.0" prefWidth="137.0" text="Pending Requests" />
+                                    <Label fx:id="pendingCardLBL1" alignment="CENTER" prefHeight="46.0" prefWidth="170.0" text="2" textFill="#001c81">
+                                       <font>
+                                          <Font name="Cambria Math" size="31.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox prefHeight="127.0" prefWidth="205.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="36.0" prefWidth="134.0" text="Certificate Status" />
+                                    <Label fx:id="eligibleCardLBL1" alignment="CENTER" prefHeight="46.0" prefWidth="178.0" text="Eligible" textFill="#00613b">
+                                       <font>
+                                          <Font name="Cambria Math" size="29.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Separator layoutX="192.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="60.0" top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

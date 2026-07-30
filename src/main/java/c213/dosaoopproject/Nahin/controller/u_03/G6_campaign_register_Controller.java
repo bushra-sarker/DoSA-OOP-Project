@@ -6,8 +6,8 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-import static commonClass.Navigation.navigate;
-import static commonClass.Navigation.newStage;
+import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.Navigation.newStage;
 
 public class G6_campaign_register_Controller
 {
@@ -34,11 +34,11 @@ public class G6_campaign_register_Controller
 
     @javafx.fxml.FXML
     public void joinCampaignOA(ActionEvent actionEvent) throws IOException {
-        newStage(actionEvent,"/c213/dosaoopproject/Nahin/u3G6_Campaigns_form.fxml");
+        newStage(actionEvent, "/Nahin/fxmlView/u3G6_Campaigns_form.fxml");
     }
 
     @javafx.fxml.FXML
     public void backDashBoardOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G1_Register_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G1_Register_view.fxml");
     }
 }

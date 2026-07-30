@@ -5,8 +5,8 @@ import javafx.scene.control.TableColumn;
 
 import java.io.IOException;
 
-import static commonClass.Navigation.navigate;
-import static commonClass.Navigation.newStage;
+import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.Navigation.newStage;
 
 public class G5_leave_request_view_Controller
 {
@@ -25,7 +25,7 @@ public class G5_leave_request_view_Controller
 
     @javafx.fxml.FXML
     public void back_to_DashOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3_dashBoard_view.fxml");
     }
 
     @javafx.fxml.FXML
@@ -34,6 +34,6 @@ public class G5_leave_request_view_Controller
 
     @javafx.fxml.FXML
     public void newLeeaveRqstOA(ActionEvent actionEvent) throws IOException {
-        newStage(actionEvent,"/c213/dosaoopproject/Nahin/u3G5_leave_Rqst_form.fxml");
+        newStage(actionEvent, "/Nahin/fxmlView/u3G5_leave_Rqst_form.fxml");
     }
 }

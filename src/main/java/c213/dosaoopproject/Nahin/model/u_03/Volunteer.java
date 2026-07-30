@@ -1,23 +1,23 @@
 package c213.dosaoopproject.Nahin.model.u_03;
-import commonClass.User;
+import c213.dosaoopproject.Nahin.commonClass.User;
 
 public class Volunteer extends User {
     private final String volID;
     private  String email;
-    private int phone;
+    private String phone;
 
     private double totalContributionHours;
     private int totalParticipation;
     private boolean isCertified;
 
-    public Volunteer(String fullName, int userId, String volID, String email, int phone, double totalContributionHours, int totalParticipation, boolean isCertified) {
+    public Volunteer(String fullName, int userId, String volID, String email, String phone, double totalContributionHours, int totalParticipation, boolean isCertified) {
         super(fullName, userId);
         this.volID = volID;
         this.email = email;
         this.phone = phone;
-        this.totalContributionHours = 0;
-        this.totalParticipation = 0;
-        this.isCertified = false;
+        this.totalContributionHours = totalContributionHours;
+        this.totalParticipation = totalParticipation;
+        this.isCertified = isCertified;
     }
 
     public String getVolID() {
@@ -32,11 +32,11 @@ public class Volunteer extends User {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

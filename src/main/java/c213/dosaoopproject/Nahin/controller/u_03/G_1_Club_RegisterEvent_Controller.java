@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
 
-import static commonClass.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 
 public class G_1_Club_RegisterEvent_Controller
 {
@@ -87,6 +87,6 @@ public class G_1_Club_RegisterEvent_Controller
 
     @javafx.fxml.FXML
     public void backDashOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G1_Register_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G1_Register_view.fxml");
     }
 }

@@ -1,23 +1,24 @@
-package commonClass;
+package c213.dosaoopproject.Nahin.commonClass;
 
 import java.time.LocalDate;
 
 public abstract class Registration {
     protected final int registrationId;
     protected final String userId;
-    protected int phonNumbr;
+    protected String phonNumbr;
     protected final String userName;
     protected String email,status;
     protected LocalDate date;
 
-    public Registration(int registrationId, String userId, String userName, int phonNumbr, String email, String status, LocalDate date) {
+    public Registration(int registrationId, String userId, String userName, String phonNumbr, String email, LocalDate date) {
         this.registrationId = registrationId;
         this.userId = userId;
         this.userName = userName;
         this.phonNumbr = phonNumbr;
         this.email = email;
-        this.status = status;
         this.date = date;
+
+        this.status = "Pending";
     }
 
     public int getRegistrationId() {
@@ -28,11 +29,11 @@ public abstract class Registration {
         return userId;
     }
 
-    public int getPhonNumbr() {
+    public String getPhonNumbr() {
         return phonNumbr;
     }
 
-    public void setPhonNumbr(int phonNumbr) {
+    public void setPhonNumbr(String phonNumbr) {
         this.phonNumbr = phonNumbr;
     }
 
@@ -52,16 +53,21 @@ public abstract class Registration {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public LocalDate getDate() {
         return date;
     }
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+
+    public void approveRegistration(){
+        this.status = "Approved";
+    }
+
+    public void rejectRegistration(){
+        this.status = "Rejected";
     }
 
     public abstract boolean validateRegistration();

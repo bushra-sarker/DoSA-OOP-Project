@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
-import static commonClass.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 
 public class G_3_Contribution_View_Controller
 {
@@ -56,6 +56,6 @@ public class G_3_Contribution_View_Controller
 
     @javafx.fxml.FXML
     public void exploreTeamOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G2_JoinTeam_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G2_JoinTeam_view.fxml");
     }
 }

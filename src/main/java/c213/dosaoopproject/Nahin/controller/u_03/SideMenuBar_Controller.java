@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 
 import java.io.IOException;
 
-import static commonClass.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 
 public class SideMenuBar_Controller
 {
@@ -18,7 +18,7 @@ public class SideMenuBar_Controller
 
     @javafx.fxml.FXML
     public void contributionViewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G3_contribution_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G3_contribution_view.fxml");
     }
 
     @javafx.fxml.FXML
@@ -27,7 +27,7 @@ public class SideMenuBar_Controller
 
     @javafx.fxml.FXML
     public void registerViewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G1_Register_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G1_Register_view.fxml");
     }
 
     @javafx.fxml.FXML
@@ -36,16 +36,16 @@ public class SideMenuBar_Controller
 
     @javafx.fxml.FXML
     public void leaveRqstViewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G5_leave_request_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G5_leave_request_view.fxml");
     }
 
     @javafx.fxml.FXML
     public void dashboardViewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3_dashBoard_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3_dashBoard_view.fxml");
     }
 
     @javafx.fxml.FXML
     public void reportViewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/c213/dosaoopproject/Nahin/u3G4_issueReporting_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G4_issueReporting_view.fxml");
     }
 }

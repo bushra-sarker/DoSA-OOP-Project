@@ -197,7 +197,7 @@
                            <children>
                               <ImageView fitHeight="38.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/Alert_Icon.png" />
+                                    <Image url="@../images/Alert_Icon.png" />
                                  </image>
                               </ImageView>
                               <Label alignment="CENTER" prefHeight="43.0" prefWidth="298.0" text="No Volunteering Activity Found">

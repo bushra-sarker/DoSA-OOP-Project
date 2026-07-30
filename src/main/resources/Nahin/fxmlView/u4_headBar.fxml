@@ -55,7 +55,7 @@
                <graphic>
                   <ImageView fitHeight="19.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/BellIcon.png" />
+                        <Image url="@../images/BellIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -71,7 +71,7 @@
                <children>
                   <ImageView fx:id="ppImageView11" fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/images.png" />
+                        <Image url="@../images/images.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" />
