@@ -11,8 +11,6 @@ public class bushraApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        // Start at the common Login Screen
-        // ✅ Use absolute path starting with /
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("U07G1_eventApprovalQueue.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
 

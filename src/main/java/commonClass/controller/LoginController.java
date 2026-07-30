@@ -41,8 +41,9 @@ public class LoginController {
         }
     }
 
+    // CHANGED FROM private TO public
     @FXML
-    private void handleLogin(ActionEvent event) {
+    public void loginButton(ActionEvent event) {
         String userId = userIDTextF.getText().trim();
         String password = passwordTextF.getText().trim();
 
@@ -100,8 +101,9 @@ public class LoginController {
         }
     }
 
+    // CHANGED FROM private TO public
     @FXML
-    private void handleForgotPassword(MouseEvent event) {
+    public void setForgotPasswordLabel(MouseEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Password Reset");
         alert.setHeaderText("Forgot Password");

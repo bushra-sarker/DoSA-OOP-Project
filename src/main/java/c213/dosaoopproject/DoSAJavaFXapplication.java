@@ -12,9 +12,7 @@ public class DoSAJavaFXapplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        // 1. Point to your main Login view path (adjust path/name if it's in commonFXML)
         String fxmlPath = "/commonFXML/LoginView.fxml";
-
         URL resource = getClass().getResource(fxmlPath);
 
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
@@ -24,7 +22,6 @@ public class DoSAJavaFXapplication extends Application {
         stage.show();
     }
 
-    // Standard entry point
     public static void main(String[] args) {
         launch(args);
     }

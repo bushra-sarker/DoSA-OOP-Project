@@ -1,4 +1,4 @@
-package c213.dosaoopproject.Bushra.Controller.U07;
+package c213.dosaoopproject.Bushra.U08.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,32 +7,37 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView; // Corrected JavaFX import
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 
-public class U07_HeadOfDoSAViewController {
+public class U08_StudentWelfareOfficerViewController {
 
     @FXML private StackPane contentArea;
     @FXML private Button btnDashboard;
-    @FXML private Button btnPendingEventsCard;
-    @FXML private Button btnBudgetManagement;
+    @FXML private Button btnScholarshipMgmt;
 
     private final String ACTIVE_STYLE = "-fx-background-color: #36649B; -fx-text-fill: white; -fx-background-radius: 10;";
     private final String INACTIVE_STYLE = "-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7;";
 
+    @FXML private ImageView ppImageView;
+    @FXML private Label nameLabel;
+    @FXML private Label userIdLabel;
+
     @FXML
     public void initialize() {
-        // Load the Dashboard Overview sub-view on app launch
-        loadSubView("/c213/dosaoopproject/bushra/U07/U07G1_dashboardOverview.fxml", btnDashboard);
+        // Default view on login load
+        loadSubView("/c213/dosaoopproject/Bushra/U08/U08SWO_DashboardOverview.fxml", btnDashboard);
     }
 
     private void loadSubView(String fxmlPath, Button activeBtn) {
         URL resource = getClass().getResource(fxmlPath);
         if (resource == null) {
-            System.err.println("Error: Cannot find FXML at: " + fxmlPath);
+            System.err.println("Error: FXML not found at " + fxmlPath);
             return;
         }
 
@@ -48,37 +53,30 @@ public class U07_HeadOfDoSAViewController {
                 activeBtn.setStyle(ACTIVE_STYLE);
             }
         } catch (IOException e) {
-            System.err.println("Failed to load view: " + fxmlPath);
+            System.err.println("Failed to load sub-view: " + fxmlPath);
             e.printStackTrace();
         }
     }
 
     private void resetButtonStyles() {
         if (btnDashboard != null) btnDashboard.setStyle(INACTIVE_STYLE);
-        if (btnPendingEventsCard != null) btnPendingEventsCard.setStyle(INACTIVE_STYLE);
-        if (btnBudgetManagement != null) btnBudgetManagement.setStyle(INACTIVE_STYLE);
+        if (btnScholarshipMgmt != null) btnScholarshipMgmt.setStyle(INACTIVE_STYLE);
     }
 
-    // Nav Handlers
     @FXML
     private void dashboardViewOA(ActionEvent event) {
-        loadSubView("/c213/dosaoopproject/bushra/U07/U07G1_dashboardOverview.fxml", btnDashboard);
+        loadSubView("/c213/dosaoopproject/Bushra/U08/U08SWO_DashboardOverview.fxml", btnDashboard);
     }
 
     @FXML
-    private void majorEventViewOA(ActionEvent event) {
-        loadSubView("/c213/dosaoopproject/bushra/U07/U07G1_MajorEventsView.fxml", btnPendingEventsCard);
-    }
-
-    @FXML
-    private void budgetManagementOA(ActionEvent event) {
-        loadSubView("", btnBudgetManagement);
+    private void scholarshipMgmtOA(ActionEvent event) {
+        loadSubView("/c213/dosaoopproject/Bushra/U08/U08G1_ScholarshipManagement.fxml", btnScholarshipMgmt);
     }
 
     @FXML
     private void logOutOA(ActionEvent event) {
         try {
-            URL resource = getClass().getResource("/commonFXML/LoginView.fxml");
+            URL resource = getClass().getResource("/c213/dosaoopproject/commonFXML/LoginView.fxml");
             if (resource == null) {
                 System.err.println("Error: LoginView.fxml not found!");
                 return;
@@ -94,15 +92,4 @@ public class U07_HeadOfDoSAViewController {
             e.printStackTrace();
         }
     }
-
-    // Placeholders for additional UI bindings
-    @FXML private void notificationOA(ActionEvent event) {}
-    @FXML private void scholarshipViewOA(ActionEvent event) {}
-    @FXML private void disciplinaryAppealsOA(ActionEvent event) {}
-    @FXML private void crisisViewOA(ActionEvent event) {}
-    @FXML private void reportViewOA(ActionEvent event) {}
-    @FXML private void exchangeViewOA(ActionEvent event) {}
-    @FXML private void partnershipViewOA(ActionEvent event) {}
-    @FXML private void transcriptViewOA(ActionEvent event) {}
-    @FXML private void viewAllNotificationLinkOA(ActionEvent event) {}
 }

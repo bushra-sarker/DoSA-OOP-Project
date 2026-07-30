@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.Controller.U07.U07_HeadOfDoSAViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07_HeadOfDoSAViewController">
     <top>
         <HBox alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -30,7 +31,7 @@
                                 <Insets top="10.0" />
                             </VBox.margin>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="14.0" prefWidth="120.0" style="-fx-text-fill: white;" text="Head of DoSA Portal" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                        <Label alignment="CENTER" prefHeight="14.0" prefWidth="108.0" style="-fx-text-fill: white;" text="Head of DoSA Portal" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
                             <font>
                                 <Font name="Calibri Light" size="11.0" />
                             </font>
@@ -40,7 +41,14 @@
                         </Label>
                     </children>
                 </VBox>
-                <Region prefHeight="66.0" prefWidth="325.0" HBox.hgrow="ALWAYS" />
+                <Region prefHeight="65.0" prefWidth="64.0" HBox.hgrow="ALWAYS" />
+            <Region prefHeight="65.0" prefWidth="171.0" />
+            <TextField fx:id="searchOFCRTF" prefHeight="26.0" prefWidth="325.0" promptText="Search clubs, events ....." style="-fx-background-color: transparent; -fx-border-color: #E5E1D8; -fx-border-width: 0.3; -fx-background-radius: 6; -fx-border-radius: 6;">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </TextField>
+            <Region prefHeight="65.0" prefWidth="171.0" />
                 <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#notificationOA" prefHeight="22.0" prefWidth="22.0" style="-fx-background-color: #083C57;">
                     <graphic>
                         <ImageView fitHeight="19.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
@@ -74,12 +82,12 @@
                             <children>
                                 <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="Head of DoSA">
                                     <font>
-                                        <Font name="Corbel" size="12.0" />
+                                        <Font name="Arial Bold" size="12.0" />
                                     </font>
                                 </Label>
                                 <Label fx:id="userIdLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="ID : DOSA-101">
                                     <font>
-                                        <Font name="Corbel" size="12.0" />
+                                        <Font name="Arial" size="12.0" />
                                     </font>
                                 </Label>
                             </children>
