@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class SceneSwitcher {
-    public static void switchScene(ActionEvent event, String fxmlPath, String title) {
+    public static void switchTo(ActionEvent event, String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(SceneSwitcher.class.getResource(fxmlPath));
             Parent root = loader.load();

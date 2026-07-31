@@ -79,7 +79,7 @@ public class LoginController {
             sessionManager.setCurrentUser(user);
 
             // Clean, one-line navigation via utility class
-            SceneSwitcher.switchScene(event, user.getFxmlPath(), user.getRole() + " Dashboard");
+            SceneSwitcher.switchTo(event, user.getFxmlPath(), user.getRole() + " Dashboard");
         } else {
             handleFailedLogin(user, sessionManager);
         }

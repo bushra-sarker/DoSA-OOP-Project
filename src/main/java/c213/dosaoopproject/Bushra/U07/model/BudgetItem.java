@@ -5,30 +5,17 @@ import java.io.Serializable;
 public class BudgetItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String description;
+    private String itemName;
     private double amount;
 
-    public BudgetItem() {}
-
-    public BudgetItem(String description, double amount) {
-        this.description = description;
+    public BudgetItem(String itemName, double amount) {
+        this.itemName = itemName;
         this.amount = amount;
     }
 
-    // Getters and Setters required by PropertyValueFactory
-    public String getDescription() {
-        return description;
-    }
+    public String getItemName() { return itemName; }
+    public void setItemName(String itemName) { this.itemName = itemName; }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
+    public double getAmount() { return amount; }
+    public void setAmount(double amount) { this.amount = amount; }
 }

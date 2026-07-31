@@ -1,115 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefWidth="922.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07_dashboardOverviewController">
+<VBox prefWidth="695.0" spacing="12.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07_dashboardOverviewController">
     <padding>
-        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        <Insets bottom="15.0" left="12.0" right="12.0" top="15.0" />
     </padding>
     <children>
-        <VBox style="-fx-border-color: lightGray; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: white; -fx-padding: 15px;">
+        <!-- HEADER TITLE BLOCK -->
+        <VBox style="-fx-border-color: lightGray; -fx-background-radius: 8; -fx-border-radius: 8; -fx-background-color: white; -fx-padding: 12px;">
             <children>
-                <Label text="Executive Dashboard Overview" textFill="#083c57">
-                    <font><Font name="System Bold" size="22.0" /></font>
+                <Label text="Executive Dashboard" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
                 </Label>
-                <Label text="Summary metrics and operational oversight for Student Affairs." textFill="GRAY">
-                    <font><Font size="13.0" /></font>
+                <Label text="Action items and entry points for Head of DoSA operations." textFill="GRAY">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
                 </Label>
             </children>
         </VBox>
 
-        <!-- DASHBOARD EXECUTIVE SUMMARY CARDS -->
-        <HBox prefHeight="110.0" prefWidth="925.0" spacing="10.0">
+        <!-- 2x4 GRID OF GOAL SUMMARY CARDS -->
+        <GridPane hgap="12.0" vgap="12.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="85.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="85.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="85.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="85.0" prefHeight="95.0" vgrow="SOMETIMES" />
+            </rowConstraints>
             <children>
-                <AnchorPane prefHeight="110.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;" HBox.hgrow="ALWAYS">
+                <!-- GOAL 1: Major Events -->
+                <AnchorPane onMouseClicked="#eventViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="0">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Label text="Pending Major Events"><font><Font size="13.0" /></font></Label>
-                                <Label fx:id="pendingEventsCountLabel" style="-fx-text-fill: #083C57;" text="3"><font><Font name="System Bold" size="26.0" /></font></Label>
+                                <Label text="Pending Major Events">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="pendingEventsCountLabel" style="-fx-text-fill: #083C57;" text="3">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
                             </children>
                         </VBox>
                     </children>
                 </AnchorPane>
 
-                <AnchorPane prefHeight="110.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;" HBox.hgrow="ALWAYS">
+                <!-- GOAL 2: Budget Allocations -->
+                <AnchorPane onMouseClicked="#budgetManagementOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="0">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Label text="Budget Final Sign-offs"><font><Font size="13.0" /></font></Label>
-                                <Label fx:id="budgetSignoffsCountLabel" style="-fx-text-fill: #755000;" text="5"><font><Font name="System Bold" size="26.0" /></font></Label>
+                                <Label text="Budget Allocations">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="pendingBudgetAllocationsLabel" style="-fx-text-fill: #755000;" text="5">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
                             </children>
                         </VBox>
                     </children>
                 </AnchorPane>
 
-                <AnchorPane prefHeight="110.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;" HBox.hgrow="ALWAYS">
+                <!-- GOAL 3: Disciplinary Appeals -->
+                <AnchorPane onMouseClicked="#disciplinaryAppealsOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="1">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Label text="Urgent Appeals / Crisis"><font><Font size="13.0" /></font></Label>
-                                <Label fx:id="urgentAppealsCountLabel" style="-fx-text-fill: #750000;" text="2"><font><Font name="System Bold" size="26.0" /></font></Label>
+                                <Label text="Disciplinary Appeals">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="pendingAppealsCountLabel" style="-fx-text-fill: #750000;" text="2">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
                             </children>
                         </VBox>
                     </children>
                 </AnchorPane>
 
-                <AnchorPane prefHeight="110.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray;" HBox.hgrow="ALWAYS">
+                <!-- GOAL 4: Reports & Analytics -->
+                <AnchorPane onMouseClicked="#reportViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Label text="Scholarship Nominations"><font><Font size="13.0" /></font></Label>
-                                <Label fx:id="scholarshipNominationsCountLabel" style="-fx-text-fill: #660075;" text="8"><font><Font name="System Bold" size="26.0" /></font></Label>
+                                <Label text="Reports to Generate">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="pendingReportsCountLabel" style="-fx-text-fill: #005F73;" text="1">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+
+                <!-- GOAL 5: Active Crisis Cases -->
+                <AnchorPane onMouseClicked="#crisisViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label text="Active Crisis Cases">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="activeCrisisCountLabel" style="-fx-text-fill: #9B2226;" text="4">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+
+                <!-- GOAL 6: Exchange Nominations -->
+                <AnchorPane onMouseClicked="#exchangeViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label text="Exchange Nominations">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="pendingExchangeCountLabel" style="-fx-text-fill: #660075;" text="6">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+
+                <!-- GOAL 7: Transcript Certifications -->
+                <AnchorPane onMouseClicked="#transcriptViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label text="Transcript Certifications">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="pendingTranscriptCountLabel" style="-fx-text-fill: #2B93B3;" text="8">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+
+                <!-- GOAL 8: Partnership Requests -->
+                <AnchorPane onMouseClicked="#partnershipViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label text="Partnership Requests">
+                                    <font><Font size="13.0" /></font>
+                                </Label>
+                                <Label fx:id="pendingPartnershipCountLabel" style="-fx-text-fill: #1B4332;" text="2">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
                             </children>
                         </VBox>
                     </children>
                 </AnchorPane>
             </children>
-        </HBox>
-
-        <!-- VISUAL CHART SECTION -->
-        <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray; -fx-padding: 10px;">
-            <children>
-                <Label text="Activity Metrics Overview" textFill="#083c57"><font><Font name="System Bold" size="16.0" /></font></Label>
-                <BarChart fx:id="activityBarChart" prefHeight="220.0">
-                    <xAxis><CategoryAxis fx:id="chartCategoryAxis" side="BOTTOM" /></xAxis>
-                    <yAxis><NumberAxis fx:id="chartNumberAxis" side="LEFT" /></yAxis>
-                </BarChart>
-            </children>
-        </VBox>
-
-        <!-- RECENT LOGS -->
-        <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightgray; -fx-padding: 10px;">
-            <children>
-                <HBox alignment="CENTER_LEFT">
-                    <children>
-                        <Label text="Recent System Activity" textFill="#083c57"><font><Font name="System Bold" size="16.0" /></font></Label>
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Hyperlink text="View All" underline="true" />
-                    </children>
-                </HBox>
-                <Separator />
-                <HBox alignment="CENTER_LEFT" prefHeight="30.0" spacing="10.0">
-                    <children>
-                        <Circle fill="#083c57" radius="4.0" stroke="TRANSPARENT" />
-                        <Label text="Major Event 'National Tech Fest' submitted for review." />
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Label style="-fx-text-fill: gray;" text="10 mins ago" />
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
+        </GridPane>
     </children>
 </VBox>

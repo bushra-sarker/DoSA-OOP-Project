@@ -1,6 +1,7 @@
 package commonClass.data;
 
 import commonClass.model.User;
+import commonClass.util.SessionManager;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -29,4 +30,5 @@ public class UserDataInitializer {
             e.printStackTrace();
         }
     }
+
 }

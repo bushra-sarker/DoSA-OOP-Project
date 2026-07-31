@@ -3,13 +3,11 @@ package commonClass.util;
 import commonClass.model.User;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class SessionManager {
 
     private static SessionManager instance;
-    private final Map<String, User> userDatabase = new HashMap<>();
+    private ArrayList<User> userList = new ArrayList<>();
     private User currentUser;
 
     private SessionManager() {
@@ -23,8 +21,14 @@ public class SessionManager {
         return instance;
     }
 
+    // Returns the ArrayList directly
+    public ArrayList<User> getAllUsers() {
+        return userList;
+    }
+
+    @SuppressWarnings("unchecked")
     public void loadUserDatabase() {
-        File file = new File("users.dat");
+        File file = new File("data/users.dat");
         System.out.println("Looking for users.dat at: " + file.getAbsolutePath());
 
         if (!file.exists()) {
@@ -33,12 +37,15 @@ public class SessionManager {
         }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-            ArrayList<User> users = (ArrayList<User>) ois.readObject();
-            userDatabase.clear();
-            for (User user : users) {
-                userDatabase.put(user.getUserId(), user);
+            userList = (ArrayList<User>) ois.readObject();
+
+            // Reset lockouts when loading from disk
+            for (User user : userList) {
+                user.setLocked(false);
+                user.setFailedAttempts(0);
             }
-            System.out.println("SUCCESS: Loaded " + userDatabase.size() + " users into SessionManager.");
+
+            System.out.println("SUCCESS: Loaded " + userList.size() + " users into SessionManager.");
         } catch (Exception e) {
             System.err.println("FAILED TO LOAD users.dat:");
             e.printStackTrace();
@@ -46,20 +53,35 @@ public class SessionManager {
     }
 
     public void saveUserDatabase() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("users.dat"))) {
-            ArrayList<User> users = new ArrayList<>(userDatabase.values());
-            oos.writeObject(users);
+        // Ensure data directory exists before saving
+        File dataDir = new File("data");
+        if (!dataDir.exists()) {
+            dataDir.mkdirs();
+        }
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/users.dat"))) {
+            oos.writeObject(userList);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public boolean isValidUserId(String userId) {
-        return userDatabase.containsKey(userId);
+        for (User user : userList) {
+            if (user.getUserId().equalsIgnoreCase(userId)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public User getUser(String userId) {
-        return userDatabase.get(userId);
+        for (User user : userList) {
+            if (user.getUserId().equalsIgnoreCase(userId)) {
+                return user;
+            }
+        }
+        return null;
     }
 
     public User getCurrentUser() {
