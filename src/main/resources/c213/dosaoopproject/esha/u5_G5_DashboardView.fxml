@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.esha.controller.u5_G5_DashboardView">
+   <children>
+      <VBox spacing="15">
+      
+          <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+         </padding>
+      
+          <Label style="-fx-font-size:20px; -fx-font-weight:bold;" text="Volunteer Task Completion Report" />
+      
+          <TableView fx:id="assignmentsTable" prefHeight="220">
+              <columns>
+                  <TableColumn fx:id="assignmentIdColumn" prefWidth="100" text="Assignment ID" />
+                  <TableColumn fx:id="volunteerIdColumn" prefWidth="100" text="Volunteer ID" />
+                  <TableColumn fx:id="eventNameColumn" prefWidth="160" text="Event" />
+                  <TableColumn fx:id="taskColumn" prefWidth="150" text="Task / Shift" />
+                  <TableColumn fx:id="completionStatusColumn" prefWidth="140" text="Completion Status" />
+              </columns>
+          </TableView>
+      
+          <GridPane hgap="12" vgap="12">
+              <Label text="Completion Status:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+              <ComboBox fx:id="completionStatusCombo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+              <Label text="Hours Worked:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+              <Spinner fx:id="hoursWorkedSpinner" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+              <Label text="Remarks:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+              <TextArea fx:id="remarksArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+          </GridPane>
+      
+          <Label fx:id="statusLabel" />
+      
+          <HBox spacing="10">
+              <Button fx:id="submitReportBtn" onAction="#handleSubmitReport" text="Submit Report" />
+              <Button fx:id="refreshBtn" onAction="#handleRefresh" text="Refresh" />
+          </HBox>
+      
+      </VBox>
+   </children>
+</AnchorPane>
