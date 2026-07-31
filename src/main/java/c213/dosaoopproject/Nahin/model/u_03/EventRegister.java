@@ -7,10 +7,10 @@ import java.time.LocalDate;
 
 public class EventRegister extends Registration {
     private final String clubName, eventName;
-    private String experience;
+    private final String experience;
 
-    public EventRegister(int registrationId, String userId, String userName, String phonNumbr, String email, LocalDate date, String clubName, String eventName, String experience) {
-        super(registrationId, userId, userName, phonNumbr, email, date);
+    public EventRegister(int registrationId, String userId, String phonNumbr, String userName, String email, LocalDate registrationDate, String clubName, String eventName, String experience) {
+        super(registrationId, userId, phonNumbr, userName, email, registrationDate);
         this.clubName = clubName;
         this.eventName = eventName;
         this.experience = experience;
@@ -30,22 +30,26 @@ public class EventRegister extends Registration {
 
     @Override
     public boolean validateRegistration() {
-        if(userId==null||userId.isEmpty())
-            return false;
-        if(userName==null||userName.isEmpty())
-            return false;
-        if(email==null||email.isEmpty())
-            return false;
-        if (phonNumbr==null)
-            return false;
-        if(date==null)
-            return false;
-        if(experience!=null && !experience.isEmpty()){
-            if(!Validation.characterLimit(experience,500))
-                return false;
-        }
 
-        return Validation.isValidId(userId) &&
-                Validation.isValidEmail(email) && Validation.isValidPhoneNumber(phonNumbr);
+        return Validation.isValidId(getUserId()) &&
+                Validation.isValidEmail(getEmail()) &&
+                Validation.isValidPhoneNumber(getPhonNumbr()) &&
+                (experience.isEmpty() || !Validation.characterLimit(getExperience(),500));
+    }
+
+    @Override
+    public String toString() {
+        return "EventRegister{" +
+                "clubName='" + clubName + '\'' +
+                ", eventName='" + eventName + '\'' +
+                ", experience='" + experience + '\'' +
+                ", registrationId=" + registrationId +
+                ", userId='" + userId + '\'' +
+                ", phonNumbr='" + phonNumbr + '\'' +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", status='" + status + '\'' +
+                ", registrationDate=" + registrationDate +
+                '}';
     }
 }

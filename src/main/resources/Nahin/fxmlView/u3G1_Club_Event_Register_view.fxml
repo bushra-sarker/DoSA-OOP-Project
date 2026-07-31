@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -73,52 +72,52 @@
                                           <VBox prefHeight="70.0" prefWidth="276.0">
                                              <children>
                                                 <Label prefHeight="27.0" prefWidth="170.0" text="Club Name :" />
-                                                <Label fx:id="registerIDLABEL1" prefHeight="33.0" prefWidth="288.0" text="System" />
+                                                <Label fx:id="clubNameLBL" prefHeight="33.0" prefWidth="288.0" text="System" />
                                              </children>
                                           </VBox>
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="615.0" spacing="30.0">
                                        <children>
-                                          <Label prefHeight="27.0" prefWidth="75.0" text="Club Name :" />
-                                          <Label fx:id="registerIDLABEL11" prefHeight="33.0" prefWidth="288.0" text="System" />
+                                          <Label prefHeight="27.0" prefWidth="75.0" text="Event Name :" />
+                                          <Label fx:id="eventNameLBL" prefHeight="33.0" prefWidth="288.0" text="System" />
                                        </children>
                                     </HBox>
                                     <HBox prefHeight="45.0" prefWidth="726.0" spacing="30.0">
                                        <children>
-                                          <HBox prefHeight="58.0" prefWidth="326.0">
-                                             <children>
-                                                <Label prefHeight="27.0" prefWidth="108.0" text="Phone Number    :" />
-                                                <TextField fx:id="phoneTF" prefHeight="26.0" prefWidth="227.0" />
-                                             </children>
-                                          </HBox>
                                           <HBox prefHeight="58.0" prefWidth="350.0">
                                              <children>
                                                 <Label prefHeight="26.0" prefWidth="81.0" text="User ID   :" />
                                                 <TextField fx:id="userIDTF" prefHeight="26.0" prefWidth="227.0" />
                                              </children>
                                           </HBox>
+                                          <HBox prefHeight="58.0" prefWidth="326.0">
+                                             <children>
+                                                <Label prefHeight="27.0" prefWidth="108.0" text="Phone Number  :" />
+                                                <TextField fx:id="phoneTF" prefHeight="26.0" prefWidth="227.0" />
+                                             </children>
+                                          </HBox>
                                        </children>
                                     </HBox>
                                     <HBox prefHeight="54.0" prefWidth="734.0" spacing="30.0">
                                        <children>
-                                          <HBox prefHeight="34.0" prefWidth="326.0">
+                                          <HBox prefHeight="45.0" prefWidth="378.0">
                                              <children>
-                                                <Label prefHeight="30.0" prefWidth="104.0" text="Name     : " />
+                                                <Label prefHeight="30.0" prefWidth="82.0" text="Name     : " />
                                                 <TextField fx:id="nameTF" prefHeight="26.0" prefWidth="227.0" style="-fx-border-color: lightgray;" />
                                              </children>
                                           </HBox>
                                           <HBox prefHeight="34.0" prefWidth="350.0">
                                              <children>
-                                                <Label prefHeight="18.0" prefWidth="82.0" text="Date    :" />
-                                                <DatePicker fx:id="dateDP" prefHeight="26.0" prefWidth="227.0" />
+                                                <Label prefHeight="32.0" prefWidth="87.0" text="Date    :" />
+                                                <Label fx:id="registrationDateLBL" prefHeight="33.0" prefWidth="288.0" text="System" />
                                              </children>
                                           </HBox>
                                        </children>
                                     </HBox>
                                     <HBox prefHeight="42.0" prefWidth="734.0">
                                        <children>
-                                          <Label prefHeight="26.0" prefWidth="100.0" text="E-mail    : " />
+                                          <Label prefHeight="26.0" prefWidth="84.0" text="E-mail    : " />
                                           <TextField fx:id="mailTF" prefHeight="26.0" prefWidth="227.0" />
                                        </children>
                                     </HBox>

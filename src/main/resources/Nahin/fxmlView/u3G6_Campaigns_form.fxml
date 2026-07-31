@@ -21,7 +21,7 @@
       </Label>
       <VBox alignment="CENTER" prefHeight="420.0" prefWidth="609.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="73.0" prefWidth="499.0" spacing="60.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="503.0" spacing="60.0">
                <children>
                   <VBox prefHeight="69.0" prefWidth="326.0" spacing="6.0">
                      <children>
@@ -30,7 +30,7 @@
                               <Font name="Candara Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="registerIDLBL" prefHeight="26.0" prefWidth="213.0" text="REGC-2026-0037" />
+                        <Label fx:id="registerIDLBL" prefHeight="35.0" prefWidth="214.0" text="REGC-2026-0037" />
                      </children>
                   </VBox>
                   <VBox prefHeight="69.0" prefWidth="340.0" spacing="6.0">
@@ -40,31 +40,45 @@
                               <Font name="Candara Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="userIdTF" editable="false" prefHeight="34.0" prefWidth="210.0" />
+                        <TextField fx:id="userIdTF" prefHeight="34.0" prefWidth="210.0" />
                      </children>
                   </VBox>
                </children>
             </HBox>
-            <VBox prefHeight="82.0" prefWidth="565.0" spacing="6.0">
+            <HBox prefHeight="81.0" prefWidth="503.0" spacing="60.0">
                <children>
-                  <Label text="User Name" textFill="#919191">
-                     <font>
-                        <Font name="Candara Bold" size="12.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="userNameTF" prefHeight="34.0" prefWidth="432.0" />
+                  <VBox prefHeight="92.0" prefWidth="214.0" spacing="6.0">
+                     <children>
+                        <Label text="User Name" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="userNameTF" prefHeight="34.0" prefWidth="432.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="92.0" prefWidth="232.0" spacing="6.0">
+                     <children>
+                        <Label text="Location" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="campaignLocationLBL" prefHeight="35.0" prefWidth="214.0" />
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
+            </HBox>
             <HBox prefHeight="76.0" prefWidth="565.0" spacing="60.0">
                <children>
-                  <VBox fx:id="mailTF" prefHeight="71.0" prefWidth="284.0" spacing="6.0">
+                  <VBox prefHeight="71.0" prefWidth="284.0" spacing="6.0">
                      <children>
                         <Label text="User email" textFill="#919191">
                            <font>
                               <Font name="Candara Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="userIdTF1" editable="false" prefHeight="34.0" prefWidth="210.0" />
+                        <TextField fx:id="mailTF" prefHeight="34.0" prefWidth="210.0" />
                      </children>
                   </VBox>
                   <VBox prefHeight="71.0" prefWidth="297.0" spacing="6.0">
@@ -74,7 +88,7 @@
                               <Font name="Candara Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="phoneTF" editable="false" prefHeight="34.0" prefWidth="210.0" />
+                        <TextField fx:id="phoneTF" prefHeight="34.0" prefWidth="210.0" />
                      </children>
                   </VBox>
                </children>

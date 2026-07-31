@@ -1,10 +1,15 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
+import c213.dosaoopproject.Nahin.model.u_03.TeamJoin;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
+import java.time.LocalDate;
+
 import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
+import static c213.dosaoopproject.Nahin.utility.IdGenerator.generateRegistrationId;
+import static c213.dosaoopproject.Nahin.utility.ToShowAlert.*;
 
 public class G_2_Join_Team_View_Controller
 {
@@ -72,6 +77,49 @@ public class G_2_Join_Team_View_Controller
 
     @javafx.fxml.FXML
     public void submitOA(ActionEvent actionEvent) {
+
+        String selectedTeam = null;
+        if(decorationRD.isSelected()){
+            selectedTeam="Decoration";
+        } else if (logisticRD.isSelected()) {
+            selectedTeam="Logistic";
+        } else if (photographyRD.isSelected()) {
+            selectedTeam="Photography";
+        } else if (culturalRD.isSelected()) {
+            selectedTeam="Cultural";
+        } else if (eventRRD.isSelected()) {
+            selectedTeam="Event";
+        }
+
+        //Empty field checking
+        if(userIDTF.getText().isEmpty() || nameTF.getText().isEmpty() || phoneTF.getText().isEmpty() ||
+                mailTF.getText().isEmpty() || selectedTeam == null || whyChooseTXTAREA.getText().isEmpty()){
+            showWaitAlert(Alert.AlertType.ERROR,"Please fill all required fields");
+            return;
+        }
+
+        int regId = generateRegistrationId();
+
+        TeamJoin teamJoin = new TeamJoin(
+                regId,
+                userIDTF.getText(),
+                phoneTF.getText(),
+                nameTF.getText(),
+                mailTF.getText(),
+                LocalDate.now(),
+                selectedTeam,
+                experienceTXTAREA.getText(),
+                whyChooseTXTAREA.getText()
+        );
+
+        if(teamJoin.validateRegistration()){
+            showAlert(Alert.AlertType.INFORMATION,"Submitted Successfully");
+
+            //TO-DO--> save data
+            //--> wait for approval
+        }else {
+            showAlert(Alert.AlertType.INFORMATION,"Invalid Information");
+        }
     }
 
     @javafx.fxml.FXML
@@ -87,6 +135,8 @@ public class G_2_Join_Team_View_Controller
 
         panel_3.setVisible(true);
         panel_3.setManaged(true);
+
+        //TO-DO--> load table with available teams from published list/file
     }
 
     @javafx.fxml.FXML

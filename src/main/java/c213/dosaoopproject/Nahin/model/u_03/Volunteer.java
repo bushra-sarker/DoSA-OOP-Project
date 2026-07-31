@@ -3,7 +3,7 @@ import c213.dosaoopproject.Nahin.commonClass.User;
 
 public class Volunteer extends User {
     private final String volID;
-    private  String email;
+    private final String email;
     private String phone;
 
     private double totalContributionHours;
@@ -28,14 +28,11 @@ public class Volunteer extends User {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPhone() {
         return phone;
     }
 
+    //can update profile (phone number)
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -44,24 +41,12 @@ public class Volunteer extends User {
         return totalContributionHours;
     }
 
-    public void setTotalContributionHours(double totalContributionHours) {
-        this.totalContributionHours = totalContributionHours;
-    }
-
     public int getTotalParticipation() {
         return totalParticipation;
     }
 
-    public void setTotalParticipation(int totalParticipation) {
-        this.totalParticipation = totalParticipation;
-    }
-
     public boolean isCertified() {
         return isCertified;
-    }
-
-    public void setCertified(boolean certified) {
-        isCertified = certified;
     }
 
     // check if volunteer is active
@@ -92,6 +77,6 @@ public class Volunteer extends User {
 
     @Override
     public void loadDashboard() {
-        //
+        //TO-DO
     }
 }
