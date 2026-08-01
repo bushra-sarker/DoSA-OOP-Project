@@ -18,7 +18,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G1_ViewNoticesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G1_NoticeDetailsController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -188,7 +188,7 @@
                      <children>
                         <Label fx:id="viewNoticeLabel" prefHeight="63.0" prefWidth="826.0" text="View Notices &amp; Announcements">
                            <font>
-                              <Font name="Book Antiqua Bold" size="24.0" />
+                              <Font name="Book Antiqua" size="36.0" />
                            </font>
                         </Label>
                         <Separator prefWidth="200.0" />
@@ -199,7 +199,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <TableView fx:id="noticeTV" layoutX="74.0" layoutY="137.0" prefHeight="267.0" prefWidth="634.0">
+                  <TableView fx:id="noticeTV" layoutX="69.0" layoutY="148.0" prefHeight="267.0" prefWidth="634.0">
                     <columns>
                       <TableColumn fx:id="noticeTitleTC" prefWidth="150.0" text="Notice Title" />
                       <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
