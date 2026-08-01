@@ -1,14 +1,13 @@
 package c213.dosaoopproject.fahmida;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-
-public class U1G2_RegisterforEventsController
+public class U1G2_EventListController
 {
     @javafx.fxml.FXML
+    private Label regForEventsLabel;
+    @javafx.fxml.FXML
     private Label userIdLabel11;
+    @javafx.fxml.FXML
+    private TextField searchOFCRTF;
     @javafx.fxml.FXML
     private ImageView ppImageView11;
     @javafx.fxml.FXML
@@ -16,19 +15,17 @@ public class U1G2_RegisterforEventsController
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private TextField studentNameTF;
+    private TableColumn eventDescriptionTC;
     @javafx.fxml.FXML
-    private TextField phonneNumTF;
+    private TableColumn venueTC;
     @javafx.fxml.FXML
-    private Label regForEventsLabel;
+    private TableColumn availableSeatsTC;
     @javafx.fxml.FXML
-    private TextField emailTF;
+    private TableColumn eventNameTC;
     @javafx.fxml.FXML
-    private ComboBox eventNameCB;
+    private TableView EventListTV;
     @javafx.fxml.FXML
-    private ComboBox deptCB;
-    @javafx.fxml.FXML
-    private TextField IDTF;
+    private TableColumn dateTC;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -42,6 +39,10 @@ public class U1G2_RegisterforEventsController
     public void notificationOA(ActionEvent actionEvent) {
     }
 
+    @Deprecated
+    public void confirmRegOA(ActionEvent actionEvent) {
+    }
+
     @javafx.fxml.FXML
     public void viewScheduleOA(ActionEvent actionEvent) {
     }
@@ -52,6 +53,10 @@ public class U1G2_RegisterforEventsController
 
     @javafx.fxml.FXML
     public void viewNoticesOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backtoDashboardOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -79,10 +84,6 @@ public class U1G2_RegisterforEventsController
     }
 
     @javafx.fxml.FXML
-    public void confirmRegOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void backtoDashboardOA(ActionEvent actionEvent) {
+    public void RegNowOA(ActionEvent actionEvent) {
     }
 }
