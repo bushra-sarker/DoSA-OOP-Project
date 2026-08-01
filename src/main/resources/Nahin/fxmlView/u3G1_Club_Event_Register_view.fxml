@@ -23,7 +23,94 @@
    <left><fx:include source="u3_sideMenuBar_view.fxml" /></left>
       <center>
          <StackPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="736.0" BorderPane.alignment="CENTER"><children>
-            <VBox fx:id="pane_2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="736.0">
+            <VBox fx:id="pane_1" prefHeight="530.0" prefWidth="740.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="706.0" style="-fx-background-color: #ECF3F9; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightblue;">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="114.0" prefWidth="298.0">
+                           <children>
+                              <Label prefHeight="90.0" prefWidth="263.0" style="-fx-text-fill: #28547B;" text="Event Opportunities">
+                                 <font>
+                                    <Font name="Candara Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <Region prefHeight="73.0" prefWidth="250.0" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#registerButtonOA" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #07579C; -fx-background-radius: 6; -fx-border-color: snow; -fx-border-radius: 6; -fx-text-fill: white;" text="+ Register New">
+                           <font>
+                              <Font name="Cambria Math" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="7.0" right="7.0" top="4.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefHeight="15.0" prefWidth="822.0">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Separator>
+                  <Label prefHeight="61.0" prefWidth="918.0" text="Available Events">
+                     <font>
+                        <Font name="Cambria Math" size="17.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets left="12.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TableView fx:id="availableEventsTABLEVIEW" prefHeight="301.0" prefWidth="913.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
+                     <columns>
+                        <TableColumn fx:id="eventNameCol" prefWidth="176.79999387264252" text="Event Name" />
+                        <TableColumn fx:id="clubNameCOL" prefWidth="175.20001220703125" text="Club Name" />
+                        <TableColumn fx:id="dateCOL" prefWidth="94.4000244140625" text="Date" />
+                        <TableColumn fx:id="timeCOL" prefWidth="92.80001831054688" text="Time" />
+                        <TableColumn fx:id="venueCOL" prefWidth="177.60003662109375" text="Venue" />
+                        <TableColumn fx:id="statusCOL" prefWidth="94.4000244140625" text="Status" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets left="8.0" right="8.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <VBox prefHeight="77.0" prefWidth="929.0">
+                     <children>
+                        <Separator prefHeight="19.0" prefWidth="706.0" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="736.0">
+                           <children>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backDashOA" prefHeight="29.0" prefWidth="89.0" text="Back">
+                                 <font>
+                                    <Font name="Californian FB" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="12.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Region prefHeight="73.0" prefWidth="37.0" />
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshEventOA" prefHeight="29.0" prefWidth="89.0" text="Refresh">
+                                 <font>
+                                    <Font name="Californian FB" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox fx:id="pane_2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="736.0" visible="false">
                <children>
                   <VBox prefHeight="88.0" prefWidth="736.0">
                      <children>
@@ -163,93 +250,6 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-               </children>
-            </VBox>
-            <VBox fx:id="pane_1" prefHeight="530.0" prefWidth="740.0" visible="false">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="706.0" style="-fx-background-color: #ECF3F9; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightblue;">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" prefHeight="114.0" prefWidth="298.0">
-                           <children>
-                              <Label prefHeight="90.0" prefWidth="263.0" style="-fx-text-fill: #28547B;" text="Event Opportunities">
-                                 <font>
-                                    <Font name="Candara Bold" size="28.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <HBox.margin>
-                              <Insets left="12.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <Region prefHeight="73.0" prefWidth="226.0" />
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#registerButtonOA" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #07579C; -fx-background-radius: 6; -fx-border-color: snow; -fx-border-radius: 6; -fx-text-fill: white;" text="+ Register New">
-                           <font>
-                              <Font name="Cambria Math" size="15.0" />
-                           </font>
-                        </Button>
-                     </children>
-                     <padding>
-                        <Insets bottom="5.0" />
-                     </padding>
-                     <VBox.margin>
-                        <Insets left="7.0" right="7.0" top="4.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <Separator prefHeight="15.0" prefWidth="822.0">
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </Separator>
-                  <Label prefHeight="61.0" prefWidth="918.0" text="Available Events">
-                     <font>
-                        <Font name="Cambria Math" size="17.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets left="12.0" />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TableView fx:id="availableEventsTABLEVIEW" prefHeight="301.0" prefWidth="913.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
-                     <columns>
-                        <TableColumn fx:id="eventNameCol" prefWidth="176.79999387264252" text="Event Name" />
-                        <TableColumn fx:id="clubNameCOL" prefWidth="175.20001220703125" text="Club Name" />
-                        <TableColumn fx:id="dateCOL" prefWidth="94.4000244140625" text="Date" />
-                        <TableColumn fx:id="timeCOL" prefWidth="92.80001831054688" text="Time" />
-                        <TableColumn fx:id="venueCOL" prefWidth="177.60003662109375" text="Venue" />
-                        <TableColumn fx:id="statusCOL" prefWidth="94.4000244140625" text="Status" />
-                     </columns>
-                     <VBox.margin>
-                        <Insets left="8.0" right="8.0" />
-                     </VBox.margin>
-                  </TableView>
-                  <VBox prefHeight="77.0" prefWidth="929.0">
-                     <children>
-                        <Separator prefHeight="19.0" prefWidth="706.0" />
-                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="706.0">
-                           <children>
-                              <Button mnemonicParsing="false" onAction="#backDashOA" prefHeight="3.0" prefWidth="92.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Back">
-                                 <font>
-                                    <Font name="Californian FB" size="18.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="12.0" />
-                                 </HBox.margin>
-                              </Button>
-                              <Region prefHeight="73.0" prefWidth="37.0" />
-                              <Button mnemonicParsing="false" onAction="#refreshEventOA" prefHeight="3.0" prefWidth="92.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Refresh">
-                                 <font>
-                                    <Font name="Californian FB" size="18.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </HBox>
-                     </children>
-                  </VBox>
                </children>
             </VBox>
          </children>

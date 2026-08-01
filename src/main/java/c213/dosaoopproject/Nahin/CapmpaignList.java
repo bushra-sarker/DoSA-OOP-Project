@@ -10,9 +10,6 @@ import java.util.ArrayList;
 public class CapmpaignList {
     public static void createDummyCampaign(){
 
-        System.out.println("Dummy list created");
-
-
         ArrayList<CampaignData> campaignData = new ArrayList<>();
 
         campaignData.add(new CampaignData("Blood Donation Camp", LocalDate.of(2026,8,20),

@@ -46,26 +46,33 @@
                      </HBox.margin>
                   </VBox>
                   <Region prefHeight="82.0" prefWidth="122.0" />
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#newLeeaveRqstOA" prefHeight="32.0" prefWidth="85.0" style="-fx-border-color: #083C57;" text="+ NEW" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#newLeeaveRqstOA" prefHeight="23.0" prefWidth="95.0" style="-fx-border-color: #083C57;" text="+ NEW">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font></Button>
                </children>
                <VBox.margin>
                   <Insets top="7.0" />
                </VBox.margin>
             </HBox>
             <Separator prefHeight="31.0" prefWidth="740.0" />
-            <TableView prefHeight="301.0" prefWidth="740.0">
+            <TableView fx:id="ApplicationHistoryVIEW" prefHeight="301.0" prefWidth="740.0">
               <columns>
-                <TableColumn fx:id="rqstIDCOL" prefWidth="148.7999725341797" text="Request ID" />
-                <TableColumn fx:id="activityNameCOL" prefWidth="248.0" text="Activity Name" />
-                  <TableColumn fx:id="leaveReasonCOL" prefWidth="234.39996337890625" text="Leave Reason" />
-                  <TableColumn fx:id="statusCOL" prefWidth="108.0" text="Status " />
+                <TableColumn fx:id="applicationIDCOL" prefWidth="149.60005795955658" text="Application  ID" />
+                <TableColumn fx:id="activityNameCOL" prefWidth="199.99993896484375" text="Activity Name" />
+                  <TableColumn fx:id="leaveReasonCOL" prefWidth="154.39996337890625" text="Leave Reason" />
+                  <TableColumn fx:id="applicationDATE" prefWidth="130.39993286132812" text="Date" />
+                  <TableColumn fx:id="statusCOL" prefWidth="112.800048828125" text="Status " />
               </columns>
             </TableView>
             <Separator prefHeight="39.0" prefWidth="740.0" />
             <HBox alignment="CENTER" prefHeight="58.0" prefWidth="740.0" spacing="30.0">
                <children>
                   <Region prefHeight="58.0" prefWidth="566.0" />
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#refreshTableOA" prefHeight="30.0" prefWidth="94.0" text="Refresh" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#refreshTableOA" prefHeight="29.0" prefWidth="90.0" text="Refresh">
+                     <font>
+                        <Font name="Cambria Math" size="14.0" />
+                     </font></Button>
                </children>
             </HBox>
          </children>

@@ -51,7 +51,7 @@ public class G_3_Contribution_View_Controller
     }
 
     private boolean checkIfUserHasContribution(){
-        return true;
+        return false;
     }
 
     @javafx.fxml.FXML

@@ -1,25 +1,29 @@
 package c213.dosaoopproject.Nahin.utility;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class FileManager {
-    public static void writeFile(String fileName, Object data){
+    public static boolean writeFile(String fileName, Object data){
         try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))){
             out.writeObject(data);
+            return true;
         }catch (Exception e){
             e.printStackTrace();
+            return false;
         }
     }
 
-    public static Object readFile(String fileName){
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))){
-            return in.readObject();
-        }catch (Exception e){
-            e.printStackTrace();
+    @SuppressWarnings("unchecked")
+    public static <T> T readFile(String fileName){
+        File file = new File(fileName);
+        if(!file.exists()) {
+            return null;
         }
-        return null;
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))) {
+            return (T) in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

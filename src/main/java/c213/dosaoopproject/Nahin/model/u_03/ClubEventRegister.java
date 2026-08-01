@@ -5,11 +5,11 @@ import c213.dosaoopproject.Nahin.utility.Validation;
 
 import java.time.LocalDate;
 
-public class EventRegister extends Registration {
+public class ClubEventRegister extends Registration {
     private final String clubName, eventName;
     private final String experience;
 
-    public EventRegister(int registrationId, String userId, String phonNumbr, String userName, String email, LocalDate registrationDate, String clubName, String eventName, String experience) {
+    public ClubEventRegister(int registrationId, String userId, String phonNumbr, String userName, String email, LocalDate registrationDate, String clubName, String eventName, String experience) {
         super(registrationId, userId, phonNumbr, userName, email, registrationDate);
         this.clubName = clubName;
         this.eventName = eventName;
@@ -39,7 +39,7 @@ public class EventRegister extends Registration {
 
     @Override
     public String toString() {
-        return "EventRegister{" +
+        return "ClubEventRegister{" +
                 "clubName='" + clubName + '\'' +
                 ", eventName='" + eventName + '\'' +
                 ", experience='" + experience + '\'' +

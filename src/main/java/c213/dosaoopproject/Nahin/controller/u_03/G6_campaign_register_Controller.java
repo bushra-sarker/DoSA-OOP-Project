@@ -41,10 +41,10 @@ public class G6_campaign_register_Controller
 
     //load data at upcoming campaign table
         private void loadCampaigns(){
-                ArrayList<CampaignData> list = (ArrayList<CampaignData>) FileManager.readFile("campaigns.bin");
+                ArrayList<CampaignData> list = FileManager.readFile("campaigns.bin");
             System.out.println(list);
-
                 campaignsTABLEVIEW.getItems().clear();
+
                 if(list!=null){
                     campaignsTABLEVIEW.getItems().addAll(list);
                 }
@@ -72,7 +72,7 @@ public class G6_campaign_register_Controller
         }
 
 
-
+        //to show the form (new window)
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Nahin/fxmlView/u3G6_Campaigns_form.fxml"));
         Parent root = loader.load();
         G6_campaigns_FORM_Controller controller = loader.getController();

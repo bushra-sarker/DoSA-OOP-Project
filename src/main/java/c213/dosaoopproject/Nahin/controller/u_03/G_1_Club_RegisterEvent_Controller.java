@@ -1,6 +1,6 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.model.u_03.EventRegister;
+import c213.dosaoopproject.Nahin.model.u_03.ClubEventRegister;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -80,7 +80,7 @@ public class G_1_Club_RegisterEvent_Controller
 
         int registrationID = generateRegistrationId();
 
-        EventRegister eventRegister = new EventRegister(
+        ClubEventRegister eventRegister = new ClubEventRegister(
                 registrationID,
                 userIDTF.getText(),
                 phoneTF.getText(),

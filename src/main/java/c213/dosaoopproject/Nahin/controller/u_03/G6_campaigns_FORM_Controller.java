@@ -77,7 +77,7 @@ public class G6_campaigns_FORM_Controller
         }
 
         //read stored file & add
-        ArrayList<CampaignRegister> list = (ArrayList<CampaignRegister>) FileManager.readFile("campaignRegister.bin");
+        ArrayList<CampaignRegister> list = FileManager.readFile("campaignRegister.bin");
 
         if(list==null){
             list= new ArrayList<>();
@@ -86,9 +86,10 @@ public class G6_campaigns_FORM_Controller
 
         //add new data
         FileManager.writeFile("campaignRegister.bin", list);
-            showAlert(Alert.AlertType.INFORMATION, "Request Submitted Successfully");
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.close();
+        showAlert(Alert.AlertType.CONFIRMATION, "Request Submitted Successfully");
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
 
     }
 
