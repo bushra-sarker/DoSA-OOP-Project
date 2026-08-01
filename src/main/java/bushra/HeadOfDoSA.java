@@ -1,6 +1,6 @@
 package bushra;
 
-import commonClass.User;
+import c213.dosaoopproject.fahmida.commonClass.User;
 
 public class HeadOfDoSA extends User {
     private int headId;
