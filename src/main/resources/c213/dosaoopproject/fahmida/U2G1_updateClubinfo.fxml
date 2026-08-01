@@ -232,7 +232,7 @@
                         <TextField fx:id="venueTF" layoutX="203.0" layoutY="169.0" prefHeight="32.0" prefWidth="249.0" />
                         <TextField fx:id="phoneTF" layoutX="203.0" layoutY="222.0" prefHeight="32.0" prefWidth="249.0" />
                         <TextField fx:id="emailTF" layoutX="203.0" layoutY="267.0" prefHeight="32.0" prefWidth="249.0" />
-                        <Button layoutX="498.0" layoutY="315.0" mnemonicParsing="false" onAction="#saveChangesOA" text="Save Changes'" />
+                        <Button layoutX="498.0" layoutY="315.0" mnemonicParsing="false" onAction="#saveChangesOA" text="Save Changes" />
                      </children>
                   </AnchorPane>
                </children>

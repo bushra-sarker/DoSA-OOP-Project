@@ -5,28 +5,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
-public class U2_DashboardController
-{
-    @javafx.fxml.FXML
-    private Label welcomeUserLabel;
+public class U2_DashboardController {
     @javafx.fxml.FXML
     private Label userIdLabel11;
-    @javafx.fxml.FXML
-    private TextField searchOFCRTF;
     @javafx.fxml.FXML
     private ImageView ppImageView11;
     @javafx.fxml.FXML
     private Label DOSALabel;
     @javafx.fxml.FXML
     private Label nameLabel11;
-    @javafx.fxml.FXML
-    private Label clubMembersCardLabel;
-    @javafx.fxml.FXML
-    private Label pendingRequestsCardLabel;
-    @javafx.fxml.FXML
-    private Label volunteerCardLabel;
-    @javafx.fxml.FXML
-    private Label upcomingEventsCardLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -75,4 +62,5 @@ public class U2_DashboardController
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
     }
+
 }
