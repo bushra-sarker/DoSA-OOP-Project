@@ -11,30 +11,44 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefWidth="695.0" spacing="12.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G1_eventDetailApprovalController">
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G1_eventDetailApprovalController">
     <padding>
-        <Insets bottom="15.0" left="12.0" right="12.0" top="15.0" />
+        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
     </padding>
     <children>
 
+        <!-- SECTION 2: WARNING BANNER (Initially Hidden) -->
+        <VBox fx:id="warningBannerVBox" managed="false" spacing="2.0" style="-fx-background-color: #F8D7DA; -fx-border-color: #F5C6CB; -fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px;" visible="false">
+            <children>
+                <Label style="-fx-text-fill: #721C24;" text="⚠ Missing Required Documents">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label fx:id="warningBannerLabel" style="-fx-text-fill: #721C24;" text="Proposal PDF and Budget Sheet are required before final approval.">
+                    <font><Font size="10.0" /></font>
+                </Label>
+            </children>
+        </VBox>
+
         <!-- SECTION 1: PAGE HEADER -->
-        <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-padding: 12px;">
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;">
             <children>
                 <HBox alignment="CENTER_LEFT">
                     <children>
                         <Button mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Back to Queue">
                             <font>
-                                <Font name="System Bold" size="12.0" />
+                                <Font name="System Bold" size="11.0" />
                             </font>
                         </Button>
                         <Region HBox.hgrow="ALWAYS" />
-                        <HBox alignment="CENTER" spacing="6.0" style="-fx-background-color: #FFF3CD; -fx-padding: 4 8 4 8; -fx-background-radius: 12; -fx-border-color: #FFEEBA; -fx-border-radius: 12;">
+                        <HBox alignment="CENTER" spacing="4.0" style="-fx-background-color: #FFF3CD; -fx-padding: 2 6 2 6; -fx-background-radius: 10; -fx-border-color: #FFEEBA; -fx-border-radius: 10;">
                             <children>
                                 <Label text="Status:" textFill="#856404">
-                                    <font><Font name="System Bold" size="11.0" /></font>
+                                    <font><Font name="System Bold" size="10.0" /></font>
                                 </Label>
                                 <Label fx:id="statusLabel" text="Pending Review" textFill="#856404">
-                                    <font><Font name="System Bold" size="11.0" /></font>
+                                    <font><Font name="System Bold" size="10.0" /></font>
                                 </Label>
                             </children>
                         </HBox>
@@ -42,91 +56,72 @@
                 </HBox>
                 <Label fx:id="pageTitleLabel" text="Review Major Event Proposal" textFill="#083c57">
                     <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="16.0" />
                     </font>
-                </Label>
-                <Label fx:id="pageDescriptionLabel" text="Review and approve high-value event proposals submitted by student organizations." textFill="GRAY">
-                    <font>
-                        <Font size="12.0" />
-                    </font>
-                </Label>
-            </children>
-        </VBox>
-
-        <!-- SECTION 2: WARNING BANNER (Initially Hidden) -->
-        <VBox fx:id="warningBannerVBox" managed="false" spacing="4.0" style="-fx-background-color: #F8D7DA; -fx-border-color: #F5C6CB; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 10px;" visible="false">
-            <children>
-                <Label style="-fx-text-fill: #721C24;" text="⚠ Missing Required Documents">
-                    <font>
-                        <Font name="System Bold" size="13.0" />
-                    </font>
-                </Label>
-                <Label fx:id="warningBannerLabel" style="-fx-text-fill: #721C24;" text="Proposal PDF and Budget Sheet are required before final approval.">
-                    <font><Font size="11.0" /></font>
                 </Label>
             </children>
         </VBox>
 
         <!-- SECTION 3: EVENT INFORMATION CARD -->
-        <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-padding: 12px;">
+        <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;">
             <children>
                 <Label text="Event Information" textFill="#083c57">
                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
                 <HBox spacing="10.0">
                     <children>
-                        <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                             <children>
                                 <VBox>
                                     <children>
-                                        <Label text="Event Name" textFill="GRAY"><font><Font size="11.0" /></font></Label>
-                                        <Label fx:id="eventNameLabel" text="National Tech Fest" textFill="#083c57"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                        <Label text="Event Name" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="eventNameLabel" text="National Tech Fest" textFill="#083c57"><font><Font name="System Bold" size="12.0" /></font></Label>
                                     </children>
                                 </VBox>
                                 <VBox>
                                     <children>
-                                        <Label text="Club Name" textFill="GRAY"><font><Font size="11.0" /></font></Label>
-                                        <Label fx:id="clubNameLabel" text="IUB CSE Society"><font><Font size="12.0" /></font></Label>
+                                        <Label text="Club Name" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="clubNameLabel" text="IUB CSE Society"><font><Font size="11.0" /></font></Label>
                                     </children>
                                 </VBox>
                                 <VBox>
                                     <children>
-                                        <Label text="Event Date" textFill="GRAY"><font><Font size="11.0" /></font></Label>
-                                        <Label fx:id="eventDateLabel" text="15 August 2026"><font><Font size="12.0" /></font></Label>
+                                        <Label text="Event Date" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="eventDateLabel" text="15 August 2026"><font><Font size="11.0" /></font></Label>
                                     </children>
                                 </VBox>
                             </children>
                         </VBox>
-                        <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                             <children>
                                 <VBox>
                                     <children>
-                                        <Label text="Venue" textFill="GRAY"><font><Font size="11.0" /></font></Label>
-                                        <Label fx:id="venueLabel" text="Auditorium"><font><Font size="12.0" /></font></Label>
+                                        <Label text="Venue" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="venueLabel" text="Auditorium"><font><Font size="11.0" /></font></Label>
                                     </children>
                                 </VBox>
                                 <VBox>
                                     <children>
-                                        <Label text="Requested Budget" textFill="GRAY"><font><Font size="11.0" /></font></Label>
-                                        <Label fx:id="requestedBudgetLabel" text="120,000 BDT" textFill="#083c57"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                        <Label text="Requested Budget" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="requestedBudgetLabel" text="120,000 BDT" textFill="#083c57"><font><Font name="System Bold" size="12.0" /></font></Label>
                                     </children>
                                 </VBox>
                                 <VBox>
                                     <children>
-                                        <Label text="Scope" textFill="GRAY"><font><Font size="11.0" /></font></Label>
-                                        <Label fx:id="scopeLabel" text="Inter-University"><font><Font size="12.0" /></font></Label>
+                                        <Label text="Scope" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="scopeLabel" text="Inter-University"><font><Font size="11.0" /></font></Label>
                                     </children>
                                 </VBox>
                             </children>
                         </VBox>
-                        <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                             <children>
                                 <VBox>
                                     <children>
-                                        <Label text="Risk Level" textFill="GRAY"><font><Font size="11.0" /></font></Label>
-                                        <Label fx:id="riskLevelLabel" style="-fx-text-fill: #750000;" text="HIGH"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                        <Label text="Risk Level" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="riskLevelLabel" style="-fx-text-fill: #750000;" text="HIGH"><font><Font name="System Bold" size="12.0" /></font></Label>
                                     </children>
                                 </VBox>
                             </children>
@@ -136,15 +131,15 @@
             </children>
         </VBox>
 
-        <!-- SECTION 4: BUDGET BREAKDOWN -->
-        <VBox spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-padding: 12px;">
+        <!-- SECTION 4: BUDGET BREAKDOWN (Dynamic VBox.vgrow) -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;" VBox.vgrow="ALWAYS">
             <children>
                 <Label text="Budget Breakdown" textFill="#083c57">
                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
-                <TableView fx:id="budgetTableView" prefHeight="140.0">
+                <TableView fx:id="budgetTableView" VBox.vgrow="ALWAYS">
                     <columns>
                         <TableColumn fx:id="itemNameTableCC" prefWidth="430.0" text="Item" />
                         <TableColumn fx:id="amountTableCC" prefWidth="230.0" text="Amount (BDT)" />
@@ -157,28 +152,28 @@
         </VBox>
 
         <!-- SECTION 5: UPLOADED DOCUMENTS -->
-        <VBox spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-padding: 12px;">
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;">
             <children>
                 <Label text="Uploaded Documents" textFill="#083c57">
                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="13.0" />
                     </font>
                 </Label>
                 <HBox spacing="30.0">
                     <children>
-                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                        <HBox alignment="CENTER_LEFT" spacing="6.0">
                             <children>
-                                <Label text="Proposal PDF:" textFill="GRAY"><font><Font size="12.0" /></font></Label>
+                                <Label text="Proposal PDF:" textFill="GRAY"><font><Font size="11.0" /></font></Label>
                                 <Label fx:id="proposalStatusLabel" text="✔ Uploaded" textFill="#1E7E34">
-                                    <font><Font name="System Bold" size="12.0" /></font>
+                                    <font><Font name="System Bold" size="11.0" /></font>
                                 </Label>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                        <HBox alignment="CENTER_LEFT" spacing="6.0">
                             <children>
-                                <Label text="Budget Sheet:" textFill="GRAY"><font><Font size="12.0" /></font></Label>
+                                <Label text="Budget Sheet:" textFill="GRAY"><font><Font size="11.0" /></font></Label>
                                 <Label fx:id="budgetSheetStatusLabel" text="✔ Uploaded" textFill="#1E7E34">
-                                    <font><Font name="System Bold" size="12.0" /></font>
+                                    <font><Font name="System Bold" size="11.0" /></font>
                                 </Label>
                             </children>
                         </HBox>
@@ -190,29 +185,29 @@
         <!-- SECTION 6: DECISION SECTION -->
         <HBox spacing="10.0">
             <children>
-                <Button fx:id="approveButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#approveOA" prefHeight="36.0" style="-fx-background-color: #1E7E34; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Approve" HBox.hgrow="ALWAYS">
-                    <font><Font name="System Bold" size="13.0" /></font>
+                <Button fx:id="approveButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#approveOA" prefHeight="32.0" style="-fx-background-color: #1E7E34; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Approve" HBox.hgrow="ALWAYS">
+                    <font><Font name="System Bold" size="12.0" /></font>
                 </Button>
-                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#returnOA" prefHeight="36.0" style="-fx-background-color: #D39E00; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Return for Revision" HBox.hgrow="ALWAYS">
-                    <font><Font name="System Bold" size="13.0" /></font>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#returnOA" prefHeight="32.0" style="-fx-background-color: #D39E00; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Return for Revision" HBox.hgrow="ALWAYS">
+                    <font><Font name="System Bold" size="12.0" /></font>
                 </Button>
-                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rejectOA" prefHeight="36.0" style="-fx-background-color: #BD2130; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Reject" HBox.hgrow="ALWAYS">
-                    <font><Font name="System Bold" size="13.0" /></font>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rejectOA" prefHeight="32.0" style="-fx-background-color: #BD2130; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Reject" HBox.hgrow="ALWAYS">
+                    <font><Font name="System Bold" size="12.0" /></font>
                 </Button>
             </children>
         </HBox>
 
         <!-- SECTION 7: INLINE REVISION PANEL (Initially Hidden) -->
-        <VBox fx:id="inlineRevisionVBox" managed="false" spacing="8.0" style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 12px;" visible="false">
+        <VBox fx:id="inlineRevisionVBox" managed="false" spacing="6.0" style="-fx-background-color: #FFF8E1; -fx-border-color: #FFE082; -fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px;" visible="false">
             <children>
                 <Label text="Revision Comments" textFill="#856404">
-                    <font><Font name="System Bold" size="13.0" /></font>
+                    <font><Font name="System Bold" size="12.0" /></font>
                 </Label>
-                <TextArea fx:id="revisionCommentsTextF" prefHeight="70.0" promptText="Enter required revisions..." wrapText="true" />
+                <TextArea fx:id="revisionCommentsTextF" prefHeight="50.0" promptText="Enter required revisions..." wrapText="true" />
                 <HBox alignment="CENTER_RIGHT">
                     <children>
-                        <Button fx:id="confirmRevisionButton" mnemonicParsing="false" onAction="#confirmRevisionOA" style="-fx-background-color: #D39E00; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Confirm Revision">
-                            <font><Font name="System Bold" size="12.0" /></font>
+                        <Button fx:id="confirmRevisionButton" mnemonicParsing="false" onAction="#confirmRevisionOA" style="-fx-background-color: #D39E00; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Confirm Revision">
+                            <font><Font name="System Bold" size="11.0" /></font>
                         </Button>
                     </children>
                 </HBox>
@@ -220,16 +215,16 @@
         </VBox>
 
         <!-- SECTION 8: INLINE REJECT PANEL (Initially Hidden) -->
-        <VBox fx:id="inlineRejectVBox" managed="false" spacing="8.0" style="-fx-background-color: #F8D7DA; -fx-border-color: #F5C6CB; -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 12px;" visible="false">
+        <VBox fx:id="inlineRejectVBox" managed="false" spacing="6.0" style="-fx-background-color: #F8D7DA; -fx-border-color: #F5C6CB; -fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px;" visible="false">
             <children>
                 <Label text="Reject Reason (Minimum 20 characters)" textFill="#721C24">
-                    <font><Font name="System Bold" size="13.0" /></font>
+                    <font><Font name="System Bold" size="12.0" /></font>
                 </Label>
-                <TextArea fx:id="rejectReasonTextF" prefHeight="70.0" promptText="Enter formal rejection justification..." wrapText="true" />
+                <TextArea fx:id="rejectReasonTextF" prefHeight="50.0" promptText="Enter formal rejection justification..." wrapText="true" />
                 <HBox alignment="CENTER_RIGHT">
                     <children>
-                        <Button fx:id="confirmRejectButton" mnemonicParsing="false" onAction="#confirmRejectOA" style="-fx-background-color: #BD2130; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Confirm Reject">
-                            <font><Font name="System Bold" size="12.0" /></font>
+                        <Button fx:id="confirmRejectButton" mnemonicParsing="false" onAction="#confirmRejectOA" style="-fx-background-color: #BD2130; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Confirm Reject">
+                            <font><Font name="System Bold" size="11.0" /></font>
                         </Button>
                     </children>
                 </HBox>

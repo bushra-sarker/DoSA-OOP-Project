@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="10.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G4_reportConfigController">
+    <padding>
+        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+    </padding>
+    <children>
+
+        <!-- HEADER CARD -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 10px 12px;">
+            <children>
+                <Label text="Semester Activity Report" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label text="Generate semester-wide activity reports for university leadership." textFill="GRAY">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- REPORT CONFIGURATION CARD -->
+        <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 12px;">
+            <children>
+                <Label text="Report Configuration" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                            <children>
+                                <Label text="Semester:" textFill="#333333">
+                                    <font><Font name="System Bold" size="11.0" /></font>
+                                </Label>
+                                <ComboBox fx:id="semesterComboBox" prefWidth="130.0" promptText="Select">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Spring" />
+                                            <String fx:value="Summer" />
+                                            <String fx:value="Autumn" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                            <children>
+                                <Label text="Year:" textFill="#333333">
+                                    <font><Font name="System Bold" size="11.0" /></font>
+                                </Label>
+                                <ComboBox fx:id="yearComboBox" prefWidth="110.0" promptText="Select">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="2026" />
+                                            <String fx:value="2025" />
+                                            <String fx:value="2024" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" style="-fx-padding: 4 0 0 0;">
+                    <children>
+                        <Button fx:id="generateReportButton" mnemonicParsing="false" onAction="#generateReportOA" prefHeight="32.0" prefWidth="160.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Generate Report">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- REPORT INFORMATION CARD (Read-only VBox) -->
+        <VBox spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 12px;" VBox.vgrow="ALWAYS">
+            <children>
+                <Label text="Report Information" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+
+                <VBox spacing="4.0">
+                    <children>
+                        <Label text="Data Sources" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <Label text="• events_data.dat" textFill="#555555">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                        <Label text="• club_budgets.txt" textFill="#555555">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <VBox spacing="4.0" style="-fx-padding: 6 0 0 0;">
+                    <children>
+                        <Label text="Output Capabilities" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <Label text="• Event Category Pie Chart" textFill="#555555">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                        <Label text="• Budget Utilization Bar Chart" textFill="#555555">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                        <Label text="• Summary Metrics (Events &amp; Student Engagement)" textFill="#555555">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                        <Label text="• CSV Export &amp; VC Office Log Submission" textFill="#555555">
+                            <font><Font size="11.0" /></font>
+                        </Label>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+    </children>
+</VBox>

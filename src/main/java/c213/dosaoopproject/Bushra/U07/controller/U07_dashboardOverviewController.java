@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class U07_dashboardOverviewController {
@@ -24,19 +27,22 @@ public class U07_dashboardOverviewController {
         refreshDashboardMetrics();
     }
 
-    /**
-     * Fetches live data from events_data.dat and populates metric badges
-     */
     private void refreshDashboardMetrics() {
+        // 1. Dynamic Events Count
         ArrayList<MajorEvent> events = EventManager.loadEvents();
-        long pendingEventsCount = events.stream()
-                .filter(e -> "Pending".equalsIgnoreCase(e.getStatus()))
-                .count();
-
+        long pendingEventsCount = 0;
+        if (events != null) {
+            pendingEventsCount = events.stream()
+                    .filter(e -> "Pending".equalsIgnoreCase(e.getStatus()))
+                    .count();
+        }
         pendingEventsCountLabel.setText(String.valueOf(pendingEventsCount));
 
-        // Static/Mock values for other goals until their respective dat stores are added
-        pendingBudgetAllocationsLabel.setText("5");
+        // 2. Dynamic Budget Allocations Count (Reads from club_budgets.txt)
+        int pendingBudgets = getPendingBudgetCount();
+        pendingBudgetAllocationsLabel.setText(String.valueOf(pendingBudgets));
+
+        // 3. Static/Mock values for remaining modules until data stores are added
         pendingAppealsCountLabel.setText("2");
         pendingReportsCountLabel.setText("1");
         activeCrisisCountLabel.setText("4");
@@ -45,7 +51,30 @@ public class U07_dashboardOverviewController {
         pendingPartnershipCountLabel.setText("2");
     }
 
-    // Card-click handlers delegating content change to the parent shell
+    /**
+     * Helper method to count lines/clubs in club_budgets.txt that need allocation review.
+     * Customize the condition based on how your text file formats pending status.
+     */
+    private int getPendingBudgetCount() {
+        int count = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader("club_budgets.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Example: Increment if line is not empty (or check specific status token)
+                if (!line.trim().isEmpty()) {
+                    count++;
+                }
+            }
+        } catch (IOException e) {
+            // Fallback if file does not exist yet
+            System.err.println("Could not read club_budgets.txt: " + e.getMessage());
+            return 0;
+        }
+        return count;
+    }
+
+    // --- CARD-CLICK NAVIGATION HANDLERS ---
+
     @FXML
     public void eventViewOA(MouseEvent event) {
         if (U07_HeadOfDoSAViewController.getInstance() != null) {

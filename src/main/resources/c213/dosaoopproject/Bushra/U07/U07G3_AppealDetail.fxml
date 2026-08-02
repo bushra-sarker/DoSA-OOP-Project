@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="6.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G3_AppealDetailController">
+    <padding>
+        <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+    </padding>
+    <children>
+
+        <!-- PAGE HEADER -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Back to Appeals Queue">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="Appeal Details" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- LATE SUBMISSION WARNING BANNER (Initially Hidden) -->
+        <VBox fx:id="lateSubmissionWarningVBox" managed="false" style="-fx-background-color: #F8D7DA; -fx-border-color: #F5C6CB; -fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 6px 10px;" visible="false">
+            <children>
+                <Label fx:id="lateSubmissionWarningLabel" style="-fx-text-fill: #721C24;" text="⚠ Appeal submitted after the allowed 7-day period.">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- INCIDENT & PENALTY SUMMARY CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Incident &amp; Penalty Details" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Student ID" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="studentIDLabel" text="221001" textFill="#083c57"><font><Font name="System Bold" size="11.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Offense" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="offenseTypeLabel" text="Cheating in Exam"><font><Font size="11.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Incident Date" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="incidentDateLabel" text="10 May 2026"><font><Font size="11.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Original Penalty" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="originalPenaltyLabel" text="1 Semester Suspension" textFill="#750000"><font><Font name="System Bold" size="11.0" /></font></Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <VBox spacing="1.0" style="-fx-padding: 2 0 0 0;">
+                    <children>
+                        <Label text="Incident Report Summary" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <Label fx:id="incidentReportLabel" text="Student was found in possession of unauthorized reference notes during final exams." textFill="#333333" wrapText="true"><font><Font size="11.0" /></font></Label>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <!-- APPEAL STATEMENT CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Appeal Statement" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="appealStatementTextArea" editable="false" prefHeight="55.0" wrapText="true">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </TextArea>
+            </children>
+        </VBox>
+
+        <!-- DECISION SELECTION CARD -->
+        <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Decision" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <RadioButton fx:id="upholdPenaltyRadio" mnemonicParsing="false" text="Uphold Penalty">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="decisionToggleGroup" />
+                            </toggleGroup>
+                            <font><Font size="11.0" /></font>
+                        </RadioButton>
+                        <RadioButton fx:id="reducePenaltyRadio" mnemonicParsing="false" text="Reduce Penalty" toggleGroup="$decisionToggleGroup">
+                            <font><Font size="11.0" /></font>
+                        </RadioButton>
+                        <RadioButton fx:id="dismissChargesRadio" mnemonicParsing="false" text="Dismiss Charges" toggleGroup="$decisionToggleGroup">
+                            <font><Font size="11.0" /></font>
+                        </RadioButton>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER_LEFT" spacing="6.0">
+                            <children>
+                                <Label text="New Penalty:" textFill="GRAY"><font><Font size="11.0" /></font></Label>
+                                <ComboBox fx:id="newPenaltyComboBox" disable="true" prefWidth="150.0" promptText="Select Penalty">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Warning" />
+                                            <String fx:value="Probation" />
+                                            <String fx:value="Community Service" />
+                                            <String fx:value="Reduced Suspension" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- DECISION RATIONALE & SUBMIT CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" VBox.vgrow="ALWAYS">
+            <children>
+                <Label text="Decision Rationale" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="decisionRationaleTextF" prefHeight="55.0" promptText="Enter rationale (minimum 50 characters)..." wrapText="true" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </TextArea>
+            </children>
+        </VBox>
+
+        <!-- FINALIZE BUTTON -->
+        <HBox alignment="CENTER">
+            <children>
+                <Button fx:id="finalizeDecisionButton" disable="true" mnemonicParsing="false" onAction="#finalizeDecisionOA" prefHeight="32.0" prefWidth="250.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Finalize Decision">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+
+    </children>
+</VBox>

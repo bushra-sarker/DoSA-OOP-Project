@@ -31,7 +31,7 @@ public class U08_StudentWelfareOfficerViewController {
     @FXML
     public void initialize() {
         // Default view on login load
-        loadSubView("/c213/dosaoopproject/Bushra/U08/U08SWO_DashboardOverview.fxml", btnDashboard);
+        loadSubView("/c213/dosaoopproject/Bushra/U08/U08_dashboardOverview.fxml", btnDashboard);
     }
 
     private void loadSubView(String fxmlPath, Button activeBtn) {
@@ -65,7 +65,7 @@ public class U08_StudentWelfareOfficerViewController {
 
     @FXML
     private void dashboardViewOA(ActionEvent event) {
-        loadSubView("/c213/dosaoopproject/Bushra/U08/U08SWO_DashboardOverview.fxml", btnDashboard);
+        loadSubView("/c213/dosaoopproject/Bushra/U08/U08_dashboardOverview.fxml", btnDashboard);
     }
 
     @FXML
