@@ -1,6 +1,6 @@
 package c213.dosaoopproject.Bushra.U07.model;
 
-import commonClass.model.User;
+import c213.dosaoopproject.commonClass.model.User;
 
 public class U07_HeadOfDoSA extends User {
 

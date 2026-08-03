@@ -7,8 +7,8 @@ module c213.DoSA.OOP.Project {
     opens c213.dosaoopproject to javafx.graphics, javafx.fxml;
 
     // Common shared packages
-    exports commonClass.controller;
-    opens commonClass.controller to javafx.fxml;
+    exports c213.dosaoopproject.commonClass.controller;
+    opens c213.dosaoopproject.commonClass.controller to javafx.fxml;
 
     // Bushra U07 packages
     exports c213.dosaoopproject.Bushra.U07.controller;

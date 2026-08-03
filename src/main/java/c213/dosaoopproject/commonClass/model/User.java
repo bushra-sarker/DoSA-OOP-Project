@@ -1,4 +1,4 @@
-package commonClass.model;
+package c213.dosaoopproject.commonClass.model;
 
 import java.io.Serializable;
 

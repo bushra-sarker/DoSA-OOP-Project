@@ -1,4 +1,4 @@
-package commonClass.util;
+package c213.dosaoopproject.commonClass.util;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,33 +12,38 @@ import java.io.IOException;
 
 public class SceneSwitcher {
 
-    // --- SWAP CONTENT INSIDE A DASHBOARD SHELL (Use for contentArea) ---
-    public static FXMLLoader loadIntoContentArea(Pane contentArea, String fxmlPath) {
-        try {
-            FXMLLoader loader = new FXMLLoader(SceneSwitcher.class.getResource(fxmlPath));
-            Parent view = loader.load();
+    //Replaces the content inside a dashboard container (Sub-view switching).
 
-            contentArea.getChildren().clear();
-            contentArea.getChildren().add(view);
-
-            return loader; // Return loader in case you need to access controller
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+    public static FXMLLoader switchContent(Pane contentArea, String fxmlPath) {
+        if (contentArea == null) {
+            throw new IllegalArgumentException("Target contentArea Pane cannot be null.");
         }
-    }
 
-    // --- FULL STAGE SWITCHING (Use for Logouts, Role Switching, or New Windows) ---
-    public static void switchTo(ActionEvent event, String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(SceneSwitcher.class.getResource(fxmlPath));
             Parent root = loader.load();
+
+            contentArea.getChildren().setAll(root);
+
+            return loader;
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to load FXML into content area: " + fxmlPath, e);
+        }
+    }
+
+    //Switches the entire Stage (e.g., Login -> Dashboard or Logout).
+
+    public static void switchScene(ActionEvent event, String fxmlPath, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(SceneSwitcher.class.getResource(fxmlPath));
+            Parent root = loader.load();
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle(title);
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Unable to switch scene: " + fxmlPath, e);
         }
     }
 }

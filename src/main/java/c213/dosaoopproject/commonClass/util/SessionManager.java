@@ -1,6 +1,6 @@
-package commonClass.util;
+package c213.dosaoopproject.commonClass.util;
 
-import commonClass.model.User;
+import c213.dosaoopproject.commonClass.model.User;
 import java.io.*;
 import java.util.ArrayList;
 

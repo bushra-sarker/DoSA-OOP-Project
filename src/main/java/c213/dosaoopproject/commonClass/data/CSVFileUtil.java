@@ -1,7 +1,6 @@
-package commonClass.data;
+package c213.dosaoopproject.commonClass.data;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CSVFileUtil {

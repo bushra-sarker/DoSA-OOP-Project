@@ -1,7 +1,7 @@
 package c213.dosaoopproject;
 
-import commonClass.model.User;
-import commonClass.util.SessionManager;
+import c213.dosaoopproject.commonClass.model.User;
+import c213.dosaoopproject.commonClass.util.SessionManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

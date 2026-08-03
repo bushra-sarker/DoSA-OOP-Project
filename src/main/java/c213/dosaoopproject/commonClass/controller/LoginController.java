@@ -1,8 +1,8 @@
-package commonClass.controller;
+package c213.dosaoopproject.commonClass.controller;
 
-import commonClass.model.User;
-import commonClass.util.SceneSwitcher;
-import commonClass.util.SessionManager;
+import c213.dosaoopproject.commonClass.model.User;
+import c213.dosaoopproject.commonClass.util.SceneSwitcher;
+import c213.dosaoopproject.commonClass.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
