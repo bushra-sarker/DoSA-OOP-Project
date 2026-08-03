@@ -1,7 +1,5 @@
 package c213.dosaoopproject.Bushra.U07.controller;
 
-import c213.dosaoopproject.Bushra.U07.model.MajorEvent;
-import c213.dosaoopproject.Bushra.U07.util.EventManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
