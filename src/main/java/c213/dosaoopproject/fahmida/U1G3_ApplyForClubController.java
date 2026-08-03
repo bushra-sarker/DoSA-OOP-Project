@@ -19,19 +19,17 @@ public class U1G3_ApplyForClubController
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private TextField studentNameTF;
-    @javafx.fxml.FXML
     private Label applyforclubLabel;
     @javafx.fxml.FXML
-    private TextField clubNameTF;
+    private TableColumn totalMembersTC;
     @javafx.fxml.FXML
-    private TextField studentIDTF;
+    private TableView applyForClubTV;
     @javafx.fxml.FXML
-    private TextField ques2TF;
+    private TableColumn clubNameTC;
     @javafx.fxml.FXML
-    private TextField ques1TF;
+    private TableColumn moderatorNameTC;
     @javafx.fxml.FXML
-    private ComboBox majorCB;
+    private TableColumn categoryTC;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -85,7 +83,11 @@ public class U1G3_ApplyForClubController
     public void backtoDashboardOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void submitApplicationOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void applyToJoinOA(ActionEvent actionEvent) {
     }
 }
