@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="6.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G2RequestDetailController">
+    <padding>
+        <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+    </padding>
+    <children>
+
+        <!-- PAGE HEADER CARD -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Back to Emergency Requests">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label text="Emergency Assistance Request Details" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- STUDENT INFORMATION CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Student Information" textFill="#083c57">
+                    <font><Font name="System Bold" size="11.0" /></font>
+                </Label>
+                <VBox spacing="2.0">
+                    <children>
+                        <Label text="Student Explanation:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <Label fx:id="emergencyStatementLabel" prefHeight="15.0" prefWidth="176.0" text="--" textFill="#333333" wrapText="true"><font><Font name="System Bold" size="10.0" /></font></Label>
+                    </children>
+                </VBox>
+                <VBox spacing="2.0">
+                    <children>
+                        <Label text="Supporting Documents:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <ListView fx:id="attachedDocsListV" prefHeight="55.0" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <!-- VERIFICATION STATUS CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Verification Status" textFill="#083c57">
+                    <font><Font name="System Bold" size="11.0" /></font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Label text="Department Status:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <Label fx:id="deptVerificationStatusLabel" text="Pending" textFill="#D39E00"><font><Font name="System Bold" size="10.0" /></font></Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="verifyDeptButton" mnemonicParsing="false" onAction="#verifyDeptOA" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Verify Department">
+                            <font><Font name="System Bold" size="10.0" /></font>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label fx:id="missingDocWarningLabel" managed="false" text="⚠ Missing supporting document!" textFill="#BD2130" visible="false">
+                    <font><Font name="System Bold" size="10.0" /></font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- PAYMENT INFORMATION CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Payment Information" textFill="#083c57">
+                    <font><Font name="System Bold" size="11.0" /></font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <RadioButton fx:id="bankTransferRadio" mnemonicParsing="false" selected="true" text="Bank Transfer" textFill="#083c57">
+                            <font><Font size="10.0" /></font>
+                            <toggleGroup>
+                                <ToggleGroup fx:id="paymentMethodGroup" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="cashDisbursementRadio" mnemonicParsing="false" text="Cash Disbursement" textFill="#083c57" toggleGroup="$paymentMethodGroup">
+                            <font><Font size="10.0" /></font>
+                        </RadioButton>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Account Number" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <TextField fx:id="accountNumberTextF" promptText="Enter account number" style="-fx-font-size: 11px;" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Approved Amount" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <TextField fx:id="approvedAmountTextF" promptText="Enter approved amount" style="-fx-font-size: 11px;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox spacing="10.0">
+                    <children>
+                        <HBox spacing="4.0">
+                            <children>
+                                <Label text="Available Balance:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="availableFundBalanceLabel" text="BDT 0" textFill="#1E7E34"><font><Font name="System Bold" size="10.0" /></font></Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Label fx:id="exceedsBalanceWarningLabel" managed="false" text="⚠ Approved amount exceeds available balance." textFill="#BD2130" visible="false">
+                    <font><Font name="System Bold" size="10.0" /></font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- BOTTOM ACTION BUTTON -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Button fx:id="approveDisbursementButton" mnemonicParsing="false" onAction="#approveDisbursementOA" prefHeight="30.0" prefWidth="220.0" style="-fx-background-color: #1E7E34; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Approve Disbursement">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</VBox>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" prefHeight="530.0" prefWidth="720.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G7RequestReviewController">
+    <content>
+        <VBox spacing="6.0" style="-fx-background-color: #F8F9FA;">
+            <padding>
+                <Insets bottom="10.0" left="12.0" right="12.0" top="8.0" />
+            </padding>
+            <children>
+
+                <!-- HEADER CARD -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Button fx:id="backButton" mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand; -fx-padding: 0 0 4 0;" text="← Back to Facility Requests">
+                                    <font>
+                                        <Font name="System Bold" size="11.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <Label text="Facility Access Request Review" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label text="Review request details and make a decision." textFill="GRAY">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- REQUEST INFORMATION CARD -->
+                <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <Label text="Request Information" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <GridPane hgap="12.0" vgap="2.0">
+                            <children>
+                                <!-- Row 0 -->
+                                <HBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Student Name :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="studentNameLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Student ID :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="studentIdLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="4.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Facility :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="facilityTypeLabel" text="--" textFill="#083c57"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+
+                                <!-- Row 1 -->
+                                <HBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Requested Date :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="requestedDateLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Requested Time :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="requestedSlotLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="4.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Status :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="requestStatusLabel" text="--" textFill="#D39E00"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+
+                <!-- REQUESTED EQUIPMENT & PURPOSE CARD -->
+                <HBox spacing="8.0">
+                    <children>
+                        <!-- Equipment List Box -->
+                        <VBox prefHeight="95.0" spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Requested Equipment" textFill="#083c57">
+                                    <font><Font name="System Bold" size="11.0" /></font>
+                                </Label>
+                                <ListView fx:id="equipmentListV" prefHeight="65.0" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+
+                        <!-- Purpose Description Box -->
+                        <VBox prefHeight="95.0" spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Purpose" textFill="#083c57">
+                                    <font><Font name="System Bold" size="11.0" /></font>
+                                </Label>
+                                <Label fx:id="purposeDescriptionLabel" text="No details provided." textFill="#333333" wrapText="true">
+                                    <font><Font size="10.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- SAFETY VERIFICATION CARD -->
+                <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <Label text="Safety Verification" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                            <children>
+                                <Label text="Safety Training Status :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="safetyTrainingBadgeLabel" style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-padding: 2 8 2 8; -fx-background-radius: 10;" text="Passed">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Label fx:id="safetyWarningLabel" text="⚠ Warning: Mandatory safety training has not been completed by the student." textFill="#BD2130" visible="false" wrapText="true">
+                            <font><Font name="System Bold" size="10.0" /></font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- DECISION PANEL -->
+                <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <Label text="Decision" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button fx:id="approveButton" mnemonicParsing="false" onAction="#approveOA" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #1E7E34; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Approve">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Button>
+                                <Button fx:id="modifyButton" mnemonicParsing="false" onAction="#modifyOA" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Modify">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Button>
+                                <Button fx:id="denyButton" mnemonicParsing="false" onAction="#denyOA" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #BD2130; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Deny">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Button>
+                            </children>
+                        </HBox>
+
+                        <!-- INLINE APPROVAL VBOX -->
+                        <VBox fx:id="inlineApprovalVBox" managed="false" spacing="4.0" style="-fx-background-color: #F1F8F5; -fx-border-color: #28A745; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 6px 10px;" visible="false">
+                            <children>
+                                <Label text="Approval Panel" textFill="#1e7e34"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                <GridPane hgap="8.0" vgap="4.0">
+                                    <children>
+                                        <Label text="Booking Date :" textFill="GRAY" GridPane.columnIndex="0" GridPane.rowIndex="0"><font><Font size="10.0" /></font></Label>
+                                        <DatePicker fx:id="bookingDateP" prefWidth="150.0" style="-fx-font-size: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                        <Label text="Start Time :" textFill="GRAY" GridPane.columnIndex="0" GridPane.rowIndex="1"><font><Font size="10.0" /></font></Label>
+                                        <ComboBox fx:id="startTimeComboBox" prefWidth="150.0" style="-fx-font-size: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                        <Label text="Duration (Hours) :" textFill="GRAY" GridPane.columnIndex="2" GridPane.rowIndex="0"><font><Font size="10.0" /></font></Label>
+                                        <Spinner fx:id="durationSpinner" prefWidth="150.0" style="-fx-font-size: 10px;" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                                        <Label text="Supervisor :" textFill="GRAY" GridPane.columnIndex="2" GridPane.rowIndex="1"><font><Font size="10.0" /></font></Label>
+                                        <ComboBox fx:id="assignedSupervisorComboBox" prefWidth="150.0" style="-fx-font-size: 10px;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                                <HBox alignment="CENTER_RIGHT" style="-fx-padding: 4 0 0 0;">
+                                    <children>
+                                        <Button fx:id="confirmApprovalButton" mnemonicParsing="false" onAction="#confirmApprovalOA" style="-fx-background-color: #1E7E34; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Confirm Approval">
+                                            <font><Font name="System Bold" size="10.0" /></font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- INLINE MODIFY VBOX -->
+                        <VBox fx:id="inlineModifyVBox" managed="false" spacing="4.0" style="-fx-background-color: #F0F4F8; -fx-border-color: #083C57; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 6px 10px;" visible="false">
+                            <children>
+                                <Label text="Modification Panel" textFill="#083c57"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                <GridPane hgap="8.0" vgap="4.0">
+                                    <children>
+                                        <Label text="Adjusted Time :" textFill="GRAY" GridPane.columnIndex="0" GridPane.rowIndex="0"><font><Font size="10.0" /></font></Label>
+                                        <ComboBox fx:id="adjustedTimeComboB" prefWidth="180.0" style="-fx-font-size: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                        <Label text="Reason :" textFill="GRAY" GridPane.columnIndex="0" GridPane.rowIndex="1"><font><Font size="10.0" /></font></Label>
+                                        <TextField fx:id="modificationReasonTextF" prefWidth="300.0" promptText="Specify modification reason..." style="-fx-font-size: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                                <HBox alignment="CENTER_RIGHT" style="-fx-padding: 4 0 0 0;">
+                                    <children>
+                                        <Button fx:id="confirmModificationButton" mnemonicParsing="false" onAction="#confirmModificationOA" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Confirm Modification">
+                                            <font><Font name="System Bold" size="10.0" /></font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- INLINE DENY VBOX -->
+                        <VBox fx:id="inlineDenyVBox" managed="false" spacing="4.0" style="-fx-background-color: #FDF2F2; -fx-border-color: #BD2130; -fx-border-radius: 4; -fx-background-radius: 4; -fx-padding: 6px 10px;" visible="false">
+                            <children>
+                                <Label text="Denial Panel" textFill="#bd2130"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                    <children>
+                                        <Label text="Reason :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <TextField fx:id="denialReasonTextF" prefWidth="320.0" promptText="Enter detailed reason for rejection..." style="-fx-font-size: 10px;" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" style="-fx-padding: 4 0 0 0;">
+                                    <children>
+                                        <Button fx:id="confirmDenialButton" mnemonicParsing="false" onAction="#confirmDenialOA" style="-fx-background-color: #BD2130; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Confirm Denial">
+                                            <font><Font name="System Bold" size="10.0" /></font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+
+                <!-- BOTTOM BACK BUTTON CARD -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Button fx:id="bottomBackButton" mnemonicParsing="false" onAction="#backOA" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Back">
+                                    <font>
+                                        <Font name="System Bold" size="10.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
