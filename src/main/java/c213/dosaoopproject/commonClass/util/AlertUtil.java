@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class AlertUtil {
 
-    public static void showSuccess(String title, String content) {
+    public static void showInformation(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setContentText(content);

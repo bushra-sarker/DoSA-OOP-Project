@@ -41,45 +41,40 @@ public class LoginController {
         }
     }
 
-    // CHANGED FROM private TO public
     @FXML
-    public void loginButton(ActionEvent event) {
+    private void loginButton(ActionEvent event) {
         String userId = userIDTextF.getText().trim();
         String password = passwordTextF.getText().trim();
 
-        clearError();
-
-        // 1. Input Validation
         if (userId.isEmpty() || password.isEmpty()) {
-            showError("Please enter both ID and password.");
+            showError("Please enter both User ID and Password.");
             return;
         }
 
         SessionManager sessionManager = SessionManager.getInstance();
 
-        // 2. User Existence Check
-        if (!sessionManager.isValidUserId(userId)) {
-            showError("Invalid ID or password.");
+        // 1. Fetch user by ID from SessionManager / users.dat
+        User user = sessionManager.getUser(userId);
+
+        if (user == null) {
+            showError("Invalid User ID or Password.");
             return;
         }
 
-        User user = sessionManager.getUser(userId);
-
-        // 3. Lockout Verification
         if (user.isLocked()) {
-            showError("Account locked due to multiple failed attempts.");
+            showError("Account is locked due to multiple failed attempts.");
             showLockoutAlert();
             return;
         }
 
-        // 4. Password Verification
+        // 2. Validate Password
         if (user.getPassword().equals(password)) {
             user.setFailedAttempts(0);
             sessionManager.saveUserDatabase();
             sessionManager.setCurrentUser(user);
 
-            // Clean, one-line navigation via utility class
-            SceneSwitcher.switchTo(event, user.getFxmlPath(), user.getRole() + " Dashboard");
+            // 3. Navigate directly to this user's assigned dashboard FXML
+            SceneSwitcher.switchScene(event, user.getFxmlPath(), "Dashboard");
         } else {
             handleFailedLogin(user, sessionManager);
         }
@@ -101,7 +96,6 @@ public class LoginController {
         }
     }
 
-    // CHANGED FROM private TO public
     @FXML
     public void setForgotPasswordLabel(MouseEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

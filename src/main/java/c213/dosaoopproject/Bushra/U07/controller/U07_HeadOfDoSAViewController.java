@@ -1,149 +1,122 @@
 package c213.dosaoopproject.Bushra.U07.controller;
 
+import c213.dosaoopproject.commonClass.model.User;
+import c213.dosaoopproject.commonClass.util.AlertUtil;
 import c213.dosaoopproject.commonClass.util.SceneSwitcher;
+import c213.dosaoopproject.commonClass.util.SessionManager;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
-import java.io.IOException;
-
 public class U07_HeadOfDoSAViewController {
 
-    @FXML private StackPane contentArea;
-    @FXML private Button btnDashboard;
-    @FXML private Button btnPendingEventsCard;
-    @FXML private Button btnPendingScholarshipsCard;
-    @FXML private Button btnBudgetManagement;
-    @FXML private Button btnDisciplinaryAppeals;
-    @FXML private Button btnCrisisManagement;
-    @FXML private Button btnReportsAnalytics;
-    @FXML private Button btnExchangePrograms;
-    @FXML private Button btnExternalRelations;
-    @FXML private Button btnCoCurricularTranscripts;
+    @javafx.fxml.FXML
+    private StackPane contentArea;
+    @javafx.fxml.FXML
+    private Button btnExchangePrograms;
+    @javafx.fxml.FXML
+    private Button btnDisciplinaryAppeals;
+    @javafx.fxml.FXML
+    private Button btnBudgetManagement;
+    @javafx.fxml.FXML
+    private Button btnCrisisManagement;
+    @javafx.fxml.FXML
+    private ImageView ppImageView;
+    @javafx.fxml.FXML
+    private Button btnExternalRelations;
+    @javafx.fxml.FXML
+    private Button btnPendingScholarshipsCard;
+    @javafx.fxml.FXML
+    private Button btnDashboard;
+    @javafx.fxml.FXML
+    private Button btnReportsAnalytics;
+    @javafx.fxml.FXML
+    private TextField searchOFCRTF;
+    @javafx.fxml.FXML
+    private Button btnCoCurricularTranscripts;
+    @javafx.fxml.FXML
+    private Label nameLabel;
+    @javafx.fxml.FXML
+    private Label userIdLabel;
+    @javafx.fxml.FXML
+    private Button btnPendingEventsCard;
 
-    @FXML private TextField searchOFCRTF;
-    @FXML private ImageView ppImageView;
-    @FXML private Label nameLabel;
-    @FXML private Label userIdLabel;
-
-    private static U07_HeadOfDoSAViewController instance;
-
-    public static U07_HeadOfDoSAViewController getInstance() {
-        return instance;
-    }
-
-    @FXML
+    @javafx.fxml.FXML
     public void initialize() {
-        instance = this;
-        // Default to loading the dashboard overview upon login
-        loadSubView("/c213/dosaoopproject/Bushra/U07/U07_dashboardOverview.fxml");
-        highlightActiveButton(btnDashboard);
-    }
-
-    /**
-     * Loads child FXML content inside the main contentArea StackPane
-     */
-    public void loadSubView(String fxmlPath) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Parent view = loader.load();
-            contentArea.getChildren().clear();
-            contentArea.getChildren().add(view);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("Failed to load sub-view: " + fxmlPath);
+        User currentUser = SessionManager.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            nameLabel.setText(currentUser.getUserId()); // <--- Changed from getName()
+            userIdLabel.setText("ID: " + currentUser.getUserId());
         }
+
+        loadDashboardView();
     }
 
-    private void highlightActiveButton(Button activeButton) {
-        Button[] sidebarButtons = {
-                btnDashboard, btnPendingEventsCard, btnPendingScholarshipsCard,
-                btnBudgetManagement, btnDisciplinaryAppeals, btnCrisisManagement,
-                btnReportsAnalytics, btnExchangePrograms, btnExternalRelations,
-                btnCoCurricularTranscripts
-        };
-
-        for (Button btn : sidebarButtons) {
-            if (btn != null) {
-                if (btn == activeButton) {
-                    btn.setStyle("-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;");
-                } else {
-                    btn.setStyle("-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;");
-                }
-            }
-        }
+    private void loadDashboardView() {
+        SceneSwitcher.switchContent(contentArea, "/c213/dosaoopproject/Bushra/U07/U07_dashboardOverview.fxml");
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void dashboardViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnDashboard);
-        loadSubView("/c213/dosaoopproject/Bushra/U07/U07_dashboardOverview.fxml");
+        loadDashboardView();
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void majorEventViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnPendingEventsCard);
-        loadSubView("/c213/dosaoopproject/Bushra/U07/U07G1_eventApprovalQueue.fxml");
+        SceneSwitcher.switchContent(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G1_eventApprovalQueue.fxml");
     }
 
-    @FXML
-    public void scholarshipViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnPendingScholarshipsCard);
-        // Load scholarship view when built
-    }
-
-    @FXML
-    public void budgetManagementOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnBudgetManagement);
-    }
-
-    @FXML
-    public void disciplinaryAppealsOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnDisciplinaryAppeals);
-    }
-
-    @FXML
-    public void crisisViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnCrisisManagement);
-    }
-
-    @FXML
-    public void reportViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnReportsAnalytics);
-    }
-
-    @FXML
-    public void exchangeViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnExchangePrograms);
-    }
-
-    @FXML
-    public void partnershipViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnExternalRelations);
-    }
-
-    @FXML
-    public void transcriptViewOA(ActionEvent actionEvent) {
-        highlightActiveButton(btnCoCurricularTranscripts);
-    }
-
-    @FXML
+    @javafx.fxml.FXML
     public void notificationOA(ActionEvent actionEvent) {
-        System.out.println("Notifications clicked");
+        AlertUtil.showInformation("Notifications", "No new unread system notifications.");
     }
 
-    @FXML
+    @javafx.fxml.FXML
     public void logOutOA(ActionEvent actionEvent) {
-        SceneSwitcher.switchTo(actionEvent, "/commonFXML/LoginView.fxml", "Login");
+        SessionManager.getInstance().logout();
+        SceneSwitcher.switchScene(actionEvent, "/c213/dosaoopproject/LoginView.fxml", "Academic Admin Portal - Login");
     }
 
-    public StackPane getContentArea() {
-        return contentArea;
+    @javafx.fxml.FXML
+    public void scholarshipViewOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Scholarships", "Scholarship Module selected.");
+    }
+
+    @javafx.fxml.FXML
+    public void exchangeViewOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Exchange Programs", "Goal 6 Module selected.");
+    }
+
+    @javafx.fxml.FXML
+    public void disciplinaryAppealsOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Disciplinary Appeals", "Goal 3 Module selected.");
+    }
+
+    @javafx.fxml.FXML
+    public void partnershipViewOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Partnerships & MOUs", "Goal 8 Module selected.");
+    }
+
+    @javafx.fxml.FXML
+    public void transcriptViewOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Transcript Requests", "Goal 7 Module selected.");
+    }
+
+    @javafx.fxml.FXML
+    public void budgetManagementOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Budget Management", "Goal 2 Module selected.");
+    }
+
+    @javafx.fxml.FXML
+    public void crisisViewOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Crisis Management", "Goal 5 Module selected.");
+    }
+
+    @javafx.fxml.FXML
+    public void reportViewOA(ActionEvent actionEvent) {
+        AlertUtil.showInformation("Reports & Analytics", "Goal 4 Module selected.");
     }
 }

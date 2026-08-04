@@ -26,26 +26,30 @@ public class SessionManager {
         return instance;
     }
 
-    // ==========================
     // User Database Operations
-    // ==========================
 
     public void loadUserDatabase() {
-        List<User> loadedUsers = BinaryFileUtil.readObject(DATA_FILE);
-        if (loadedUsers != null) {
+        // Use readList instead of readObjects!
+        List<User> loadedUsers = BinaryFileUtil.readList(DATA_FILE);
+
+        if (loadedUsers != null && !loadedUsers.isEmpty()) {
             this.userList = loadedUsers;
         } else {
             this.userList = new ArrayList<>();
+
+            userList.add(new User("HOD07", "1234", "/c213/dosaoopproject/Bushra/U07/U07_HeadOfDoSADashboardView.fxml"));
+            userList.add(new User("CLUB201", "1234", "/c213/dosaoopproject/commonFXML/ClubPresidentDashboard.fxml"));
+            userList.add(new User("STU301", "1234", "/c213/dosaoopproject/commonFXML/StudentDashboard.fxml"));
+
+            saveUserDatabase();
         }
     }
 
     public void saveUserDatabase() {
-        BinaryFileUtil.writeObject(DATA_FILE, userList);
+        BinaryFileUtil.writeObjects(DATA_FILE, userList);
     }
 
-    // ==========================
     // Session State Management
-    // ==========================
 
     public User getCurrentUser() {
         return currentUser;
@@ -63,9 +67,7 @@ public class SessionManager {
         this.currentUser = null;
     }
 
-    // ==========================
     // User Lookups & Helper Methods
-    // ==========================
 
     public List<User> getAllUsers() {
         return userList;

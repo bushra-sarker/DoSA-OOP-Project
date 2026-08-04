@@ -73,12 +73,12 @@
                 </HBox>
                 <TableView fx:id="eventsTableView" prefHeight="300.0">
                     <columns>
-                        <TableColumn fx:id="eventNameCol" prefWidth="160.0" text="Event Name" />
-                        <TableColumn fx:id="clubNameCol" prefWidth="130.0" text="Club / Org" />
-                        <TableColumn fx:id="eventDateCol" prefWidth="95.0" text="Date" />
-                        <TableColumn fx:id="budgetCol" prefWidth="95.0" text="Budget (BDT)" />
-                        <TableColumn fx:id="riskCol" prefWidth="75.0" text="Risk" />
-                        <TableColumn fx:id="statusCol" prefWidth="110.0" text="Status" />
+                        <TableColumn fx:id="eventNameTableC" prefWidth="160.0" text="Event Name" />
+                        <TableColumn fx:id="clubNameTableC" prefWidth="130.0" text="Club / Org" />
+                        <TableColumn fx:id="eventDateTableC" prefWidth="95.0" text="Date" />
+                        <TableColumn fx:id="budgetTableC" prefWidth="95.0" text="Budget (BDT)" />
+                        <TableColumn fx:id="riskTableC" prefWidth="75.0" text="Risk" />
+                        <TableColumn fx:id="statusTableC" prefWidth="110.0" text="Status" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
