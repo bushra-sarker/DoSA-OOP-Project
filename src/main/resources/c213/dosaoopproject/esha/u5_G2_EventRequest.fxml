@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="501.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.esha.controller.u5_G1_DashboardView">
+<AnchorPane prefHeight="501.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.esha.controller.u5_G2_EventRequest">
    <children>
       <VBox spacing="15">
       

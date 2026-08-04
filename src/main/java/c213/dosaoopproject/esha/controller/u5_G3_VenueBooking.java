@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
-public class u5_G4_DashboardView
+public class u5_G3_VenueBooking
 {@FXML private TextField venueField;
     @FXML private DatePicker bookingDatePicker;
     @FXML private TextField startTimeField;

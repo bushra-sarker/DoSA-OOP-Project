@@ -3,7 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class u6_G1_DashboardView
+public class u6_G1_PostServiceOpportunity
 {
     @FXML private TextField titleField;
     @FXML private TextArea descriptionArea;

@@ -6,7 +6,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-public class u5_G1_DashboardView
+public class u5_G2_EventRequest
 {    @FXML private TextArea eventDescArea;
     @FXML private DatePicker eventDatePicker;
     @FXML private Label statusLabel;

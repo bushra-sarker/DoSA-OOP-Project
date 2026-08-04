@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class u5_G5_DashboardView
+public class u6_G8_VolunteerTaskCompletionReport
 { @FXML private TableView<AssignmentRow> assignmentsTable;
     @FXML private TableColumn<AssignmentRow, Integer> assignmentIdColumn;
     @FXML private TableColumn<AssignmentRow, Integer> volunteerIdColumn;
