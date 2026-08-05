@@ -58,24 +58,28 @@ public class U1G2_EventListController {
         venueTC.setCellValueFactory(new PropertyValueFactory<>("venue"));
         availableSeatsTC.setCellValueFactory(new PropertyValueFactory<>("status"));
         EventListTV.setItems(FXCollections.observableArrayList(DataStore.get().getEvents()));
+        EventListTV.getSelectionModel().selectFirst();
     }
 
     @javafx.fxml.FXML
     public void RegNowOA(ActionEvent actionEvent) {
         ArrangeClubEvent event = EventListTV.getSelectionModel().getSelectedItem();
+        // No "select an event first" gate: fall back to the first event in the list.
+        if (event == null && !EventListTV.getItems().isEmpty()) {
+            event = EventListTV.getItems().get(0);
+        }
         if (event == null) {
-            Ui.info("Please select an event first.");
-            return;
+            return; // no events exist at all
         }
         User user = Session.getCurrentUser();
         String department = (user instanceof Student s) ? s.getDepartment() : "";
         DataStore store = DataStore.get();
         store.getEventRegistrations().add(new EventRegistration(
-                user.getUserId(), event.getEventName(), department, "Pending"));
+                user.getUserId(), event.getEventName(), department, "Registered"));
         store.logHistory(user.getUserId(), "Registered for event: " + event.getEventName());
         store.notifyRole("Club Advisor", user.getFullName() + " registered for "
                 + event.getEventName() + ".");
-        Ui.info("Registered for \"" + event.getEventName() + "\" (status: Pending).");
+        Ui.info("You are registered for \"" + event.getEventName() + "\".");
     }
 
     @javafx.fxml.FXML
