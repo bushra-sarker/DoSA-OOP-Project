@@ -119,206 +119,34 @@ public class U2_DashboardController {
         SceneManager.switchTo("U2G3_ReviewandapproveClubMembership");
     }
 
-    // "Arrange Club Events" — create a new event (feeds the students' lists).
+    // "Arrange Club Events" — dedicated screen (feeds the students' event lists).
     @javafx.fxml.FXML
     public void viewScheduleOA(ActionEvent actionEvent) {
-        // Single modal capturing all event fields.
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.setTitle("Arrange Club Event");
-        dialog.setHeaderText("Create a new event");
-        ButtonType createType = new ButtonType("Create", ButtonBar.ButtonData.OK_DONE);
-        dialog.getDialogPane().getButtonTypes().addAll(createType, ButtonType.CANCEL);
-
-        TextField nameField = new TextField();
-        nameField.setPromptText("Event name");
-        TextArea descArea = new TextArea();
-        descArea.setPromptText("Description");
-        descArea.setPrefRowCount(3);
-        descArea.setWrapText(true);
-        DatePicker datePicker = new DatePicker(LocalDate.now().plusDays(7));
-        TextField venueField = new TextField();
-        venueField.setPromptText("Venue");
-
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(10));
-        grid.add(new Label("Event Name:"), 0, 0);
-        grid.add(nameField, 1, 0);
-        grid.add(new Label("Description:"), 0, 1);
-        grid.add(descArea, 1, 1);
-        grid.add(new Label("Date:"), 0, 2);
-        grid.add(datePicker, 1, 2);
-        grid.add(new Label("Venue:"), 0, 3);
-        grid.add(venueField, 1, 3);
-        dialog.getDialogPane().setContent(grid);
-        dialog.setResultConverter(bt -> bt);
-
-        Optional<ButtonType> result = dialog.showAndWait();
-        if (result.isEmpty() || result.get() != createType) {
-            return; // cancelled
-        }
-
-        String name = nameField.getText().trim();
-        if (name.isEmpty() || datePicker.getValue() == null) {
-            Ui.info("Please enter at least an event name and date.");
-            return;
-        }
-
-        DataStore store = DataStore.get();
-        int id = store.getEvents().size() + 1;
-        String venue = venueField.getText().isBlank() ? "TBA" : venueField.getText().trim();
-        String desc = descArea.getText().isBlank() ? "Created by advisor" : descArea.getText().trim();
-        store.getEvents().add(new ArrangeClubEvent(id, name, desc,
-                datePicker.getValue(), venue, "Upcoming"));
-        logHistory("Created event: " + name);
-        store.save();
-        Ui.info("Event \"" + name + "\" created (Upcoming).");
+        SceneManager.switchTo("U2G4_ArrangeEvent");
     }
 
-    // "Assign Student Volunteers to Events" — single modal for all fields.
+    // "Assign Student Volunteers to Events"
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
-        DataStore store = DataStore.get();
-        List<String> events = eventNames(store);
-        if (events.isEmpty()) {
-            Ui.info("Create an event first.");
-            return;
-        }
-
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.setTitle("Assign Volunteer");
-        dialog.setHeaderText("Assign a student volunteer to an event");
-        ButtonType assignType = new ButtonType("Assign", ButtonBar.ButtonData.OK_DONE);
-        dialog.getDialogPane().getButtonTypes().addAll(assignType, ButtonType.CANCEL);
-
-        ComboBox<String> eventBox = new ComboBox<>(FXCollections.observableArrayList(events));
-        eventBox.getSelectionModel().selectFirst();
-        TextField volunteerField = new TextField();
-        volunteerField.setPromptText("Volunteer student ID (e.g. 1001)");
-        TextField responsibilityField = new TextField();
-        responsibilityField.setPromptText("Responsibility");
-
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(10));
-        grid.add(new Label("Event:"), 0, 0);
-        grid.add(eventBox, 1, 0);
-        grid.add(new Label("Volunteer ID:"), 0, 1);
-        grid.add(volunteerField, 1, 1);
-        grid.add(new Label("Responsibility:"), 0, 2);
-        grid.add(responsibilityField, 1, 2);
-        dialog.getDialogPane().setContent(grid);
-        dialog.setResultConverter(bt -> bt);
-
-        Optional<ButtonType> result = dialog.showAndWait();
-        if (result.isEmpty() || result.get() != assignType) {
-            return; // cancelled
-        }
-
-        String eventName = eventBox.getValue();
-        String responsibility = responsibilityField.getText().trim();
-        if (eventName == null || responsibility.isEmpty()) {
-            Ui.info("Please choose an event and enter a responsibility.");
-            return;
-        }
-        int volunteerId = parseIntSafe(volunteerField.getText());
-        int eventId = events.indexOf(eventName) + 1;
-        String assignId = "VA" + (store.getVolunteerAssignments().size() + 1);
-        store.getVolunteerAssignments().add(new VolunteerAssignment(
-                assignId, volunteerId, eventId, responsibility, "Assigned"));
-        logHistory("Assigned a volunteer to " + eventName);
-        store.save();
-        Ui.info("Volunteer assigned to \"" + eventName + "\".");
-    }
-
-    private static int parseIntSafe(String value) {
-        try {
-            return Integer.parseInt(value.trim());
-        } catch (NumberFormatException e) {
-            return 0;
-        }
+        SceneManager.switchTo("U2G5_AssignVolunteer");
     }
 
     // "View Registered Participants for Events"
     @javafx.fxml.FXML
     public void downloadApprovalOA(ActionEvent actionEvent) {
-        String list = DataStore.get().getEventRegistrations().stream()
-                .map(r -> r.getEventName() + " — student " + r.getStudentId()
-                        + " (" + r.getStatus() + ")")
-                .collect(Collectors.joining("\n"));
-        Ui.info(list.isEmpty() ? "No participants registered yet." : list);
+        SceneManager.switchTo("U2G6_ViewParticipants");
     }
 
-    // "Advisor Submit Student's Event Completion Report" — single modal.
+    // "Advisor Submit Student's Event Completion Report"
     @javafx.fxml.FXML
     public void submitCompletionReportOA(ActionEvent actionEvent) {
-        DataStore store = DataStore.get();
-        List<String> events = eventNames(store);
-        if (events.isEmpty()) {
-            Ui.info("Create an event first.");
-            return;
-        }
-
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.setTitle("Event Completion Report");
-        dialog.setHeaderText("Submit a completion report");
-        ButtonType submitType = new ButtonType("Submit", ButtonBar.ButtonData.OK_DONE);
-        dialog.getDialogPane().getButtonTypes().addAll(submitType, ButtonType.CANCEL);
-
-        ComboBox<String> eventBox = new ComboBox<>(FXCollections.observableArrayList(events));
-        eventBox.getSelectionModel().selectFirst();
-        TextField attendanceField = new TextField();
-        attendanceField.setPromptText("Actual attendance (number)");
-        TextArea outcomeArea = new TextArea();
-        outcomeArea.setPromptText("Outcome summary");
-        outcomeArea.setPrefRowCount(3);
-        outcomeArea.setWrapText(true);
-
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(10));
-        grid.add(new Label("Event:"), 0, 0);
-        grid.add(eventBox, 1, 0);
-        grid.add(new Label("Attendance:"), 0, 1);
-        grid.add(attendanceField, 1, 1);
-        grid.add(new Label("Outcome:"), 0, 2);
-        grid.add(outcomeArea, 1, 2);
-        dialog.getDialogPane().setContent(grid);
-        dialog.setResultConverter(bt -> bt);
-
-        Optional<ButtonType> result = dialog.showAndWait();
-        if (result.isEmpty() || result.get() != submitType) {
-            return; // cancelled
-        }
-
-        String eventName = eventBox.getValue();
-        String summary = outcomeArea.getText().trim();
-        if (eventName == null || summary.isEmpty()) {
-            Ui.info("Please choose an event and enter an outcome summary.");
-            return;
-        }
-        int eventId = events.indexOf(eventName) + 1;
-        int reportId = store.getCompletionReports().size() + 1;
-        store.getCompletionReports().add(new EventCompletionReport(
-                reportId, eventId, eventName, parseIntSafe(attendanceField.getText()),
-                summary, "Submitted"));
-        logHistory("Submitted completion report for " + eventName);
-        store.save();
-        Ui.info("Completion report submitted for \"" + eventName + "\".");
+        SceneManager.switchTo("U2G7_CompletionReport");
     }
 
     // "View Club Activity History"
     @javafx.fxml.FXML
     public void trackHistoryOA(ActionEvent actionEvent) {
-        User user = Session.getCurrentUser();
-        String history = DataStore.get().getHistory().stream()
-                .filter(h -> user != null && h.getUserId() == user.getUserId())
-                .map(h -> h.getDate() + " — " + h.getAction())
-                .collect(Collectors.joining("\n"));
-        Ui.info(history.isEmpty() ? "No activity yet." : history);
+        SceneManager.switchTo("U2G8_ActivityHistory");
     }
 
     @javafx.fxml.FXML
