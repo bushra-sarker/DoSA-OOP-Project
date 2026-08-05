@@ -1,4 +1,6 @@
 package c213.dosaoopproject.esha.controller;
+import c213.dosaoopproject.esha.model.Request;
+import c213.dosaoopproject.esha.model.RequestStore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -46,6 +48,10 @@ public class u5_G3_VenueBooking
             statusLabel.setText("End time must be after start time.");
             return;
         }
+        String details = "Venue: " + venueField.getText() + "\nDate: " + bookingDatePicker.getValue()
+                + "\nTime: " + startTimeField.getText() + " - " + endTimeField.getText();
+        RequestStore.getInstance().addRequest(new Request("Venue Booking", details));
+
         statusLabel.setStyle("-fx-text-fill:green;");
-        statusLabel.setText("Venue booking submitted.");
+        statusLabel.setText("Venue booking submitted to DoSA Coordinator!");
     }}

@@ -1,4 +1,6 @@
 package c213.dosaoopproject.esha.controller;
+import c213.dosaoopproject.esha.model.Request;
+import c213.dosaoopproject.esha.model.RequestStore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -46,6 +48,13 @@ public class u5_G5_ResourceRequest
         //         quantitySpinner.getValue(), requiredDatePicker.getValue(), purposeArea.getText());
         // resourceRequestService.submitRequest(request);
 
+        String details = "Category: " + resourceCategoryCombo.getValue()
+                + "\nMaterial: " + materialNameField.getText()
+                + "\nQuantity: " + quantitySpinner.getValue()
+                + "\nRequired Date: " + requiredDatePicker.getValue()
+                + "\nPurpose: " + purposeArea.getText();
+        RequestStore.getInstance().addRequest(new Request("Resource Request", details));
+
         statusLabel.setStyle("-fx-text-fill:green;");
-        statusLabel.setText("Resource request submitted.");
+        statusLabel.setText("Resource request submitted to DoSA Coordinator!");
     }}

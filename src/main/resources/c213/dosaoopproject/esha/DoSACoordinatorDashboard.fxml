@@ -31,6 +31,8 @@
           <!-- ===================== LEFT NAV MENU ===================== -->
           <left>
               <VBox prefWidth="230" spacing="8" style="-fx-background-color:#76608a; -fx-padding:15;" BorderPane.alignment="TOP_CENTER">
+                  <Button fx:id="navPendingRequestsBtn" maxWidth="Infinity" onAction="#showPendingRequests" text="📋 Pending Requests" style="-fx-background-color:#FF9800; -fx-text-fill:white; -fx-font-weight:bold;" />
+                  <Separator />
                   <Button fx:id="navServiceOpportunityBtn" maxWidth="Infinity" onAction="#showServiceOpportunity" text="Post Service Opportunity" />
                   <Button fx:id="navVolunteerHoursBtn" maxWidth="Infinity" onAction="#showVolunteerHours" text="Approve Volunteer Hours" />
                   <Button fx:id="navAssignVolunteersBtn" maxWidth="Infinity" onAction="#showAssignVolunteers" text="Assign Volunteers" />

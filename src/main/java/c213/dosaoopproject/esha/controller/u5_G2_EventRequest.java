@@ -1,4 +1,6 @@
 package c213.dosaoopproject.esha.controller;
+import c213.dosaoopproject.esha.model.Request;
+import c213.dosaoopproject.esha.model.RequestStore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,8 +28,11 @@ public class u5_G2_EventRequest
             statusLabel.setText("Please fill in the description and date.");
             return;
         }
+        String details = "Date: " + eventDatePicker.getValue() + "\nDescription: " + eventDescArea.getText();
+        RequestStore.getInstance().addRequest(new Request("Event Request", details));
+
         statusLabel.setStyle("-fx-text-fill:green;");
-        statusLabel.setText("Event request submitted.");
+        statusLabel.setText("Event request submitted to DoSA Coordinator!");
         eventDescArea.clear();
         eventDatePicker.setValue(null);
 

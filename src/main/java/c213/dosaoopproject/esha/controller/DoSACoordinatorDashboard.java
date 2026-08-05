@@ -35,6 +35,8 @@ public class DoSACoordinatorDashboard
     private Button navTaskCompletionReportBtn;
     @FXML
     private Button navManageClubsBtn;
+    @FXML
+    private Button navPendingRequestsBtn;
 
 
     public void initSession(int coordinatorId,String coordinatorName) {
@@ -42,6 +44,11 @@ public class DoSACoordinatorDashboard
         welcomeLabel.setText("Welcome, " + coordinatorName);
     }
     // ===================== NAV HANDLERS =====================
+
+    @FXML
+    private void showPendingRequests(ActionEvent event) {
+        loadView("/c213/dosaoopproject/esha/PendingRequests.fxml");
+    }
 
     @FXML
     private void showServiceOpportunity(ActionEvent event) {

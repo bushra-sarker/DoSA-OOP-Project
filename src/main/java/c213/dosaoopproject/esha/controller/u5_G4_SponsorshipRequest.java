@@ -1,4 +1,6 @@
 package c213.dosaoopproject.esha.controller;
+import c213.dosaoopproject.esha.model.Request;
+import c213.dosaoopproject.esha.model.RequestStore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -42,8 +44,12 @@ public class u5_G4_SponsorshipRequest
     @FXML
     private void handleSubmitSponsorship(ActionEvent event) {
         if (!validateFields()) return;
+
+        String details = "Event: " + eventNameField.getText() + "\nType: " + sponsorshipTypeField.getText()
+                + "\nSponsor: " + sponsorOrgNameField.getText()
+                + "\nExpected Support: " + expectedSupportArea.getText();
+        RequestStore.getInstance().addRequest(new Request("Sponsorship Request", details));
+
         statusLabel.setStyle("-fx-text-fill:green;");
-        statusLabel.setText("Sponsorship request submitted.");
-
-
+        statusLabel.setText("Sponsorship request submitted to DoSA Coordinator!");
     }}
