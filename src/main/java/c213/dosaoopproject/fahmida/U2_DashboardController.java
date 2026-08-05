@@ -14,11 +14,13 @@ import c213.dosaoopproject.fahmida.util.SceneManager;
 import c213.dosaoopproject.fahmida.util.Search;
 import c213.dosaoopproject.fahmida.util.Ui;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
@@ -174,7 +176,7 @@ public class U2_DashboardController {
         Ui.info("Event \"" + name + "\" created (Upcoming).");
     }
 
-    // "Assign Student Volunteers to Events"
+    // "Assign Student Volunteers to Events" — single modal for all fields.
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
         DataStore store = DataStore.get();
@@ -183,16 +185,60 @@ public class U2_DashboardController {
             Ui.info("Create an event first.");
             return;
         }
-        Ui.choose("Assign Volunteer", "Choose an event:", events).ifPresent(eventName ->
-                Ui.prompt("Assign Volunteer", "Volunteer responsibility:").ifPresent(resp -> {
-                    int eventId = events.indexOf(eventName) + 1;
-                    String assignId = "VA" + (store.getVolunteerAssignments().size() + 1);
-                    store.getVolunteerAssignments().add(new VolunteerAssignment(
-                            assignId, 0, eventId, resp, "Assigned"));
-                    logHistory("Assigned a volunteer to " + eventName);
-                    store.save();
-                    Ui.info("Volunteer assigned to \"" + eventName + "\".");
-                }));
+
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Assign Volunteer");
+        dialog.setHeaderText("Assign a student volunteer to an event");
+        ButtonType assignType = new ButtonType("Assign", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(assignType, ButtonType.CANCEL);
+
+        ComboBox<String> eventBox = new ComboBox<>(FXCollections.observableArrayList(events));
+        eventBox.getSelectionModel().selectFirst();
+        TextField volunteerField = new TextField();
+        volunteerField.setPromptText("Volunteer student ID (e.g. 1001)");
+        TextField responsibilityField = new TextField();
+        responsibilityField.setPromptText("Responsibility");
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(10));
+        grid.add(new Label("Event:"), 0, 0);
+        grid.add(eventBox, 1, 0);
+        grid.add(new Label("Volunteer ID:"), 0, 1);
+        grid.add(volunteerField, 1, 1);
+        grid.add(new Label("Responsibility:"), 0, 2);
+        grid.add(responsibilityField, 1, 2);
+        dialog.getDialogPane().setContent(grid);
+        dialog.setResultConverter(bt -> bt);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isEmpty() || result.get() != assignType) {
+            return; // cancelled
+        }
+
+        String eventName = eventBox.getValue();
+        String responsibility = responsibilityField.getText().trim();
+        if (eventName == null || responsibility.isEmpty()) {
+            Ui.info("Please choose an event and enter a responsibility.");
+            return;
+        }
+        int volunteerId = parseIntSafe(volunteerField.getText());
+        int eventId = events.indexOf(eventName) + 1;
+        String assignId = "VA" + (store.getVolunteerAssignments().size() + 1);
+        store.getVolunteerAssignments().add(new VolunteerAssignment(
+                assignId, volunteerId, eventId, responsibility, "Assigned"));
+        logHistory("Assigned a volunteer to " + eventName);
+        store.save();
+        Ui.info("Volunteer assigned to \"" + eventName + "\".");
+    }
+
+    private static int parseIntSafe(String value) {
+        try {
+            return Integer.parseInt(value.trim());
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 
     // "View Registered Participants for Events"
