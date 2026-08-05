@@ -32,6 +32,12 @@ public class U1G1_NoticeDetailsController {
     private Label DOSALabel;
     @javafx.fxml.FXML
     private Label nameLabel11;
+    @javafx.fxml.FXML
+    private Label detailTitle;
+    @javafx.fxml.FXML
+    private Label detailMeta;
+    @javafx.fxml.FXML
+    private Label detailBody;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -44,9 +50,20 @@ public class U1G1_NoticeDetailsController {
                 userIdLabel11.setText(user.getLoginId());
             }
         }
-        if (selectedNotice != null && viewNoticeLabel != null) {
-            viewNoticeLabel.setWrapText(true);
-            viewNoticeLabel.setText(selectedNotice.getFullNotice());
+
+        if (viewNoticeLabel != null) {
+            viewNoticeLabel.setText("Notice Details");
+        }
+        if (selectedNotice != null) {
+            detailTitle.setText(selectedNotice.getTitle());
+            detailMeta.setText("Posted by " + selectedNotice.getClubName()
+                    + "  •  " + selectedNotice.getCategory()
+                    + "  •  " + selectedNotice.getDatePosted());
+            detailBody.setText(selectedNotice.getBody());
+        } else {
+            detailTitle.setText("No notice selected");
+            detailMeta.setText("");
+            detailBody.setText("Go back and click \"Read More\" on a notice.");
         }
     }
 

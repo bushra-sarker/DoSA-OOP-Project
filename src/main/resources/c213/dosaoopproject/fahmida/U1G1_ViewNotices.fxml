@@ -18,7 +18,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G1_NoticeDetailsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G1_ViewNoticesController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -208,7 +208,6 @@
                         <TableColumn fx:id="datePostedTC" prefWidth="172.0" text="Date Posted" />
                     </columns>
                   </TableView>
-                  <Button layoutX="524.0" layoutY="436.0" mnemonicParsing="false" onAction="#readMoreOA" text="Read More" />
                   <Button layoutX="639.0" layoutY="436.0" mnemonicParsing="false" onAction="#goDashboardOA" text="Go to Dashboard" />
                </children>
             </AnchorPane>

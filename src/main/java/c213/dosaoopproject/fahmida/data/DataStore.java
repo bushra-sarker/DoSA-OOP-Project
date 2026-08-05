@@ -191,9 +191,12 @@ public class DataStore implements Serializable {
                 "karim@iub.edu", 1));
 
         // Clubs
-        clubs.add(new ClubInfo(1, "Robotics Club",
+        clubs.add(new ClubInfo(1, "Robotics Club", "Technology", "Dr. Karim Uddin", 24,
                 "Builds robots and runs workshops.", "Sundays 3–5 PM",
                 "robotics@iub.edu", "01700000000", "Auditorium Lab"));
+        clubs.add(new ClubInfo(2, "Debate Club", "Cultural", "Ms. Nadia Islam", 30,
+                "Weekly debates and public-speaking practice.", "Tuesdays 4–6 PM",
+                "debate@iub.edu", "01800000000", "Room 4012"));
 
         // Notices (posted by a club — visible to students)
         notices.add(new Notice(1, "Robotics Club", "Welcome Session",

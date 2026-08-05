@@ -13,17 +13,23 @@ public class ClubInfo implements Serializable {
 
     private int clubId;
     private String clubName;
+    private String category;
+    private String moderatorName;
+    private int totalMembers;
     private String description;
     private String meetingSchedule;
     private String contactEmail;
     private String contactPhone;
     private String venue;
 
-    public ClubInfo(int clubId, String clubName, String description,
-                    String meetingSchedule, String contactEmail,
-                    String contactPhone, String venue) {
+    public ClubInfo(int clubId, String clubName, String category, String moderatorName,
+                    int totalMembers, String description, String meetingSchedule,
+                    String contactEmail, String contactPhone, String venue) {
         this.clubId = clubId;
         this.clubName = clubName;
+        this.category = category;
+        this.moderatorName = moderatorName;
+        this.totalMembers = totalMembers;
         this.description = description;
         this.meetingSchedule = meetingSchedule;
         this.contactEmail = contactEmail;
@@ -37,6 +43,18 @@ public class ClubInfo implements Serializable {
 
     public String getClubName() {
         return clubName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getModeratorName() {
+        return moderatorName;
+    }
+
+    public int getTotalMembers() {
+        return totalMembers;
     }
 
     public String getDescription() {

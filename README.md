@@ -52,5 +52,8 @@ open -a "SceneBuilder" src/main/resources/c213/dosaoopproject/fahmida/U1_Dashboa
 ## Status
 - **Phase 0 (Foundation): done** — login, role routing, session, navigation, data
   layer with sample data, working logout.
-- **Phase 1 (Student) & Phase 2 (Club Advisor):** in progress — wiring each
-  dashboard feature to the data layer (see the roadmap).
+- **Phase 1 (Student): done** — all 8 goals wired to the data layer (View Notices
+  with per-row "Read More" → full details, Register for Event, Apply for Club,
+  View Schedule, Submit Complaint, Community Service, Download Approval Letter,
+  Track History).
+- **Phase 2 (Club Advisor): in progress** — see the roadmap.

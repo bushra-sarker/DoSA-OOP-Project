@@ -197,7 +197,23 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Button layoutX="620.0" layoutY="430.0" mnemonicParsing="false" onAction="#goDashboardOA" text="Go to Dashboard" />
+                  <VBox layoutX="14.0" layoutY="150.0" prefWidth="800.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="detailTitle" style="-fx-font-weight: bold;" wrapText="true">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="detailMeta" style="-fx-text-fill: #555555;" wrapText="true" />
+                        <Separator prefWidth="770.0" />
+                        <Label fx:id="detailBody" prefWidth="780.0" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Button layoutX="620.0" layoutY="560.0" mnemonicParsing="false" onAction="#goDashboardOA" text="Go to Dashboard" />
                </children>
             </AnchorPane>
          </content>

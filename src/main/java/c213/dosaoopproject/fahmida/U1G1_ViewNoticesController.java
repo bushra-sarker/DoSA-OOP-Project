@@ -8,7 +8,9 @@ import c213.dosaoopproject.fahmida.util.SceneManager;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -65,15 +67,45 @@ public class U1G1_ViewNoticesController {
 
         // Fill the table from the shared data store.
         noticeTV.setItems(FXCollections.observableArrayList(DataStore.get().getNotices()));
+
+        // Drop the stray empty placeholder column ("C2") left over in the FXML.
+        noticeTV.getColumns().removeIf(c -> "C2".equals(c.getText()));
+
+        // Add a per-row "Read More" button that opens that notice's details.
+        addReadMoreColumn();
+
+        // Make all columns (including the button) share the visible width — no
+        // horizontal scrolling, so the Read More button sits beside each notice.
+        noticeTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
-    @javafx.fxml.FXML
-    public void readMoreOA(ActionEvent actionEvent) {
-        Notice selected = noticeTV.getSelectionModel().getSelectedItem();
-        if (selected == null) {
-            return; // nothing selected — ignore
-        }
-        U1G1_NoticeDetailsController.setSelectedNotice(selected);
+    /** Appends a column whose every row shows a "Read More" button for that notice. */
+    private void addReadMoreColumn() {
+        TableColumn<Notice, Void> actionCol = new TableColumn<>("");
+        actionCol.setPrefWidth(120);
+        actionCol.setMinWidth(120);
+        actionCol.setSortable(false);
+        actionCol.setCellFactory(col -> new TableCell<>() {
+            private final Button button = new Button("Read More");
+            {
+                button.setOnAction(e -> {
+                    Notice notice = getTableView().getItems().get(getIndex());
+                    openDetails(notice);
+                });
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                setGraphic(empty ? null : button);
+            }
+        });
+        noticeTV.getColumns().add(actionCol);
+    }
+
+    /** Hands the chosen notice to the details screen and navigates there. */
+    private void openDetails(Notice notice) {
+        U1G1_NoticeDetailsController.setSelectedNotice(notice);
         SceneManager.switchTo("U1G1_NoticeDetails");
     }
 

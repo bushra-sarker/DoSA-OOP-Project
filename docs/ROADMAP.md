@@ -15,14 +15,18 @@ show/edit it in a screen, save. Tick items off as you go.
 ## Phase 1 — Student (User-1)
 Wire each dashboard button to a screen backed by `DataStore`.
 
-- [x] **View Notices** — fill the table from `getNotices()`, "Read More" → details ✅
-- [ ] **Register for Event** — create an `EventRegistration`, save
-- [ ] **Apply for Club Membership** — create a `ClubMembershipApplication` (Pending)
-- [ ] **View Event Schedule** — list `getEvents()`
-- [ ] **Submit Complaint** — create a `Complaint`, save
-- [ ] **Community Service** — `registerAsVolunteer(...)`
-- [ ] **Download Approval Letter** — write `ApprovalLetter.content()` to a `.txt`
-- [ ] **Track History** — list `getHistory()` for this student
+- [x] **View Notices** — table from `getNotices()`, a **per-row "Read More"** button
+      opens the Notice Details page (title, meta, full body) ✅
+- [x] **Register for Event** — creates an `EventRegistration` (Pending) ✅
+- [x] **Apply for Club Membership** — creates a `ClubMembershipApplication` (Pending) ✅
+- [x] **View Event Schedule** — lists `getEvents()` ✅
+- [x] **Submit Complaint** — creates a `Complaint`, saves ✅
+- [x] **Community Service** — shows programs (dialog) ✅
+- [x] **Download Approval Letter** — writes `ApprovalLetter.content()` to a `.txt` ✅
+- [x] **Track History** — shows this student's `getHistory()` (dialog) ✅
+
+> Also fixed a pre-existing bug: `U1G1_ViewNotices.fxml` pointed at the wrong
+> controller (`U1G1_NoticeDetailsController`), which broke the View Notices screen.
 
 ## Phase 2 — Club Advisor (User-2)
 - [ ] **Update Club Info** — edit the `ClubInfo`, save
