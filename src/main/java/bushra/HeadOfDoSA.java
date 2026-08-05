@@ -1,12 +1,12 @@
 package bushra;
 
-import c213.dosaoopproject.fahmida.commonClass.User;
+import commonClass.User;
 
 public class HeadOfDoSA extends User {
     private int headId;
 
     public HeadOfDoSA(String role, String fullName, String passwordHash, int userId, int headId) {
-        super(passwordHash, userId);
+        super(fullName, passwordHash, userId);
         this.headId = headId;
     }
 
