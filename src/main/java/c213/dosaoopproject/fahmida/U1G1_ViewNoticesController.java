@@ -1,6 +1,8 @@
 package c213.dosaoopproject.fahmida;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,6 +37,14 @@ public class U1G1_ViewNoticesController
 
     @javafx.fxml.FXML
     public void readMoreOA(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("U1G1_ViewNotices.fxml"));
+            Node node =  fxmlLoader.load();
+            mainPane.getChildren().setAll(node);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
