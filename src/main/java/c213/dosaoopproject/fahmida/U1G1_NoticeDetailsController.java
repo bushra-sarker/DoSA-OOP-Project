@@ -1,11 +1,27 @@
 package c213.dosaoopproject.fahmida;
 
+import commonClass.User;
+import c213.dosaoopproject.fahmida.model.Notice;
+import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.util.SceneManager;
+
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class U1G1_NoticeDetailsController
-{
+/**
+ * User-1 Goal-1 (details): shows the full text of the notice the student picked
+ * on the "View Notices" screen ("Read More").
+ */
+public class U1G1_NoticeDetailsController {
+
+    /** The notice chosen on the list screen, handed over before navigation. */
+    private static Notice selectedNotice;
+
+    public static void setSelectedNotice(Notice notice) {
+        selectedNotice = notice;
+    }
+
     @javafx.fxml.FXML
     private Label viewNoticeLabel;
     @javafx.fxml.FXML
@@ -19,7 +35,43 @@ public class U1G1_NoticeDetailsController
 
     @javafx.fxml.FXML
     public void initialize() {
+        User user = Session.getCurrentUser();
+        if (user != null) {
+            if (nameLabel11 != null) {
+                nameLabel11.setText(user.getFullName());
+            }
+            if (userIdLabel11 != null) {
+                userIdLabel11.setText(user.getLoginId());
+            }
+        }
+        if (selectedNotice != null && viewNoticeLabel != null) {
+            viewNoticeLabel.setWrapText(true);
+            viewNoticeLabel.setText(selectedNotice.getFullNotice());
+        }
     }
+
+    @javafx.fxml.FXML
+    public void viewNoticesOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G1_ViewNotices");
+    }
+
+    @javafx.fxml.FXML
+    public void goDashboardOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1_Dashboard");
+    }
+
+    @javafx.fxml.FXML
+    public void studentdashboardOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1_Dashboard");
+    }
+
+    @javafx.fxml.FXML
+    public void logOutOA(ActionEvent actionEvent) {
+        Session.clear();
+        SceneManager.switchTo("LoginView");
+    }
+
+    // --- remaining navigation buttons (wired in later phases) ---------------
 
     @javafx.fxml.FXML
     public void registerEventsOA(ActionEvent actionEvent) {
@@ -38,27 +90,11 @@ public class U1G1_NoticeDetailsController
     }
 
     @javafx.fxml.FXML
-    public void viewNoticesOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void logOutOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void downloadApprovalOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void clubMembershipOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void goDashboardOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void studentdashboardOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

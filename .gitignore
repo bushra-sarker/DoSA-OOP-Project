@@ -64,3 +64,6 @@ build/
 hs_err_pid*
 replay_pid*
 >>>>>>> d234d46b5c6a190ccc70b6fcd224e5015b77ca25
+
+# Runtime data file (binary DataStore)
+dosa.dat

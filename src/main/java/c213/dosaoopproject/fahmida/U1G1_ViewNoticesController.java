@@ -1,27 +1,42 @@
 package c213.dosaoopproject.fahmida;
 
+import commonClass.User;
+import c213.dosaoopproject.fahmida.data.DataStore;
+import c213.dosaoopproject.fahmida.model.Notice;
+import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.util.SceneManager;
+
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
-public class U1G1_ViewNoticesController
-{
+/**
+ * User-1 Goal-1: View DoSA Notices and Announcements.
+ *
+ * <p>Fills the table from {@link DataStore#getNotices()} — the same list a Club
+ * Advisor writes to when posting a notice — and opens the details screen when the
+ * student selects a row and clicks "Read More".</p>
+ */
+public class U1G1_ViewNoticesController {
+
     @javafx.fxml.FXML
-    private TableColumn noticeTitleTC;
+    private TableColumn<Notice, String> noticeTitleTC;
     @javafx.fxml.FXML
     private Label viewNoticeLabel;
     @javafx.fxml.FXML
     private Label userIdLabel11;
     @javafx.fxml.FXML
-    private TableView noticeTV;
+    private TableView<Notice> noticeTV;
     @javafx.fxml.FXML
-    private TableColumn postedByTC;
+    private TableColumn<Notice, String> postedByTC;
     @javafx.fxml.FXML
-    private TableColumn datePostedTC;
+    private TableColumn<Notice, Object> datePostedTC;
     @javafx.fxml.FXML
-    private TableColumn categoryTC;
+    private TableColumn<Notice, String> categoryTC;
     @javafx.fxml.FXML
     private ImageView ppImageView11;
     @javafx.fxml.FXML
@@ -31,11 +46,53 @@ public class U1G1_ViewNoticesController
 
     @javafx.fxml.FXML
     public void initialize() {
+        // Header labels
+        User user = Session.getCurrentUser();
+        if (user != null) {
+            if (nameLabel11 != null) {
+                nameLabel11.setText(user.getFullName());
+            }
+            if (userIdLabel11 != null) {
+                userIdLabel11.setText(user.getLoginId());
+            }
+        }
+
+        // Map each column to a Notice property (getTitle, getClubName, ...)
+        noticeTitleTC.setCellValueFactory(new PropertyValueFactory<>("title"));
+        postedByTC.setCellValueFactory(new PropertyValueFactory<>("clubName"));
+        categoryTC.setCellValueFactory(new PropertyValueFactory<>("category"));
+        datePostedTC.setCellValueFactory(new PropertyValueFactory<>("datePosted"));
+
+        // Fill the table from the shared data store.
+        noticeTV.setItems(FXCollections.observableArrayList(DataStore.get().getNotices()));
     }
 
     @javafx.fxml.FXML
     public void readMoreOA(ActionEvent actionEvent) {
+        Notice selected = noticeTV.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            return; // nothing selected — ignore
+        }
+        U1G1_NoticeDetailsController.setSelectedNotice(selected);
+        SceneManager.switchTo("U1G1_NoticeDetails");
     }
+
+    @javafx.fxml.FXML
+    public void goDashboardOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1_Dashboard");
+    }
+
+    @javafx.fxml.FXML
+    public void studentdashboardOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1_Dashboard");
+    }
+
+    @javafx.fxml.FXML
+    public void viewNoticesOA(ActionEvent actionEvent) {
+        // already on this screen — no-op
+    }
+
+    // --- remaining navigation buttons (wired in later phases) ---------------
 
     @javafx.fxml.FXML
     public void registerEventsOA(ActionEvent actionEvent) {
@@ -54,11 +111,9 @@ public class U1G1_ViewNoticesController
     }
 
     @javafx.fxml.FXML
-    public void viewNoticesOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void logOutOA(ActionEvent actionEvent) {
+        Session.clear();
+        SceneManager.switchTo("LoginView");
     }
 
     @javafx.fxml.FXML
@@ -67,14 +122,6 @@ public class U1G1_ViewNoticesController
 
     @javafx.fxml.FXML
     public void clubMembershipOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void goDashboardOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void studentdashboardOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

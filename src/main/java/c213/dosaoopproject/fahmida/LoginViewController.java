@@ -1,0 +1,57 @@
+package c213.dosaoopproject.fahmida;
+
+import commonClass.User;
+import c213.dosaoopproject.fahmida.data.DataStore;
+import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.util.SceneManager;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+/**
+ * Controller for the login screen (shared Login process from the spec).
+ *
+ * <p>Validates that both fields are filled, verifies the credentials against the
+ * {@link DataStore}, stores the user in the {@link Session}, then routes to the
+ * correct dashboard via {@link User#getDashboardFxml()} (role-based, polymorphic).</p>
+ */
+public class LoginViewController {
+
+    @FXML
+    private TextField userIdTF;
+    @FXML
+    private PasswordField passwordTF;
+    @FXML
+    private Label errorLabel;
+
+    @FXML
+    public void initialize() {
+        errorLabel.setText("");
+    }
+
+    @FXML
+    public void loginOA(ActionEvent actionEvent) {
+        String userId = userIdTF.getText() == null ? "" : userIdTF.getText().trim();
+        String password = passwordTF.getText() == null ? "" : passwordTF.getText();
+
+        // Validation (VL): both fields required.
+        if (userId.isEmpty() || password.isEmpty()) {
+            errorLabel.setText("Please enter both ID and password");
+            return;
+        }
+
+        // Verification (VR): check credentials against stored users.
+        User user = DataStore.get().authenticate(userId, password);
+        if (user == null) {
+            errorLabel.setText("Invalid ID or password");
+            return;
+        }
+
+        // Success: start the session and load the role-specific dashboard.
+        Session.setCurrentUser(user);
+        SceneManager.switchTo(user.getDashboardFxml());
+    }
+}

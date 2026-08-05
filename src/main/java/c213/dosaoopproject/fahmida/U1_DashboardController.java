@@ -1,6 +1,12 @@
 package c213.dosaoopproject.fahmida;
 
+import commonClass.User;
+import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.util.SceneManager;
+
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -30,6 +36,18 @@ public class U1_DashboardController
 
     @javafx.fxml.FXML
     public void initialize() {
+        User user = Session.getCurrentUser();
+        if (user != null) {
+            if (welcomeUserLabel != null) {
+                welcomeUserLabel.setText("Welcome, " + user.getFullName());
+            }
+            if (nameLabel11 != null) {
+                nameLabel11.setText(user.getFullName());
+            }
+            if (userIdLabel11 != null) {
+                userIdLabel11.setText(user.getLoginId());
+            }
+        }
     }
 
     @javafx.fxml.FXML
@@ -50,10 +68,20 @@ public class U1_DashboardController
 
     @javafx.fxml.FXML
     public void viewNoticesOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G1_ViewNotices");
     }
 
     @javafx.fxml.FXML
     public void logOutOA(ActionEvent actionEvent) {
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
+                "Do you want to exit?", ButtonType.YES, ButtonType.NO);
+        confirm.setHeaderText(null);
+        confirm.showAndWait().ifPresent(choice -> {
+            if (choice == ButtonType.YES) {
+                Session.clear();
+                SceneManager.switchTo("LoginView");
+            }
+        });
     }
 
     @javafx.fxml.FXML
