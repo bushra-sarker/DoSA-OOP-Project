@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -186,7 +188,7 @@
                <children>
                   <VBox layoutX="2.0" layoutY="7.0" prefHeight="79.0" prefWidth="819.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="65.0" prefWidth="593.0" text="Post Club Notice &amp; Anouncements">
+                        <Label alignment="CENTER" prefHeight="65.0" prefWidth="700.0" text="Review &amp; Approve Club Membership">
                            <font>
                               <Font name="Book Antiqua" size="36.0" />
                            </font>
@@ -194,6 +196,17 @@
                         <Separator prefHeight="11.0" prefWidth="819.0" />
                      </children>
                   </VBox>
+                  <TableView fx:id="applicationsTV" layoutX="20.0" layoutY="110.0" prefHeight="330.0" prefWidth="795.0">
+                     <columns>
+                        <TableColumn fx:id="appStudentTC" prefWidth="110.0" text="Student ID" />
+                        <TableColumn fx:id="appClubTC" prefWidth="180.0" text="Club" />
+                        <TableColumn fx:id="appReasonTC" prefWidth="255.0" text="Reason" />
+                        <TableColumn fx:id="appStatusTC" prefWidth="120.0" text="Status" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="20.0" layoutY="455.0" mnemonicParsing="false" onAction="#approveOA" text="Approve" />
+                  <Button layoutX="110.0" layoutY="455.0" mnemonicParsing="false" onAction="#rejectOA" text="Reject" />
+                  <Button layoutX="700.0" layoutY="455.0" mnemonicParsing="false" onAction="#backtoDashboardButtonOA" text="Back to Dashboard" />
                </children>
             </AnchorPane>
          </content>

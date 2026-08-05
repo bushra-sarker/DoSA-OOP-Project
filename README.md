@@ -50,7 +50,8 @@ open -a "SceneBuilder" src/main/resources/c213/dosaoopproject/fahmida/U1_Dashboa
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — the phased build plan and progress.
 - **Per-phase technical docs:**
   [Phase 0 — Foundation](docs/phases/PHASE0-FOUNDATION.md) ·
-  [Phase 1 — Student](docs/phases/PHASE1-STUDENT.md)
+  [Phase 1 — Student](docs/phases/PHASE1-STUDENT.md) ·
+  [Phase 2 — Club Advisor](docs/phases/PHASE2-CLUBADVISOR.md)
 
 ## Status
 - **Phase 0 (Foundation): done** — login, role routing, session, navigation, data
@@ -59,4 +60,7 @@ open -a "SceneBuilder" src/main/resources/c213/dosaoopproject/fahmida/U1_Dashboa
   with per-row "Read More" → full details, Register for Event, Apply for Club,
   View Schedule, Submit Complaint, Community Service, Download Approval Letter,
   Track History).
-- **Phase 2 (Club Advisor): in progress** — see the roadmap.
+- **Phase 2 (Club Advisor): done** — all 8 goals wired (Update Club Info, Post
+  Notice, Review & Approve Membership, Create Event, View Participants, Assign
+  Volunteer, Submit Completion Report, View Activity History).
+- **Phase 3 (shared: Notification, Search): pending** — see the roadmap.

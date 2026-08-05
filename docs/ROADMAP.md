@@ -6,7 +6,7 @@ show/edit it in a screen, save. Tick items off as you go.
 **Per-phase technical documentation:**
 - [Phase 0 — Foundation](phases/PHASE0-FOUNDATION.md)
 - [Phase 1 — Student](phases/PHASE1-STUDENT.md)
-- Phase 2 — Club Advisor *(doc added when the phase is built)*
+- [Phase 2 — Club Advisor](phases/PHASE2-CLUBADVISOR.md)
 
 ## Phase 0 — Foundation ✅ (done)
 - [x] `User` abstract base (Serializable, role hooks)
@@ -33,15 +33,15 @@ Wire each dashboard button to a screen backed by `DataStore`.
 > Also fixed a pre-existing bug: `U1G1_ViewNotices.fxml` pointed at the wrong
 > controller (`U1G1_NoticeDetailsController`), which broke the View Notices screen.
 
-## Phase 2 — Club Advisor (User-2)
-- [ ] **Update Club Info** — edit the `ClubInfo`, save
-- [ ] **Post Notice** — create a `Notice` (appears in students' View Notices!)
-- [ ] **Review Membership** — approve/reject `ClubMembershipApplication`
-- [ ] **Create Event** — create an `ArrangeClubEvent`
-- [ ] **View Registered Participants** — list registrations for an event
-- [ ] **Assign Volunteer** — create a `VolunteerAssignment`
-- [ ] **Submit Completion Report** — create an `EventCompletionReport`
-- [ ] **View Activity History** — list `getHistory()` for this advisor
+## Phase 2 — Club Advisor (User-2) ✅ (done)
+- [x] **Update Club Info** — edits the `ClubInfo` form, saves ✅
+- [x] **Post Notice** — creates a `Notice` (appears in students' View Notices!) ✅
+- [x] **Review Membership** — table of applications, Approve/Reject ✅
+- [x] **Create Event** — creates an `ArrangeClubEvent` (feeds students) ✅
+- [x] **View Registered Participants** — lists registrations (dialog) ✅
+- [x] **Assign Volunteer** — pick event + responsibility → `VolunteerAssignment` ✅
+- [x] **Submit Completion Report** — pick event + summary → `EventCompletionReport` ✅
+- [x] **View Activity History** — lists this advisor's `getHistory()` (dialog) ✅
 
 ## Phase 3 — Shared processes
 - [ ] **Logout** ✅ (done in Phase 0)
