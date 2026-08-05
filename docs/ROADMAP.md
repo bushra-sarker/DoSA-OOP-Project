@@ -7,6 +7,7 @@ show/edit it in a screen, save. Tick items off as you go.
 - [Phase 0 — Foundation](phases/PHASE0-FOUNDATION.md)
 - [Phase 1 — Student](phases/PHASE1-STUDENT.md)
 - [Phase 2 — Club Advisor](phases/PHASE2-CLUBADVISOR.md)
+- [Phase 3 — Shared processes (Notification, Search)](phases/PHASE3-SHARED.md)
 
 ## Phase 0 — Foundation ✅ (done)
 - [x] `User` abstract base (Serializable, role hooks)
@@ -43,10 +44,13 @@ Wire each dashboard button to a screen backed by `DataStore`.
 - [x] **Submit Completion Report** — pick event + summary → `EventCompletionReport` ✅
 - [x] **View Activity History** — lists this advisor's `getHistory()` (dialog) ✅
 
-## Phase 3 — Shared processes
-- [ ] **Logout** ✅ (done in Phase 0)
-- [ ] **Notification** — an in-app list; add an entry on each status change
-- [ ] **Search** — filter Events/Notices/Clubs by keyword
+## Phase 3 — Shared processes ✅ (done)
+- [x] **Logout** — confirm dialog, clears session (Phase 0) ✅
+- [x] **Notification** — `Notification` model + DataStore; raised on membership
+      approve/reject, notice post, event register, club apply; shown via the
+      notification button ✅
+- [x] **Search** — keyword search over Notices/Events/Clubs (Enter in the search
+      box on either dashboard) ✅
 
 ## Phase 4 — Polish (optional)
 - [ ] Real-time login validation / failed-attempt lockout

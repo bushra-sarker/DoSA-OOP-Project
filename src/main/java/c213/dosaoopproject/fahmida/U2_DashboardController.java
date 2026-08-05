@@ -7,13 +7,16 @@ import c213.dosaoopproject.fahmida.model.EventCompletionReport;
 import c213.dosaoopproject.fahmida.model.EventRegistration;
 import c213.dosaoopproject.fahmida.model.VolunteerAssignment;
 import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.util.Notifications;
 import c213.dosaoopproject.fahmida.util.SceneManager;
+import c213.dosaoopproject.fahmida.util.Search;
 import c213.dosaoopproject.fahmida.util.Ui;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 import java.time.LocalDate;
@@ -34,10 +37,15 @@ public class U2_DashboardController {
     private Label DOSALabel;
     @javafx.fxml.FXML
     private Label nameLabel11;
+    @javafx.fxml.FXML
+    private TextField searchOFCRTF;
 
     @javafx.fxml.FXML
     public void initialize() {
         Ui.greet(nameLabel11, userIdLabel11);
+        if (searchOFCRTF != null) {
+            searchOFCRTF.setOnAction(e -> Ui.info(Search.query(searchOFCRTF.getText())));
+        }
     }
 
     // "Update Club Information"
@@ -150,7 +158,7 @@ public class U2_DashboardController {
 
     @javafx.fxml.FXML
     public void notificationOA(ActionEvent actionEvent) {
-        Ui.info("No new notifications.");
+        Notifications.showForCurrentUser();
     }
 
     @javafx.fxml.FXML

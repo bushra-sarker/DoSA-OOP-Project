@@ -13,6 +13,7 @@ import c213.dosaoopproject.fahmida.model.EventCompletionReport;
 import c213.dosaoopproject.fahmida.model.EventRegistration;
 import c213.dosaoopproject.fahmida.model.HistoryEntry;
 import c213.dosaoopproject.fahmida.model.Notice;
+import c213.dosaoopproject.fahmida.model.Notification;
 import c213.dosaoopproject.fahmida.model.Student;
 import c213.dosaoopproject.fahmida.model.VolunteerAssignment;
 
@@ -61,6 +62,7 @@ public class DataStore implements Serializable {
     private final List<Certificate> certificates = new ArrayList<>();
     private final List<ApprovalLetter> approvalLetters = new ArrayList<>();
     private final List<HistoryEntry> history = new ArrayList<>();
+    private final List<Notification> notifications = new ArrayList<>();
 
     private DataStore() {
     }
@@ -175,6 +177,26 @@ public class DataStore implements Serializable {
     /** Records an activity-history line and saves. */
     public void logHistory(int userId, String action) {
         history.add(new HistoryEntry(userId, action, LocalDate.now()));
+        save();
+    }
+
+    public List<Notification> getNotifications() {
+        return notifications;
+    }
+
+    /** Raises a notification for one user (Notification process) and saves. */
+    public void notify(int userId, String message) {
+        notifications.add(new Notification(userId, message, LocalDate.now()));
+        save();
+    }
+
+    /** Raises the same notification for every user matching the role name. */
+    public void notifyRole(String role, String message) {
+        for (User u : users) {
+            if (role.equalsIgnoreCase(u.getRole())) {
+                notifications.add(new Notification(u.getUserId(), message, LocalDate.now()));
+            }
+        }
         save();
     }
 

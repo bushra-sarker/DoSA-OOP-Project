@@ -67,6 +67,7 @@ public class U2G2_PostClubNoticeController {
                             store.getNotices().size() + 1, currentClubName(),
                             title, body, "Club Activity", LocalDate.now()));
                     logHistory("Posted notice: " + title);
+                    store.notifyRole("Student", "New notice: " + title);
                     store.save();
                     refresh();
                     Ui.info("Notice posted. Students can now see it.");

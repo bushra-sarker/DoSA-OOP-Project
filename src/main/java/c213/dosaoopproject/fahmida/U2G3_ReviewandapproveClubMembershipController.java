@@ -80,6 +80,8 @@ public class U2G3_ReviewandapproveClubMembershipController {
             app.reject();
         }
         DataStore.get().save();
+        DataStore.get().notify(app.getStudentId(), "Your membership request for "
+                + app.getClubName() + " was " + app.getStatus() + ".");
         logHistory((approve ? "Approved" : "Rejected") + " membership for student "
                 + app.getStudentId());
         refresh();

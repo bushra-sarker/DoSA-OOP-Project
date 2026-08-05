@@ -263,7 +263,7 @@
                         </VBox>
                      </children>
                   </HBox>
-                      <TextField fx:id="searchOFCRTF" layoutX="185.0" layoutY="356.0" prefHeight="43.0" prefWidth="437.0" promptText="Search clubs, events ....." style="-fx-background-color: #065279; -fx-border-color: #065279; -fx-border-width: 0.3; -fx-background-radius: 6; -fx-border-radius: 6;">
+                      <TextField fx:id="searchOFCRTF" layoutX="185.0" layoutY="356.0" prefHeight="43.0" prefWidth="437.0" promptText="Search clubs, events ....." style="-fx-background-color: #065279; -fx-border-color: #065279; -fx-border-width: 0.3; -fx-background-radius: 6; -fx-border-radius: 6; -fx-text-fill: white; -fx-prompt-text-fill: #cfe3ef;">
                           <font>
                               <Font name="System Bold Italic" size="11.0" />
                           </font>

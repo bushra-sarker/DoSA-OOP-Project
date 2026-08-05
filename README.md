@@ -51,7 +51,8 @@ open -a "SceneBuilder" src/main/resources/c213/dosaoopproject/fahmida/U1_Dashboa
 - **Per-phase technical docs:**
   [Phase 0 — Foundation](docs/phases/PHASE0-FOUNDATION.md) ·
   [Phase 1 — Student](docs/phases/PHASE1-STUDENT.md) ·
-  [Phase 2 — Club Advisor](docs/phases/PHASE2-CLUBADVISOR.md)
+  [Phase 2 — Club Advisor](docs/phases/PHASE2-CLUBADVISOR.md) ·
+  [Phase 3 — Shared](docs/phases/PHASE3-SHARED.md)
 
 ## Status
 - **Phase 0 (Foundation): done** — login, role routing, session, navigation, data
@@ -63,4 +64,6 @@ open -a "SceneBuilder" src/main/resources/c213/dosaoopproject/fahmida/U1_Dashboa
 - **Phase 2 (Club Advisor): done** — all 8 goals wired (Update Club Info, Post
   Notice, Review & Approve Membership, Create Event, View Participants, Assign
   Volunteer, Submit Completion Report, View Activity History).
-- **Phase 3 (shared: Notification, Search): pending** — see the roadmap.
+- **Phase 3 (shared: Notification, Search): done** — in-app notifications raised
+  on status changes; keyword search over notices/events/clubs.
+- **Phase 4 (polish): optional** — see the roadmap.

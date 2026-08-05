@@ -4,7 +4,9 @@ import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.ApprovalLetter;
 import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.util.Notifications;
 import c213.dosaoopproject.fahmida.util.SceneManager;
+import c213.dosaoopproject.fahmida.util.Search;
 import c213.dosaoopproject.fahmida.util.Ui;
 
 import javafx.event.ActionEvent;
@@ -57,6 +59,10 @@ public class U1_DashboardController
                 userIdLabel11.setText(user.getLoginId());
             }
         }
+        if (searchOFCRTF != null) {
+            // Search runs when the user presses Enter in the search box.
+            searchOFCRTF.setOnAction(e -> Ui.info(Search.query(searchOFCRTF.getText())));
+        }
     }
 
     @javafx.fxml.FXML
@@ -66,7 +72,7 @@ public class U1_DashboardController
 
     @javafx.fxml.FXML
     public void notificationOA(ActionEvent actionEvent) {
-        Ui.info("No new notifications.");
+        Notifications.showForCurrentUser();
     }
 
     @javafx.fxml.FXML

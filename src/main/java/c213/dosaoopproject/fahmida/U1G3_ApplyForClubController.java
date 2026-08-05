@@ -72,6 +72,8 @@ public class U1G3_ApplyForClubController {
                 store.getMembershipApplications().size() + 1, user.getUserId(),
                 club.getClubName(), major, "Interested in joining", ""));
         store.logHistory(user.getUserId(), "Applied to club: " + club.getClubName());
+        store.notifyRole("Club Advisor", "New membership application from "
+                + user.getFullName() + " for " + club.getClubName() + ".");
         Ui.info("Application to \"" + club.getClubName() + "\" submitted (Pending review).");
     }
 

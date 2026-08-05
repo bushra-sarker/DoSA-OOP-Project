@@ -73,6 +73,8 @@ public class U1G2_EventListController {
         store.getEventRegistrations().add(new EventRegistration(
                 user.getUserId(), event.getEventName(), department, "Pending"));
         store.logHistory(user.getUserId(), "Registered for event: " + event.getEventName());
+        store.notifyRole("Club Advisor", user.getFullName() + " registered for "
+                + event.getEventName() + ".");
         Ui.info("Registered for \"" + event.getEventName() + "\" (status: Pending).");
     }
 
