@@ -4,6 +4,7 @@ import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.Notice;
 import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.util.Notifications;
 import c213.dosaoopproject.fahmida.util.SceneManager;
 
 import javafx.collections.FXCollections;
@@ -124,22 +125,24 @@ public class U1G1_ViewNoticesController {
         // already on this screen — no-op
     }
 
-    // --- remaining navigation buttons (wired in later phases) ---------------
-
     @javafx.fxml.FXML
     public void registerEventsOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G2_EventList");
     }
 
     @javafx.fxml.FXML
     public void notificationOA(ActionEvent actionEvent) {
+        Notifications.showForCurrentUser();
     }
 
     @javafx.fxml.FXML
     public void viewScheduleOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G4_ViewEventSchedule");
     }
 
     @javafx.fxml.FXML
     public void communityProgramOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G5_CommunityService");
     }
 
     @javafx.fxml.FXML
@@ -150,17 +153,21 @@ public class U1G1_ViewNoticesController {
 
     @javafx.fxml.FXML
     public void downloadApprovalOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G7_DownloadApproval");
     }
 
     @javafx.fxml.FXML
     public void clubMembershipOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G3_ApplyForClub");
     }
 
     @javafx.fxml.FXML
     public void trackHistoryOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G8_TrackHistory");
     }
 
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U1G6_SubmitComplaints");
     }
 }

@@ -25,9 +25,14 @@ Primary action ──▶ build a model object, add to the list, DataStore.save()
 | Apply for Club | `clubMembershipOA` | `U1G3_ApplyForClub` | `ClubMembershipApplication` | `getClubs()` |
 | View Event Schedule | `viewScheduleOA` | `U1G4_ViewEventSchedule` | — | `getEvents()` |
 | Submit Complaint | `submitComplaintsOA` | `U1G6` | `Complaint` | — |
-| Community Service | `communityProgramOA` | (dialog) | — | `getCommunityPrograms()` |
-| Download Approval Letter | `downloadApprovalOA` | (writes file) | `ApprovalLetter` | — |
-| Track History | `trackHistoryOA` | (dialog) | — | `getHistory()` |
+| Community Service | `communityProgramOA` | `U1G5_CommunityService` | volunteer slot | `getCommunityPrograms()` |
+| Download Approval Letter | `downloadApprovalOA` | `U1G7_DownloadApproval` | `ApprovalLetter` (+ .txt file) | own letters |
+| Track History | `trackHistoryOA` | `U1G8_TrackHistory` | — | own `getHistory()` |
+
+> Community Service, Download Approval Letter and Track History are now full
+> sidebar screens (built from the `U1G4_ViewEventSchedule` template), each with
+> the correct sidebar item highlighted. Cross-page sidebar navigation is wired on
+> every student screen.
 
 ---
 

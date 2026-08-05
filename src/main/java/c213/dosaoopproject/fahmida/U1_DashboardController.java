@@ -104,10 +104,7 @@ public class U1_DashboardController
 
     @javafx.fxml.FXML
     public void communityProgramOA(ActionEvent actionEvent) {
-        String programs = DataStore.get().getCommunityPrograms().stream()
-                .map(p -> "• " + p.getDetails())
-                .collect(Collectors.joining("\n"));
-        Ui.info(programs.isEmpty() ? "No community programs available." : programs);
+        SceneManager.switchTo("U1G5_CommunityService");
     }
 
     @javafx.fxml.FXML
@@ -130,24 +127,7 @@ public class U1_DashboardController
 
     @javafx.fxml.FXML
     public void downloadApprovalOA(ActionEvent actionEvent) {
-        User user = Session.getCurrentUser();
-        if (user == null) {
-            return;
-        }
-        DataStore store = DataStore.get();
-        ApprovalLetter letter = new ApprovalLetter(
-                store.getApprovalLetters().size() + 1, user.getUserId(),
-                user.getFullName(), LocalDate.now());
-        Path path = Path.of("ApprovalLetter_" + user.getLoginId() + ".txt");
-        try {
-            Files.writeString(path, letter.content());
-            letter.setFilePath(path.toString());
-            store.getApprovalLetters().add(letter);
-            store.logHistory(user.getUserId(), "Downloaded approval letter");
-            Ui.info("Approval letter saved to:\n" + path.toAbsolutePath());
-        } catch (IOException e) {
-            Ui.info("Could not save the letter: " + e.getMessage());
-        }
+        SceneManager.switchTo("U1G7_DownloadApproval");
     }
 
     @javafx.fxml.FXML
@@ -162,16 +142,11 @@ public class U1_DashboardController
 
     @javafx.fxml.FXML
     public void trackHistoryOA(ActionEvent actionEvent) {
-        User user = Session.getCurrentUser();
-        String history = DataStore.get().getHistory().stream()
-                .filter(h -> user != null && h.getUserId() == user.getUserId())
-                .map(h -> h.getDate() + " — " + h.getAction())
-                .collect(Collectors.joining("\n"));
-        Ui.info(history.isEmpty() ? "No activity yet." : history);
+        SceneManager.switchTo("U1G8_TrackHistory");
     }
 
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G6");
+        SceneManager.switchTo("U1G6_SubmitComplaints");
     }
 }

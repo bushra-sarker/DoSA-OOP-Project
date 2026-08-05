@@ -110,22 +110,22 @@ public class U1G2_EventListController {
 
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G6");
+        SceneManager.switchTo("U1G6_SubmitComplaints");
     }
 
     @javafx.fxml.FXML
     public void communityProgramOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+        SceneManager.switchTo("U1G5_CommunityService");
     }
 
     @javafx.fxml.FXML
     public void downloadApprovalOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+        SceneManager.switchTo("U1G7_DownloadApproval");
     }
 
     @javafx.fxml.FXML
     public void trackHistoryOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+        SceneManager.switchTo("U1G8_TrackHistory");
     }
 
     @javafx.fxml.FXML
