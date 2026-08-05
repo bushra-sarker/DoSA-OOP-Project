@@ -43,7 +43,8 @@ public final class SceneManager {
                     SceneManager.class.getResource(BASE + viewName + ".fxml"));
             Parent root = loader.load();
             if (stage.getScene() == null) {
-                stage.setScene(new Scene(root));
+                // Initial window size — larger than any single FXML's own pref size.
+                stage.setScene(new Scene(root, 1000, 720));
             } else {
                 stage.getScene().setRoot(root);
             }
