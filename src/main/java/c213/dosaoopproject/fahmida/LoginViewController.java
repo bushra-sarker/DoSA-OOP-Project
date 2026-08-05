@@ -43,14 +43,39 @@ public class LoginViewController {
             return;
         }
 
-        // Verification (VR): check credentials against stored users.
-        User user = DataStore.get().authenticate(userId, password);
+        DataStore store = DataStore.get();
+        User user = store.findByLoginId(userId);
+
+        // Unknown id — do not reveal which field was wrong.
         if (user == null) {
             errorLabel.setText("Invalid ID or password");
             return;
         }
 
-        // Success: start the session and load the role-specific dashboard.
+        // Locked account (too many failed attempts).
+        if (user.isLocked()) {
+            errorLabel.setText("Account locked after "
+                    + User.MAX_FAILED_ATTEMPTS + " failed attempts. Contact the DoSA office.");
+            return;
+        }
+
+        // Verification (VR): wrong password → count the attempt, warn or lock.
+        if (!user.getPasswordHash().equals(password)) {
+            user.recordFailedAttempt();
+            store.save();
+            if (user.isLocked()) {
+                errorLabel.setText("Account locked after "
+                        + User.MAX_FAILED_ATTEMPTS + " failed attempts.");
+            } else {
+                errorLabel.setText("Invalid ID or password. "
+                        + user.attemptsRemaining() + " attempt(s) remaining before lockout.");
+            }
+            return;
+        }
+
+        // Success: reset the counter, start the session, load the dashboard.
+        user.resetFailedAttempts();
+        store.save();
         Session.setCurrentUser(user);
         SceneManager.switchTo(user.getDashboardFxml());
     }

@@ -8,6 +8,7 @@ show/edit it in a screen, save. Tick items off as you go.
 - [Phase 1 — Student](phases/PHASE1-STUDENT.md)
 - [Phase 2 — Club Advisor](phases/PHASE2-CLUBADVISOR.md)
 - [Phase 3 — Shared processes (Notification, Search)](phases/PHASE3-SHARED.md)
+- [Phase 4 — Polish (lockout, icons)](phases/PHASE4-POLISH.md)
 
 ## Phase 0 — Foundation ✅ (done)
 - [x] `User` abstract base (Serializable, role hooks)
@@ -53,8 +54,10 @@ Wire each dashboard button to a screen backed by `DataStore`.
       box on either dashboard) ✅
 
 ## Phase 4 — Polish (optional)
-- [ ] Real-time login validation / failed-attempt lockout
-- [ ] Consistent styling; replace the placeholder icons
+- [x] Login validation + failed-attempt lockout (3 tries → account locked) ✅
+- [x] Replaced the 1×1 placeholder icons with real bell + profile icons ✅
+- [x] White search-box text on the dark header ✅
+- [ ] Broader consistent styling
 - [ ] Short user guide / screenshots
 
 ## The repeating pattern for every "Phase 1/2" goal

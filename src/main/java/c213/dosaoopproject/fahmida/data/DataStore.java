@@ -110,10 +110,14 @@ public class DataStore implements Serializable {
      * if none matches.
      */
     public User authenticate(String loginId, String password) {
+        User u = findByLoginId(loginId);
+        return (u != null && u.getPasswordHash().equals(password)) ? u : null;
+    }
+
+    /** Finds a user by login id regardless of password (for lockout handling). */
+    public User findByLoginId(String loginId) {
         for (User u : users) {
-            if (u.getLoginId() != null
-                    && u.getLoginId().equalsIgnoreCase(loginId)
-                    && u.getPasswordHash().equals(password)) {
+            if (u.getLoginId() != null && u.getLoginId().equalsIgnoreCase(loginId)) {
                 return u;
             }
         }

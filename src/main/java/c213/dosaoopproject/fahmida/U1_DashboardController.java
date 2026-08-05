@@ -63,6 +63,28 @@ public class U1_DashboardController
             // Search runs when the user presses Enter in the search box.
             searchOFCRTF.setOnAction(e -> Ui.info(Search.query(searchOFCRTF.getText())));
         }
+        showCardCounts(user);
+    }
+
+    /** Fills the four summary cards with real counts from the data store. */
+    private void showCardCounts(User user) {
+        DataStore store = DataStore.get();
+        int uid = user != null ? user.getUserId() : -1;
+        if (noticesCardLabel != null) {
+            noticesCardLabel.setText(String.valueOf(store.getNotices().size()));
+        }
+        if (submitComplaintsCardLabel != null) {
+            long n = store.getComplaints().stream().filter(c -> c.getStudentId() == uid).count();
+            submitComplaintsCardLabel.setText(String.valueOf(n));
+        }
+        if (downloadLetterCardLabel != null) {
+            long n = store.getApprovalLetters().stream().filter(l -> l.getStudentId() == uid).count();
+            downloadLetterCardLabel.setText(String.valueOf(n));
+        }
+        if (trackHistoryLabel != null) {
+            long n = store.getHistory().stream().filter(h -> h.getUserId() == uid).count();
+            trackHistoryLabel.setText(String.valueOf(n));
+        }
     }
 
     @javafx.fxml.FXML

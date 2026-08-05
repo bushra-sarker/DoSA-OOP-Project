@@ -3,6 +3,8 @@ package c213.dosaoopproject.fahmida;
 import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
+import c213.dosaoopproject.fahmida.model.ClubAdvisor;
+import c213.dosaoopproject.fahmida.model.ClubInfo;
 import c213.dosaoopproject.fahmida.model.EventCompletionReport;
 import c213.dosaoopproject.fahmida.model.EventRegistration;
 import c213.dosaoopproject.fahmida.model.VolunteerAssignment;
@@ -39,12 +41,54 @@ public class U2_DashboardController {
     private Label nameLabel11;
     @javafx.fxml.FXML
     private TextField searchOFCRTF;
+    @javafx.fxml.FXML
+    private Label welcomeUserLabel;
+    @javafx.fxml.FXML
+    private Label clubMembersCardLabel;
+    @javafx.fxml.FXML
+    private Label pendingRequestsCardLabel;
+    @javafx.fxml.FXML
+    private Label upcomingEventsCardLabel;
+    @javafx.fxml.FXML
+    private Label volunteerCardLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
+        User user = Session.getCurrentUser();
         Ui.greet(nameLabel11, userIdLabel11);
+        if (welcomeUserLabel != null && user != null) {
+            welcomeUserLabel.setText("Welcome, " + user.getFullName() + "!");
+        }
         if (searchOFCRTF != null) {
             searchOFCRTF.setOnAction(e -> Ui.info(Search.query(searchOFCRTF.getText())));
+        }
+        showCardCounts(user);
+    }
+
+    /** Fills the four summary cards with real counts from the data store. */
+    private void showCardCounts(User user) {
+        DataStore store = DataStore.get();
+        if (clubMembersCardLabel != null) {
+            int members = 0;
+            if (user instanceof ClubAdvisor advisor) {
+                members = store.getClubs().stream()
+                        .filter(c -> c.getClubId() == advisor.getClubId())
+                        .mapToInt(ClubInfo::getTotalMembers).findFirst().orElse(0);
+            }
+            clubMembersCardLabel.setText(String.valueOf(members));
+        }
+        if (pendingRequestsCardLabel != null) {
+            long n = store.getMembershipApplications().stream()
+                    .filter(a -> "Pending".equalsIgnoreCase(a.getStatus())).count();
+            pendingRequestsCardLabel.setText(String.valueOf(n));
+        }
+        if (upcomingEventsCardLabel != null) {
+            long n = store.getEvents().stream()
+                    .filter(e -> "Upcoming".equalsIgnoreCase(e.getStatus())).count();
+            upcomingEventsCardLabel.setText(String.valueOf(n));
+        }
+        if (volunteerCardLabel != null) {
+            volunteerCardLabel.setText(String.valueOf(store.getVolunteerAssignments().size()));
         }
     }
 
