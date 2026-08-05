@@ -45,59 +45,53 @@ public class DoSACoordinatorDashboard
 
     @FXML
     private void showServiceOpportunity(ActionEvent event) {
-        loadView("/views/ServiceOpportunity.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G1_PostServiceOpportunity.fxml");
     }
 
     @FXML
     private void showVolunteerHours(ActionEvent event) {
-        loadView("/views/VolunteerHourApproval.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G2_ApproveVolunteerHour.fxml");
     }
 
     @FXML
     private void showAssignVolunteers(ActionEvent event) {
-        loadView("/views/VolunteerAssignment.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G3_AssignVolunteers.fxml");
     }
 
     @FXML
     private void showGenerateCertificate(ActionEvent event) {
-        loadView("/views/GenerateCertificate.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G4_GenerateCertificate.fxml");
     }
 
     @FXML
     private void showClubRegistration(ActionEvent event) {
-        loadView("/views/ClubRegistrationApproval.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G5_ClubRegistrationApproval.fxml");
     }
 
     @FXML
     private void showManageClubs(ActionEvent event) {
-        loadView("/views/ManageActiveClubs.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G6_ManageActiveClubs.fxml");
     }
 
     @FXML
     private void showImpactReport(ActionEvent event) {
-        loadView("/views/ImpactReport.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G7_ImpactReport.fxml");
     }
 
     @FXML
     private void showAnnouncement(ActionEvent event) {
-        loadView("/views/PostAnnouncement.fxml");
+        showFallbackError("Post Announcement — Coming Soon");
     }
 
     @FXML
     private void showTaskCompletionReport(ActionEvent event) {
-        loadView("/views/VolunteerTaskCompletionReport.fxml");
+        loadView("/c213/dosaoopproject/esha/u6_G8_VolunteerTaskCompletionReport.fxml");
     }
 
     @FXML
     private void handleLogout(ActionEvent event) {
-        try {
-            Parent loginRoot = FXMLLoader.load(getClass().getResource("/views/Login.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.getScene().setRoot(loginRoot);
-        } catch (IOException e) {
-            e.printStackTrace();
-            showFallbackError("Could not return to login screen.");
-        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     // ===================== HELPER =====================

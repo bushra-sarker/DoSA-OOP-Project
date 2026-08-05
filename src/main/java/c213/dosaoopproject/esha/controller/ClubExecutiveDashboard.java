@@ -48,59 +48,53 @@ public class ClubExecutiveDashboard
 
     @FXML
     private void showUpdateClubInfo(ActionEvent event) {
-        loadView("/views/UpdateClubInfo.fxml");
+        showFallbackError("Update Club Info — Coming Soon");
     }
 
     @FXML
     private void showArrangeEvent(ActionEvent event) {
-        loadView("/views/ArrangeClubEvent.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G1_ArrangeClubEvent.fxml");
     }
 
     @FXML
     private void showEventRequest(ActionEvent event) {
-        loadView("/views/EventRequest.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G2_EventRequest.fxml");
     }
 
     @FXML
     private void showVenueBooking(ActionEvent event) {
-        loadView("/views/VenueBooking.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G3_VenueBooking.fxml");
     }
 
     @FXML
     private void showSponsorshipRequest(ActionEvent event) {
-        loadView("/views/SponsorshipRequest.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G4_SponsorshipRequest.fxml");
     }
 
     @FXML
     private void showResourceRequest(ActionEvent event) {
-        loadView("/views/ResourceRequest.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G5_ResourceRequest.fxml");
     }
 
     @FXML
     private void showPostNotice(ActionEvent event) {
-        loadView("/views/PostNotice.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G6_PostNotice.fxml");
     }
 
     @FXML
     private void showMembershipApplications(ActionEvent event) {
-        loadView("/views/MembershipApplications.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G7_MembershipApplications.fxml");
     }
 
     @FXML
     private void showCompletionReport(ActionEvent event) {
-        loadView("/views/EventCompletionReport.fxml");
+        loadView("/c213/dosaoopproject/esha/u5_G8_EventCompletion.fxml");
     }
 
     @FXML
     private void handleLogout(ActionEvent event) {
-        try {
-            Parent loginRoot = FXMLLoader.load(getClass().getResource("/views/Login.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.getScene().setRoot(loginRoot);
-        } catch (IOException e) {
-            e.printStackTrace();
-            showFallbackError("Could not return to login screen.");
-        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
     private void loadView(String fxmlPath) {
         try {
