@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class u6_G4_DashboardView
+public class u6_G7_ImpactReport
 {@FXML private ComboBox<String> semesterCombo;
     @FXML private TextField yearField;
     @FXML private TextField totalEventsField;

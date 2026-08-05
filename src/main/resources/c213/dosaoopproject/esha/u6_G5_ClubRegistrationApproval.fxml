@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.esha.controller.u6_G5_ClubRegistrationApproval">
+   <children>
+      <VBox spacing="15">
+      
+          <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+         </padding>
+      
+          <Label style="-fx-font-size:20px; -fx-font-weight:bold;" text="Approve Club Registration" />
+      
+          <TableView fx:id="requestsTable" prefHeight="280">
+              <columns>
+                  <TableColumn fx:id="registrationIdColumn" prefWidth="120" text="Registration ID" />
+                  <TableColumn fx:id="clubNameColumn" prefWidth="180" text="Club Name" />
+                  <TableColumn fx:id="categoryColumn" prefWidth="140" text="Category" />
+                  <TableColumn fx:id="submissionDateColumn" prefWidth="120" text="Submitted" />
+                  <TableColumn fx:id="statusColumn" prefWidth="100" text="Status" />
+              </columns>
+          </TableView>
+      
+          <Label fx:id="statusLabel" />
+      
+          <HBox spacing="10">
+              <Button fx:id="approveBtn" onAction="#handleApprove" text="Approve" />
+              <Button fx:id="rejectBtn" onAction="#handleReject" text="Reject" />
+          </HBox>
+      
+      </VBox>
+   </children>
+</AnchorPane>
