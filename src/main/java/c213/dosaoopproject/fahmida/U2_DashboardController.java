@@ -251,7 +251,7 @@ public class U2_DashboardController {
         Ui.info(list.isEmpty() ? "No participants registered yet." : list);
     }
 
-    // "Advisor Submit Student's Event Completion Report"
+    // "Advisor Submit Student's Event Completion Report" — single modal.
     @javafx.fxml.FXML
     public void submitCompletionReportOA(ActionEvent actionEvent) {
         DataStore store = DataStore.get();
@@ -260,16 +260,54 @@ public class U2_DashboardController {
             Ui.info("Create an event first.");
             return;
         }
-        Ui.choose("Completion Report", "Choose an event:", events).ifPresent(eventName ->
-                Ui.prompt("Completion Report", "Outcome summary:").ifPresent(summary -> {
-                    int eventId = events.indexOf(eventName) + 1;
-                    int reportId = store.getCompletionReports().size() + 1;
-                    store.getCompletionReports().add(new EventCompletionReport(
-                            reportId, eventId, eventName, 0, summary, "Submitted"));
-                    logHistory("Submitted completion report for " + eventName);
-                    store.save();
-                    Ui.info("Completion report submitted for \"" + eventName + "\".");
-                }));
+
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Event Completion Report");
+        dialog.setHeaderText("Submit a completion report");
+        ButtonType submitType = new ButtonType("Submit", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(submitType, ButtonType.CANCEL);
+
+        ComboBox<String> eventBox = new ComboBox<>(FXCollections.observableArrayList(events));
+        eventBox.getSelectionModel().selectFirst();
+        TextField attendanceField = new TextField();
+        attendanceField.setPromptText("Actual attendance (number)");
+        TextArea outcomeArea = new TextArea();
+        outcomeArea.setPromptText("Outcome summary");
+        outcomeArea.setPrefRowCount(3);
+        outcomeArea.setWrapText(true);
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(10));
+        grid.add(new Label("Event:"), 0, 0);
+        grid.add(eventBox, 1, 0);
+        grid.add(new Label("Attendance:"), 0, 1);
+        grid.add(attendanceField, 1, 1);
+        grid.add(new Label("Outcome:"), 0, 2);
+        grid.add(outcomeArea, 1, 2);
+        dialog.getDialogPane().setContent(grid);
+        dialog.setResultConverter(bt -> bt);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isEmpty() || result.get() != submitType) {
+            return; // cancelled
+        }
+
+        String eventName = eventBox.getValue();
+        String summary = outcomeArea.getText().trim();
+        if (eventName == null || summary.isEmpty()) {
+            Ui.info("Please choose an event and enter an outcome summary.");
+            return;
+        }
+        int eventId = events.indexOf(eventName) + 1;
+        int reportId = store.getCompletionReports().size() + 1;
+        store.getCompletionReports().add(new EventCompletionReport(
+                reportId, eventId, eventName, parseIntSafe(attendanceField.getText()),
+                summary, "Submitted"));
+        logHistory("Submitted completion report for " + eventName);
+        store.save();
+        Ui.info("Completion report submitted for \"" + eventName + "\".");
     }
 
     // "View Club Activity History"
