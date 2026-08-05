@@ -55,6 +55,8 @@ public class U2G3_ReviewandapproveClubMembershipController {
     private void refresh() {
         applicationsTV.setItems(FXCollections.observableArrayList(
                 DataStore.get().getMembershipApplications()));
+        // status is a plain field, so force the cells to re-read it after approve/reject.
+        applicationsTV.refresh();
     }
 
     @javafx.fxml.FXML

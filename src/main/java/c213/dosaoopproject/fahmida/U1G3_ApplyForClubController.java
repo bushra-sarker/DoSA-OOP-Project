@@ -11,12 +11,20 @@ import c213.dosaoopproject.fahmida.util.Ui;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+
+import java.util.Optional;
 
 /**
  * User-1 Goal-3: Apply for Club Membership. Lists clubs from the DataStore;
@@ -66,11 +74,61 @@ public class U1G3_ApplyForClubController {
             return;
         }
         User user = Session.getCurrentUser();
-        String major = (user instanceof Student s) ? s.getDepartment() : "";
+        String department = (user instanceof Student s) ? s.getDepartment() : "";
+
+        // Application form modal: major, reason to join, skills.
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Apply to Join");
+        dialog.setHeaderText("Membership application — " + club.getClubName());
+        ButtonType applyType = new ButtonType("Apply", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(applyType, ButtonType.CANCEL);
+
+        TextField nameField = new TextField(user != null ? user.getFullName() : "");
+        nameField.setEditable(false);
+        TextField idField = new TextField(user != null ? user.getLoginId() : "");
+        idField.setEditable(false);
+        TextField majorField = new TextField(department);
+        majorField.setPromptText("Your major");
+        TextArea reasonArea = new TextArea();
+        reasonArea.setPromptText("Why do you want to join?");
+        reasonArea.setPrefRowCount(3);
+        reasonArea.setWrapText(true);
+        TextField skillsField = new TextField();
+        skillsField.setPromptText("Relevant skills");
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(10));
+        grid.add(new Label("Student Name:"), 0, 0);
+        grid.add(nameField, 1, 0);
+        grid.add(new Label("Student ID:"), 0, 1);
+        grid.add(idField, 1, 1);
+        grid.add(new Label("Major:"), 0, 2);
+        grid.add(majorField, 1, 2);
+        grid.add(new Label("Reason:"), 0, 3);
+        grid.add(reasonArea, 1, 3);
+        grid.add(new Label("Skills:"), 0, 4);
+        grid.add(skillsField, 1, 4);
+        dialog.getDialogPane().setContent(grid);
+        dialog.setResultConverter(bt -> bt);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isEmpty() || result.get() != applyType) {
+            return; // cancelled
+        }
+
+        String reason = reasonArea.getText().trim();
+        if (reason.isEmpty()) {
+            Ui.info("Please enter your reason for joining.");
+            return;
+        }
+
         DataStore store = DataStore.get();
         store.getMembershipApplications().add(new ClubMembershipApplication(
                 store.getMembershipApplications().size() + 1, user.getUserId(),
-                club.getClubName(), major, "Interested in joining", ""));
+                club.getClubName(), majorField.getText().trim(), reason,
+                skillsField.getText().trim()));
         store.logHistory(user.getUserId(), "Applied to club: " + club.getClubName());
         store.notifyRole("Club Advisor", "New membership application from "
                 + user.getFullName() + " for " + club.getClubName() + ".");
