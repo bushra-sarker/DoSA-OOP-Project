@@ -48,6 +48,9 @@ open -a "SceneBuilder" src/main/resources/c213/dosaoopproject/fahmida/U1_Dashboa
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the code is organised and
   the OOP design.
 - [`docs/ROADMAP.md`](docs/ROADMAP.md) — the phased build plan and progress.
+- **Per-phase technical docs:**
+  [Phase 0 — Foundation](docs/phases/PHASE0-FOUNDATION.md) ·
+  [Phase 1 — Student](docs/phases/PHASE1-STUDENT.md)
 
 ## Status
 - **Phase 0 (Foundation): done** — login, role routing, session, navigation, data

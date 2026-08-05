@@ -3,6 +3,11 @@
 Simple, phase-by-phase plan. Each goal is small: read a list from `DataStore`,
 show/edit it in a screen, save. Tick items off as you go.
 
+**Per-phase technical documentation:**
+- [Phase 0 — Foundation](phases/PHASE0-FOUNDATION.md)
+- [Phase 1 — Student](phases/PHASE1-STUDENT.md)
+- Phase 2 — Club Advisor *(doc added when the phase is built)*
+
 ## Phase 0 — Foundation ✅ (done)
 - [x] `User` abstract base (Serializable, role hooks)
 - [x] Model classes for every green class in the diagram
