@@ -1,26 +1,19 @@
 package c213.dosaoopproject;
 
-import c213.dosaoopproject.fahmida.util.SceneManager;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * Application entry point.
- *
- * <p>Registers the primary stage with {@link SceneManager} and opens the shared
- * Login screen. After a successful login the login controller routes the user to
- * their role-specific dashboard.</p>
- */
+import java.io.IOException;
+
 public class HelloApplication extends Application {
-
     @Override
-    public void start(Stage stage) {
-        SceneManager.setStage(stage);
-        stage.setTitle("DoSA — Division of Student Affairs");
-        SceneManager.switchTo("LoginView");
-    }
-
-    public static void main(String[] args) {
-        launch();
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("U1G1_NoticeDetails.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 }

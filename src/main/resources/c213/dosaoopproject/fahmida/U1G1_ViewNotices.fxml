@@ -182,7 +182,7 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <AnchorPane prefHeight="651.0" prefWidth="843.0">
+            <AnchorPane fx:id="mainPane" prefHeight="651.0" prefWidth="843.0">
                <children>
                   <VBox layoutX="3.0" layoutY="14.0" prefHeight="117.0" prefWidth="827.0">
                      <children>

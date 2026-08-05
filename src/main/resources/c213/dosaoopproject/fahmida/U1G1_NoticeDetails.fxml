@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G1_NoticeDetailsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G1_..NoticeDetailsController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -180,7 +180,7 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <AnchorPane prefHeight="651.0" prefWidth="843.0">
+            <AnchorPane fx:id="mainPane" prefHeight="651.0" prefWidth="843.0">
                <children>
                   <VBox layoutX="3.0" layoutY="14.0" prefHeight="117.0" prefWidth="827.0">
                      <children>
@@ -197,23 +197,8 @@
                         </Label>
                      </children>
                   </VBox>
-                  <VBox layoutX="14.0" layoutY="150.0" prefWidth="800.0" spacing="10.0">
-                     <children>
-                        <Label fx:id="detailTitle" style="-fx-font-weight: bold;" wrapText="true">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="detailMeta" style="-fx-text-fill: #555555;" wrapText="true" />
-                        <Separator prefWidth="770.0" />
-                        <Label fx:id="detailBody" prefWidth="780.0" wrapText="true">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <Button layoutX="620.0" layoutY="560.0" mnemonicParsing="false" onAction="#goDashboardOA" text="Go to Dashboard" />
+                  <Button layoutX="578.0" layoutY="431.0" mnemonicParsing="false" onAction="#goDashboardOA" text="Go to Dashboard" />
+                  <Button layoutX="704.0" layoutY="431.0" mnemonicParsing="false" onAction="#nextOA" text="Next" />
                </children>
             </AnchorPane>
          </content>
