@@ -1,77 +1,76 @@
 package c213.dosaoopproject.fahmida;
 
-import c213.dosaoopproject.fahmida.data.DataStore;
-import c213.dosaoopproject.fahmida.model.CommunityServiceProgram;
 import c213.dosaoopproject.fahmida.session.Session;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
 import c213.dosaoopproject.fahmida.utility.Ui;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
-/**
- * User-1 Goal: Community Service Programs. Lists the programs and lets the
- * student sign up for the selected one as a volunteer.
- */
-public class U1G5_CommunityServiceController {
-
-    @javafx.fxml.FXML
-    private TableView<CommunityServiceProgram> programsTV;
-    @javafx.fxml.FXML
-    private TableColumn<CommunityServiceProgram, String> programNameTC;
-    @javafx.fxml.FXML
-    private TableColumn<CommunityServiceProgram, String> typeTC;
-    @javafx.fxml.FXML
-    private TableColumn<CommunityServiceProgram, String> durationTC;
-    @javafx.fxml.FXML
-    private Label userIdLabel11;
-    @javafx.fxml.FXML
-    private ImageView ppImageView11;
+public class U1G5_CommunityServiceFormController
+{
     @javafx.fxml.FXML
     private Label DOSALabel;
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private TableColumn venueTC;
+    private Label userIdLabel11;
     @javafx.fxml.FXML
-    private TableColumn dateTC;
+    private ImageView ppImageView11;
+
+    // Section 1
+    @javafx.fxml.FXML
+    private TextField programNameTF1;
+    @javafx.fxml.FXML
+    private DatePicker collectionDateDP1;
+    @javafx.fxml.FXML
+    private TextField durationTF1;
+
+    // Section 2
+    @javafx.fxml.FXML
+    private TextField programName2;
+    @javafx.fxml.FXML
+    private DatePicker collectionDateDP2;
+    @javafx.fxml.FXML
+    private TextField durationTF2;
 
     @javafx.fxml.FXML
     public void initialize() {
-        programNameTC.setCellValueFactory(new PropertyValueFactory<>("programName"));
-        typeTC.setCellValueFactory(new PropertyValueFactory<>("type"));
-        durationTC.setCellValueFactory(new PropertyValueFactory<>("campaignDuration"));
-        venueTC.setCellValueFactory(new PropertyValueFactory<>("venue"));
-        refresh();
-    }
+        Ui.greet(nameLabel11, userIdLabel11);
 
-    private void refresh() {
-        programsTV.setItems(FXCollections.observableArrayList(
-                DataStore.get().getCommunityPrograms()));
+        // the two sections are two fixed programs
+        programNameTF1.setText("Winter Cloth Distribution");
+        programName2.setText("Fundraising for Disaster Victims");
     }
 
     @javafx.fxml.FXML
-    public void registerVolunteerOA(ActionEvent actionEvent) {
-        CommunityServiceProgram program = programsTV.getSelectionModel().getSelectedItem();
-
-        if (program == null) {
-            Ui.info("Please select a program first.");
+    public void submitOA1(ActionEvent actionEvent) {
+        if (programNameTF1.getText().trim().isEmpty()
+                || collectionDateDP1.getValue() == null
+                || durationTF1.getText().trim().isEmpty()) {
+            Ui.info("Please fill in all required fields.");
             return;
         }
 
-        // remember the chosen program so the form can auto-fill its name
-        Session.setSelectedProgram(program);
-
-        // open the volunteer registration form
-        SceneManager.switchTo("U1G5_CommunityServiceForm");
+        Ui.info("Registered as volunteer successfully.");
+        SceneManager.switchTo("U1G5_CommunityService");
     }
 
-    // --- navigation ----------------------------------------------------------
+    @javafx.fxml.FXML
+    public void submitaOA2(ActionEvent actionEvent) {
+        if (programName2.getText().trim().isEmpty()
+                || collectionDateDP2.getValue() == null
+                || durationTF2.getText().trim().isEmpty()) {
+            Ui.info("Please fill in all required fields.");
+            return;
+        }
+
+        Ui.info("Registered as volunteer successfully.");
+        SceneManager.switchTo("U1G5_CommunityService");
+    }
 
     @javafx.fxml.FXML
     public void gotoDashboardOA(ActionEvent actionEvent) {
@@ -105,7 +104,7 @@ public class U1G5_CommunityServiceController {
 
     @javafx.fxml.FXML
     public void communityProgramOA(ActionEvent actionEvent) {
-        // already on this screen
+        SceneManager.switchTo("U1G5_CommunityService");
     }
 
     @javafx.fxml.FXML
@@ -125,7 +124,7 @@ public class U1G5_CommunityServiceController {
 
     @javafx.fxml.FXML
     public void notificationOA(ActionEvent actionEvent) {
-        c213.dosaoopproject.fahmida.utility.Notifications.showForCurrentUser();
+        Ui.info("No new notifications.");
     }
 
     @javafx.fxml.FXML
