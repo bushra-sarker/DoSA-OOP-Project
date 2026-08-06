@@ -88,7 +88,7 @@ public class U07_HeadOfDoSAViewController {
     @FXML
     public void budgetManagementOA(ActionEvent actionEvent) {
         setActiveButton(btnBudgetManagement);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G3_budgetView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G2_budgetManagement.fxml");
     }
 
     @FXML

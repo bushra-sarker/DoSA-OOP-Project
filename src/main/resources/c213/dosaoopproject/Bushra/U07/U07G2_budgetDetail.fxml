@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="10.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G2_budgetDetailController">
+    <padding>
+        <Insets bottom="12.0" left="14.0" right="14.0" top="12.0" />
+    </padding>
+    <children>
+        <!-- Top Navigation Header -->
+        <HBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-color: #E0E0E0; -fx-border-radius: 6; -fx-padding: 8px 12px;">
+            <children>
+                <Button mnemonicParsing="false" onAction="#backToManagementOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Back to Budget List">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Button>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="Club Budget Allocation Detail" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <!-- Details & Inputs Card -->
+        <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-color: #E0E0E0; -fx-border-radius: 6; -fx-padding: 12px;" VBox.vgrow="ALWAYS">
+            <children>
+                <Label text="Allocation Details &amp; History" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+
+                <!-- Allocated Budget Input -->
+                <VBox spacing="4.0">
+                    <children>
+                        <Label text="Allocated Budget (BDT)" textFill="#555555">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="allocatedBudgetTextF" maxWidth="300.0" prefHeight="28.0" promptText="Enter allocated amount" />
+                    </children>
+                </VBox>
+
+                <!-- Remarks Text Area -->
+                <VBox spacing="4.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label text="Remarks / Adjustment Rationale" textFill="#555555">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="remarksTextArea" prefHeight="150.0" promptText="Enter allocation remarks..." wrapText="true" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <!-- Save/Confirm Button -->
+        <HBox alignment="CENTER">
+            <children>
+                <Button fx:id="confirmBudgetButton" mnemonicParsing="false" onAction="#confirmBudgetOA" prefHeight="32.0" prefWidth="220.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 6; -fx-cursor: hand;" text="Confirm &amp; Save Budget">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>

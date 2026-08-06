@@ -101,7 +101,7 @@
             </children>
         </HBox>
 
-        <!-- TABLE SECTION (Expands Dynamically) -->
+        <!-- TABLE SECTION -->
         <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;" VBox.vgrow="ALWAYS">
             <children>
                 <HBox alignment="CENTER_LEFT">
@@ -117,7 +117,7 @@
                                 <Label text="Total:" textFill="GRAY">
                                     <font><Font size="11.0" /></font>
                                 </Label>
-                                <Label fx:id="totalCountHeaderLabel" text="18" textFill="#083c57">
+                                <Label fx:id="totalCountHeaderLabel" text="0" textFill="#083c57">
                                     <font><Font name="System Bold" size="11.0" /></font>
                                 </Label>
                             </children>
@@ -131,13 +131,23 @@
                         <TableColumn fx:id="studentIDTableC" prefWidth="95.0" text="Student ID" />
                         <TableColumn fx:id="offenseTypeTableC" prefWidth="130.0" text="Offense" />
                         <TableColumn fx:id="originalPenaltyTableC" prefWidth="120.0" text="Penalty" />
-                        <TableColumn fx:id="submissionDateTableC" prefWidth="110.0" text="Date" />
-                        <TableColumn fx:id="actionTableC" prefWidth="120.0" text="Action" />
+                        <TableColumn fx:id="submissionDateTableC" prefWidth="110.0" text="Submission Date" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
+
+                <!-- ACTION BUTTON (Added to meet Event 5) -->
+                <HBox alignment="CENTER_RIGHT" style="-fx-padding: 4 0 0 0;">
+                    <children>
+                        <Button fx:id="viewAppealButton" mnemonicParsing="false" onAction="#viewAppealOA" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="View Selected Appeal Details">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
             </children>
         </VBox>
 

@@ -175,7 +175,7 @@
         <!-- FINALIZE BUTTON -->
         <HBox alignment="CENTER">
             <children>
-                <Button fx:id="finalizeDecisionButton" disable="true" mnemonicParsing="false" onAction="#finalizeDecisionOA" prefHeight="32.0" prefWidth="250.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Finalize Decision">
+                <Button fx:id="finalizeDecisionButton" mnemonicParsing="false" onAction="#finalizeDecisionOA" prefHeight="32.0" prefWidth="250.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Finalize Decision">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
