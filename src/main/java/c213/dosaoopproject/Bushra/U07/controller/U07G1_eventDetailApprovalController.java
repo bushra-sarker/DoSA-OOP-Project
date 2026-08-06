@@ -20,7 +20,6 @@ public class U07G1_eventDetailApprovalController {
     @FXML private VBox warningBannerVBox;
     @FXML private Label warningBannerLabel;
     @FXML private Label statusLabel;
-    @FXML private Label pageTitleLabel;
 
     @FXML private Label eventNameLabel;
     @FXML private Label clubNameLabel;
@@ -65,19 +64,24 @@ public class U07G1_eventDetailApprovalController {
         budgetSheetStatusLabel.setText(currentEvent.isBudgetSheetUploaded() ? "✔ Uploaded" : "❌ Missing");
     }
 
-    // Event 6: Verify required attachments and display warning if missing
+    // Event 6: Check attachments and display warning banner if incomplete
     private void checkDocumentAttachments() {
         if (!currentEvent.isProposalPdfUploaded() || !currentEvent.isBudgetSheetUploaded()) {
             warningBannerVBox.setVisible(true);
             warningBannerVBox.setManaged(true);
-            warningBannerLabel.setText("Required documents are missing. Proposal cannot be directly approved.");
+            warningBannerLabel.setText("Required documents missing. Proposal cannot be directly approved.");
             approveButton.setDisable(true);
         }
     }
 
     @FXML
     public void backOA(ActionEvent event) {
-        returnToQueue(event);
+        Node source = (Node) event.getSource();
+        AnchorPane contentArea = (AnchorPane) source.getScene().lookup("#contentArea");
+
+        if (contentArea != null) {
+            SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G1_eventApprovalQueue.fxml");
+        }
     }
 
     @FXML
@@ -95,7 +99,7 @@ public class U07G1_eventDetailApprovalController {
 
     @FXML
     public void confirmRevisionOA(ActionEvent event) {
-        // Event 6: Validate rationale input via ValidationUtil
+        // Event 6: Validate rationale input
         if (ValidationUtil.isEmpty(new TextField(revisionCommentsTextF.getText()))) {
             AlertUtil.showError("Validation Error", "Please provide comments for revision.");
             return;
@@ -114,7 +118,7 @@ public class U07G1_eventDetailApprovalController {
     @FXML
     public void confirmRejectOA(ActionEvent event) {
         String reason = rejectReasonTextF.getText();
-        // Event 6: Validate rationale minimum character length
+        // Event 6: Validate minimum 20 characters length
         if (reason == null || reason.trim().length() < 20) {
             AlertUtil.showError("Validation Error", "Rejection rationale must be at least 20 characters.");
             return;
@@ -122,22 +126,23 @@ public class U07G1_eventDetailApprovalController {
         saveDecision(event, "Rejected", reason);
     }
 
-    // Event 7 & Event 8: Update proposal status, persist changes, show alert, and reload queue
+    // Event 7 & Event 8: Persist decision, show alert, and reload Queue
     private void saveDecision(ActionEvent event, String newStatus, String rationale) {
         ArrayList<EventProposal> list = BinaryFileUtil.readList(DATA_FILE);
 
-        for (EventProposal p : list) {
-            if (p.getEventName().equalsIgnoreCase(currentEvent.getEventName())) {
-                p.setStatus(newStatus);
-                p.setDecisionRationale(rationale);
-                break;
+        if (list != null) {
+            for (EventProposal p : list) {
+                if (p.getEventName().equalsIgnoreCase(currentEvent.getEventName())) {
+                    p.setStatus(newStatus);
+                    p.setDecisionRationale(rationale);
+                    break;
+                }
             }
+            // Event 7: Save to binary file
+            BinaryFileUtil.saveList(DATA_FILE, list);
         }
 
-        // Event 7: Save updated list using BinaryFileUtil
-        BinaryFileUtil.saveList(DATA_FILE, list);
-
-        // Event 8: Display alert and reload Queue view
+        // Event 8: Alert & Refresh Queue
         AlertUtil.showInformation("Success", "Event proposal status updated to: " + newStatus);
         returnToQueue(event);
     }

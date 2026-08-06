@@ -5,14 +5,20 @@ import java.io.Serializable;
 public class BudgetItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String item;
+    private String itemName;
     private double amount;
 
-    public BudgetItem(String item, double amount) {
-        this.item = item;
+    public BudgetItem() {
+    }
+
+    public BudgetItem(String itemName, double amount) {
+        this.itemName = itemName;
         this.amount = amount;
     }
 
-    public String getItem() { return item; }
+    public String getItemName() { return itemName; }
+    public void setItemName(String itemName) { this.itemName = itemName; }
+
     public double getAmount() { return amount; }
+    public void setAmount(double amount) { this.amount = amount; }
 }

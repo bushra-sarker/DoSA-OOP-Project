@@ -12,4 +12,8 @@ public class EventSelectionHolder {
     public static void setSelectedEvent(EventProposal event) {
         selectedEvent = event;
     }
+
+    public static void clear() {
+        selectedEvent = null;
+    }
 }

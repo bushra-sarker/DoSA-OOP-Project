@@ -17,12 +17,6 @@ import java.util.ArrayList;
 
 public class U07G1_eventApprovalQueueController {
 
-    @FXML private TextField searchTextField;
-    @FXML private ComboBox<String> statusFilterComboBox;
-    @FXML private ComboBox<String> riskFilterComboBox;
-    @FXML private Button resetFiltersButton;
-    @FXML private Label totalCountLabel;
-
     @FXML private TableView<EventProposal> eventsTableView;
     @FXML private TableColumn<EventProposal, String> eventNameTableC;
     @FXML private TableColumn<EventProposal, String> clubNameTableC;
@@ -31,6 +25,7 @@ public class U07G1_eventApprovalQueueController {
     @FXML private TableColumn<EventProposal, String> riskTableC;
     @FXML private TableColumn<EventProposal, String> statusTableC;
 
+    @FXML private Label totalCountLabel;
     @FXML private Button viewDetailsButton;
 
     private final String DATA_FILE = "events_data.dat";
@@ -57,7 +52,7 @@ public class U07G1_eventApprovalQueueController {
     private void loadEventData() {
         ArrayList<EventProposal> list = BinaryFileUtil.readList(DATA_FILE);
 
-        // Populate sample data if file is empty
+        // Populate initial sample data if file is missing/empty
         if (list == null || list.isEmpty()) {
             list = new ArrayList<>();
             list.add(new EventProposal("National Tech Fest", "IUB CSE Society", "15 August 2026", "Auditorium", "120000", "Inter-University", "HIGH", "Pending Review", true, true));
@@ -74,10 +69,16 @@ public class U07G1_eventApprovalQueueController {
     @FXML
     public void handleViewDetails(ActionEvent event) {
         EventProposal selected = eventsTableView.getSelectionModel().getSelectedItem();
+
         if (selected != null) {
             EventSelectionHolder.setSelectedEvent(selected);
-            AnchorPane contentArea = (AnchorPane) ((Node) event.getSource()).getScene().lookup("#contentArea");
-            SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/view/U07G1_eventDetailApproval.fxml");
+
+            Node source = (Node) event.getSource();
+            AnchorPane contentArea = (AnchorPane) source.getScene().lookup("#contentArea");
+
+            if (contentArea != null) {
+                SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G1_eventDetailApproval.fxml");
+            }
         }
     }
 }
