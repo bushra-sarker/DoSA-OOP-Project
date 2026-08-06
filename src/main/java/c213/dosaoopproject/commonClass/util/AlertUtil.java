@@ -6,32 +6,38 @@ import java.util.Optional;
 
 public class AlertUtil {
 
-    public static void showInformation(String title, String content) {
+    public static void showInformation(String title, String message){
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
-        alert.setContentText(content);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
         alert.showAndWait();
     }
 
-    public static void showWarning(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle(title);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
+    public static void showError(String title, String message){
 
-    public static void showError(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
-        alert.setContentText(content);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
         alert.showAndWait();
     }
 
-    public static boolean showConfirmation(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle(title);
-        alert.setContentText(content);
-        Optional<ButtonType> result = alert.showAndWait();
-        return result.isPresent() && result.get() == ButtonType.OK;
+    public class ToShowAlert {
+        public static void showAlert(Alert.AlertType type, String message) {
+            Alert alert = new Alert(type);
+            alert.setHeaderText(null);
+            alert.setContentText(message);
+            alert.show();
+        }
+
+        public static void showWaitAlert(Alert.AlertType type, String message) {
+            Alert alert = new Alert(type);
+            alert.setHeaderText(null);
+            alert.setContentText(message);
+            alert.showAndWait();
+        }
     }
+
 }

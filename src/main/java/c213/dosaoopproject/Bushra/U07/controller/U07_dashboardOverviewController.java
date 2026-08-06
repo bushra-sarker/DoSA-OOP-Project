@@ -1,80 +1,68 @@
 package c213.dosaoopproject.Bushra.U07.controller;
 
-import c213.dosaoopproject.Bushra.U07.util.EventManager;
-import c213.dosaoopproject.commonClass.util.SceneSwitcher;
-import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 
-public class U07_dashboardOverviewController
-{
-    @javafx.fxml.FXML
-    private Label pendingReportsCountLabel;
-    @javafx.fxml.FXML
-    private Label pendingEventsCountLabel;
-    @javafx.fxml.FXML
-    private Label pendingBudgetAllocationsLabel;
-    @javafx.fxml.FXML
-    private Label activeCrisisCountLabel;
-    @javafx.fxml.FXML
-    private Label pendingPartnershipCountLabel;
-    @javafx.fxml.FXML
-    private Label pendingAppealsCountLabel;
-    @javafx.fxml.FXML
-    private Label pendingTranscriptCountLabel;
-    @javafx.fxml.FXML
-    private Label pendingExchangeCountLabel;
+public class U07_dashboardOverviewController {
 
-    @javafx.fxml.FXML
+    @FXML private Label pendingEventsCountLabel;
+    @FXML private Label pendingBudgetAllocationsLabel;
+    @FXML private Label pendingAppealsCountLabel;
+    @FXML private Label pendingReportsCountLabel;
+    @FXML private Label activeCrisisCountLabel;
+    @FXML private Label pendingExchangeCountLabel;
+    @FXML private Label pendingTranscriptCountLabel;
+    @FXML private Label pendingPartnershipCountLabel;
+
+    @FXML
     public void initialize() {
-        updateDashboardCounts();
+        // Load initial metric counts
+        loadDashboardMetrics();
     }
 
-    public void updateDashboardCounts() {
-        int pendingEventsCount = EventManager.getPendingEvents().size();
-        pendingEventsCountLabel.setText(String.valueOf(pendingEventsCount));
+    public void loadDashboardMetrics() {
+        // Example dynamic values / hooks to your data model:
+        setPendingEventsCount(3);
+        setPendingBudgetAllocationsCount(5);
+        setPendingAppealsCount(2);
+        setPendingReportsCount(1);
+        setActiveCrisisCount(4);
+        setPendingExchangeCount(6);
+        setPendingTranscriptCount(8);
+        setPendingPartnershipCount(2);
     }
 
-    @javafx.fxml.FXML
-    public void eventViewOA(Event event) {
-        Pane contentArea = (Pane) pendingAppealsCountLabel.getScene().lookup("#contentArea");
-        SceneSwitcher.switchContent(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G1_eventApprovalQueue.fxml");
+    // --- Setter methods for dynamic runtime updates ---
 
+    public void setPendingEventsCount(int count) {
+        pendingEventsCountLabel.setText(String.valueOf(count));
     }
 
-    @javafx.fxml.FXML
-    public void budgetManagementOA(Event event) {
-        //goal02
+    public void setPendingBudgetAllocationsCount(int count) {
+        pendingBudgetAllocationsLabel.setText(String.valueOf(count));
     }
 
-    @javafx.fxml.FXML
-    public void disciplinaryAppealsOA(Event event) {
-        //goal03
+    public void setPendingAppealsCount(int count) {
+        pendingAppealsCountLabel.setText(String.valueOf(count));
     }
 
-    @javafx.fxml.FXML
-    public void reportViewOA(Event event) {
-        //goal04
+    public void setPendingReportsCount(int count) {
+        pendingReportsCountLabel.setText(String.valueOf(count));
     }
 
-    @javafx.fxml.FXML
-    public void crisisViewOA(Event event) {
-        //goal05
+    public void setActiveCrisisCount(int count) {
+        activeCrisisCountLabel.setText(String.valueOf(count));
     }
 
-    @javafx.fxml.FXML
-    public void exchangeViewOA(Event event) {
-        //goal06
+    public void setPendingExchangeCount(int count) {
+        pendingExchangeCountLabel.setText(String.valueOf(count));
     }
 
-    @javafx.fxml.FXML
-    public void transcriptViewOA(Event event) {
-        //goal07
+    public void setPendingTranscriptCount(int count) {
+        pendingTranscriptCountLabel.setText(String.valueOf(count));
     }
 
-    @javafx.fxml.FXML
-    public void partnershipViewOA(Event event) {
-        //goal08
+    public void setPendingPartnershipCount(int count) {
+        pendingPartnershipCountLabel.setText(String.valueOf(count));
     }
-
 }

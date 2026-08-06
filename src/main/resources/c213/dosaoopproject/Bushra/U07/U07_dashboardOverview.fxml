@@ -14,7 +14,6 @@
         <Insets bottom="15.0" left="12.0" right="12.0" top="15.0" />
     </padding>
     <children>
-        <!-- HEADER TITLE BLOCK -->
         <VBox style="-fx-border-color: lightGray; -fx-background-radius: 8; -fx-border-radius: 8; -fx-background-color: white; -fx-padding: 12px;">
             <children>
                 <Label text="Executive Dashboard" textFill="#083c57">
@@ -30,7 +29,6 @@
             </children>
         </VBox>
 
-        <!-- 2x4 GRID OF GOAL SUMMARY CARDS -->
         <GridPane hgap="12.0" vgap="12.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
@@ -44,7 +42,7 @@
             </rowConstraints>
             <children>
                 <!-- GOAL 1: Major Events -->
-                <AnchorPane onMouseClicked="#eventViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="0" GridPane.rowIndex="0">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
@@ -60,7 +58,7 @@
                 </AnchorPane>
 
                 <!-- GOAL 2: Budget Allocations -->
-                <AnchorPane onMouseClicked="#budgetManagementOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="1" GridPane.rowIndex="0">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
@@ -76,7 +74,7 @@
                 </AnchorPane>
 
                 <!-- GOAL 3: Disciplinary Appeals -->
-                <AnchorPane onMouseClicked="#disciplinaryAppealsOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="0" GridPane.rowIndex="1">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
@@ -92,7 +90,7 @@
                 </AnchorPane>
 
                 <!-- GOAL 4: Reports & Analytics -->
-                <AnchorPane onMouseClicked="#reportViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
@@ -108,7 +106,7 @@
                 </AnchorPane>
 
                 <!-- GOAL 5: Active Crisis Cases -->
-                <AnchorPane onMouseClicked="#crisisViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="0" GridPane.rowIndex="2">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
@@ -124,7 +122,7 @@
                 </AnchorPane>
 
                 <!-- GOAL 6: Exchange Nominations -->
-                <AnchorPane onMouseClicked="#exchangeViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
@@ -140,7 +138,7 @@
                 </AnchorPane>
 
                 <!-- GOAL 7: Transcript Certifications -->
-                <AnchorPane onMouseClicked="#transcriptViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="0" GridPane.rowIndex="3">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
@@ -156,7 +154,7 @@
                 </AnchorPane>
 
                 <!-- GOAL 8: Partnership Requests -->
-                <AnchorPane onMouseClicked="#partnershipViewOA" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray; -fx-cursor: hand;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <AnchorPane style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: lightgray;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <children>
                         <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>

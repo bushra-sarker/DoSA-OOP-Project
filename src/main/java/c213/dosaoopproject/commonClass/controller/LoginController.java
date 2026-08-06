@@ -1,12 +1,14 @@
 package c213.dosaoopproject.commonClass.controller;
 
 import c213.dosaoopproject.commonClass.model.User;
-import c213.dosaoopproject.commonClass.util.SceneSwitcher;
+import c213.dosaoopproject.commonClass.util.Navigation;
 import c213.dosaoopproject.commonClass.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+
+import java.io.IOException;
 
 public class LoginController {
 
@@ -42,7 +44,7 @@ public class LoginController {
     }
 
     @FXML
-    private void loginButton(ActionEvent event) {
+    private void loginButton(ActionEvent event) throws IOException {
         String userId = userIDTextF.getText().trim();
         String password = passwordTextF.getText().trim();
 
@@ -74,7 +76,7 @@ public class LoginController {
             sessionManager.setCurrentUser(user);
 
             // 3. Navigate directly to this user's assigned dashboard FXML
-            SceneSwitcher.switchScene(event, user.getFxmlPath(), "Dashboard");
+            Navigation.navigate(event, user.getFxmlPath());
         } else {
             handleFailedLogin(user, sessionManager);
         }

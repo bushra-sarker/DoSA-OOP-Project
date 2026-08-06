@@ -1,53 +1,43 @@
 package c213.dosaoopproject.Bushra.U07.controller;
-import c213.dosaoopproject.Bushra.U07.model.Event;
-import c213.dosaoopproject.Bushra.U07.util.EventManager;
-import c213.dosaoopproject.commonClass.data.BinaryFileUtil;
-import c213.dosaoopproject.commonClass.util.AlertUtil;
-import c213.dosaoopproject.commonClass.util.SceneSwitcher;
-import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.collections.ObservableList;
-import c213.dosaoopproject.Bushra.U07.controller.U07G1_eventDetailApprovalController;
 
-import javafx.fxml.FXMLLoader;
+import c213.dosaoopproject.Bushra.U07.model.EventProposal;
+import c213.dosaoopproject.Bushra.U07.util.EventSelectionHolder;
+import c213.dosaoopproject.commonClass.data.BinaryFileUtil;
+import c213.dosaoopproject.commonClass.util.SubViewSwitcher;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.AnchorPane;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
-public class U07G1_eventApprovalQueueController
-{
-    @javafx.fxml.FXML
-    private Button resetFiltersButton;
-    @javafx.fxml.FXML
-    private ComboBox<String> statusFilterComboBox;
-    @javafx.fxml.FXML
-    private Label totalCountLabel;
-    @javafx.fxml.FXML
-    private ComboBox<String> riskFilterComboBox;
-    @javafx.fxml.FXML
-    private TableView<Event> eventsTableView;
-    @javafx.fxml.FXML
-    private Button viewDetailsButton;
-    @javafx.fxml.FXML
-    private TextField searchTextField;
-    private TableColumn<Event, String> eventNameTableC;
-    private TableColumn<Event, String> clubNameTableC;
-    private TableColumn<Event, String> eventDateTableC;
-    private TableColumn<Event, Double> budgetTableC;
-    private TableColumn<Event, String> riskTableC;
-    private TableColumn<Event, String> statusTableC;
+public class U07G1_eventApprovalQueueController {
 
+    @FXML private TextField searchTextField;
+    @FXML private ComboBox<String> statusFilterComboBox;
+    @FXML private ComboBox<String> riskFilterComboBox;
+    @FXML private Button resetFiltersButton;
+    @FXML private Label totalCountLabel;
 
-    //private ObservableList<Event> eventList;
-    private ObservableList<Event> eventList = FXCollections.observableArrayList();
+    @FXML private TableView<EventProposal> eventsTableView;
+    @FXML private TableColumn<EventProposal, String> eventNameTableC;
+    @FXML private TableColumn<EventProposal, String> clubNameTableC;
+    @FXML private TableColumn<EventProposal, String> eventDateTableC;
+    @FXML private TableColumn<EventProposal, String> budgetTableC;
+    @FXML private TableColumn<EventProposal, String> riskTableC;
+    @FXML private TableColumn<EventProposal, String> statusTableC;
 
-    @javafx.fxml.FXML
+    @FXML private Button viewDetailsButton;
+
+    private final String DATA_FILE = "events_data.dat";
+
+    @FXML
     public void initialize() {
-        //TableC
+        // Map Table Columns to Model Properties
         eventNameTableC.setCellValueFactory(new PropertyValueFactory<>("eventName"));
         clubNameTableC.setCellValueFactory(new PropertyValueFactory<>("clubName"));
         eventDateTableC.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
@@ -55,55 +45,39 @@ public class U07G1_eventApprovalQueueController
         riskTableC.setCellValueFactory(new PropertyValueFactory<>("riskLevel"));
         statusTableC.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        //comboBox
-        statusFilterComboBox.getItems().addAll("All", "Pending", "Approved", "Rejected");
-        riskFilterComboBox.getItems().addAll("All", "Low", "Medium", "High");
+        // Event 4: Read objects from binary file and display in TableView
+        loadEventData();
 
-        loadEvents();
+        // Enable "View Details" button only when a row is selected
+        eventsTableView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            viewDetailsButton.setDisable(newVal == null);
+        });
     }
 
-    //to load event from the binary file
-    private void loadEvents() {
-        // 1 line fetches or auto-creates mock data!
-        List<Event> events = EventManager.loadEvents();
+    private void loadEventData() {
+        ArrayList<EventProposal> list = BinaryFileUtil.readList(DATA_FILE);
 
-        eventList = FXCollections.observableArrayList(events);
-        eventsTableView.setItems(eventList);
-        totalCountLabel.setText(String.valueOf(eventList.size()));
-    }
-
-    // Helper method to create dummy data
-    private List<Event> createDummyEvents() {
-        List<Event> list = new ArrayList<>();
-
-        // Make sure Event model implements java.io.Serializable!
-        Event e1 = new Event("E101", "Spring Cultural Fest", "Cultural Club", "2026-05-20", 45000.0, "Medium", "Pending", "Auditorium Main Hall");
-        Event e2 = new Event("E102", "Inter-Uni Hackathon", "IEEE Student Branch", "2026-06-15", 85000.0, "High", "Pending", "Lab 402 & 403");
-        Event e3 = new Event("E103", "Blood Donation Camp", "ROVER Scout", "2026-04-10", 12000.0, "Low", "Approved", "Cafeteria Grounds");
-
-        list.add(e1);
-        list.add(e2);
-        list.add(e3);
-
-        return list;
-    }
-
-
-    @javafx.fxml.FXML
-    public void handleViewDetails(ActionEvent actionEvent) {
-        Event selected = eventsTableView.getSelectionModel().getSelectedItem();
-
-        if (selected == null){
-            AlertUtil.showWarning("No selection", "Please select an event first.");
-            return;
+        // Populate sample data if file is empty
+        if (list == null || list.isEmpty()) {
+            list = new ArrayList<>();
+            list.add(new EventProposal("National Tech Fest", "IUB CSE Society", "15 August 2026", "Auditorium", "120000", "Inter-University", "HIGH", "Pending Review", true, true));
+            list.add(new EventProposal("Cultural Night 2026", "Music Club", "20 September 2026", "Open Plaza", "45000", "Intra-University", "LOW", "Pending Review", true, false));
+            BinaryFileUtil.saveList(DATA_FILE, list);
         }
 
-        Pane contentArea = (Pane) eventsTableView.getScene().lookup("#contentArea");
-        FXMLLoader loader = SceneSwitcher.switchContent(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G1_eventDetailApproval.fxml");
+        ObservableList<EventProposal> observableList = FXCollections.observableArrayList(list);
+        eventsTableView.setItems(observableList);
+        totalCountLabel.setText("Total: " + list.size() + " items");
+    }
 
-        if (loader != null && loader.getController() != null){
-            U07G1_eventDetailApprovalController detailController = loader.getController();
-            detailController.setSelectedEvent(selected);
+    // Event 5: Select row and view details
+    @FXML
+    public void handleViewDetails(ActionEvent event) {
+        EventProposal selected = eventsTableView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            EventSelectionHolder.setSelectedEvent(selected);
+            AnchorPane contentArea = (AnchorPane) ((Node) event.getSource()).getScene().lookup("#contentArea");
+            SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/view/U07G1_eventDetailApproval.fxml");
         }
     }
 }

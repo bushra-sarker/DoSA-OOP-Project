@@ -5,21 +5,14 @@ import java.io.Serializable;
 public class BudgetItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String itemName;
-    private String amount;
+    private String item;
+    private double amount;
 
-    public BudgetItem() {
-    }
-
-    public BudgetItem(String itemName, String amount) {
-        this.itemName = itemName;
+    public BudgetItem(String item, double amount) {
+        this.item = item;
         this.amount = amount;
     }
 
-    // Getters and Setters (Required for TableView PropertyValueFactory)
-    public String getItemName() { return itemName; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
-
-    public String getAmount() { return amount; }
-    public void setAmount(String amount) { this.amount = amount; }
+    public String getItem() { return item; }
+    public double getAmount() { return amount; }
 }

@@ -46,7 +46,7 @@ public class SessionManager {
     }
 
     public void saveUserDatabase() {
-        BinaryFileUtil.writeObjects(DATA_FILE, userList);
+        BinaryFileUtil.saveList(DATA_FILE, new ArrayList<>(this.userList));
     }
 
     // Session State Management
@@ -88,11 +88,4 @@ public class SessionManager {
         return null;
     }
 
-    public void addUser(User user) {
-        if (userList == null) {
-            userList = new ArrayList<>();
-        }
-        userList.add(user);
-        saveUserDatabase();
-    }
 }

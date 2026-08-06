@@ -16,4 +16,6 @@ module c213.DoSA.OOP.Project {
 
     exports c213.dosaoopproject.Bushra.U07.model;
     opens c213.dosaoopproject.Bushra.U07.model to javafx.base, javafx.fxml;
+    exports c213.dosaoopproject.Bushra.U07.util;
+    opens c213.dosaoopproject.Bushra.U07.util to javafx.base, javafx.fxml;
 }

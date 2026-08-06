@@ -1,165 +1,149 @@
 package c213.dosaoopproject.Bushra.U07.controller;
 
-import c213.dosaoopproject.Bushra.U07.model.BudgetItem;
-import c213.dosaoopproject.Bushra.U07.model.Event;
+import c213.dosaoopproject.Bushra.U07.model.EventProposal;
+import c213.dosaoopproject.Bushra.U07.util.EventSelectionHolder;
 import c213.dosaoopproject.commonClass.data.BinaryFileUtil;
 import c213.dosaoopproject.commonClass.util.AlertUtil;
-import c213.dosaoopproject.commonClass.util.SceneSwitcher;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import c213.dosaoopproject.commonClass.util.SubViewSwitcher;
+import c213.dosaoopproject.commonClass.util.ValidationUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class U07G1_eventDetailApprovalController {
 
+    @FXML private VBox warningBannerVBox;
+    @FXML private Label warningBannerLabel;
+    @FXML private Label statusLabel;
     @FXML private Label pageTitleLabel;
+
     @FXML private Label eventNameLabel;
     @FXML private Label clubNameLabel;
     @FXML private Label eventDateLabel;
     @FXML private Label venueLabel;
     @FXML private Label requestedBudgetLabel;
+    @FXML private Label scopeLabel;
     @FXML private Label riskLevelLabel;
-    @FXML private Label statusLabel;
 
-    @FXML private TableView<BudgetItem> budgetTableView;
-    @FXML private TableColumn<BudgetItem, String> itemNameTableCC;
-    @FXML private TableColumn<BudgetItem, String> amountTableCC;
+    @FXML private Label proposalStatusLabel;
+    @FXML private Label budgetSheetStatusLabel;
 
-    @FXML private VBox inlineRejectVBox;
-    @FXML private TextArea rejectReasonTextF;
-    @FXML private Button confirmRejectButton;
-
+    @FXML private Button approveButton;
     @FXML private VBox inlineRevisionVBox;
     @FXML private TextArea revisionCommentsTextF;
-    @FXML private Button confirmRevisionButton;
+    @FXML private VBox inlineRejectVBox;
+    @FXML private TextArea rejectReasonTextF;
 
-    @FXML private Label warningBannerLabel;
-    @FXML private VBox warningBannerVBox;
-
-    private Event selectedEvent;
+    private EventProposal currentEvent;
+    private final String DATA_FILE = "events_data.dat";
 
     @FXML
     public void initialize() {
-        // Setup TableView Columns for Budget Items
-        itemNameTableCC.setCellValueFactory(new PropertyValueFactory<>("itemName"));
-        amountTableCC.setCellValueFactory(new PropertyValueFactory<>("amount"));
-
-        // Hide inline feedback boxes initially
-        if (inlineRejectVBox != null) inlineRejectVBox.setVisible(false);
-        if (inlineRevisionVBox != null) inlineRevisionVBox.setVisible(false);
-        if (warningBannerVBox != null) warningBannerVBox.setVisible(false);
+        currentEvent = EventSelectionHolder.getSelectedEvent();
+        if (currentEvent != null) {
+            populateDetails();
+            checkDocumentAttachments();
+        }
     }
 
-    // Called from Queue Controller when passing selected event
-    public void setSelectedEvent(Event event) {
-        this.selectedEvent = event;
-        populateEventDetails();
+    private void populateDetails() {
+        eventNameLabel.setText(currentEvent.getEventName());
+        clubNameLabel.setText(currentEvent.getClubName());
+        eventDateLabel.setText(currentEvent.getEventDate());
+        venueLabel.setText(currentEvent.getVenue());
+        requestedBudgetLabel.setText(currentEvent.getBudget() + " BDT");
+        scopeLabel.setText(currentEvent.getScope());
+        riskLevelLabel.setText(currentEvent.getRiskLevel());
+        statusLabel.setText(currentEvent.getStatus());
+
+        proposalStatusLabel.setText(currentEvent.isProposalPdfUploaded() ? "✔ Uploaded" : "❌ Missing");
+        budgetSheetStatusLabel.setText(currentEvent.isBudgetSheetUploaded() ? "✔ Uploaded" : "❌ Missing");
     }
 
-    private void populateEventDetails() {
-        if (selectedEvent == null) return;
-
-        eventNameLabel.setText(selectedEvent.getEventName());
-        clubNameLabel.setText(selectedEvent.getClubName());
-        eventDateLabel.setText(selectedEvent.getEventDate());
-        requestedBudgetLabel.setText("BDT " + selectedEvent.getBudget());
-        riskLevelLabel.setText(selectedEvent.getRiskLevel());
-        statusLabel.setText(selectedEvent.getStatus());
-
-        if (venueLabel != null) {
-            venueLabel.setText(selectedEvent.getVenue() != null ? selectedEvent.getVenue() : "N/A");
-        }
-
-        // Show warning if high risk
-        if ("High".equalsIgnoreCase(selectedEvent.getRiskLevel())) {
-            if (warningBannerVBox != null) warningBannerVBox.setVisible(true);
-            if (warningBannerLabel != null) warningBannerLabel.setText("WARNING: High-risk event requires careful safety check.");
-        }
-
-        // Populate TableView with budget items if present
-        if (selectedEvent.getBudgetItems() != null) {
-            ObservableList<BudgetItem> items = FXCollections.observableArrayList(selectedEvent.getBudgetItems());
-            budgetTableView.setItems(items);
+    // Event 6: Verify required attachments and display warning if missing
+    private void checkDocumentAttachments() {
+        if (!currentEvent.isProposalPdfUploaded() || !currentEvent.isBudgetSheetUploaded()) {
+            warningBannerVBox.setVisible(true);
+            warningBannerVBox.setManaged(true);
+            warningBannerLabel.setText("Required documents are missing. Proposal cannot be directly approved.");
+            approveButton.setDisable(true);
         }
     }
 
     @FXML
-    public void approveOA(ActionEvent actionEvent) {
-        if (selectedEvent == null) return;
-
-        selectedEvent.setStatus("Approved");
-        saveUpdatedEvent();
-        AlertUtil.showInformation("Success", "Event proposal approved successfully!");
-        returnToQueue();
+    public void backOA(ActionEvent event) {
+        returnToQueue(event);
     }
 
     @FXML
-    public void rejectOA(ActionEvent actionEvent) {
-        // Toggle inline rejection text box
+    public void approveOA(ActionEvent event) {
+        saveDecision(event, "Approved", "Proposal approved by Head of DoSA.");
+    }
+
+    @FXML
+    public void returnOA(ActionEvent event) {
+        inlineRevisionVBox.setVisible(true);
+        inlineRevisionVBox.setManaged(true);
+        inlineRejectVBox.setVisible(false);
+        inlineRejectVBox.setManaged(false);
+    }
+
+    @FXML
+    public void confirmRevisionOA(ActionEvent event) {
+        // Event 6: Validate rationale input via ValidationUtil
+        if (ValidationUtil.isEmpty(new TextField(revisionCommentsTextF.getText()))) {
+            AlertUtil.showError("Validation Error", "Please provide comments for revision.");
+            return;
+        }
+        saveDecision(event, "Revision Required", revisionCommentsTextF.getText());
+    }
+
+    @FXML
+    public void rejectOA(ActionEvent event) {
         inlineRejectVBox.setVisible(true);
+        inlineRejectVBox.setManaged(true);
         inlineRevisionVBox.setVisible(false);
+        inlineRevisionVBox.setManaged(false);
     }
 
     @FXML
-    public void confirmRejectOA(ActionEvent actionEvent) {
-        String reason = rejectReasonTextF.getText().trim();
-        if (reason.isEmpty()) {
-            AlertUtil.showWarning("Missing Input", "Please provide a rejection reason.");
+    public void confirmRejectOA(ActionEvent event) {
+        String reason = rejectReasonTextF.getText();
+        // Event 6: Validate rationale minimum character length
+        if (reason == null || reason.trim().length() < 20) {
+            AlertUtil.showError("Validation Error", "Rejection rationale must be at least 20 characters.");
             return;
         }
-
-        selectedEvent.setStatus("Rejected");
-        // Optionally save reason if Event class supports setRejectionReason(reason)
-        saveUpdatedEvent();
-        AlertUtil.showInformation("Rejected", "Event proposal has been rejected.");
-        returnToQueue();
+        saveDecision(event, "Rejected", reason);
     }
 
-    @FXML
-    public void confirmRevisionOA(ActionEvent actionEvent) {
-        String comments = revisionCommentsTextF.getText().trim();
-        if (comments.isEmpty()) {
-            AlertUtil.showWarning("Missing Input", "Please enter revision notes.");
-            return;
-        }
+    // Event 7 & Event 8: Update proposal status, persist changes, show alert, and reload queue
+    private void saveDecision(ActionEvent event, String newStatus, String rationale) {
+        ArrayList<EventProposal> list = BinaryFileUtil.readList(DATA_FILE);
 
-        selectedEvent.setStatus("Revision Requested");
-        saveUpdatedEvent();
-        AlertUtil.showInformation("Revision Sent", "Revision request submitted to Club Executive.");
-        returnToQueue();
-    }
-
-    @FXML
-    public void backOA(ActionEvent actionEvent) {
-        returnToQueue();
-    }
-
-    @FXML
-    public void returnOA(ActionEvent actionEvent) {
-        returnToQueue();
-    }
-
-    private void saveUpdatedEvent() {
-        String filePath = "data/events_data.dat";
-        List<Event> events = BinaryFileUtil.readObjects(filePath);
-
-        for (int i = 0; i < events.size(); i++) {
-            if (events.get(i).getEventId().equals(selectedEvent.getEventId())) {
-                events.set(i, selectedEvent);
+        for (EventProposal p : list) {
+            if (p.getEventName().equalsIgnoreCase(currentEvent.getEventName())) {
+                p.setStatus(newStatus);
+                p.setDecisionRationale(rationale);
                 break;
             }
         }
-        BinaryFileUtil.writeObjects(filePath, events);
+
+        // Event 7: Save updated list using BinaryFileUtil
+        BinaryFileUtil.saveList(DATA_FILE, list);
+
+        // Event 8: Display alert and reload Queue view
+        AlertUtil.showInformation("Success", "Event proposal status updated to: " + newStatus);
+        returnToQueue(event);
     }
 
-    private void returnToQueue() {
-        Pane contentArea = (Pane) budgetTableView.getScene().lookup("#contentArea");
-        SceneSwitcher.switchContent(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G1_eventApprovalQueue.fxml");
+    private void returnToQueue(ActionEvent event) {
+        AnchorPane contentArea = (AnchorPane) ((Node) event.getSource()).getScene().lookup("#contentArea");
+        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/view/U07G1_eventApprovalQueue.fxml");
     }
 }

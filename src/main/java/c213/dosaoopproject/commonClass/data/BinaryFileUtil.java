@@ -24,8 +24,7 @@ public class BinaryFileUtil {
     public static <T extends Serializable> void appendObject(String fileName, T object) {
         File file = new File(fileName);
 
-        try (ObjectOutputStream out =
-                     file.exists() && file.length() > 0
+        try (ObjectOutputStream out = file.exists() && file.length() > 0
                              ? new AppendableObjectOutputStream(new FileOutputStream(file, true))
                              : new ObjectOutputStream(new FileOutputStream(file, true))) {
 
@@ -38,30 +37,19 @@ public class BinaryFileUtil {
 
     // Read all objects stored one after another
     public static <T> ArrayList<T> readObjects(String fileName) {
-        ArrayList<T> list = new ArrayList<>();
-
         File file = new File(fileName);
 
-        if (!file.exists() || file.length() == 0)
-            return list;
+        if (!file.exists()) {
+            return new ArrayList<>();
+        }
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
 
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
-
-            while (true) {
-                try {
-                    @SuppressWarnings("unchecked")
-                    T obj = (T) in.readObject();
-                    list.add(obj);
-                } catch (EOFException e) {
-                    break;
-                }
-            }
+            return (ArrayList<T>) ois.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            return new ArrayList<>();
         }
-
-        return list;
     }
 
     // Save an entire ArrayList
@@ -90,11 +78,11 @@ public class BinaryFileUtil {
         return new ArrayList<>();
     }
 
-    public static <T> void writeObjects(String dataFile, List<T> objectList) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(dataFile))) {
-            for (T item : objectList) {
-                oos.writeObject(item);
-            }
+    // write object
+    public static <T> void writeObjects(String fileName, ArrayList<T> list) {
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
+            oos.writeObject(list);
         } catch (IOException e) {
             e.printStackTrace();
         }
