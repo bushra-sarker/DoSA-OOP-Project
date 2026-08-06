@@ -69,17 +69,23 @@ public class U1G1_ViewNoticesController {
         // Fill the table from the shared data store.
         noticeTV.setItems(FXCollections.observableArrayList(DataStore.get().getNotices()));
 
+        // Drop the stray empty placeholder column ("C2") left over in the FXML.
+        noticeTV.getColumns().removeIf(c -> "C2".equals(c.getText()));
+
         // Add a per-row "Read More" button that opens that notice's details.
         addReadMoreColumn();
 
         // Make all columns (including the button) share the visible width — no
         // horizontal scrolling, so the Read More button sits beside each notice.
-        //noticeTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        noticeTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     /** Appends a column whose every row shows a "Read More" button for that notice. */
     private void addReadMoreColumn() {
         TableColumn<Notice, Void> actionCol = new TableColumn<>("");
+        actionCol.setPrefWidth(120);
+        actionCol.setMinWidth(120);
+        actionCol.setSortable(false);
         actionCol.setCellFactory(col -> new TableCell<>() {
             private final Button button = new Button("Read More");
             {

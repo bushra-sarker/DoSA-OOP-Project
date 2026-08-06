@@ -199,13 +199,13 @@
                         </Label>
                      </children>
                   </VBox>
-                  <TableView fx:id="noticeTV" layoutX="47.0" layoutY="144.0" prefHeight="267.0" prefWidth="690.0">
+                  <TableView fx:id="noticeTV" layoutX="69.0" layoutY="148.0" prefHeight="267.0" prefWidth="634.0">
                     <columns>
-                      <TableColumn fx:id="noticeTitleTC" prefWidth="135.0" text="Notice Title" />
-                        <TableColumn fx:id="postedByTC" prefWidth="149.0" text="Posted By" />
-                        <TableColumn fx:id="categoryTC" prefWidth="152.0" text="Category" />
-                        <TableColumn fx:id="datePostedTC" prefWidth="106.0" text="Date Posted" />
-                        <TableColumn fx:id="actionTC" prefWidth="143.0" />
+                      <TableColumn fx:id="noticeTitleTC" prefWidth="150.0" text="Notice Title" />
+                      <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+                        <TableColumn fx:id="postedByTC" prefWidth="150.0" text="Posted By" />
+                        <TableColumn fx:id="categoryTC" prefWidth="161.0" text="Category" />
+                        <TableColumn fx:id="datePostedTC" prefWidth="172.0" text="Date Posted" />
                     </columns>
                   </TableView>
                   <Button layoutX="639.0" layoutY="436.0" mnemonicParsing="false" onAction="#goDashboardOA" text="Go to Dashboard" />
