@@ -3,16 +3,22 @@ package c213.dosaoopproject.fahmida;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.SceneManager;
-import c213.dosaoopproject.fahmida.util.Ui;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.Ui;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 /**
  * User-1 Goal-4: View Event Schedule. Read-only list of upcoming events from the
@@ -41,21 +47,30 @@ public class U1G4_ViewEventScheduleController {
     @javafx.fxml.FXML
     private TableColumn<ArrangeClubEvent, String> organizingClubTC;
 
+    // Clubs shown in the "Organizing Club" column, picked at random for each event.
+    private static final String[] ORGANIZING_CLUBS = {"EEE", "CSE"};
+
     @javafx.fxml.FXML
     public void initialize() {
         Ui.greet(nameLabel11, userIdLabel11);
         activityNameTC.setCellValueFactory(new PropertyValueFactory<>("eventName"));
-        organizingClubTC.setCellValueFactory(new PropertyValueFactory<>("status"));
         venueTC.setCellValueFactory(new PropertyValueFactory<>("venue"));
         dateTC.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
         // "time" is not part of the event model; column left empty.
-        EventScheduleTV.setItems(
-                FXCollections.observableArrayList(DataStore.get().getEvents()));
-    }
 
-    @javafx.fxml.FXML
-    public void backtoSchedulesOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+        ObservableList<ArrangeClubEvent> events =
+                FXCollections.observableArrayList(DataStore.get().getEvents());
+
+        // Give each event one random organizing club and keep it fixed.
+        Random random = new Random();
+        Map<ArrangeClubEvent, String> clubOf = new HashMap<>();
+        for (ArrangeClubEvent event : events) {
+            clubOf.put(event, ORGANIZING_CLUBS[random.nextInt(ORGANIZING_CLUBS.length)]);
+        }
+        organizingClubTC.setCellValueFactory(cell ->
+                new SimpleStringProperty(clubOf.get(cell.getValue())));
+
+        EventScheduleTV.setItems(events);
     }
 
     @javafx.fxml.FXML

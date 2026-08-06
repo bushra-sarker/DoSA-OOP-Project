@@ -204,7 +204,6 @@
                     </columns>
                   </TableView>
                   <Button layoutX="667.0" layoutY="502.0" mnemonicParsing="false" onAction="#gotoDashboardOA" text="Go to Dashboard" />
-                  <Button layoutX="499.0" layoutY="502.0" mnemonicParsing="false" onAction="#backtoSchedulesOA" prefHeight="25.0" prefWidth="133.0" text="Back to Schedules" textAlignment="CENTER" wrapText="true" />
                </children>
             </AnchorPane>
          </content>
