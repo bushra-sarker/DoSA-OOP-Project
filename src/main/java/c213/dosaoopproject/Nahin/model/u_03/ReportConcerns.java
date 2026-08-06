@@ -1,9 +1,13 @@
 package c213.dosaoopproject.Nahin.model.u_03;
 
-import c213.dosaoopproject.Nahin.utility.Validation;
-
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
+import static c213.dosaoopproject.Nahin.utility.FileManager.readFile;
+import static c213.dosaoopproject.Nahin.utility.FileManager.writeFile;
+import static c213.dosaoopproject.Nahin.utility.VIA.characterLimit;
+import static c213.dosaoopproject.Nahin.utility.VIA.isValidId;
 
 public class ReportConcerns implements Serializable {
     private final String userID;
@@ -12,17 +16,17 @@ public class ReportConcerns implements Serializable {
     private final String category;
     private final String complaintDetails;
     private final LocalDate date;
-    private final String incidentTime;
+    private final LocalDate incidentDate;
     private String status;
 
-    public ReportConcerns(String userID, int complaintID, String eventName, String category, String complaintDetails, LocalDate date, String incidentTime) {
+    public ReportConcerns(String userID, int complaintID, String eventName, String category, String complaintDetails, LocalDate date, LocalDate incidentDate) {
         this.userID = userID;
         this.complaintID = complaintID;
         this.eventName = eventName;
         this.category = category;
         this.complaintDetails = complaintDetails;
         this.date = date;
-        this.incidentTime = incidentTime;
+        this.incidentDate = incidentDate;
 
         this.status = "Pending";
     }
@@ -51,8 +55,8 @@ public class ReportConcerns implements Serializable {
         return date;
     }
 
-    public String getIncidentTime() {
-        return incidentTime;
+    public LocalDate getIncidentDate() {
+        return incidentDate;
     }
 
     public String getStatus() {
@@ -72,12 +76,50 @@ public class ReportConcerns implements Serializable {
                 ", category='" + category + '\'' +
                 ", complaintDetails='" + complaintDetails + '\'' +
                 ", date=" + date +
-                ", incidentTime=" + incidentTime +
+                ", incidentDate=" + incidentDate +
                 ", status='" + status + '\'' +
                 '}';
     }
 
     public boolean validateInfo(){
-        return Validation.isValidId(getUserID()) && Validation.characterLimit(getComplaintDetails(),1000);
+        return isValidId(getUserID()) && characterLimit(getComplaintDetails(),1000) &&
+                (!getIncidentDate().isAfter(LocalDate.now())) && getDate().equals(LocalDate.now());
+    }
+
+    public void markSolved(){
+        this.status="Solved";
+    }
+    public void markInProgress(){
+        this.status="In Progress";
+    }
+    public void markUnderReview(){
+        this.status ="Under Review";
+    }
+
+    public static boolean updateStatus(String fileName,int complaintID, String selectedStatus){
+        ArrayList<ReportConcerns> issueFile = readFile(fileName);
+        if(issueFile==null){
+            return false;
+        }ReportConcerns found = null;
+
+        for(ReportConcerns x:issueFile){
+            if (x.getComplaintID()==complaintID){
+                found = x;
+            }
+        }
+        if(found==null){
+            return false;
+        }
+        if(selectedStatus.equals("Under Review")){
+            found.markUnderReview();
+        }
+        if(selectedStatus.equals("In Progress")){
+            found.markInProgress();
+        }
+        if(selectedStatus.equals("Solved")){
+            found.markSolved();
+        }
+        writeFile(fileName,issueFile);
+        return true;
     }
 }

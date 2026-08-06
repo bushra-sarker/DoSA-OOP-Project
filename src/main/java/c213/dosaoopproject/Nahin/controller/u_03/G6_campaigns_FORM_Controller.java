@@ -1,8 +1,7 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.model.u_03.CampaignData;
+import c213.dosaoopproject.Nahin.nonUser.CampaignData;
 import c213.dosaoopproject.Nahin.model.u_03.CampaignRegister;
-import c213.dosaoopproject.Nahin.utility.FileManager;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -10,13 +9,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static c213.dosaoopproject.Nahin.utility.IdGenerator.generateRegistrationId;
-import static c213.dosaoopproject.Nahin.utility.ToShowAlert.showAlert;
-import static c213.dosaoopproject.Nahin.utility.ToShowAlert.showWaitAlert;
+import static c213.dosaoopproject.Nahin.utility.FileManager.readFile;
+import static c213.dosaoopproject.Nahin.utility.FileManager.writeFile;
+import static c213.dosaoopproject.Nahin.utility.VIA.generateRegistrationId;
+import static c213.dosaoopproject.Nahin.utility.VIA.showAlert;
+import static c213.dosaoopproject.Nahin.utility.VIA.showWaitAlert;
 
 public class G6_campaigns_FORM_Controller
 {
@@ -77,7 +77,7 @@ public class G6_campaigns_FORM_Controller
         }
 
         //read stored file & add
-        ArrayList<CampaignRegister> list = FileManager.readFile("campaignRegister.bin");
+        ArrayList<CampaignRegister> list = readFile("campaignRegister.bin");
 
         if(list==null){
             list= new ArrayList<>();
@@ -85,15 +85,15 @@ public class G6_campaigns_FORM_Controller
         list.add(campaignRegister);
 
         //add new data
-        FileManager.writeFile("campaignRegister.bin", list);
-        showAlert(Alert.AlertType.CONFIRMATION, "Request Submitted Successfully");
+        writeFile("campaignRegister.bin", list);
+        showAlert(Alert.AlertType.INFORMATION, "Request Submitted Successfully");
 
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
 
     }
 
-    //method to access data from given list of upcoming campaign table
+    //received & set data from tableview controller
     public void setCampaignData(CampaignData campaignData) {
 
         campaignNameLBL.setText(campaignData.getCampaignName());

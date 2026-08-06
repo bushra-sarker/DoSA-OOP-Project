@@ -1,9 +1,7 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
 import javafx.event.ActionEvent;
-
 import java.io.IOException;
-
 import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 
 public class G_1_RegisterEvent_Controller

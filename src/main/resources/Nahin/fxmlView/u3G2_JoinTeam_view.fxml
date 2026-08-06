@@ -10,8 +10,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -27,51 +25,35 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox minWidth="-Infinity" prefHeight="518.0" prefWidth="714.0">
+            <VBox minWidth="-Infinity" prefHeight="536.0" prefWidth="742.0">
                <children>
                   <Label alignment="BOTTOM_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="720.0" text=" VOLUNTEER / TEAM MEMBERSHIP">
                      <VBox.margin>
-                        <Insets left="49.0" top="6.0" />
+                        <Insets left="7.0" top="6.0" />
                      </VBox.margin>
                      <font>
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="724.0" style="-fx-background-radius: 13; -fx-background-color: snow; -fx-border-radius: 13;">
+                  <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="724.0" style="-fx-background-radius: 13; -fx-background-color: snow; -fx-border-radius: 13;">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/teamicon.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="8.0" right="8.0" top="8.0" />
-                           </HBox.margin>
-                        </ImageView>
                         <VBox prefHeight="72.0" prefWidth="271.0">
                            <children>
-                              <Label prefHeight="42.0" prefWidth="271.0" text="Join A Team">
+                              <Label prefHeight="47.0" prefWidth="271.0" text="Join A Team">
                                  <font>
                                     <Font name="Cambria Math" size="28.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="18.0" prefWidth="384.0" text="Track &amp; manage your team membership request">
-                                 <font>
-                                    <Font name="Bookman Old Style" size="10.0" />
-                                 </font>
-                              </Label>
                            </children>
                         </VBox>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="74.0" stroke="#ffffff00" strokeType="INSIDE" width="265.0" />
-                        <Button fx:id="joinButtonFXiD" mnemonicParsing="false" onAction="#goToNextOA" prefHeight="30.0" prefWidth="133.0" style="-fx-background-color: #004675; -fx-text-fill: snow;" text="+ Join New Team">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="48.0" stroke="#ffffff00" strokeType="INSIDE" width="265.0" />
+                        <Button fx:id="joinButtonFXiD" mnemonicParsing="false" onAction="#goToNextOA" prefHeight="30.0" prefWidth="182.0" style="-fx-background-color: #004675; -fx-text-fill: snow;" text="+ Join New Team">
                            <font>
                               <Font name="Calisto MT" size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets top="20.0" />
+                              <Insets />
                            </HBox.margin>
-                           <padding>
-                              <Insets bottom="3.0" />
-                           </padding>
                         </Button>
                      </children>
                      <padding>
@@ -84,113 +66,40 @@
                   <Separator minHeight="-Infinity" prefHeight="17.0" prefWidth="714.0" />
                   <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="732.0">
                      <children>
-                        <VBox fx:id="panel_1" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="730.0">
+                        <VBox fx:id="panel_1" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="725.0">
                            <children>
-                              <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="726.0">
+                              <Label prefHeight="42.0" prefWidth="730.0" text=" Recent Requests " textFill="#003984">
+                                 <padding>
+                                    <Insets left="7.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="rqstTableView" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="736.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
+                                <columns>
+                                  <TableColumn fx:id="rqstIdCOL" prefWidth="180.80000883340836" text="Request ID" />
+                                  <TableColumn fx:id="teamNameCOL" prefWidth="277.6000061035156" text="Team Name" />
+                                    <TableColumn fx:id="dateCOL" prefWidth="149.59994506835938" text="Date" />
+                                    <TableColumn fx:id="statusCOL" prefWidth="126.4000244140625" text="Status" />
+                                </columns>
+                              </TableView>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="730.0" spacing="20.0">
                                  <children>
-                                    <Separator orientation="VERTICAL" prefHeight="200.0" />
-                                    <HBox prefHeight="71.0" prefWidth="242.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="230.0" style="-fx-background-radius: 7; -fx-border-radius: 7;">
-                                             <children>
-                                                <Label fx:id="totalRequestLBL" alignment="CENTER" prefHeight="50.0" prefWidth="81.0" text="3" textFill="#634100">
-                                                   <font>
-                                                      <Font name="Cambria" size="35.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label prefHeight="30.0" prefWidth="85.0" text="Total Requests">
-                                                   <font>
-                                                      <Font size="13.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </VBox>
-                                          <Separator orientation="VERTICAL" prefHeight="200.0" />
-                                       </children>
-                                    </HBox>
-                                    <HBox prefHeight="71.0" prefWidth="250.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="74.0" prefWidth="237.0" style="-fx-background-radius: 7; -fx-border-radius: 7;">
-                                             <children>
-                                                <Label fx:id="pendingRqstLBL" alignment="CENTER" prefHeight="50.0" prefWidth="80.0" text="1" textFill="#730000">
-                                                   <font>
-                                                      <Font name="Cambria" size="35.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label prefHeight="26.0" prefWidth="106.0" text="Pending Requests">
-                                                   <font>
-                                                      <Font size="13.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </VBox>
-                                          <Separator orientation="VERTICAL" prefHeight="200.0" />
-                                       </children>
-                                    </HBox>
-                                    <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="242.0">
-                                       <children>
-                                          <VBox alignment="CENTER" prefHeight="71.0" prefWidth="232.0" style="-fx-background-radius: 7; -fx-border-radius: 7;">
-                                             <children>
-                                                <Label fx:id="approvedRqstLBL" alignment="CENTER" prefHeight="50.0" prefWidth="70.0" text="2" textFill="#006e07">
-                                                   <font>
-                                                      <Font name="Cambria" size="35.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label prefHeight="18.0" prefWidth="59.0" text="Approved">
-                                                   <font>
-                                                      <Font size="13.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </VBox>
-                                          <Separator orientation="VERTICAL" prefHeight="200.0" />
-                                       </children>
-                                    </HBox>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="9.0" right="7.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <VBox minWidth="-Infinity" prefHeight="308.0" prefWidth="722.0" style="-fx-background-radius: 10; -fx-border-color: lightgray; -fx-border-radius: 10;">
-                                 <children>
-                                    <Label prefHeight="38.0" prefWidth="811.0" text=" Recent Requests " textFill="#003984">
-                                       <padding>
-                                          <Insets left="7.0" />
-                                       </padding>
+                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToDashOA" prefHeight="29.0" prefWidth="90.0" text="Back">
                                        <font>
-                                          <Font name="Californian FB Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <TableView fx:id="rqstTableView" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="722.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
-                                      <columns>
-                                        <TableColumn fx:id="rqstIdCOL" prefWidth="180.80000883340836" text="Request ID" />
-                                        <TableColumn fx:id="teamNameCOL" prefWidth="277.6000061035156" text="Team Name" />
-                                          <TableColumn fx:id="dateCOL" prefWidth="136.0" text="Date" />
-                                          <TableColumn fx:id="statusCOL" prefWidth="126.4000244140625" text="Status" />
-                                      </columns>
-                                    </TableView>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="7.0" right="7.0" top="10.0" />
-                                 </VBox.margin>
-                              </VBox>
-                              <HBox alignment="CENTER" prefHeight="113.0" prefWidth="730.0">
-                                 <children>
-                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToDashOA" prefHeight="27.0" prefWidth="66.0" text="&lt;&lt;">
-                                       <font>
-                                          <Font name="Arial" size="15.0" />
+                                          <Font name="Calisto MT" size="15.0" />
                                        </font>
                                     </Button>
-                                    <Region prefHeight="76.0" prefWidth="524.0" />
-                                    <Button mnemonicParsing="false" onAction="#refreshTable" prefHeight="30.0" prefWidth="90.0" text="Refresh">
+                                    <Button mnemonicParsing="false" onAction="#refreshTable" prefHeight="29.0" prefWidth="90.0" text="Refresh">
                                        <font>
                                           <Font name="Calisto MT" size="14.0" />
                                        </font>
-                                       <padding>
-                                          <Insets bottom="3.0" />
-                                       </padding>
                                     </Button>
                                  </children>
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="30.0" />
+                                 </VBox.margin>
                               </HBox>
                            </children>
                            <StackPane.margin>

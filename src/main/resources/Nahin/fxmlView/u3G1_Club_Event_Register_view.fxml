@@ -23,15 +23,15 @@
    <left><fx:include source="u3_sideMenuBar_view.fxml" /></left>
       <center>
          <StackPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="736.0" BorderPane.alignment="CENTER"><children>
-            <VBox fx:id="pane_1" prefHeight="530.0" prefWidth="740.0">
+            <VBox fx:id="pane_1" prefHeight="530.0" prefWidth="740.0" visible="false">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="706.0" style="-fx-background-color: #ECF3F9; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: lightblue;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="706.0" style="-fx-background-color: #ECF3F9; -fx-border-color: lightblue;">
                      <children>
                         <VBox alignment="CENTER_LEFT" prefHeight="114.0" prefWidth="298.0">
                            <children>
                               <Label prefHeight="90.0" prefWidth="263.0" style="-fx-text-fill: #28547B;" text="Event Opportunities">
                                  <font>
-                                    <Font name="Candara Bold" size="28.0" />
+                                    <Font name="Constantia" size="24.0" />
                                  </font>
                               </Label>
                            </children>
@@ -69,7 +69,7 @@
                         <Insets left="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TableView fx:id="availableEventsTABLEVIEW" prefHeight="301.0" prefWidth="913.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
+                  <TableView fx:id="availableEventsTABLEVIEW" prefHeight="229.0" prefWidth="720.0">
                      <columns>
                         <TableColumn fx:id="eventNameCol" prefWidth="176.79999387264252" text="Event Name" />
                         <TableColumn fx:id="clubNameCOL" prefWidth="175.20001220703125" text="Club Name" />
@@ -110,7 +110,7 @@
                   </VBox>
                </children>
             </VBox>
-            <VBox fx:id="pane_2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="736.0" visible="false">
+            <VBox fx:id="pane_2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="736.0">
                <children>
                   <VBox prefHeight="88.0" prefWidth="736.0">
                      <children>
@@ -148,7 +148,7 @@
                            <children>
                               <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="734.0" spacing="10.0">
                                  <children>
-                                    <HBox prefHeight="64.0" prefWidth="684.0" spacing="30.0">
+                                    <HBox prefHeight="51.0" prefWidth="684.0" spacing="30.0">
                                        <children>
                                           <VBox prefHeight="44.0" prefWidth="327.0">
                                              <children>
@@ -164,13 +164,13 @@
                                           </VBox>
                                        </children>
                                     </HBox>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="615.0" spacing="30.0">
+                                    <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="684.0" spacing="30.0">
                                        <children>
                                           <Label prefHeight="27.0" prefWidth="75.0" text="Event Name :" />
                                           <Label fx:id="eventNameLBL" prefHeight="33.0" prefWidth="288.0" text="System" />
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="45.0" prefWidth="726.0" spacing="30.0">
+                                    <HBox prefHeight="30.0" prefWidth="684.0" spacing="30.0">
                                        <children>
                                           <HBox prefHeight="58.0" prefWidth="350.0">
                                              <children>
@@ -186,7 +186,7 @@
                                           </HBox>
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="54.0" prefWidth="734.0" spacing="30.0">
+                                    <HBox prefHeight="42.0" prefWidth="684.0" spacing="30.0">
                                        <children>
                                           <HBox prefHeight="45.0" prefWidth="378.0">
                                              <children>
@@ -202,16 +202,19 @@
                                           </HBox>
                                        </children>
                                     </HBox>
-                                    <HBox prefHeight="42.0" prefWidth="734.0">
+                                    <HBox prefHeight="32.0" prefWidth="684.0">
                                        <children>
                                           <Label prefHeight="26.0" prefWidth="84.0" text="E-mail    : " />
                                           <TextField fx:id="mailTF" prefHeight="26.0" prefWidth="227.0" />
                                        </children>
                                     </HBox>
-                                    <VBox prefHeight="90.0" prefWidth="734.0">
+                                    <VBox prefHeight="81.0" prefWidth="684.0">
                                        <children>
                                           <Label prefHeight="61.0" prefWidth="214.0" text="Experience    :" />
-                                          <TextArea fx:id="experienceTXTAR" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="668.0" />
+                                          <TextArea fx:id="experienceTXTAR" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="668.0">
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </VBox.margin></TextArea>
                                        </children>
                                     </VBox>
                                     <HBox alignment="CENTER" prefHeight="57.0" prefWidth="734.0">

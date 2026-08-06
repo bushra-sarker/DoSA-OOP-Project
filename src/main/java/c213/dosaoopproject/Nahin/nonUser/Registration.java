@@ -1,4 +1,4 @@
-package c213.dosaoopproject.Nahin.commonClass;
+package c213.dosaoopproject.Nahin.nonUser;
 
 import java.io.Serializable;
 import java.time.LocalDate;

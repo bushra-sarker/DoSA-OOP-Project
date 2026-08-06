@@ -36,17 +36,11 @@ public class G_3_Contribution_View_Controller
     public void initialize() {
         boolean hasContribution = checkIfUserHasContribution();
         if(hasContribution) {
-            pane_1.setVisible(true);
-            pane_1.setManaged(true);
-
-            pane_2.setVisible(false);
-            pane_2.setManaged(false);
+            pane_1.setVisible(true);pane_1.setManaged(true);
+            pane_2.setVisible(false);pane_2.setManaged(false);
         }else {
-            pane_2.setVisible(true);
-            pane_2.setManaged(true);
-
-            pane_1.setVisible(false);
-            pane_1.setManaged(false);
+            pane_2.setVisible(true);pane_2.setManaged(true);
+            pane_1.setVisible(false);pane_1.setManaged(false);
         }
     }
 

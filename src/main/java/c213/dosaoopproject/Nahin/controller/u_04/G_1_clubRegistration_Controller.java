@@ -2,7 +2,6 @@ package c213.dosaoopproject.Nahin.controller.u_04;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import java.io.IOException;
 
 import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
@@ -14,8 +13,6 @@ public class G_1_clubRegistration_Controller
     private TableColumn dateCOL;
     @javafx.fxml.FXML
     private TableColumn statusCOL;
-    @javafx.fxml.FXML
-    private TextField searchOFCRTF;
     @javafx.fxml.FXML
     private TableColumn categoryCOL;
     @javafx.fxml.FXML

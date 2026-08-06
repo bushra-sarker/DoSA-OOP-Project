@@ -10,4 +10,5 @@ module c213.dosaoopproject {
     opens c213.dosaoopproject.Nahin.commonClass to javafx.base;
     opens c213.dosaoopproject.Nahin.utility to javafx.base;
     exports c213.dosaoopproject;
+    opens c213.dosaoopproject.Nahin.nonUser to javafx.base;
 }

@@ -9,9 +9,10 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import static c213.dosaoopproject.Nahin.utility.FileManager.writeFile;
 import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
-import static c213.dosaoopproject.Nahin.utility.IdGenerator.generateRegistrationId;
-import static c213.dosaoopproject.Nahin.utility.ToShowAlert.*;
+import static c213.dosaoopproject.Nahin.utility.VIA.*;
 
 public class G_2_Join_Team_View_Controller
 {
@@ -75,9 +76,6 @@ public class G_2_Join_Team_View_Controller
         photographyRD.setToggleGroup(teamGroup);
         culturalRD.setToggleGroup(teamGroup);
         eventRRD.setToggleGroup(teamGroup);
-
-        //Set requestId
-        rqstIdLBL.setText(String.valueOf(generateRegistrationId()));
 
         panel_1.setVisible(true);panel_1.setManaged(true);
         panel_2.setVisible(false);panel_2.setManaged(false);
@@ -145,7 +143,7 @@ public class G_2_Join_Team_View_Controller
 
 
         //write new data (form submit)
-        FileManager.writeFile("teamRequests.bin",rqstList);
+        writeFile("teamRequests.bin",rqstList);
         showAlert(Alert.AlertType.CONFIRMATION,"Submitted Successfully");
 
         System.out.println(rqstList);
@@ -179,7 +177,6 @@ public class G_2_Join_Team_View_Controller
     //read data from file & add to history table
     public void loadHistory(){
         ArrayList<TeamJoin> historyList = FileManager.readFile("teamRequests.bin");
-        rqstTableView.getItems().clear();
         if(historyList!=null){
             rqstTableView.getItems().addAll(historyList);
         }
@@ -197,6 +194,8 @@ public class G_2_Join_Team_View_Controller
 
     @javafx.fxml.FXML
     public void goToNextOA(ActionEvent actionEvent) {
+        //Set requestId
+        rqstIdLBL.setText(String.valueOf(generateRegistrationId()));
 
         joinButtonFXiD.setVisible(false);joinButtonFXiD.setManaged(false);
 

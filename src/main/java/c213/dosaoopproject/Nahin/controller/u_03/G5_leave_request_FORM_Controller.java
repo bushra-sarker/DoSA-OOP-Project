@@ -2,14 +2,17 @@ package c213.dosaoopproject.Nahin.controller.u_03;
 
 import c213.dosaoopproject.Nahin.model.u_03.LeaveApplication;
 import c213.dosaoopproject.Nahin.utility.FileManager;
-import c213.dosaoopproject.Nahin.utility.IdGenerator;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import static c213.dosaoopproject.Nahin.utility.ToShowAlert.showAlert;
+
+import static c213.dosaoopproject.Nahin.utility.FileManager.readFile;
+import static c213.dosaoopproject.Nahin.utility.FileManager.writeFile;
+import static c213.dosaoopproject.Nahin.utility.VIA.generateRegistrationId;
+import static c213.dosaoopproject.Nahin.utility.VIA.showAlert;
 
 public class G5_leave_request_FORM_Controller
 {
@@ -29,7 +32,7 @@ public class G5_leave_request_FORM_Controller
     @javafx.fxml.FXML
     public void initialize() {
         //set applicationID
-        applicationIDLBL.setText(Integer.toString(IdGenerator.generateRegistrationId()));
+        applicationIDLBL.setText(Integer.toString(generateRegistrationId()));
         applicationDATElbl.setText(String.valueOf(LocalDate.now()));
 
         leaveReasonCOMBO.getItems().addAll("Sick Leave","Personal Problem","Family Emergency","Academic Conflict","Other");
@@ -65,14 +68,14 @@ public class G5_leave_request_FORM_Controller
         }
 
         //read old data & add
-        ArrayList<LeaveApplication> applicationsList = FileManager.readFile("LeaveRequests.bin");
+        ArrayList<LeaveApplication> applicationsList = readFile("LeaveRequests.bin");
         if(applicationsList==null){
             applicationsList=new ArrayList<>();
         }
         applicationsList.add(application);
 
         //write new data
-        FileManager.writeFile("LeaveRequests.bin", applicationsList);
+        writeFile("LeaveRequests.bin", applicationsList);
 
         showAlert(Alert.AlertType.CONFIRMATION,"Submitted Successfully");
 

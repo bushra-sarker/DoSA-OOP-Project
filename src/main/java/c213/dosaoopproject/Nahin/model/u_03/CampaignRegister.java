@@ -1,8 +1,9 @@
 package c213.dosaoopproject.Nahin.model.u_03;
 
-import c213.dosaoopproject.Nahin.commonClass.Registration;
-import c213.dosaoopproject.Nahin.utility.Validation;
+import c213.dosaoopproject.Nahin.nonUser.Registration;
+
 import java.time.LocalDate;
+import static c213.dosaoopproject.Nahin.utility.VIA.*;
 
 public class CampaignRegister extends Registration {
     private final String campaignName;
@@ -36,9 +37,10 @@ public class CampaignRegister extends Registration {
 
     @Override
     public boolean validateRegistration() {
-        return Validation.isValidId(getUserId()) && Validation.isValidPhoneNumber(getPhonNumbr())
-        && Validation.isValidEmail(getEmail()) &&
-                (notes.isEmpty() || Validation.characterLimit(notes,200));
+        return isValidId(getUserId()) && isValidPhoneNumber(getPhonNumbr())
+        && isValidEmail(getEmail()) &&
+                (notes.isEmpty() ||
+                        characterLimit(notes,200));
     }
 
     @Override

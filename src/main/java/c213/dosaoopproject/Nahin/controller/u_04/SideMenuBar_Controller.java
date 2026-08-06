@@ -6,12 +6,7 @@ import java.io.IOException;
 
 import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 
-public class SideMenuBar_Controller
-{
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
-
+public class SideMenuBar_Controller {
     @javafx.fxml.FXML
     public void eventCalenderOA(ActionEvent actionEvent) {
     }
@@ -21,12 +16,8 @@ public class SideMenuBar_Controller
     }
 
     @javafx.fxml.FXML
-    public void suspendClubOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void dashboardVwOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent, "/Nahin/fxmlView/u4_dashBoard.fxml");
+        navigate(actionEvent,"/Nahin/fxmlView/u4_dashBoard.fxml");
     }
 
     @javafx.fxml.FXML
@@ -34,7 +25,8 @@ public class SideMenuBar_Controller
     }
 
     @javafx.fxml.FXML
-    public void complaintsOA(ActionEvent actionEvent) {
+    public void complaintsOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent,"/Nahin/fxmlView/u4_G2_Complaints_List.fxml");
     }
 
     @javafx.fxml.FXML
@@ -50,7 +42,7 @@ public class SideMenuBar_Controller
     }
 
     @javafx.fxml.FXML
-    public void registerCLUBViewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent, "/Nahin/fxmlView/u4_G1_clubRegistrationList_view.fxml");
+    public void manageCLUBViiewOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent,"/Nahin/fxmlView/u4_G1_clubRegistrationList_view.fxml");
     }
 }

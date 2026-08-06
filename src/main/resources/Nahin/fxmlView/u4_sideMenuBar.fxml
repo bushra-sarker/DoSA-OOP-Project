@@ -16,7 +16,7 @@
                   <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#registerCLUBViewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Club Registration">
+            <Button mnemonicParsing="false" onAction="#manageCLUBViiewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Club Management">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
@@ -32,11 +32,6 @@
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#oversightCLUBOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Oversights">
-               <VBox.margin>
-                  <Insets left="5.0" right="5.0" top="3.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#suspendClubOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Club Suspension">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>

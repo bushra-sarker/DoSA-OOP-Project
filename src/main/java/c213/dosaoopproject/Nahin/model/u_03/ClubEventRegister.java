@@ -1,9 +1,10 @@
 package c213.dosaoopproject.Nahin.model.u_03;
 
-import c213.dosaoopproject.Nahin.commonClass.Registration;
-import c213.dosaoopproject.Nahin.utility.Validation;
+import c213.dosaoopproject.Nahin.nonUser.Registration;
 
 import java.time.LocalDate;
+
+import static c213.dosaoopproject.Nahin.utility.VIA.*;
 
 public class ClubEventRegister extends Registration {
     private final String clubName, eventName;
@@ -31,10 +32,10 @@ public class ClubEventRegister extends Registration {
     @Override
     public boolean validateRegistration() {
 
-        return Validation.isValidId(getUserId()) &&
-                Validation.isValidEmail(getEmail()) &&
-                Validation.isValidPhoneNumber(getPhonNumbr()) &&
-                (experience.isEmpty() || !Validation.characterLimit(getExperience(),500));
+        return isValidId(getUserId()) &&
+                isValidEmail(getEmail()) &&
+                isValidPhoneNumber(getPhonNumbr()) &&
+                (experience.isEmpty() || !characterLimit(getExperience(),500));
     }
 
     @Override

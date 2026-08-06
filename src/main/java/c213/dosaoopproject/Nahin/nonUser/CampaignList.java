@@ -1,13 +1,11 @@
-package c213.dosaoopproject.Nahin;
-
-import c213.dosaoopproject.Nahin.model.u_03.CampaignData;
+package c213.dosaoopproject.Nahin.nonUser;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class CapmpaignList {
+public class CampaignList {
     public static void createDummyCampaign(){
 
         ArrayList<CampaignData> campaignData = new ArrayList<>();

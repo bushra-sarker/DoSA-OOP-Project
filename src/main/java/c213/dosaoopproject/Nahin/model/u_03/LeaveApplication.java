@@ -1,8 +1,10 @@
 package c213.dosaoopproject.Nahin.model.u_03;
 
-import c213.dosaoopproject.Nahin.utility.Validation;
 import java.io.Serializable;
 import java.time.LocalDate;
+
+import static c213.dosaoopproject.Nahin.utility.VIA.characterLimit;
+import static c213.dosaoopproject.Nahin.utility.VIA.isValidId;
 
 public class LeaveApplication implements Serializable {
     private final String userID;
@@ -57,8 +59,8 @@ public class LeaveApplication implements Serializable {
     }
 
     public boolean validateRequestInfo(){
-        return Validation.isValidId(getUserID()) &&
-                Validation.characterLimit(getDetails(),500);
+        return isValidId(getUserID()) &&
+               characterLimit(getDetails(),500);
     }
 
     @Override

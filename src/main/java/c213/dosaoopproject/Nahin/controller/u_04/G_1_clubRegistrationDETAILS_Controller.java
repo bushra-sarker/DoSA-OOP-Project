@@ -3,7 +3,6 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import static c213.dosaoopproject.Nahin.utility.Navigation.newStage;
 
