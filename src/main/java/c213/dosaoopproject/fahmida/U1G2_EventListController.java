@@ -1,15 +1,13 @@
 package c213.dosaoopproject.fahmida;
 
-import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
-import c213.dosaoopproject.fahmida.model.EventRegistration;
-import c213.dosaoopproject.fahmida.model.Student;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.SceneManager;
-import c213.dosaoopproject.fahmida.util.Ui;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.Ui;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -18,10 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
-/**
- * User-1 Goal-2: Register for Event. Lists the club events from the DataStore;
- * "Reg Now" creates an {@link EventRegistration} for the logged-in student.
- */
 public class U1G2_EventListController {
 
     @javafx.fxml.FXML
@@ -41,47 +35,43 @@ public class U1G2_EventListController {
     @javafx.fxml.FXML
     private TableColumn<ArrangeClubEvent, String> venueTC;
     @javafx.fxml.FXML
-    private TableColumn<ArrangeClubEvent, String> availableSeatsTC;
-    @javafx.fxml.FXML
     private TableColumn<ArrangeClubEvent, String> eventNameTC;
     @javafx.fxml.FXML
     private TableView<ArrangeClubEvent> EventListTV;
     @javafx.fxml.FXML
     private TableColumn<ArrangeClubEvent, Object> dateTC;
 
+    private ObservableList<ArrangeClubEvent> eventList;
+
     @javafx.fxml.FXML
     public void initialize() {
         Ui.greet(nameLabel11, userIdLabel11);
+
         eventNameTC.setCellValueFactory(new PropertyValueFactory<>("eventName"));
         eventDescriptionTC.setCellValueFactory(new PropertyValueFactory<>("description"));
         dateTC.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
         venueTC.setCellValueFactory(new PropertyValueFactory<>("venue"));
-        availableSeatsTC.setCellValueFactory(new PropertyValueFactory<>("status"));
-        EventListTV.setItems(FXCollections.observableArrayList(DataStore.get().getEvents()));
+
+        eventList = FXCollections.observableArrayList(DataStore.get().getEvents());
+        EventListTV.setItems(eventList);
         EventListTV.getSelectionModel().selectFirst();
     }
 
     @javafx.fxml.FXML
     public void RegNowOA(ActionEvent actionEvent) {
         ArrangeClubEvent event = EventListTV.getSelectionModel().getSelectedItem();
-        // No "select an event first" gate: fall back to the first event in the list.
-        if (event == null && !EventListTV.getItems().isEmpty()) {
-            event = EventListTV.getItems().get(0);
-        }
-        if (event == null) {
-            return; // no events exist at all
-        }
-        User user = Session.getCurrentUser();
-        String department = (user instanceof Student s) ? s.getDepartment() : "";
-        DataStore store = DataStore.get();
-        store.getEventRegistrations().add(new EventRegistration(
-                user.getUserId(), event.getEventName(), department, "Registered"));
-        store.logHistory(user.getUserId(), "Registered for event: " + event.getEventName());
-        store.notifyRole("Club Advisor", user.getFullName() + " registered for "
-                + event.getEventName() + ".");
-        Ui.info("You are registered for \"" + event.getEventName() + "\".");
-    }
 
+        if (event == null) {
+            Ui.info("Please select an event first.");
+            return;
+        }
+
+        // save the chosen event so the next screen knows which event to register for
+        Session.setSelectedEvent(event);
+
+        // navigate to the registration form screen (no extension, no ActionEvent param)
+        SceneManager.switchTo("U1G2_RegisterForEvents");
+    }
     @javafx.fxml.FXML
     public void backtoDashboardOA(ActionEvent actionEvent) {
         SceneManager.switchTo("U1_Dashboard");

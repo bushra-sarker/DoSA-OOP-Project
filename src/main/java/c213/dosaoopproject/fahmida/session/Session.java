@@ -1,5 +1,8 @@
 package c213.dosaoopproject.fahmida.session;
 
+import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
+import c213.dosaoopproject.fahmida.model.ClubInfo;
+import c213.dosaoopproject.fahmida.model.CommunityServiceProgram;
 import commonClass.User;
 
 /**
@@ -12,6 +15,9 @@ import commonClass.User;
 public final class Session {
 
     private static User currentUser;
+    private static ArrangeClubEvent selectedEvent;
+    private static ClubInfo selectedClub;
+    private static CommunityServiceProgram selectedProgram;
 
     private Session() {
     }
@@ -26,6 +32,30 @@ public final class Session {
 
     public static boolean isLoggedIn() {
         return currentUser != null;
+    }
+
+    public static void setSelectedEvent(ArrangeClubEvent event) {
+        selectedEvent = event;
+    }
+
+    public static ArrangeClubEvent getSelectedEvent() {
+        return selectedEvent;
+    }
+
+    public static void setSelectedClub(ClubInfo club) {
+        selectedClub = club;
+    }
+
+    public static ClubInfo getSelectedClub() {
+        return selectedClub;
+    }
+
+    public static void setSelectedProgram(CommunityServiceProgram program) {
+        selectedProgram = program;
+    }
+
+    public static CommunityServiceProgram getSelectedProgram() {
+        return selectedProgram;
     }
 
     /** Ends the session (used by the Logout process). */

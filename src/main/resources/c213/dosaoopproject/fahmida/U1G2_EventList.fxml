@@ -209,13 +209,12 @@
                       </TextField>
                   <Button layoutX="562.0" layoutY="475.0" mnemonicParsing="false" onAction="#RegNowOA" text="Register Now" />
                   <Button layoutX="677.0" layoutY="475.0" mnemonicParsing="false" onAction="#backtoDashboardOA" text="Back to Dashboard" />
-                  <TableView fx:id="EventListTV" layoutX="41.0" layoutY="152.0" prefHeight="270.0" prefWidth="740.0">
+                  <TableView fx:id="EventListTV" layoutX="87.0" layoutY="154.0" prefHeight="270.0" prefWidth="620.0">
                     <columns>
                       <TableColumn fx:id="eventNameTC" prefWidth="160.0" text="Event Name" />
                       <TableColumn fx:id="eventDescriptionTC" prefWidth="214.0" text="Event Description" />
                         <TableColumn fx:id="dateTC" prefWidth="105.0" text="Date" />
                         <TableColumn fx:id="venueTC" prefWidth="139.0" text="Venue" />
-                        <TableColumn fx:id="availableSeatsTC" prefWidth="120.0" text="Available Seats" />
                     </columns>
                   </TableView>
                </children>
