@@ -94,7 +94,7 @@ public class U07_HeadOfDoSAViewController {
     @FXML
     public void disciplinaryAppealsOA(ActionEvent actionEvent) {
         setActiveButton(btnDisciplinaryAppeals);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G4_appealsView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G3_appealsList.fxml");
     }
 
     @FXML
