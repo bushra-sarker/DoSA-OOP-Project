@@ -5,7 +5,7 @@ import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.Notification;
 import c213.dosaoopproject.fahmida.session.Session;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 /**
@@ -22,9 +22,9 @@ public final class Notifications {
         if (user == null) {
             return;
         }
-        List<Notification> mine = DataStore.get().getNotifications().stream()
+        ArrayList<Notification> mine = DataStore.get().getNotifications().stream()
                 .filter(n -> n.getUserId() == user.getUserId())
-                .collect(Collectors.toList());
+                .collect(Collectors.toCollection(ArrayList::new));
 
         if (mine.isEmpty()) {
             Ui.info("No new notifications.");

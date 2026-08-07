@@ -2,11 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,7 +18,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2G3_ReviewandapproveClubMembershipController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2G2_CreateClubNoticeController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -115,14 +115,14 @@
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Button>
-                <Button mnemonicParsing="false" onAction="#registerEventsOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text=" Post Club Notices and Announcements " textAlignment="CENTER" wrapText="true">
+                <Button mnemonicParsing="false" onAction="#registerEventsOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text=" Post Club Notices and Announcements " textAlignment="CENTER" wrapText="true">
                     <VBox.margin>
                         <Insets left="5.0" right="5.0" top="3.0" />
                     </VBox.margin>
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-                <Button mnemonicParsing="false" onAction="#clubMembershipOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Review and Approve Club Membership Requests" textAlignment="CENTER" wrapText="true">
+                <Button mnemonicParsing="false" onAction="#clubMembershipOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Review and Approve Club Membership Requests" textAlignment="CENTER" wrapText="true">
                     <VBox.margin>
                         <Insets left="5.0" right="5.0" top="3.0" />
                     </VBox.margin>
@@ -181,7 +181,7 @@
                <children>
                   <VBox layoutX="2.0" layoutY="7.0" prefHeight="79.0" prefWidth="819.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="65.0" prefWidth="700.0" text="Review &amp; Approve Club Membership">
+                        <Label alignment="CENTER" prefHeight="65.0" prefWidth="593.0" text="Post Club Notice &amp; Anouncements">
                            <font>
                               <Font name="Book Antiqua" size="36.0" />
                            </font>
@@ -189,17 +189,36 @@
                         <Separator prefHeight="11.0" prefWidth="819.0" />
                      </children>
                   </VBox>
-                  <TableView fx:id="applicationsTV" layoutX="20.0" layoutY="110.0" prefHeight="330.0" prefWidth="795.0">
-                     <columns>
-                        <TableColumn fx:id="appStudentTC" prefWidth="110.0" text="Student ID" />
-                        <TableColumn fx:id="appClubTC" prefWidth="180.0" text="Club" />
-                        <TableColumn fx:id="appReasonTC" prefWidth="255.0" text="Reason" />
-                        <TableColumn fx:id="appStatusTC" prefWidth="120.0" text="Status" />
-                     </columns>
-                  </TableView>
-                  <Button layoutX="20.0" layoutY="455.0" mnemonicParsing="false" onAction="#approveOA" text="Approve" />
-                  <Button layoutX="110.0" layoutY="455.0" mnemonicParsing="false" onAction="#rejectOA" text="Reject" />
-                  <Button layoutX="700.0" layoutY="455.0" mnemonicParsing="false" onAction="#backtoDashboardButtonOA" text="Back to Dashboard" />
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="81.0" prefHeight="47.0" prefWidth="286.0" text=" Notices &amp; Announcements">
+                     <font>
+                        <Font name="Book Antiqua" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="625.0" layoutY="420.0" mnemonicParsing="false" onAction="#backtoDashboardOA" text="Back to Dashboard" />
+                  <Separator layoutX="2.0" layoutY="128.0" prefHeight="11.0" prefWidth="819.0" />
+                  <AnchorPane layoutX="74.0" layoutY="170.0" prefHeight="239.0" prefWidth="642.0">
+                     <children>
+                        <Label layoutX="49.0" layoutY="28.0" text="Club Name:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="noticeTitleTF" layoutX="162.0" layoutY="72.0" prefHeight="25.0" prefWidth="320.0" />
+                        <ComboBox fx:id="clubNameCB" layoutX="161.0" layoutY="24.0" prefHeight="25.0" prefWidth="313.0" />
+                        <Label layoutX="48.0" layoutY="76.0" text="Notice Title:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="48.0" layoutY="111.0" text=" Notice Body:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="noticeBodyTF" alignment="CENTER" layoutX="162.0" layoutY="107.0" prefHeight="114.0" prefWidth="326.0" promptText="Max 1000 Words" />
+                        <Button layoutX="551.0" layoutY="196.0" mnemonicParsing="false" onAction="#postNoticeOA" prefHeight="25.0" prefWidth="90.0" text="Post Notice" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </content>

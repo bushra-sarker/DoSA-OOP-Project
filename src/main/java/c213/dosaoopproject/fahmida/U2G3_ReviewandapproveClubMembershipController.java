@@ -48,7 +48,6 @@ public class U2G3_ReviewandapproveClubMembershipController {
         appClubTC.setCellValueFactory(new PropertyValueFactory<>("clubName"));
         appReasonTC.setCellValueFactory(new PropertyValueFactory<>("reasonToJoin"));
         appStatusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
-        applicationsTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         refresh();
     }
 

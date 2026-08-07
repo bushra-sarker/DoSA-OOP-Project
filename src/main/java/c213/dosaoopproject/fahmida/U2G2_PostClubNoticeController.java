@@ -57,7 +57,6 @@ public class U2G2_PostClubNoticeController {
         noticeTitleTC.setCellValueFactory(new PropertyValueFactory<>("title"));
         noticeBodyTC.setCellValueFactory(new PropertyValueFactory<>("body"));
         dateTC.setCellValueFactory(new PropertyValueFactory<>("datePosted"));
-        NoticeTableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         refresh();
     }
 

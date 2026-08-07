@@ -18,7 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 /**
@@ -137,14 +137,6 @@ public class U2_DashboardController {
     }
 
     @javafx.fxml.FXML
-    public void communityProgramOA(ActionEvent actionEvent) {
-        String programs = DataStore.get().getCommunityPrograms().stream()
-                .map(p -> "• " + p.getDetails())
-                .collect(Collectors.joining("\n"));
-        Ui.info(programs.isEmpty() ? "No community programs." : programs);
-    }
-
-    @javafx.fxml.FXML
     public void studentdashboardOA(ActionEvent actionEvent) {
         SceneManager.switchTo("U2_Dashboard");
     }
@@ -169,10 +161,10 @@ public class U2_DashboardController {
 
     // --- helpers -------------------------------------------------------------
 
-    private static List<String> eventNames(DataStore store) {
+    private static ArrayList<String> eventNames(DataStore store) {
         return store.getEvents().stream()
                 .map(ArrangeClubEvent::getEventName)
-                .collect(Collectors.toList());
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     private static void logHistory(String action) {

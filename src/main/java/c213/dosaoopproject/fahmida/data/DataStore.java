@@ -27,7 +27,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The single source of data for the whole app.
@@ -49,20 +48,20 @@ public class DataStore implements Serializable {
 
     private static DataStore instance;
 
-    private final List<User> users = new ArrayList<>();
-    private final List<Notice> notices = new ArrayList<>();
-    private final List<ArrangeClubEvent> events = new ArrayList<>();
-    private final List<EventRegistration> eventRegistrations = new ArrayList<>();
-    private final List<ClubMembershipApplication> membershipApplications = new ArrayList<>();
-    private final List<CommunityServiceProgram> communityPrograms = new ArrayList<>();
-    private final List<Complaint> complaints = new ArrayList<>();
-    private final List<VolunteerAssignment> volunteerAssignments = new ArrayList<>();
-    private final List<EventCompletionReport> completionReports = new ArrayList<>();
-    private final List<ClubInfo> clubs = new ArrayList<>();
-    private final List<Certificate> certificates = new ArrayList<>();
-    private final List<ApprovalLetter> approvalLetters = new ArrayList<>();
-    private final List<HistoryEntry> history = new ArrayList<>();
-    private final List<Notification> notifications = new ArrayList<>();
+    private final ArrayList<User> users = new ArrayList<>();
+    private final ArrayList<Notice> notices = new ArrayList<>();
+    private final ArrayList<ArrangeClubEvent> events = new ArrayList<>();
+    private final ArrayList<EventRegistration> eventRegistrations = new ArrayList<>();
+    private final ArrayList<ClubMembershipApplication> membershipApplications = new ArrayList<>();
+    private final ArrayList<CommunityServiceProgram> communityPrograms = new ArrayList<>();
+    private final ArrayList<Complaint> complaints = new ArrayList<>();
+    private final ArrayList<VolunteerAssignment> volunteerAssignments = new ArrayList<>();
+    private final ArrayList<EventCompletionReport> completionReports = new ArrayList<>();
+    private final ArrayList<ClubInfo> clubs = new ArrayList<>();
+    private final ArrayList<Certificate> certificates = new ArrayList<>();
+    private final ArrayList<ApprovalLetter> approvalLetters = new ArrayList<>();
+    private final ArrayList<HistoryEntry> history = new ArrayList<>();
+    private final ArrayList<Notification> notifications = new ArrayList<>();
 
     private DataStore() {
     }
@@ -126,55 +125,55 @@ public class DataStore implements Serializable {
 
     // ----- list accessors -----------------------------------------------------
 
-    public List<User> getUsers() {
+    public ArrayList<User> getUsers() {
         return users;
     }
 
-    public List<Notice> getNotices() {
+    public ArrayList<Notice> getNotices() {
         return notices;
     }
 
-    public List<ArrangeClubEvent> getEvents() {
+    public ArrayList<ArrangeClubEvent> getEvents() {
         return events;
     }
 
-    public List<EventRegistration> getEventRegistrations() {
+    public ArrayList<EventRegistration> getEventRegistrations() {
         return eventRegistrations;
     }
 
-    public List<ClubMembershipApplication> getMembershipApplications() {
+    public ArrayList<ClubMembershipApplication> getMembershipApplications() {
         return membershipApplications;
     }
 
-    public List<CommunityServiceProgram> getCommunityPrograms() {
+    public ArrayList<CommunityServiceProgram> getCommunityPrograms() {
         return communityPrograms;
     }
 
-    public List<Complaint> getComplaints() {
+    public ArrayList<Complaint> getComplaints() {
         return complaints;
     }
 
-    public List<VolunteerAssignment> getVolunteerAssignments() {
+    public ArrayList<VolunteerAssignment> getVolunteerAssignments() {
         return volunteerAssignments;
     }
 
-    public List<EventCompletionReport> getCompletionReports() {
+    public ArrayList<EventCompletionReport> getCompletionReports() {
         return completionReports;
     }
 
-    public List<ClubInfo> getClubs() {
+    public ArrayList<ClubInfo> getClubs() {
         return clubs;
     }
 
-    public List<Certificate> getCertificates() {
+    public ArrayList<Certificate> getCertificates() {
         return certificates;
     }
 
-    public List<ApprovalLetter> getApprovalLetters() {
+    public ArrayList<ApprovalLetter> getApprovalLetters() {
         return approvalLetters;
     }
 
-    public List<HistoryEntry> getHistory() {
+    public ArrayList<HistoryEntry> getHistory() {
         return history;
     }
 
@@ -184,7 +183,7 @@ public class DataStore implements Serializable {
         save();
     }
 
-    public List<Notification> getNotifications() {
+    public ArrayList<Notification> getNotifications() {
         return notifications;
     }
 

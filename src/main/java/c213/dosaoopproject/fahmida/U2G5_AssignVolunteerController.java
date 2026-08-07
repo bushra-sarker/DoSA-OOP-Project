@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 /**
@@ -80,9 +80,9 @@ public class U2G5_AssignVolunteerController {
     @javafx.fxml.FXML
     public void assignOA(ActionEvent actionEvent) {
         DataStore store = DataStore.get();
-        List<String> events = store.getEvents().stream()
+        ArrayList<String> events = store.getEvents().stream()
                 .map(ArrangeClubEvent::getEventName)
-                .collect(Collectors.toList());
+                .collect(Collectors.toCollection(ArrayList::new));
         if (events.isEmpty()) {
             Ui.info("Create an event first.");
             return;

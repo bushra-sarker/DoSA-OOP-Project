@@ -20,7 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 /**
@@ -79,8 +79,8 @@ public class U2G7_CompletionReportController {
     @javafx.fxml.FXML
     public void submitReportOA(ActionEvent actionEvent) {
         DataStore store = DataStore.get();
-        List<String> events = store.getEvents().stream()
-                .map(ArrangeClubEvent::getEventName).collect(Collectors.toList());
+        ArrayList<String> events = store.getEvents().stream()
+                .map(ArrangeClubEvent::getEventName).collect(Collectors.toCollection(ArrayList::new));
         if (events.isEmpty()) {
             Ui.info("Create an event first.");
             return;

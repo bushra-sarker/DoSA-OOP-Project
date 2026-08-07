@@ -8,7 +8,7 @@ import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 /**
@@ -49,7 +49,7 @@ public final class Ui {
     }
 
     /** Pick one option from a list. Returns empty if the list is empty or cancelled. */
-    public static Optional<String> choose(String title, String header, List<String> options) {
+    public static Optional<String> choose(String title, String header, ArrayList<String> options) {
         if (options.isEmpty()) {
             return Optional.empty();
         }
