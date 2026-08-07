@@ -31,4 +31,23 @@ public class TextFileUtil {
             e.printStackTrace();
         }
     }
+
+    // Append a single line of text to the file
+    public static void appendLine(String fileName, String line) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
+            writer.write(line);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Overwrite file with a single String
+    public static void overwriteFile(String fileName, String content) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            writer.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

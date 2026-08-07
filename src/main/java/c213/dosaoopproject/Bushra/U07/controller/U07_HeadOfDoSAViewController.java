@@ -100,7 +100,7 @@ public class U07_HeadOfDoSAViewController {
     @FXML
     public void reportViewOA(ActionEvent actionEvent) {
         setActiveButton(btnReports);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G6_reportView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G4_reportConfig.fxml");
     }
 
     @FXML
