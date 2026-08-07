@@ -4,9 +4,8 @@ import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.HistoryEntry;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.Notifications;
-import c213.dosaoopproject.fahmida.util.SceneManager;
-import c213.dosaoopproject.fahmida.util.Ui;
+import c213.dosaoopproject.fahmida.utility.Notifications;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;

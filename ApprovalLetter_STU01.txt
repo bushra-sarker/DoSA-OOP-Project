@@ -1,7 +1,7 @@
 DoSA APPROVAL LETTER
 --------------------
-Letter ID : 2
+Letter ID : 1
 Student   : Ayesha Rahman (ID 1001)
-Issued    : 2026-08-05
+Issued    : 2026-08-07
 
 This letter confirms that the above student's request has been approved by the Division of Student Affairs.

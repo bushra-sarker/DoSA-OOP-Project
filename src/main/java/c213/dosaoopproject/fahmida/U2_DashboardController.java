@@ -5,33 +5,20 @@ import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
 import c213.dosaoopproject.fahmida.model.ClubAdvisor;
 import c213.dosaoopproject.fahmida.model.ClubInfo;
-import c213.dosaoopproject.fahmida.model.EventCompletionReport;
-import c213.dosaoopproject.fahmida.model.EventRegistration;
-import c213.dosaoopproject.fahmida.model.VolunteerAssignment;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.Notifications;
-import c213.dosaoopproject.fahmida.util.SceneManager;
-import c213.dosaoopproject.fahmida.util.Search;
-import c213.dosaoopproject.fahmida.util.Ui;
+import c213.dosaoopproject.fahmida.utility.Notifications;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.Search;
+import c213.dosaoopproject.fahmida.utility.Ui;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**

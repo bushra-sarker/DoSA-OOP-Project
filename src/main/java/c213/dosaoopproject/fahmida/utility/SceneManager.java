@@ -1,5 +1,6 @@
-package c213.dosaoopproject.fahmida.util;
+package c213.dosaoopproject.fahmida.utility;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -54,4 +55,5 @@ public final class SceneManager {
             throw new RuntimeException("Could not load view: " + viewName, e);
         }
     }
-}
+
+    }

@@ -1,4 +1,4 @@
-package c213.dosaoopproject.fahmida.util;
+package c213.dosaoopproject.fahmida.utility;
 
 import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;

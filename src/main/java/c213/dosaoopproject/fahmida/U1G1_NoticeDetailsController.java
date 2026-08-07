@@ -3,7 +3,7 @@ package c213.dosaoopproject.fahmida;
 import commonClass.User;
 import c213.dosaoopproject.fahmida.model.Notice;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.SceneManager;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
@@ -120,5 +120,9 @@ public class U1G1_NoticeDetailsController {
 
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backtoNoticesOA(ActionEvent actionEvent) {
     }
 }

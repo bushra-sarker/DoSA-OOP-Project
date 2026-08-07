@@ -3,7 +3,7 @@ package c213.dosaoopproject.fahmida;
 import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.SceneManager;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

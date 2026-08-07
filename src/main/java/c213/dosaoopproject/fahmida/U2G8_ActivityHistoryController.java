@@ -4,9 +4,9 @@ import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.HistoryEntry;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.Notifications;
-import c213.dosaoopproject.fahmida.util.SceneManager;
-import c213.dosaoopproject.fahmida.util.Ui;
+import c213.dosaoopproject.fahmida.utility.Notifications;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.Ui;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -15,8 +15,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-
-import java.util.stream.Collectors;
 
 /**
  * Club Advisor Goal: View Club Activity History. Read-only screen that lists the

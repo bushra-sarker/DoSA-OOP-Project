@@ -229,7 +229,7 @@
                                     <Font name="Calibri Bold" size="19.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="submitComplaintsCardLabel" alignment="CENTER" prefHeight="61.0" prefWidth="213.0" text="0">
+                              <Label fx:id="submitComplaintsCardLabel" alignment="CENTER" prefHeight="77.0" prefWidth="210.0" text="0">
                                  <font>
                                     <Font name="System Bold" size="36.0" />
                                  </font>
@@ -243,9 +243,9 @@
                                     <Font name="Calibri Bold" size="19.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="trackHistoryLabel" alignment="CENTER" prefHeight="61.0" prefWidth="200.0" text="Not Yet">
+                              <Label fx:id="trackHistoryLabel" alignment="CENTER" prefHeight="77.0" prefWidth="196.0" text="Not Yet">
                                  <font>
-                                    <Font name="System Bold" size="20.0" />
+                                    <Font name="System Bold" size="24.0" />
                                  </font>
                               </Label>
                            </children>

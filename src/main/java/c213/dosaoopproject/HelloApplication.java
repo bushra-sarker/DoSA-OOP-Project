@@ -1,6 +1,6 @@
 package c213.dosaoopproject;
 
-import c213.dosaoopproject.fahmida.util.SceneManager;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

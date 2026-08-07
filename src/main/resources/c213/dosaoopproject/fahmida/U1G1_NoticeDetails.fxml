@@ -205,7 +205,6 @@
                            </font>
                         </Label>
                         <Label fx:id="detailMeta" style="-fx-text-fill: #555555;" wrapText="true" />
-                        <Separator prefWidth="770.0" />
                         <Label fx:id="detailBody" prefWidth="780.0" wrapText="true">
                            <font>
                               <Font size="14.0" />
@@ -214,6 +213,7 @@
                      </children>
                   </VBox>
                   <Button layoutX="620.0" layoutY="560.0" mnemonicParsing="false" onAction="#goDashboardOA" text="Go to Dashboard" />
+                  <Button layoutX="496.0" layoutY="560.0" mnemonicParsing="false" onAction="#backtoNoticesOA" text="Back to Notices" />
                </children>
             </AnchorPane>
          </content>

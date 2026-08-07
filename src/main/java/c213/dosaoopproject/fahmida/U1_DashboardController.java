@@ -2,12 +2,11 @@ package c213.dosaoopproject.fahmida;
 
 import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
-import c213.dosaoopproject.fahmida.model.ApprovalLetter;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.Notifications;
-import c213.dosaoopproject.fahmida.util.SceneManager;
-import c213.dosaoopproject.fahmida.util.Search;
-import c213.dosaoopproject.fahmida.util.Ui;
+import c213.dosaoopproject.fahmida.utility.Notifications;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.Search;
+import c213.dosaoopproject.fahmida.utility.Ui;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -15,12 +14,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.time.LocalDate;
-import java.util.stream.Collectors;
 
 public class U1_DashboardController
 {

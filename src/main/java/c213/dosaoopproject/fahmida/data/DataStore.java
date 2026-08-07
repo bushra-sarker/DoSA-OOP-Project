@@ -241,7 +241,10 @@ public class DataStore implements Serializable {
                 "Main Ground", "Upcoming"));
 
         // Community-service programs
-        communityPrograms.add(new CommunityServiceProgram(1, "Winter Clothing Drive",
-                "Donation", "Warm clothes", 10, "2 weeks", 0.0));
+        communityPrograms.add(new CommunityServiceProgram(1, "Winter Cloth Distribution",
+                "Donation", "Jackets, sweaters, blankets", "2 weeks", 0.0,
+                "Student Activity Area"));
+        communityPrograms.add(new CommunityServiceProgram(2, "Fundraising for Disaster Victims",
+                "Fundraising", "-", "1 month", 50000.0, "AUDITORIUM"));
     }
 }

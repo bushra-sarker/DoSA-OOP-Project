@@ -30,7 +30,7 @@ Login screen ──▶ (verify credentials) ──▶ role dashboard ──▶ f
 | `c213.dosaoopproject.fahmida.model` | **Data classes** from the class diagram (all `Serializable`) |
 | `c213.dosaoopproject.fahmida.data` | `DataStore` — holds the lists, loads/saves the binary file, seeds sample data |
 | `c213.dosaoopproject.fahmida.session` | `Session` — remembers the logged-in user |
-| `c213.dosaoopproject.fahmida.util` | `SceneManager` — switches between FXML screens |
+| `c213.dosaoopproject.fahmida.utility` | `SceneManager` — switches between FXML screens |
 
 Resources (FXML + images) live under
 `src/main/resources/c213/dosaoopproject/fahmida/`.

@@ -4,8 +4,8 @@ import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.Notice;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.Notifications;
-import c213.dosaoopproject.fahmida.util.SceneManager;
+import c213.dosaoopproject.fahmida.utility.Notifications;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -20,94 +20,82 @@ import javafx.scene.image.ImageView;
 /**
  * User-1 Goal-1: View DoSA Notices and Announcements.
  *
- * <p>Fills the table from {@link DataStore#getNotices()} — the same list a Club
- * Advisor writes to when posting a notice — and opens the details screen when the
- * student selects a row and clicks "Read More".</p>
+ * <p>Shows all notices in a table. Each row has a "Read More" button that
+ * opens that notice's details on the {@link U1G1_NoticeDetailsController}
+ * screen.</p>
  */
 public class U1G1_ViewNoticesController {
 
     @javafx.fxml.FXML
+    private TableView<Notice> noticeTV;
+    @javafx.fxml.FXML
     private TableColumn<Notice, String> noticeTitleTC;
+    @javafx.fxml.FXML
+    private TableColumn<Notice, String> postedByTC;
+    @javafx.fxml.FXML
+    private TableColumn<Notice, String> categoryTC;
+    @javafx.fxml.FXML
+    private TableColumn<Notice, Object> datePostedTC;
+    @javafx.fxml.FXML
+    private TableColumn<Notice, Void> actionTC;
+
     @javafx.fxml.FXML
     private Label viewNoticeLabel;
     @javafx.fxml.FXML
     private Label userIdLabel11;
     @javafx.fxml.FXML
-    private TableView<Notice> noticeTV;
-    @javafx.fxml.FXML
-    private TableColumn<Notice, String> postedByTC;
-    @javafx.fxml.FXML
-    private TableColumn<Notice, Object> datePostedTC;
-    @javafx.fxml.FXML
-    private TableColumn<Notice, String> categoryTC;
-    @javafx.fxml.FXML
-    private ImageView ppImageView11;
+    private Label nameLabel11;
     @javafx.fxml.FXML
     private Label DOSALabel;
     @javafx.fxml.FXML
-    private Label nameLabel11;
+    private ImageView ppImageView11;
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Header labels
+        // Show the logged-in user's name and ID on the header.
         User user = Session.getCurrentUser();
         if (user != null) {
-            if (nameLabel11 != null) {
-                nameLabel11.setText(user.getFullName());
-            }
-            if (userIdLabel11 != null) {
-                userIdLabel11.setText(user.getLoginId());
-            }
+            nameLabel11.setText(user.getFullName());
+            userIdLabel11.setText(user.getLoginId());
         }
 
-        // Map each column to a Notice property (getTitle, getClubName, ...)
+        // Tell each column which Notice field to read.
         noticeTitleTC.setCellValueFactory(new PropertyValueFactory<>("title"));
         postedByTC.setCellValueFactory(new PropertyValueFactory<>("clubName"));
         categoryTC.setCellValueFactory(new PropertyValueFactory<>("category"));
         datePostedTC.setCellValueFactory(new PropertyValueFactory<>("datePosted"));
 
-        // Fill the table from the shared data store.
+        // Put a "Read More" button on every row.
+        addReadMoreButton();
+
+        // Put all the notices into the table.
         noticeTV.setItems(FXCollections.observableArrayList(DataStore.get().getNotices()));
-
-        // Drop the stray empty placeholder column ("C2") left over in the FXML.
-        noticeTV.getColumns().removeIf(c -> "C2".equals(c.getText()));
-
-        // Add a per-row "Read More" button that opens that notice's details.
-        addReadMoreColumn();
-
-        // Make all columns (including the button) share the visible width — no
-        // horizontal scrolling, so the Read More button sits beside each notice.
-        noticeTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
-    /** Appends a column whose every row shows a "Read More" button for that notice. */
-    private void addReadMoreColumn() {
-        TableColumn<Notice, Void> actionCol = new TableColumn<>("");
-        actionCol.setPrefWidth(120);
-        actionCol.setMinWidth(120);
-        actionCol.setSortable(false);
-        actionCol.setCellFactory(col -> new TableCell<>() {
-            private final Button button = new Button("Read More");
+    /** Makes the last column show a "Read More" button on each row. */
+    private void addReadMoreButton() {
+        actionTC.setCellFactory(column -> new TableCell<Notice, Void>() {
+            private final Button readMoreBtn = new Button("Read More");
+
             {
-                button.setOnAction(e -> {
+                readMoreBtn.setOnAction(e -> {
+                    // Find the notice on this row and open its details.
                     Notice notice = getTableView().getItems().get(getIndex());
-                    openDetails(notice);
+                    U1G1_NoticeDetailsController.setSelectedNotice(notice);
+                    SceneManager.switchTo("U1G1_NoticeDetails");
                 });
             }
 
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
-                setGraphic(empty ? null : button);
+                if (empty) {
+                    setGraphic(null);          // empty rows get no button
+                } else {
+                    setGraphic(readMoreBtn);
+                }
             }
         });
-        noticeTV.getColumns().add(actionCol);
-    }
-
-    /** Hands the chosen notice to the details screen and navigates there. */
-    private void openDetails(Notice notice) {
-        U1G1_NoticeDetailsController.setSelectedNotice(notice);
-        SceneManager.switchTo("U1G1_NoticeDetails");
     }
 
     @javafx.fxml.FXML

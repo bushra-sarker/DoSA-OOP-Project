@@ -13,20 +13,20 @@ public class CommunityServiceProgram implements Serializable {
     private String programName;
     private String type;
     private String itemsNeeded;
-    private int volunteerSlotsAvailable;
     private String campaignDuration;
     private double amountRaised;
+    private String venue;
 
     public CommunityServiceProgram(int programId, String programName, String type,
-                                   String itemsNeeded, int volunteerSlotsAvailable,
-                                   String campaignDuration, double amountRaised) {
+                                   String itemsNeeded, String campaignDuration, double amountRaised,
+                                   String venue) {
         this.programId = programId;
         this.programName = programName;
         this.type = type;
         this.itemsNeeded = itemsNeeded;
-        this.volunteerSlotsAvailable = volunteerSlotsAvailable;
         this.campaignDuration = campaignDuration;
         this.amountRaised = amountRaised;
+        this.venue = venue;
     }
 
     public int getProgramId() {
@@ -45,10 +45,6 @@ public class CommunityServiceProgram implements Serializable {
         return itemsNeeded;
     }
 
-    public int getVolunteerSlotsAvailable() {
-        return volunteerSlotsAvailable;
-    }
-
     public String getCampaignDuration() {
         return campaignDuration;
     }
@@ -57,17 +53,13 @@ public class CommunityServiceProgram implements Serializable {
         return amountRaised;
     }
 
-    public String getDetails() {
-        return programName + " (" + type + ") — " + campaignDuration
-                + ", slots left: " + volunteerSlotsAvailable;
+    public String getVenue() {
+        return venue;
     }
 
-    /** Enrol a student as a volunteer; returns false when no slots remain. */
-    public boolean registerAsVolunteer(int studentId) {
-        if (volunteerSlotsAvailable <= 0) {
-            return false;
-        }
-        volunteerSlotsAvailable--;
-        return true;
+    public String getDetails() {
+        return programName + " (" + type + ") — " + campaignDuration;
     }
-}
+
+    }
+
