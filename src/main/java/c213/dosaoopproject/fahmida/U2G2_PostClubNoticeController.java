@@ -1,9 +1,6 @@
 package c213.dosaoopproject.fahmida;
 
-import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
-import c213.dosaoopproject.fahmida.model.ClubAdvisor;
-import c213.dosaoopproject.fahmida.model.ClubInfo;
 import c213.dosaoopproject.fahmida.model.Notice;
 import c213.dosaoopproject.fahmida.session.Session;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
@@ -11,26 +8,16 @@ import c213.dosaoopproject.fahmida.utility.Ui;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-
-import java.time.LocalDate;
-import java.util.Optional;
 
 /**
- * Club Advisor Goal: Post Club Notices. Lists the advisor's existing notices and
- * creates a new {@link Notice} — which immediately shows up in every student's
- * "View Notices" screen (both read the same DataStore list).
+ * Club Advisor Goal: Post Club Notices. Shows the list of existing notices in a
+ * table. The "Create Notice" button opens the separate create-notice screen
+ * ({@link U2G2_CreateClubNoticeController}) where the new notice is entered.
  */
 public class U2G2_PostClubNoticeController {
 
@@ -65,72 +52,10 @@ public class U2G2_PostClubNoticeController {
                 FXCollections.observableArrayList(DataStore.get().getNotices()));
     }
 
+    // Opens the separate "Create Club Notice" screen.
     @javafx.fxml.FXML
     public void createNoticeButtonOA(ActionEvent actionEvent) {
-        // One modal that captures the title and body together.
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.setTitle("Post Notice");
-        dialog.setHeaderText("Create a new club notice");
-        ButtonType postType = new ButtonType("Post", ButtonBar.ButtonData.OK_DONE);
-        dialog.getDialogPane().getButtonTypes().addAll(postType, ButtonType.CANCEL);
-
-        TextField titleField = new TextField();
-        titleField.setPromptText("Notice title");
-        TextArea bodyArea = new TextArea();
-        bodyArea.setPromptText("Notice body");
-        bodyArea.setPrefRowCount(4);
-        bodyArea.setWrapText(true);
-
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(10));
-        grid.add(new Label("Title:"), 0, 0);
-        grid.add(titleField, 1, 0);
-        grid.add(new Label("Body:"), 0, 1);
-        grid.add(bodyArea, 1, 1);
-        dialog.getDialogPane().setContent(grid);
-        dialog.setResultConverter(bt -> bt);
-
-        Optional<ButtonType> result = dialog.showAndWait();
-        if (result.isEmpty() || result.get() != postType) {
-            return; // cancelled
-        }
-
-        String title = titleField.getText().trim();
-        String body = bodyArea.getText().trim();
-        if (title.isEmpty() || body.isEmpty()) {
-            Ui.info("Please enter both a title and a body.");
-            return;
-        }
-
-        DataStore store = DataStore.get();
-        store.getNotices().add(new Notice(
-                store.getNotices().size() + 1, currentClubName(),
-                title, body, "Club Activity", LocalDate.now()));
-        logHistory("Posted notice: " + title);
-        store.notifyRole("Student", "New notice: " + title);
-        store.save();
-        refresh();
-        Ui.info("Notice posted. Students can now see it.");
-    }
-
-    private String currentClubName() {
-        User user = Session.getCurrentUser();
-        if (user instanceof ClubAdvisor advisor) {
-            return DataStore.get().getClubs().stream()
-                    .filter(c -> c.getClubId() == advisor.getClubId())
-                    .map(ClubInfo::getClubName)
-                    .findFirst().orElse("DoSA");
-        }
-        return "DoSA";
-    }
-
-    private void logHistory(String action) {
-        User user = Session.getCurrentUser();
-        if (user != null) {
-            DataStore.get().logHistory(user.getUserId(), action);
-        }
+        SceneManager.switchTo("U2G2_CreateClubNotice");
     }
 
     // --- navigation ----------------------------------------------------------
