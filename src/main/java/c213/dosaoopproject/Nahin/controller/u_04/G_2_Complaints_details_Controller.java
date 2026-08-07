@@ -34,6 +34,8 @@ public class G_2_Complaints_details_Controller
         decisionSelection.getItems().addAll("Under Review","In Progress","Solved");
     }
 
+
+
     @javafx.fxml.FXML
     public void statusUpdateOA(ActionEvent actionEvent) {
         String selectStatus = decisionSelection.getValue();
@@ -43,6 +45,8 @@ public class G_2_Complaints_details_Controller
             showAlert(Alert.AlertType.ERROR, "Please select your decision first");
             return;
         }
+
+
         boolean updated = updateStatus("VolunteerIssuereports.bin",selected.getComplaintID(),selectStatus);
         if(!updated){
             updateStatus("StudentIssueReports.bin",selected.getComplaintID(),selectStatus);
@@ -58,11 +62,15 @@ public class G_2_Complaints_details_Controller
         }
     }
 
+
+
     @javafx.fxml.FXML
     public void cancelOA(ActionEvent actionEvent) {
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         stage.close();
     }
+
+
 
     public void receiveData(ReportConcerns selectedRecord){
         this.selected = selectedRecord;

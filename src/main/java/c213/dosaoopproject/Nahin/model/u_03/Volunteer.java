@@ -1,5 +1,5 @@
 package c213.dosaoopproject.Nahin.model.u_03;
-import c213.dosaoopproject.Nahin.commonClass.User;
+import c213.dosaoopproject.commonClass.model.User;
 
 import java.util.ArrayList;
 
@@ -19,8 +19,9 @@ public class Volunteer extends User {
     private ArrayList<CampaignRegister> campaignRegistration;
     private ArrayList<ReportConcerns> reportIssues;
 
-    public Volunteer(String fullName, int userId, String volID, String email, String phone, double totalContributionHours, int totalParticipation, boolean isCertified) {
-        super(fullName, userId);
+
+    public Volunteer(String userId, String password, String fxmlPath, String volID, String email, String phone, double totalContributionHours, int totalParticipation, boolean isCertified) {
+        super(userId, password, fxmlPath);
         this.volID = volID;
         this.email = email;
         this.phone = phone;
@@ -86,10 +87,5 @@ public class Volunteer extends User {
         }else{
             return "Inactive";
         }
-    }
-
-    @Override
-    public void loadDashboard() {
-        //TO-DO
     }
 }

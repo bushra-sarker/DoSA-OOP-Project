@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_1_clubRegistration_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_1_5_clubRegistration_Controller">
    <top><fx:include source="u4_headBar.fxml" /></top>
    <left><fx:include source="u4_sideMenuBar.fxml" /></left>
    <center>
@@ -100,7 +100,7 @@
                            <children>
                               <Label prefHeight="74.0" prefWidth="73.0" text="Select Status ;" />
                               <ComboBox fx:id="filterBySTATUSCOMBO" prefHeight="26.0" prefWidth="236.0" />
-                              <Button mnemonicParsing="false" onAction="#spFilterOA" prefHeight="26.0" prefWidth="94.0" text="Check">
+                              <Button mnemonicParsing="false" onAction="#spFilterOA" prefHeight="26.0" prefWidth="94.0" text="Filter">
                                  <font>
                                     <Font size="14.0" />
                                  </font>

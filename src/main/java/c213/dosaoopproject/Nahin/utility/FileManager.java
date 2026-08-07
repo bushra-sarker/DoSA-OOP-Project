@@ -13,7 +13,6 @@ public final class FileManager {
         }
     }
 
-    @SuppressWarnings("unchecked")
     public static <T> T readFile(String fileName){
         File file = new File(fileName);
         if(!file.exists()) {

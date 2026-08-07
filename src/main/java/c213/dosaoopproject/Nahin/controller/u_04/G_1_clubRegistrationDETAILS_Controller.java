@@ -91,11 +91,13 @@ public class G_1_clubRegistrationDETAILS_Controller
         stage.close();
     }
 
+
     @javafx.fxml.FXML
     public void closeDetailsOA(ActionEvent actionEvent) {
             Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
             stage.close();
     }
+
 
     //to receive passed data
     public void receiveData(NewClubRegister selectedApplicationData){

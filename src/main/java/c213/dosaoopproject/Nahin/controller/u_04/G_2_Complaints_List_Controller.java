@@ -42,7 +42,7 @@ public class G_2_Complaints_List_Controller
     private DatePicker filterByDateDP;
 
     private static final String volunteerFile = "VolunteerIssuereports.bin";
-    private static final String studentFile = "StudentIssueReports.bin";
+//    private static final String studentFile = "StudentIssueReports.bin";
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -53,13 +53,15 @@ public class G_2_Complaints_List_Controller
         statusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         //student records
-        stComplaintIDCOL.setCellValueFactory(new PropertyValueFactory<>("complaintID"));
-        stIssueCategoryCOL.setCellValueFactory(new PropertyValueFactory<>("category"));
-        stDateCOL.setCellValueFactory(new PropertyValueFactory<>("date"));
-        stStatusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
+//        stComplaintIDCOL.setCellValueFactory(new PropertyValueFactory<>("complaintID"));
+//        stIssueCategoryCOL.setCellValueFactory(new PropertyValueFactory<>("category"));
+//        stDateCOL.setCellValueFactory(new PropertyValueFactory<>("date"));
+//        stStatusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         loadComplaints();
     }
+
+
 
     private void loadComplaints(){
         //read volunteer reports
@@ -68,21 +70,24 @@ public class G_2_Complaints_List_Controller
             complaintTableView.getItems().clear();
             complaintTableView.getItems().addAll(vReports);
         }
-        //read student issues
-        ArrayList<ReportConcerns> stReports = readFile(studentFile);
-        if(stReports!=null){
-            studentIssueTableView.getItems().clear();
-            studentIssueTableView.getItems().addAll(stReports);
-        }
+//        //read student issues
+//        ArrayList<ReportConcerns> stReports = readFile(studentFile);
+//        if(stReports!=null){
+//            studentIssueTableView.getItems().clear();
+//            studentIssueTableView.getItems().addAll(stReports);
+//        }
     }
 
+
+
+    //to see details & pass data to details page
     @javafx.fxml.FXML
     public void seeComplaintDetailsOA(ActionEvent actionEvent) {
         ReportConcerns selectreport = complaintTableView.getSelectionModel().getSelectedItem();
 
-        if(selectreport==null){
-            selectreport = studentIssueTableView.getSelectionModel().getSelectedItem();
-        }
+//        if(selectreport==null){
+//            selectreport = studentIssueTableView.getSelectionModel().getSelectedItem();
+//        }
 
         if(selectreport==null){
             showAlert(Alert.AlertType.WARNING,"Select a record first");
@@ -102,6 +107,8 @@ public class G_2_Complaints_List_Controller
             e.printStackTrace();
         }
     }
+
+
 
     //clear filter & load table again
     @javafx.fxml.FXML

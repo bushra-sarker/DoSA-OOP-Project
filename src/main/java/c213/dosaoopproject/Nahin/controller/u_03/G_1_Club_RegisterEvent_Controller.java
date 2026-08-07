@@ -154,13 +154,13 @@ public class G_1_Club_RegisterEvent_Controller {
     public void loadAvailableEvents() {
         //reload published table data from the list/file
         ArrayList<AvailableEvents> eventList = new ArrayList<>();
-        eventList.add(new AvailableEvents("IUB Debate Club", "Intra-University Debate Championship", "IUB Auditorium", LocalDate.of(2026, 9, 10), "10:00 am-4:00 pm"));
+        eventList.add(new AvailableEvents("IUB Debate SuspendClub", "Intra-University Debate Championship", "IUB Auditorium", LocalDate.of(2026, 9, 10), "10:00 am-4:00 pm"));
         eventList.add(new AvailableEvents("JUKTI", "Tech Workshop", "IUB Lecture Gallery", LocalDate.of(2026, 8, 15), "12:00 pm-4:00 pm"));
-        eventList.add(new AvailableEvents("IUB Music Club", "Musical Evening", "IUB Auditorium", LocalDate.of(2026, 8, 15), "4:00 pm-8:00 pm"));
-        eventList.add(new AvailableEvents("IUB Art Club", "Art & Sketch Exhibition", "IUB Cultural Centre", LocalDate.of(2026, 8, 18), "10:00 am-5:00 pm"));
-        eventList.add(new AvailableEvents("IUB Dance Club", "Folk Dance Festival", "IUB Central Court", LocalDate.of(2026, 8, 12), "10:00 am-4:00 pm"));
-        eventList.add(new AvailableEvents("IUB Theatre Club", "Short Drama Showcase", "IUB Lecture Gallery", LocalDate.of(2026, 9, 10), "3:00 pm-8:00 pm"));
-        eventList.add(new AvailableEvents("IUB Photography Club", "Photography Exhibition", "IUB Student Activity Area", LocalDate.of(2026, 9, 1), "10:00 am-4:00 pm"));
+        eventList.add(new AvailableEvents("IUB Music SuspendClub", "Musical Evening", "IUB Auditorium", LocalDate.of(2026, 8, 15), "4:00 pm-8:00 pm"));
+        eventList.add(new AvailableEvents("IUB Art SuspendClub", "Art & Sketch Exhibition", "IUB Cultural Centre", LocalDate.of(2026, 8, 18), "10:00 am-5:00 pm"));
+        eventList.add(new AvailableEvents("IUB Dance SuspendClub", "Folk Dance Festival", "IUB Central Court", LocalDate.of(2026, 8, 12), "10:00 am-4:00 pm"));
+        eventList.add(new AvailableEvents("IUB Theatre SuspendClub", "Short Drama Showcase", "IUB Lecture Gallery", LocalDate.of(2026, 9, 10), "3:00 pm-8:00 pm"));
+        eventList.add(new AvailableEvents("IUB Photography SuspendClub", "Photography Exhibition", "IUB Student Activity Area", LocalDate.of(2026, 9, 1), "10:00 am-4:00 pm"));
 
         availableEventsTABLEVIEW.getItems().clear();
         if (eventList != null) {

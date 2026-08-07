@@ -25,7 +25,7 @@ public class DbinFile {
         list.add(new NewClubRegister(1002,"Creative Arts","IUB Photography Circle","Nusrat Jahan","Organize photo walks, exhibition & workshops", LocalDate.of(2026,8,3),"01898462008"));
         list.add(new NewClubRegister(1003,"Recreational","IUB Chess Federation","Rafiul Islam","Host Chess tournaments & improve strategic thinking", LocalDate.of(2026,7,30),"01833456782"));
         list.add(new NewClubRegister(1004,"Business","IUB Entrepreneurship Hub","Sadia Rahman","Support students startup through mentorship & pitch thinking", LocalDate.of(2026,8,10),"01728491107"));
-        list.add(new NewClubRegister(1005,"Environment","IUB Wildlife & Environment Club","Farhan Kabir","Raise awareness on conservation and sustainability", LocalDate.of(2026,8,10),"01345627834"));
+        list.add(new NewClubRegister(1005,"Environment","IUB Wildlife & Environment SuspendClub","Farhan Kabir","Raise awareness on conservation and sustainability", LocalDate.of(2026,8,10),"01345627834"));
 
         writeFile("NewClubApplications.bin",list);
     }

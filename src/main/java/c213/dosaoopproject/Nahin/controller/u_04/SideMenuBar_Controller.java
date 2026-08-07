@@ -21,7 +21,8 @@ public class SideMenuBar_Controller {
     }
 
     @javafx.fxml.FXML
-    public void announcementsOA(ActionEvent actionEvent) {
+    public void announcementsOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent,"/Nahin/fxmlView/u4_G3_announcements.fxml");
     }
 
     @javafx.fxml.FXML
@@ -43,6 +44,6 @@ public class SideMenuBar_Controller {
 
     @javafx.fxml.FXML
     public void manageCLUBViiewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/Nahin/fxmlView/u4_G1_clubRegistrationList_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u4_G1_G5_clubRegistrationList_view.fxml");
     }
 }

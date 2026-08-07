@@ -13,7 +13,8 @@ public class Application extends javafx.application.Application {
 //        DbinFile.generateCampaign();
 //        DbinFile.generateNewClubRegistration();
 //
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u3_dashBoard_view.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u3_dashBoard_view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/commonFXML/LoginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("DoSA Management Simulation");
         stage.setScene(scene);

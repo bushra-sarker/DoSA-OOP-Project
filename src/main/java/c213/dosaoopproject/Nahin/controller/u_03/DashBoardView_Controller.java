@@ -1,6 +1,7 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.commonClass.User;
+import c213.dosaoopproject.commonClass.model.User;
+import c213.dosaoopproject.commonClass.util.SessionManager;
 import javafx.scene.control.Label;
 
 public class DashBoardView_Controller
@@ -11,8 +12,11 @@ public class DashBoardView_Controller
 
     @javafx.fxml.FXML
     public void initialize() {
-    }
-    public void setUser(User user){
-        titleUserNameLBL.setText("Welcome, "+user.getFullName());
+        User currentUser = SessionManager.getInstance().getCurrentUser();
+
+        if (currentUser != null){
+            titleUserNameLBL.setText("Welcome, "+currentUser.getUserId());
+        }
+
     }
 }
