@@ -84,6 +84,32 @@ public class U2G3_ReviewandapproveClubMembershipController {
         Ui.info("Application " + action.toLowerCase() + ".");
     }
 
+    // "Reject" button.
+    @javafx.fxml.FXML
+    public void rejectOA(ActionEvent actionEvent) {
+        ClubMembershipApplication app = applicationsTV.getSelectionModel().getSelectedItem();
+        if (app == null) {
+            Ui.info("Please select an application first.");
+            return;
+        }
+
+        boolean approve = false;
+        String action;
+        if (approve) {
+            app.approve();
+            action = "Approved";
+        } else {
+            app.reject();
+            action = "Rejected";
+        }
+
+        DataStore.get().save();
+        DataStore.get().notify(app.getStudentId(),
+                "Your membership request for " + app.getClubName() + " was " + app.getStatus() + ".");
+        logHistory(action + " membership for student " + app.getStudentId());
+        refresh();
+        Ui.info("Application " + action.toLowerCase() + ".");
+    }
 
     private void logHistory(String action) {
         User user = Session.getCurrentUser();
