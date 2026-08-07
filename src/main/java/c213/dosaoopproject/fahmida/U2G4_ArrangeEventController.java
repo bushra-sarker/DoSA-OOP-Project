@@ -52,8 +52,6 @@ public class U2G4_ArrangeEventController {
     private TableColumn<ArrangeClubEvent, Object> evDateTC;
     @javafx.fxml.FXML
     private TableColumn<ArrangeClubEvent, String> evVenueTC;
-    @javafx.fxml.FXML
-    private TableColumn<ArrangeClubEvent, String> evStatusTC;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -61,7 +59,6 @@ public class U2G4_ArrangeEventController {
         evNameTC.setCellValueFactory(new PropertyValueFactory<>("eventName"));
         evDateTC.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
         evVenueTC.setCellValueFactory(new PropertyValueFactory<>("venue"));
-        evStatusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
         eventDP.setValue(LocalDate.now().plusDays(7));
         refresh();
     }
@@ -77,6 +74,7 @@ public class U2G4_ArrangeEventController {
             Ui.info("Please enter at least an event name and date.");
             return;
         }
+
         DataStore store = DataStore.get();
         int id = store.getEvents().size() + 1;
         String venue = venueTF.getText().isBlank() ? "TBA" : venueTF.getText().trim();
@@ -126,7 +124,7 @@ public class U2G4_ArrangeEventController {
         SceneManager.switchTo("U2G3_ReviewandapproveClubMembership");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void communityProgramOA(ActionEvent actionEvent) {
         String programs = DataStore.get().getCommunityPrograms().stream()
                 .map(p -> "• " + p.getDetails())

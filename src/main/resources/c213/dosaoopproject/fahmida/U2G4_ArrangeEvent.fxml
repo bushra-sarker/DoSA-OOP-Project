@@ -21,7 +21,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2G4_ArrangeEventController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2G4_ArrangeEventController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -198,21 +198,32 @@
                                 <Separator prefHeight="11.0" prefWidth="819.0" />
                             </children>
                         </VBox>
-                        <Label layoutX="20.0" layoutY="100.0" text="Event Name:" />
+                        <Label layoutX="20.0" layoutY="100.0" text="Event Name:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                         <TextField fx:id="eventNameTF" layoutX="130.0" layoutY="96.0" prefWidth="300.0" promptText="Event name" />
-                        <Label layoutX="20.0" layoutY="140.0" text="Description:" />
+                        <Label layoutX="20.0" layoutY="140.0" text="Description:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                         <TextArea fx:id="descTA" layoutX="130.0" layoutY="136.0" prefHeight="70.0" prefWidth="300.0" promptText="Description" wrapText="true" />
-                        <Label layoutX="20.0" layoutY="220.0" text="Date:" />
+                        <Label layoutX="20.0" layoutY="220.0" text="Date:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                         <DatePicker fx:id="eventDP" layoutX="130.0" layoutY="216.0" prefWidth="200.0" />
-                        <Label layoutX="20.0" layoutY="260.0" text="Venue:" />
+                        <Label layoutX="20.0" layoutY="260.0" text="Venue:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                         <TextField fx:id="venueTF" layoutX="130.0" layoutY="256.0" prefWidth="300.0" promptText="Venue" />
                         <Button layoutX="130.0" layoutY="296.0" mnemonicParsing="false" onAction="#createEventOA" text="Create Event" />
-                        <TableView fx:id="eventsTV" layoutX="20.0" layoutY="345.0" prefHeight="270.0" prefWidth="795.0">
+                        <TableView fx:id="eventsTV" layoutX="112.0" layoutY="343.0" prefHeight="270.0" prefWidth="562.0">
                             <columns>
-                                <TableColumn fx:id="evNameTC" prefWidth="240.0" text="Event" />
-                                <TableColumn fx:id="evDateTC" prefWidth="130.0" text="Date" />
-                                <TableColumn fx:id="evVenueTC" prefWidth="200.0" text="Venue" />
-                                <TableColumn fx:id="evStatusTC" prefWidth="120.0" text="Status" />
+                                <TableColumn fx:id="evNameTC" prefWidth="194.0" text="Event Name" />
+                                <TableColumn fx:id="evDateTC" prefWidth="176.0" text="Date" />
+                        <TableColumn fx:id="evVenueTC" prefWidth="155.0" text="Venue" />
                             </columns>
                         </TableView>
                     </children>
