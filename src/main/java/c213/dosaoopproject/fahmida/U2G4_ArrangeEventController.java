@@ -62,7 +62,6 @@ public class U2G4_ArrangeEventController {
         evDateTC.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
         evVenueTC.setCellValueFactory(new PropertyValueFactory<>("venue"));
         evStatusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
-        eventsTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         eventDP.setValue(LocalDate.now().plusDays(7));
         refresh();
     }

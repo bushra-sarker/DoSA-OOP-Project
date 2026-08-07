@@ -89,6 +89,7 @@ public class U1G3_ApplyForClubFormController
         store.getMembershipApplications().add(new ClubMembershipApplication(
                 store.getMembershipApplications().size() + 1,
                 Integer.parseInt(id), clubName, major, reason, skills));
+        store.save();
 
         User user = Session.getCurrentUser();
         if (user != null) {
