@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -127,15 +126,15 @@
             </children>
         </VBox>
 
-        <!-- REVIEW NOTES PANEL (DYNAMICALLY TOGGLED) -->
-        <VBox fx:id="inlineReviewNotesVBox" managed="false" spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" visible="false" VBox.vgrow="ALWAYS">
+        <!-- REVIEW NOTES PANEL (Made Visible & Managed) -->
+        <VBox fx:id="inlineReviewNotesVBox" managed="true" spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" visible="true" VBox.vgrow="ALWAYS">
             <children>
-                <Label text="Review Notes &amp; Justification (Required)" textFill="#bd2130">
+                <Label text="Review Notes &amp; Justification" textFill="#083c57">
                     <font>
                         <Font name="System Bold" size="11.0" />
                     </font>
                 </Label>
-                <TextArea fx:id="reviewNotesTextF" promptText="Enter detailed justification or documents required from student..." wrapText="true" VBox.vgrow="ALWAYS">
+                <TextArea fx:id="reviewNotesTextF" promptText="Enter detailed justification or reasons here..." wrapText="true" VBox.vgrow="ALWAYS">
                     <font>
                         <Font size="10.0" />
                     </font>

@@ -107,12 +107,6 @@ public class LoginController {
         alert.showAndWait();
     }
 
-    private void clearError() {
-        if (errorLabel != null) {
-            errorLabel.setVisible(false);
-            errorLabel.setText("");
-        }
-    }
 
     private void showError(String message) {
         if (errorLabel != null) {
@@ -128,4 +122,6 @@ public class LoginController {
         alert.setContentText("Your DoSA account has been locked due to multiple failed login attempts.");
         alert.showAndWait();
     }
+
+
 }

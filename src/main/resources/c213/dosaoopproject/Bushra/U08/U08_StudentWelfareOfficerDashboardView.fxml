@@ -77,38 +77,38 @@
     <left>
         <VBox alignment="TOP_CENTER" prefHeight="530.0" prefWidth="183.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Dashboard">
+                <Button fx:id="btnDashboard" mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Dashboard">
                     <VBox.margin><Insets left="5.0" right="5.0" top="5.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#scholarshipReviewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Scholarship Review">
+                <Button fx:id="btnScholarships" mnemonicParsing="false" onAction="#scholarshipManagementOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Scholarship Review">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#financialAssistanceOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Financial Assistance">
+                <Button fx:id="btnFinancialAssistance" mnemonicParsing="false" onAction="#financialAssistanceOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Financial Assistance">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#grievancesOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Grievances">
+                <Button fx:id="btnGrievances" mnemonicParsing="false" onAction="#grievancesOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Grievances">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#healthInsuranceOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Health Insurance">
+                <Button fx:id="btnHealthInsurance" mnemonicParsing="false" onAction="#healthInsuranceOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Health Insurance">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#orientationOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Orientation">
+                <Button fx:id="btnOrientation" mnemonicParsing="false" onAction="#orientationOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Orientation">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#accommodationsOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Accommodations">
+                <Button fx:id="btnAccommodations" mnemonicParsing="false" onAction="#accommodationsOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Accommodations">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#studentFacilityAccessOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Facility Access">
+                <Button fx:id="btnFacilityAccess" mnemonicParsing="false" onAction="#studentFacilityAccessOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Facility Access">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#studentFeedbackOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Feedback">
+                <Button fx:id="btnStudentFeedback" mnemonicParsing="false" onAction="#studentFeedbackOA" prefHeight="38.0" prefWidth="173.0" style="-fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Student Feedback">
                     <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
                 </Button>
                 <Separator prefHeight="15.0" prefWidth="183.0">
                     <VBox.margin><Insets top="3.0" /></VBox.margin>
                 </Separator>
                 <Region VBox.vgrow="ALWAYS" />
-                <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="36.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
+                <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="36.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
                     <VBox.margin><Insets bottom="6.0" /></VBox.margin>
                 </Button>
             </children>

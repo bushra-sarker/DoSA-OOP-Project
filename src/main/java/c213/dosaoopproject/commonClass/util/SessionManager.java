@@ -37,8 +37,8 @@ public class SessionManager {
         } else {
             this.userList = new ArrayList<>();
 
-            userList.add(new User("HOD07", "1234", "/c213/dosaoopproject/Bushra/U07/U07_HeadOfDoSADashboardView.fxml"));
-            userList.add(new User("CLUB201", "1234", "/c213/dosaoopproject/commonFXML/ClubPresidentDashboard.fxml"));
+            userList.add(new User("HOD07", "1234567", "/c213/dosaoopproject/Bushra/U07/U07_HeadOfDoSADashboardView.fxml"));
+            userList.add(new User("SWO08", "1234567", "/c213/dosaoopproject/Bushra/U08/U08_StudentWelfareOfficerDashboardView.fxml"));
             userList.add(new User("STU301", "1234", "/c213/dosaoopproject/commonFXML/StudentDashboard.fxml"));
 
             saveUserDatabase();
