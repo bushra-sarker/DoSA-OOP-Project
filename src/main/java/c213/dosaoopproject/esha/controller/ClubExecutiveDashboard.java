@@ -93,8 +93,14 @@ public class ClubExecutiveDashboard
 
     @FXML
     private void handleLogout(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/c213/dosaoopproject/esha/RoleSelection.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(loader.load(), 500, 400));
+            stage.setTitle("DoSA OOP Project — Select Role");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private void loadView(String fxmlPath) {
         try {

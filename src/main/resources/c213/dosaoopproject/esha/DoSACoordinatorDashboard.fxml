@@ -38,7 +38,7 @@
                   <Button fx:id="navAssignVolunteersBtn" maxWidth="Infinity" onAction="#showAssignVolunteers" text="Assign Volunteers" />
                   <Button fx:id="navGenerateCertificateBtn" maxWidth="Infinity" onAction="#showGenerateCertificate" text="Generate Certificate" />
                   <Button fx:id="navClubRegistrationBtn" maxWidth="Infinity" onAction="#showClubRegistration" text="Approve Club Registration" />
-                  <Button fx:id="navManageClubsBtn" maxWidth="Infinity" onAction="#showManageClubs" text="Manage Active Clubs" />
+                  <Button fx:id="navManageClubsBtn" maxWidth="Infinity" onAction="#showManageClubs" text="Budget Approval" />
                   <Button fx:id="navImpactReportBtn" maxWidth="Infinity" onAction="#showImpactReport" text="Impact Report" />
                   <Button fx:id="navAnnouncementBtn" maxWidth="Infinity" onAction="#showAnnouncement" text="Post Announcement" />
                   <Button fx:id="navTaskCompletionReportBtn" maxWidth="Infinity" onAction="#showTaskCompletionReport" text="Volunteer Task Completion Report" />
