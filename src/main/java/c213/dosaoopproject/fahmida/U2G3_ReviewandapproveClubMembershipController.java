@@ -51,43 +51,39 @@ public class U2G3_ReviewandapproveClubMembershipController {
         refresh();
     }
 
+    // Reloads the table from the shared data store.
     private void refresh() {
         applicationsTV.setItems(FXCollections.observableArrayList(
                 DataStore.get().getMembershipApplications()));
-        // status is a plain field, so force the cells to re-read it after approve/reject.
-        applicationsTV.refresh();
     }
 
+    // "Approve" button.
     @javafx.fxml.FXML
     public void approveOA(ActionEvent actionEvent) {
-        decide(true);
-    }
-
-    @javafx.fxml.FXML
-    public void rejectOA(ActionEvent actionEvent) {
-        decide(false);
-    }
-
-    private void decide(boolean approve) {
-        ClubMembershipApplication app =
-                applicationsTV.getSelectionModel().getSelectedItem();
+        ClubMembershipApplication app = applicationsTV.getSelectionModel().getSelectedItem();
         if (app == null) {
             Ui.info("Please select an application first.");
             return;
         }
+
+        boolean approve = true;
+        String action;
         if (approve) {
             app.approve();
+            action = "Approved";
         } else {
             app.reject();
+            action = "Rejected";
         }
+
         DataStore.get().save();
-        DataStore.get().notify(app.getStudentId(), "Your membership request for "
-                + app.getClubName() + " was " + app.getStatus() + ".");
-        logHistory((approve ? "Approved" : "Rejected") + " membership for student "
-                + app.getStudentId());
+        DataStore.get().notify(app.getStudentId(),
+                "Your membership request for " + app.getClubName() + " was " + app.getStatus() + ".");
+        logHistory(action + " membership for student " + app.getStudentId());
         refresh();
-        Ui.info("Application " + (approve ? "approved." : "rejected."));
+        Ui.info("Application " + action.toLowerCase() + ".");
     }
+
 
     private void logHistory(String action) {
         User user = Session.getCurrentUser();

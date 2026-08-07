@@ -17,7 +17,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2_DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2_DashboardController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -194,7 +194,7 @@
                   </VBox>
                   <HBox layoutX="2.0" layoutY="155.0" prefHeight="140.0" prefWidth="826.0">
                      <children>
-                        <VBox prefHeight="140.0" prefWidth="224.0" style="-fx-background-radius: 10; -fx-border-radius: 10; \-fx\-border\-color\:\ \#083C57\;\ \-fx\-border\-width\:\ 1\;\ \-fx\-background\-color\:\ white\;">
+                        <VBox prefHeight="140.0" prefWidth="224.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #083C57; -fx-border-width: 1; -fx-background-color: white;">
                            <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="189.0" text="Total Club Members">
                                  <font>
@@ -209,7 +209,7 @@
                               <Label alignment="CENTER" prefHeight="36.0" prefWidth="135.0" text="View all Members" />
                            </children>
                         </VBox>
-                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="140.0" prefWidth="264.0" style="-fx-background-radius: 10; -fx-border-radius: 10; \-fx\-border\-color\:\ \#083C57\;\ \-fx\-border\-width\:\ 1\;\ \-fx\-background\-color\:\ white\;">
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="140.0" prefWidth="264.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #083C57; -fx-border-width: 1; -fx-background-color: white;">
                            <children>
                               <Label alignment="CENTER" prefHeight="57.0" prefWidth="228.0" text="Pending Requests" textAlignment="CENTER" wrapText="true">
                                  <font>
@@ -224,7 +224,7 @@
                               <Label alignment="CENTER" prefHeight="25.0" prefWidth="135.0" text="Review Requests" />
                            </children>
                         </VBox>
-                        <VBox layoutX="185.0" layoutY="10.0" prefHeight="140.0" prefWidth="243.0" style="-fx-background-radius: 10; -fx-border-radius: 10; \-fx\-border\-color\:\ \#083C57\;\ \-fx\-border\-width\:\ 1\;\ \-fx\-background\-color\:\ white\;">
+                        <VBox layoutX="185.0" layoutY="10.0" prefHeight="140.0" prefWidth="243.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #083C57; -fx-border-width: 1; -fx-background-color: white;">
                            <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="209.0" text="Upcoming Events">
                                  <font>
@@ -239,7 +239,7 @@
                               <Label alignment="CENTER" prefHeight="25.0" prefWidth="135.0" text="View Events" />
                            </children>
                         </VBox>
-                        <VBox layoutX="360.0" layoutY="10.0" prefHeight="140.0" prefWidth="229.0" style="-fx-background-radius: 10; -fx-border-radius: 10; \-fx\-border\-color\:\ \#083C57\;\ \-fx\-border\-width\:\ 1\;\ \-fx\-background\-color\:\ white\;">
+                        <VBox layoutX="360.0" layoutY="10.0" prefHeight="140.0" prefWidth="229.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #083C57; -fx-border-width: 1; -fx-background-color: white;">
                            <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="195.0" text="Active Volunteer">
                                  <font>
