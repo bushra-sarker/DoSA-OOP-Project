@@ -22,7 +22,7 @@ public class TeamJoin extends Registration {
     public boolean validateRegistration() {
         return isValidId(getUserId()) && isValidEmail(getEmail()) &&
                 isValidPhoneNumber(getPhonNumbr()) &&
-                characterLimit(reason,200);
+                characterLimit(reason, 200);
     }
 
     public String getSelectTeam() {

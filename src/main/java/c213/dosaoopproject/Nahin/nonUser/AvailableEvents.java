@@ -3,14 +3,14 @@ package c213.dosaoopproject.Nahin.nonUser;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class AvailableEvents_false implements Serializable {
+public class AvailableEvents implements Serializable {
     private final String clubName;
     private final String eventName;
     private String venue;
     private LocalDate eventDate;
     private String time;
 
-    public AvailableEvents_false(String clubName, String eventName, String venue, LocalDate eventDate, String time) {
+    public AvailableEvents(String clubName, String eventName, String venue, LocalDate eventDate, String time) {
         this.clubName = clubName;
         this.eventName = eventName;
         this.venue = venue;
@@ -52,7 +52,7 @@ public class AvailableEvents_false implements Serializable {
 
     @Override
     public String toString() {
-        return "AvailableEvents_false{" +
+        return "AvailableEvents{" +
                 "clubName='" + clubName + '\'' +
                 ", eventName='" + eventName + '\'' +
                 ", venue='" + venue + '\'' +

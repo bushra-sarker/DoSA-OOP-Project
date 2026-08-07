@@ -23,27 +23,15 @@ public class G_2_Join_Team_View_Controller
     @javafx.fxml.FXML
     private TextField nameTF;
     @javafx.fxml.FXML
-    private Label totalRequestLBL;
-    @javafx.fxml.FXML
-    private VBox panel_3;
-    @javafx.fxml.FXML
     private VBox panel_2;
     @javafx.fxml.FXML
     private VBox panel_1;
-    @javafx.fxml.FXML
-    private Label approvedRqstLBL;
     @javafx.fxml.FXML
     private RadioButton logisticRD;
     @javafx.fxml.FXML
     private RadioButton photographyRD;
     @javafx.fxml.FXML
-    private TableColumn<TeamJoin,Integer> rqstIdCOL;
-    @javafx.fxml.FXML
     private TextArea experienceTXTAREA;
-    @javafx.fxml.FXML
-    private TableColumn<TeamJoin,String>  teamNameCOL;
-    @javafx.fxml.FXML
-    private TableView<TeamJoin>  rqstTableView;
     @javafx.fxml.FXML
     private TextField phoneTF;
     @javafx.fxml.FXML
@@ -51,17 +39,9 @@ public class G_2_Join_Team_View_Controller
     @javafx.fxml.FXML
     private RadioButton culturalRD;
     @javafx.fxml.FXML
-    private TableColumn<TeamJoin,LocalDate>  dateCOL;
-    @javafx.fxml.FXML
-    private TableColumn<TeamJoin,String>  statusCOL;
-    @javafx.fxml.FXML
-    private Button joinButtonFXiD;
-    @javafx.fxml.FXML
     private TextArea whyChooseTXTAREA;
     @javafx.fxml.FXML
     private RadioButton eventRRD;
-    @javafx.fxml.FXML
-    private Label pendingRqstLBL;
     @javafx.fxml.FXML
     private Label rqstIdLBL;
 
@@ -71,6 +51,10 @@ public class G_2_Join_Team_View_Controller
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        //Set requestId
+        rqstIdLBL.setText(String.valueOf(generateRegistrationId()));
+
         decorationRD.setToggleGroup(teamGroup);
         logisticRD.setToggleGroup(teamGroup);
         photographyRD.setToggleGroup(teamGroup);
@@ -79,15 +63,8 @@ public class G_2_Join_Team_View_Controller
 
         panel_1.setVisible(true);panel_1.setManaged(true);
         panel_2.setVisible(false);panel_2.setManaged(false);
-        panel_3.setVisible(false);panel_3.setManaged(false);
 
-        //recent request table
-        rqstIdCOL.setCellValueFactory(new PropertyValueFactory<>("registrationId"));
-        teamNameCOL.setCellValueFactory(new PropertyValueFactory<>("selectTeam"));
-        dateCOL.setCellValueFactory(new PropertyValueFactory<>("registrationDate"));
-        statusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        loadHistory();
     }
 
     @javafx.fxml.FXML
@@ -126,11 +103,9 @@ public class G_2_Join_Team_View_Controller
 
         //validation
         if(!teamJoin.validateRegistration()){
-
             //failed to validate-->go back to first page of form
-            panel_1.setVisible(false);panel_1.setManaged(false);
-            panel_2.setVisible(true);panel_2.setManaged(true);
-            panel_3.setVisible(false);panel_3.setManaged(false);
+            panel_1.setVisible(true);panel_1.setManaged(true);
+            panel_2.setVisible(false);panel_2.setManaged(false);
             showAlert(Alert.AlertType.INFORMATION,"Invalid Information");
             return;
         }
@@ -145,16 +120,10 @@ public class G_2_Join_Team_View_Controller
         //write new data (form submit)
         writeFile("teamRequests.bin",rqstList);
         showAlert(Alert.AlertType.CONFIRMATION,"Submitted Successfully");
-
         System.out.println(rqstList);
-        loadHistory();
 
-        //go back to historyList page
-        joinButtonFXiD.setVisible(true);joinButtonFXiD.setManaged(true);
         panel_2.setVisible(false);panel_2.setManaged(false);
-        panel_3.setVisible(false);panel_3.setManaged(false);
         panel_1.setVisible(true);panel_1.setManaged(true);
-
 
         //clear field
         userIDTF.clear();nameTF.clear();phoneTF.clear();rqstIdLBL.setText(null);mailTF.clear();teamGroup.selectToggle(null);experienceTXTAREA.clear();whyChooseTXTAREA.clear();
@@ -162,61 +131,18 @@ public class G_2_Join_Team_View_Controller
 
     @javafx.fxml.FXML
     public void continueScreenButtonOA(ActionEvent actionEvent) {
-        joinButtonFXiD.setVisible(false);joinButtonFXiD.setManaged(false);
-
-        panel_2.setVisible(false);panel_2.setManaged(false);
-        panel_1.setVisible(false);panel_1.setManaged(false);
-        panel_3.setVisible(true);panel_3.setManaged(true);
-    }
-
-    @javafx.fxml.FXML
-    public void backToDashOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent, "/Nahin/fxmlView/u3G1_Register_view.fxml");
-    }
-
-    //read data from file & add to history table
-    public void loadHistory(){
-        ArrayList<TeamJoin> historyList = FileManager.readFile("teamRequests.bin");
-        if(historyList!=null){
-            rqstTableView.getItems().addAll(historyList);
-        }
-    }
-
-    @javafx.fxml.FXML
-    public void backButtonOA(ActionEvent actionEvent) {
-
-        joinButtonFXiD.setVisible(true);joinButtonFXiD.setManaged(true);
-
-        panel_2.setVisible(false);panel_2.setManaged(false);
-        panel_3.setVisible(false);panel_3.setManaged(false);
-        panel_1.setVisible(true);panel_1.setManaged(true);
-    }
-
-    @javafx.fxml.FXML
-    public void goToNextOA(ActionEvent actionEvent) {
-        //Set requestId
-        rqstIdLBL.setText(String.valueOf(generateRegistrationId()));
-
-        joinButtonFXiD.setVisible(false);joinButtonFXiD.setManaged(false);
-
-        panel_1.setVisible(false);panel_1.setManaged(false);
-        panel_3.setVisible(false);panel_3.setManaged(false);
         panel_2.setVisible(true);panel_2.setManaged(true);
+        panel_1.setVisible(false);panel_1.setManaged(false);
+    }
+
+    @javafx.fxml.FXML
+    public void backButtonOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent, "/Nahin/fxmlView/u3G1_Register_view.fxml");
     }
 
     @javafx.fxml.FXML
     public void backOA(ActionEvent actionEvent) {
-
-        joinButtonFXiD.setVisible(false);joinButtonFXiD.setManaged(false);
-
-        panel_1.setVisible(false);panel_1.setManaged(false);
-        panel_3.setVisible(false);panel_3.setManaged(false);
-        panel_2.setVisible(true);panel_2.setManaged(true);
-    }
-
-    @javafx.fxml.FXML
-    public void refreshTable(ActionEvent actionEvent) {
-        rqstTableView.getItems().clear();
-        loadHistory();
+        panel_1.setVisible(true);panel_1.setManaged(true);
+        panel_2.setVisible(false);panel_2.setManaged(false);
     }
 }

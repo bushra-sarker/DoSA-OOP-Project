@@ -9,6 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import static c213.dosaoopproject.Nahin.utility.FileManager.readFile;
 import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 import static c213.dosaoopproject.Nahin.utility.Navigation.newStage;
 
@@ -39,7 +41,7 @@ public class G5_leave_request_view_Controller
     }
     //to load all data from file
     private void loadHistory(){
-        ArrayList<LeaveApplication> history = FileManager.readFile("LeaveRequests.bin");
+        ArrayList<LeaveApplication> history = readFile("LeaveRequests.bin");
         if(history!=null){
             ApplicationHistoryVIEW.getItems().addAll(history);
         }

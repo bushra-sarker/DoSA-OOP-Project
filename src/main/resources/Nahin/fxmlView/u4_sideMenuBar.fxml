@@ -9,44 +9,44 @@
 
 <AnchorPane prefHeight="540.0" prefWidth="154.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.SideMenuBar_Controller">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="540.0" prefWidth="154.0" style="-fx-background-color: #083C57;">
+      <VBox alignment="TOP_CENTER" prefHeight="540.0" prefWidth="176.0" spacing="5.0" style="-fx-background-color: #EDE8CC;">
          <children>
-            <Button mnemonicParsing="false" onAction="#dashboardVwOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Dashboard">
+            <Button mnemonicParsing="false" onAction="#dashboardVwOA" prefHeight="0.0" prefWidth="176.0" text="Dashboard">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#manageCLUBViiewOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Club Management">
+            <Button mnemonicParsing="false" onAction="#manageCLUBViiewOA" prefHeight="0.0" prefWidth="176.0" text="Club Management">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#complaintsOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Complaints">
+            <Button mnemonicParsing="false" onAction="#complaintsOA" prefHeight="0.0" prefWidth="176.0" text="Complaints">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#announcementsOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Announcement">
+            <Button mnemonicParsing="false" onAction="#announcementsOA" prefHeight="0.0" prefWidth="176.0" text="Announcement">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#oversightCLUBOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Oversights">
+            <Button mnemonicParsing="false" onAction="#oversightCLUBOA" prefHeight="0.0" prefWidth="176.0" text="Oversights">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#venueRqstOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Venue Requests">
+            <Button mnemonicParsing="false" onAction="#venueRqstOA" prefHeight="0.0" prefWidth="176.0" text="Venue Requests">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#resourcesOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Resources">
+            <Button mnemonicParsing="false" onAction="#resourcesOA" prefHeight="0.0" prefWidth="176.0" text="Resources">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#eventCalenderOA" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Event Calendar">
+            <Button mnemonicParsing="false" onAction="#eventCalenderOA" prefHeight="0.0" prefWidth="176.0" text="Event Calendar">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="3.0" />
                </VBox.margin>
@@ -56,8 +56,8 @@
                   <Insets top="3.0" />
                </VBox.margin>
             </Separator>
-            <Region prefHeight="114.0" prefWidth="183.0" />
-            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="36.0" prefWidth="183.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
+            <Region prefHeight="199.0" prefWidth="176.0" />
+            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="0.0" prefWidth="176.0" text="logOut">
                <VBox.margin>
                   <Insets bottom="6.0" />
                </VBox.margin>

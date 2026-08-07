@@ -64,7 +64,7 @@
                                     <Font name="Centaur" size="11.0" />
                                  </font>
                               </Text>
-                              <Button mnemonicParsing="false" onAction="#registerClubEventOA" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="View Events  →">
+                              <Button mnemonicParsing="false" onAction="#registerClubEventOA" prefHeight="30.0" prefWidth="159.0" style="-fx-background-radius: 7; -fx-border-radius: 7;" text="View Events  →">
                                  <VBox.margin>
                                     <Insets bottom="50.0" left="5.0" right="5.0" top="60.0" />
                                  </VBox.margin>
@@ -89,7 +89,7 @@
                                     <Font name="Centaur" size="11.0" />
                                  </font>
                               </Text>
-                              <Button mnemonicParsing="false" onAction="#exploreTeamOA" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Explore Teams  →">
+                              <Button mnemonicParsing="false" onAction="#exploreTeamOA" prefHeight="30.0" prefWidth="159.0" style="-fx-background-radius: 7; -fx-border-radius: 7;" text="Explore Teams  →">
                                  <VBox.margin>
                                     <Insets bottom="50.0" left="5.0" right="5.0" top="60.0" />
                                  </VBox.margin>
@@ -114,7 +114,7 @@
                                     <Font name="Centaur" size="11.0" />
                                  </font>
                               </Text>
-                              <Button mnemonicParsing="false" onAction="#campaignsViewOA" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="View Campaigns  →">
+                              <Button mnemonicParsing="false" onAction="#campaignsViewOA" prefHeight="30.0" prefWidth="159.0" style="-fx-background-radius: 7; -fx-border-radius: 7;" text="View Campaigns  →">
                                  <VBox.margin>
                                     <Insets bottom="50.0" left="5.0" right="5.0" top="60.0" />
                                  </VBox.margin>

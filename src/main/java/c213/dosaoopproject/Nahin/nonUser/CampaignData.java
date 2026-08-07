@@ -19,10 +19,6 @@ public class CampaignData implements Serializable {
         return campaignName;
     }
 
-    public void setCampaignName(String campaignName) {
-        this.campaignName = campaignName;
-    }
-
     public LocalDate getDate() {
         return date;
     }
@@ -33,10 +29,6 @@ public class CampaignData implements Serializable {
 
     public String getLocation() {
         return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getStatus() {

@@ -22,20 +22,12 @@ public abstract class Registration implements Serializable {
         this.registrationDate = registrationDate;
     }
 
-    public int getRegistrationId() {
-        return registrationId;
-    }
-
     public String getUserId() {
         return userId;
     }
 
     public String getPhonNumbr() {
         return phonNumbr;
-    }
-
-    public String getUserName() {
-        return userName;
     }
 
     public String getEmail() {
@@ -46,22 +38,5 @@ public abstract class Registration implements Serializable {
         return status;
     }
 
-    public LocalDate getRegistrationDate() {
-        return registrationDate;
-    }
-
     public abstract boolean validateRegistration();
-
-    @Override
-    public String toString() {
-        return "Registration{" +
-                "registrationId=" + registrationId +
-                ", userId='" + userId + '\'' +
-                ", phonNumbr='" + phonNumbr + '\'' +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                ", status='" + status + '\'' +
-                ", registrationDate=" + registrationDate +
-                '}';
-    }
 }

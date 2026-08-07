@@ -2,7 +2,7 @@ package c213.dosaoopproject.Nahin.utility;
 
 import java.io.*;
 
-public class FileManager {
+public final class FileManager {
     public static boolean writeFile(String fileName, Object data){
         try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))){
             out.writeObject(data);

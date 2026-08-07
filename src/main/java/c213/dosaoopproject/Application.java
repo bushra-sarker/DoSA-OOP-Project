@@ -1,6 +1,5 @@
 package c213.dosaoopproject;
 
-import c213.dosaoopproject.Nahin.nonUser.CampaignList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -11,9 +10,10 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        CampaignList.createDummyCampaign();
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u4_dashBoard.fxml"));
+//        DbinFile.generateCampaign();
+//        DbinFile.generateNewClubRegistration();
+//
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u3_dashBoard_view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("DoSA Management Simulation");
         stage.setScene(scene);
@@ -21,5 +21,4 @@ public class Application extends javafx.application.Application {
 
 
     }
-
 }

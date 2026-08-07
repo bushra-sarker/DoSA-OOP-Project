@@ -1,6 +1,8 @@
 package c213.dosaoopproject.Nahin.model.u_03;
 import c213.dosaoopproject.Nahin.commonClass.User;
 
+import java.util.ArrayList;
+
 public class Volunteer extends User {
     private final String volID;
     private final String email;
@@ -10,6 +12,13 @@ public class Volunteer extends User {
     private int totalParticipation;
     private boolean isCertified;
 
+
+    //process
+    private ArrayList<TeamJoin> teamRequests;
+    private ArrayList<ClubEventRegister> clubEventRegister;
+    private ArrayList<CampaignRegister> campaignRegistration;
+    private ArrayList<ReportConcerns> reportIssues;
+
     public Volunteer(String fullName, int userId, String volID, String email, String phone, double totalContributionHours, int totalParticipation, boolean isCertified) {
         super(fullName, userId);
         this.volID = volID;
@@ -18,6 +27,11 @@ public class Volunteer extends User {
         this.totalContributionHours = totalContributionHours;
         this.totalParticipation = totalParticipation;
         this.isCertified = isCertified;
+
+        teamRequests = new ArrayList<>();
+        clubEventRegister = new ArrayList<>();
+        campaignRegistration = new ArrayList<>();
+        reportIssues = new ArrayList<>();
     }
 
     public String getVolID() {
@@ -49,6 +63,20 @@ public class Volunteer extends User {
         return isCertified;
     }
 
+
+    public ArrayList<TeamJoin> getTeamRequests(){
+        return teamRequests;
+    }
+    public ArrayList<ClubEventRegister> getClubEventRegister(){
+        return clubEventRegister;
+    }
+    public ArrayList<CampaignRegister> getCampaignRegistration(){
+        return campaignRegistration;
+    }
+    public ArrayList<ReportConcerns> getReportIssues(){
+        return reportIssues;
+    }
+
     // check if volunteer is active
     public String getStatus(){
         if(isCertified){
@@ -58,21 +86,6 @@ public class Volunteer extends User {
         }else{
             return "Inactive";
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Volunteer{" +
-                "volID='" + volID + '\'' +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
-                ", totalContributionHours=" + totalContributionHours +
-                ", totalParticipation=" + totalParticipation +
-                ", isCertified=" + isCertified +
-                ", userId=" + userId +
-                ", passwordHash='" + passwordHash + '\'' +
-                ", fullName='" + fullName + '\'' +
-                '}';
     }
 
     @Override

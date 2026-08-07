@@ -86,15 +86,15 @@ public class ReportConcerns implements Serializable {
                 (!getIncidentDate().isAfter(LocalDate.now())) && getDate().equals(LocalDate.now());
     }
 
+
     public void markSolved(){
         this.status="Solved";
     }
-    public void markInProgress(){
-        this.status="In Progress";
-    }
+    public void markInProgress(){this.status="In Progress";}
     public void markUnderReview(){
         this.status ="Under Review";
     }
+
 
     public static boolean updateStatus(String fileName,int complaintID, String selectedStatus){
         ArrayList<ReportConcerns> issueFile = readFile(fileName);
@@ -102,11 +102,14 @@ public class ReportConcerns implements Serializable {
             return false;
         }ReportConcerns found = null;
 
+
         for(ReportConcerns x:issueFile){
             if (x.getComplaintID()==complaintID){
                 found = x;
             }
         }
+
+
         if(found==null){
             return false;
         }

@@ -49,7 +49,7 @@
                         <Glow />
                      </effect>
                   </Separator>
-                  <TableView fx:id="campaignsTABLEVIEW" prefHeight="272.0" prefWidth="720.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
+                  <TableView fx:id="campaignsTABLEVIEW" prefHeight="262.0" prefWidth="724.0" style="-fx-background-radius: 10; -fx-border-radius: 10;">
                      <columns>
                         <TableColumn fx:id="campaignNameCol" prefWidth="236.000018119812" text="Campaign Name" />
                         <TableColumn fx:id="datECOL" prefWidth="159.1999969482422" text="Date" />
@@ -63,12 +63,15 @@
                   <VBox prefHeight="106.0" prefWidth="736.0">
                      <children>
                         <Separator prefHeight="37.0" prefWidth="736.0" />
-                        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="736.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="736.0">
                            <children>
                               <Button alignment="CENTER" mnemonicParsing="false" onAction="#backDashBoardOA" prefHeight="9.0" prefWidth="106.0" text="Back">
                                  <font>
                                     <Font name="Constantia" size="15.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
                               </Button>
                               <Region prefHeight="32.0" prefWidth="23.0" />
                               <Button alignment="CENTER" mnemonicParsing="false" onAction="#refreshTable" prefHeight="13.0" prefWidth="98.0" text="Refresh">
@@ -76,8 +79,8 @@
                                     <Font name="Constantia" size="15.0" />
                                  </font>
                               </Button>
-                              <Region prefHeight="32.0" prefWidth="362.0" />
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#joinCampaignOA" prefHeight="0.0" prefWidth="119.0" style="-fx-background-color: #07579C; -fx-border-color: snow; -fx-text-fill: white;" text="+ Join Now">
+                              <Region prefHeight="29.0" prefWidth="305.0" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#joinCampaignOA" prefHeight="29.0" prefWidth="149.0" text="+ Join Now">
                                  <font>
                                     <Font name="Constantia" size="15.0" />
                                  </font>

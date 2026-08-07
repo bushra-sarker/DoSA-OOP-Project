@@ -43,7 +43,7 @@ public class G_2_Complaints_details_Controller
             showAlert(Alert.AlertType.ERROR, "Please select your decision first");
             return;
         }
-        boolean updated = updateStatus("Volunteer_Issue_reports.bin",selected.getComplaintID(),selectStatus);
+        boolean updated = updateStatus("VolunteerIssuereports.bin",selected.getComplaintID(),selectStatus);
         if(!updated){
             updateStatus("StudentIssueReports.bin",selected.getComplaintID(),selectStatus);
         }

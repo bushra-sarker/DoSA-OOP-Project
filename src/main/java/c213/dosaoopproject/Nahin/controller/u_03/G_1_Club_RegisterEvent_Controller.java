@@ -1,6 +1,6 @@
 package c213.dosaoopproject.Nahin.controller.u_03;
 
-import c213.dosaoopproject.Nahin.nonUser.AvailableEvents_false;
+import c213.dosaoopproject.Nahin.nonUser.AvailableEvents;
 import c213.dosaoopproject.Nahin.model.u_03.ClubEventRegister;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -34,23 +34,23 @@ public class G_1_Club_RegisterEvent_Controller {
     @javafx.fxml.FXML
     private VBox pane_1;
     @javafx.fxml.FXML
-    private TableView<AvailableEvents_false> availableEventsTABLEVIEW;
+    private TableView<AvailableEvents> availableEventsTABLEVIEW;
     @javafx.fxml.FXML
-    private TableColumn<AvailableEvents_false, LocalDate> dateCOL;
+    private TableColumn<AvailableEvents, LocalDate> dateCOL;
     @javafx.fxml.FXML
-    private TableColumn<AvailableEvents_false, String> statusCOL;
+    private TableColumn<AvailableEvents, String> timeCOL;
     @javafx.fxml.FXML
-    private TableColumn<AvailableEvents_false, String> timeCOL;
+    private TableColumn<AvailableEvents, String> eventNameCol;
     @javafx.fxml.FXML
-    private TableColumn<AvailableEvents_false, String> eventNameCol;
-    @javafx.fxml.FXML
-    private TableColumn<AvailableEvents_false, String> clubNameCOL;
+    private TableColumn<AvailableEvents, String> clubNameCOL;
     @javafx.fxml.FXML
     private Label registrationDateLBL;
     @javafx.fxml.FXML
     private Label clubNameLBL;
     @javafx.fxml.FXML
     private Label eventNameLBL;
+    @javafx.fxml.FXML
+    private SideMenuBar_Controller nullController;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -71,6 +71,7 @@ public class G_1_Club_RegisterEvent_Controller {
         availableEventsTABLEVIEW.getItems().clear();
         loadAvailableEvents();
     }
+
 
     @javafx.fxml.FXML
     public void submitFormOA(ActionEvent actionEvent) {
@@ -99,16 +100,19 @@ public class G_1_Club_RegisterEvent_Controller {
             return;
         }
 
-        //saving data to file
-        ArrayList<ClubEventRegister> eventList = readFile("Available Events.bin");
+        //read old data
+        ArrayList<ClubEventRegister> eventList = readFile("AvailableEvents.bin");
         if(eventList==null){
             eventList = new ArrayList<>();
         }eventList.add(eventRegister);
 
-        //submit new data
-        writeFile("Available Events.bin",eventList);
+        //save new data
+        writeFile("AvailableEvents.bin",eventList);
         showAlert(Alert.AlertType.INFORMATION, "Submitted Successfully");
+        System.out.println(eventList);
 
+
+        userIDTF.clear();nameTF.clear();phoneTF.clear();mailTF.clear();experienceTXTAR.clear();
         //back to previous page
         pane_2.setVisible(false);pane_2.setManaged(false);
         pane_1.setVisible(true);pane_1.setManaged(true);
@@ -128,12 +132,15 @@ public class G_1_Club_RegisterEvent_Controller {
 
     @javafx.fxml.FXML
     public void registerButtonOA(ActionEvent actionEvent) {
-        if (availableEventsTABLEVIEW.getSelectionModel().getSelectedItem() == null) {
+        AvailableEvents selectedEvent =  availableEventsTABLEVIEW.getSelectionModel().getSelectedItem();
+
+        if(selectedEvent == null) {
             showWaitAlert(Alert.AlertType.ERROR, "Please select an event first");
             return;
         }
-        //--> display the selected club name
-        //--> display the selected event name
+        clubNameLBL.setText(selectedEvent.getClubName());
+        eventNameLBL.setText(selectedEvent.getEventName());
+        registerIDLABEL.setText(String.valueOf(generateRegistrationId()));
 
         pane_1.setVisible(false);pane_1.setManaged(false);
         pane_2.setVisible(true);pane_2.setManaged(true);
@@ -145,15 +152,15 @@ public class G_1_Club_RegisterEvent_Controller {
     }
 
     public void loadAvailableEvents() {
-        //TO-DO --> reload published table data from the list/file
-        ArrayList<AvailableEvents_false> eventList = new ArrayList<>();
-        eventList.add(new AvailableEvents_false("IUB Debate Club", "Intra-University Debate Championship", "IUB Auditorium", LocalDate.of(2026, 9, 10), "10:00 am-4:00 pm"));
-        eventList.add(new AvailableEvents_false("JUKTI", "Tech Workshop", "IUB Lecture Gallery", LocalDate.of(2026, 8, 15), "12:00 pm-4:00 pm"));
-        eventList.add(new AvailableEvents_false("IUB Music Club", "Musical Evening", "IUB Auditorium", LocalDate.of(2026, 8, 15), "4:00 pm-8:00 pm"));
-        eventList.add(new AvailableEvents_false("IUB Art Club", "Art & Sketch Exhibition", "IUB Cultural Centre", LocalDate.of(2026, 8, 18), "10:00 am-5:00 pm"));
-        eventList.add(new AvailableEvents_false("IUB Dance Club", "Folk Dance Festival", "IUB Central Court", LocalDate.of(2026, 8, 12), "10:00 am-4:00 pm"));
-        eventList.add(new AvailableEvents_false("IUB Theatre Club", "Short Drama Showcase", "IUB Lecture Gallery", LocalDate.of(2026, 9, 10), "3:00 pm-8:00 pm"));
-        eventList.add(new AvailableEvents_false("IUB Photography Club", "Photography Exhibition", "IUB Student Activity Area", LocalDate.of(2026, 9, 1), "10:00 am-4:00 pm"));
+        //reload published table data from the list/file
+        ArrayList<AvailableEvents> eventList = new ArrayList<>();
+        eventList.add(new AvailableEvents("IUB Debate Club", "Intra-University Debate Championship", "IUB Auditorium", LocalDate.of(2026, 9, 10), "10:00 am-4:00 pm"));
+        eventList.add(new AvailableEvents("JUKTI", "Tech Workshop", "IUB Lecture Gallery", LocalDate.of(2026, 8, 15), "12:00 pm-4:00 pm"));
+        eventList.add(new AvailableEvents("IUB Music Club", "Musical Evening", "IUB Auditorium", LocalDate.of(2026, 8, 15), "4:00 pm-8:00 pm"));
+        eventList.add(new AvailableEvents("IUB Art Club", "Art & Sketch Exhibition", "IUB Cultural Centre", LocalDate.of(2026, 8, 18), "10:00 am-5:00 pm"));
+        eventList.add(new AvailableEvents("IUB Dance Club", "Folk Dance Festival", "IUB Central Court", LocalDate.of(2026, 8, 12), "10:00 am-4:00 pm"));
+        eventList.add(new AvailableEvents("IUB Theatre Club", "Short Drama Showcase", "IUB Lecture Gallery", LocalDate.of(2026, 9, 10), "3:00 pm-8:00 pm"));
+        eventList.add(new AvailableEvents("IUB Photography Club", "Photography Exhibition", "IUB Student Activity Area", LocalDate.of(2026, 9, 1), "10:00 am-4:00 pm"));
 
         availableEventsTABLEVIEW.getItems().clear();
         if (eventList != null) {

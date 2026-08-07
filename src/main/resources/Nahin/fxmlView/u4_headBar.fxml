@@ -10,11 +10,11 @@
 
 <AnchorPane prefHeight="60.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="900.0" style="-fx-background-color: #083C57;">
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="900.0" style="-fx-background-color: #EDE8CC;">
          <children>
             <VBox prefHeight="55.0" prefWidth="984.0">
                <children>
-                  <Label prefHeight="145.0" prefWidth="322.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA) " textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                  <Label prefHeight="145.0" prefWidth="322.0" text="Division Of Student Affairs (DoSA) " textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Constantia" size="14.0" />
                      </font>
@@ -22,7 +22,7 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Label prefHeight="23.0" prefWidth="275.0" style="-fx-text-fill: white;" text="Officer " textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                  <Label prefHeight="23.0" prefWidth="275.0" text="Officer " textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Calibri Light" size="11.0" />
                      </font>

@@ -2,10 +2,11 @@ package c213.dosaoopproject.Nahin.model.u_03;
 
 import c213.dosaoopproject.Nahin.nonUser.Registration;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import static c213.dosaoopproject.Nahin.utility.VIA.*;
 
-public class CampaignRegister extends Registration {
+public class CampaignRegister extends Registration implements Serializable {
     private final String campaignName;
     private final LocalDate date;
     private final String notes;
@@ -37,10 +38,10 @@ public class CampaignRegister extends Registration {
 
     @Override
     public boolean validateRegistration() {
-        return isValidId(getUserId()) && isValidPhoneNumber(getPhonNumbr())
-        && isValidEmail(getEmail()) &&
-                (notes.isEmpty() ||
-                        characterLimit(notes,200));
+        return !isValidId(getUserId()) || !isValidPhoneNumber(getPhonNumbr())
+                || !isValidEmail(getEmail()) ||
+                (!notes.isEmpty() &&
+                        !characterLimit(notes, 200));
     }
 
     @Override

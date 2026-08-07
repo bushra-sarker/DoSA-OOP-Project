@@ -71,7 +71,7 @@ public class G6_campaigns_FORM_Controller
         );
 
         //show validation msg
-        if (!campaignRegister.validateRegistration()){
+        if (campaignRegister.validateRegistration()){
             showAlert(Alert.AlertType.WARNING, "Invalid registered information");
             return;
         }

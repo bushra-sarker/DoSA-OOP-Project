@@ -31,11 +31,9 @@ public class ClubEventRegister extends Registration {
 
     @Override
     public boolean validateRegistration() {
-
-        return isValidId(getUserId()) &&
-                isValidEmail(getEmail()) &&
+        return isValidId(getUserId()) && isValidEmail(getEmail()) &&
                 isValidPhoneNumber(getPhonNumbr()) &&
-                (experience.isEmpty() || !characterLimit(getExperience(),500));
+                (experience.isEmpty() || characterLimit(getExperience(), 500));
     }
 
     @Override

@@ -44,6 +44,6 @@ public class SideMenuBar_Controller
 
     @javafx.fxml.FXML
     public void reportViewOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent, "/Nahin/fxmlView/u3G4_issueReporting_view.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u3G4_issueReporting_Form_view.fxml");
     }
 }
