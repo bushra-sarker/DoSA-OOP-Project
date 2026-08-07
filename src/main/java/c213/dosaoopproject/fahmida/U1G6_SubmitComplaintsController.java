@@ -4,9 +4,9 @@ import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.Complaint;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.util.Notifications;
-import c213.dosaoopproject.fahmida.util.SceneManager;
-import c213.dosaoopproject.fahmida.util.Ui;
+import c213.dosaoopproject.fahmida.utility.Notifications;
+import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.Ui;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -40,8 +40,6 @@ public class U1G6_SubmitComplaintsController {
     @javafx.fxml.FXML
     private ComboBox<String> categoryCB;
     @javafx.fxml.FXML
-    private Label attachDocumentsLabel;
-    @javafx.fxml.FXML
     private TextField titleTF;
 
     @javafx.fxml.FXML
@@ -55,7 +53,7 @@ public class U1G6_SubmitComplaintsController {
                 "Academic", "Facilities", "Harassment", "Other"));
         if (searchOFCRTF != null) {
             searchOFCRTF.setOnAction(e ->
-                    Ui.info(c213.dosaoopproject.fahmida.util.Search.query(searchOFCRTF.getText())));
+                    Ui.info(c213.dosaoopproject.fahmida.utility.Search.query(searchOFCRTF.getText())));
         }
     }
 
