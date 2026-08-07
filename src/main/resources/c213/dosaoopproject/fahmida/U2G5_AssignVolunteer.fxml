@@ -20,7 +20,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2G5_AssignVolunteerController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U2G5_AssignVolunteerController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -198,21 +198,22 @@
                             </children>
                         </VBox>
                         <Label layoutX="20.0" layoutY="100.0" text="Event:" />
-                        <ComboBox fx:id="eventBox" layoutX="130.0" layoutY="96.0" prefWidth="300.0" />
+                        <ComboBox fx:id="eventCB" layoutX="130.0" layoutY="96.0" prefWidth="300.0" />
                         <Label layoutX="20.0" layoutY="140.0" text="Volunteer ID:" />
-                        <TextField fx:id="volunteerTF" layoutX="130.0" layoutY="136.0" prefWidth="300.0" promptText="Volunteer student ID (e.g. 1001)" />
+                        <TextField fx:id="volunteerIIDTF" layoutX="130.0" layoutY="136.0" prefWidth="300.0" promptText="Volunteer student ID (e.g. 1001)" />
                         <Label layoutX="20.0" layoutY="180.0" text="Responsibility:" />
                         <TextField fx:id="responsibilityTF" layoutX="130.0" layoutY="176.0" prefWidth="300.0" promptText="Responsibility" />
                         <Button layoutX="130.0" layoutY="216.0" mnemonicParsing="false" onAction="#assignOA" text="Assign" />
                         <TableView fx:id="assignmentsTV" layoutX="20.0" layoutY="265.0" prefHeight="270.0" prefWidth="795.0">
                             <columns>
-                                <TableColumn fx:id="asgIdTC" prefWidth="150.0" text="Assignment" />
-                                <TableColumn fx:id="asgVolTC" prefWidth="150.0" text="Volunteer ID" />
-                                <TableColumn fx:id="asgEventTC" prefWidth="150.0" text="Event ID" />
-                                <TableColumn fx:id="asgRespTC" prefWidth="220.0" text="Responsibility" />
-                                <TableColumn fx:id="asgStatusTC" prefWidth="120.0" text="Status" />
+                                <TableColumn fx:id="assignmentTC" prefWidth="150.0" text="Assignment" />
+                                <TableColumn fx:id="volunteerIdTC" prefWidth="150.0" text="Volunteer ID" />
+                                <TableColumn fx:id="eventIdTC" prefWidth="150.0" text="Event ID" />
+                                <TableColumn fx:id="responsibiltyTC" prefWidth="220.0" text="Responsibility" />
+                                <TableColumn fx:id="statusTC" prefWidth="120.0" text="Status" />
                             </columns>
                         </TableView>
+                  <Button layoutX="634.0" layoutY="563.0" mnemonicParsing="false" onAction="#assignOA" prefHeight="25.0" prefWidth="161.0" text="Back to Dashboard" />
                     </children>
                 </AnchorPane>
             </content>

@@ -38,23 +38,23 @@ public class U2G5_AssignVolunteerController {
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private ComboBox<String> eventBox;
-    @javafx.fxml.FXML
-    private TextField volunteerTF;
-    @javafx.fxml.FXML
     private TextField responsibilityTF;
     @javafx.fxml.FXML
     private TableView<VolunteerAssignment> assignmentsTV;
     @javafx.fxml.FXML
-    private TableColumn<VolunteerAssignment, String> asgIdTC;
+    private TextField volunteerIIDTF;
     @javafx.fxml.FXML
-    private TableColumn<VolunteerAssignment, Integer> asgVolTC;
+    private TableColumn responsibiltyTC;
     @javafx.fxml.FXML
-    private TableColumn<VolunteerAssignment, Integer> asgEventTC;
+    private TableColumn volunteerIdTC;
     @javafx.fxml.FXML
-    private TableColumn<VolunteerAssignment, String> asgRespTC;
+    private ComboBox eventCB;
     @javafx.fxml.FXML
-    private TableColumn<VolunteerAssignment, String> asgStatusTC;
+    private TableColumn statusTC;
+    @javafx.fxml.FXML
+    private TableColumn assignmentTC;
+    @javafx.fxml.FXML
+    private TableColumn eventIdTC;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -142,7 +142,7 @@ public class U2G5_AssignVolunteerController {
         SceneManager.switchTo("U2G3_ReviewandapproveClubMembership");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void communityProgramOA(ActionEvent actionEvent) {
         String programs = DataStore.get().getCommunityPrograms().stream()
                 .map(p -> "• " + p.getDetails())
