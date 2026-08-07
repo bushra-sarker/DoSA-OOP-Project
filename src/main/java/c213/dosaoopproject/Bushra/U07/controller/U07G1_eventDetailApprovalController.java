@@ -100,7 +100,7 @@ public class U07G1_eventDetailApprovalController {
     @FXML
     public void confirmRevisionOA(ActionEvent event) {
         // Event 6: Validate rationale input
-        if (ValidationUtil.isEmpty(new TextField(revisionCommentsTextF.getText()))) {
+        if (ValidationUtil.isEmpty(revisionCommentsTextF.getText())) {
             AlertUtil.showError("Validation Error", "Please provide comments for revision.");
             return;
         }

@@ -87,7 +87,7 @@ public class U08_StudentWelfareOfficerViewController {
     @FXML
     public void financialAssistanceOA(ActionEvent event) {
         setActiveButton(btnFinancialAssistance);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G2_financialAssistanceView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G2_emergencyFundDashboard.fxml");
     }
 
     @FXML

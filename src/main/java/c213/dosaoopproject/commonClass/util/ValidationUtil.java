@@ -2,13 +2,13 @@ package c213.dosaoopproject.commonClass.util;
 
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+
 import java.time.LocalDate;
 
 public class ValidationUtil {
 
-    public static boolean isEmpty(TextField textField) {
-        return textField == null || textField.getText() == null || textField.getText().trim().isEmpty();
+    public static boolean isEmpty(String textField) {
+        return textField == null || textField.trim().isEmpty();
     }
 
     public static boolean isComboUnselected(ComboBox<?> comboBox) {

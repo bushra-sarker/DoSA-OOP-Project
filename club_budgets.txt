@@ -1,0 +1,3 @@
+IUB CSE Society,500000.0,450000.0,Approved,Approved for annual tech fest and hackathon events.
+IUB IEEE Student Branch,350000.0,300000.0,Approved,Allocated for workshops and seminar series.
+IUB Robotics Club,600000.0,500000.0,Approved,Budget granted for national hardware competitions.

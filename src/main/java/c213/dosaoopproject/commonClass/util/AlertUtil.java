@@ -7,7 +7,6 @@ import java.util.Optional;
 public class AlertUtil {
 
     public static void showInformation(String title, String message){
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -16,7 +15,6 @@ public class AlertUtil {
     }
 
     public static void showError(String title, String message){
-
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -39,6 +37,7 @@ public class AlertUtil {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
 
     public class ToShowAlert {
         public static void showAlert(Alert.AlertType type, String message) {
