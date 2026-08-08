@@ -3,11 +3,7 @@ package c213.dosaoopproject.fahmida.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * A single line in a user's activity history ("Track History" /
- * "View Activity History"). One entry is recorded whenever a user performs an
- * action such as registering for an event or approving an application.
- */
+
 public class HistoryEntry implements Serializable {
 
     private static final long serialVersionUID = 1L;

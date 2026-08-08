@@ -3,9 +3,7 @@ package c213.dosaoopproject.fahmida.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * A participation certificate issued to a student for an activity.
- */
+
 public class Certificate implements Serializable {
 
     private static final long serialVersionUID = 1L;

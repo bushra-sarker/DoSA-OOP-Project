@@ -2,9 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import java.io.Serializable;
 
-/**
- * A report a Club Advisor submits after an event finishes.
- */
+
 public class EventCompletionReport implements Serializable {
 
     private static final long serialVersionUID = 1L;
