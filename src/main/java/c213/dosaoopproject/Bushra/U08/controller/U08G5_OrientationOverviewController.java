@@ -104,6 +104,6 @@ public class U08G5_OrientationOverviewController {
 
     private void openSetupView() {
         AnchorPane contentArea = (AnchorPane) orientationsTableView.getScene().lookup("#contentArea");
-        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/view/U08G5_orientationSetup.fxml");
+        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G5_orientationSetup.fxml");
     }
 }

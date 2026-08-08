@@ -105,13 +105,13 @@ public class U08_StudentWelfareOfficerViewController {
     @FXML
     public void orientationOA(ActionEvent event) {
         setActiveButton(btnOrientation);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G5_orientationView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G5_orientationOverview.fxml");
     }
 
     @FXML
     public void accommodationsOA(ActionEvent event) {
         setActiveButton(btnAccommodations);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G6_accommodationsView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G6_housingDashboard.fxml");
     }
 
     @FXML
