@@ -17,11 +17,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * Club Advisor Goal: finalize a volunteer assignment. Shows the registrant
- * picked on the Assign Volunteer list (read-only) and lets the advisor enter
- * a responsibility to confirm the assignment.
- */
 public class U2G5_AssignVolunteerFormController
 {
     @javafx.fxml.FXML

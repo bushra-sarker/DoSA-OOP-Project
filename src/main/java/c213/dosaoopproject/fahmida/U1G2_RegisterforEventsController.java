@@ -40,12 +40,11 @@ public class U1G2_RegisterforEventsController
     public void initialize() {
         deptCB.getItems().addAll("CSE", "EEE", "BBA");
         eventNameCB.getItems().addAll(
-                "Robotics",
-                "Hackathon",
-                "Cultural Night",
-                "Sports Day",
+                "Robotics Workshop",
                 "Career Fair",
-                "Science Olympiad"
+                "Cultural",
+                "Sports Day",
+                "Annual Drama"
         );
     }
     @javafx.fxml.FXML

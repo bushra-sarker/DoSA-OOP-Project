@@ -11,13 +11,8 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * User-1 Goal-1 (details): shows the full text of the notice the student picked
- * on the "View Notices" screen ("Read More").
- */
 public class U1G1_NoticeDetailsController {
 
-    /** The notice chosen on the list screen, handed over before navigation. */
     private static Notice selectedNotice;
 
     public static void setSelectedNotice(Notice notice) {

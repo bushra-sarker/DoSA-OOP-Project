@@ -70,10 +70,8 @@ public class U1G2_EventListController {
             return;
         }
 
-        // save the chosen event so the next screen knows which event to register for
         Session.setSelectedEvent(event);
 
-        // navigate to the registration form screen
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G2_RegisterForEvents.fxml");
     }
     @javafx.fxml.FXML
@@ -114,16 +112,6 @@ public class U1G2_EventListController {
     @javafx.fxml.FXML
     public void communityProgramOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G5_CommunityService.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

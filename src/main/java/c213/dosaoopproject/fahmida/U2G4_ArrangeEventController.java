@@ -24,11 +24,6 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.time.LocalDate;
 
-/**
- * Club Advisor Goal: Arrange Club Events. Captures the new event's details and
- * adds it to the shared DataStore (the same list the students' event screens read
- * from), then lists all events below.
- */
 public class U2G4_ArrangeEventController {
 
     @javafx.fxml.FXML

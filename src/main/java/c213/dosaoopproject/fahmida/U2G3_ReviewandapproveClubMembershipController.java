@@ -19,11 +19,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * Club Advisor Goal: Review and Approve Club Membership Requests. Lists the
- * applications students submitted and lets the advisor Approve or Reject the
- * selected one (updating its status in the shared DataStore).
- */
 public class U2G3_ReviewandapproveClubMembershipController {
 
     @javafx.fxml.FXML

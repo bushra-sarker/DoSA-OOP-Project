@@ -2,13 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import commonClass.User;
 
-/**
- * User-1: a Student. Inherits identity fields from {@link User} and adds the
- * student-specific {@code email} and {@code department}.
- *
- * <p>The inherited {@code userId} doubles as the student id and {@code fullName}
- * as the student's name, so nothing is duplicated.</p>
- */
+
 public class Student extends User {
 
     private static final long serialVersionUID = 1L;

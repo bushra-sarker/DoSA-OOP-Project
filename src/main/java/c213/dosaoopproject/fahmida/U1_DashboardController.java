@@ -125,11 +125,6 @@ public class U1_DashboardController
     }
 
     @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
     public void clubMembershipOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G3_ApplyForClub.fxml");
     }
@@ -137,11 +132,6 @@ public class U1_DashboardController
     @javafx.fxml.FXML
     public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

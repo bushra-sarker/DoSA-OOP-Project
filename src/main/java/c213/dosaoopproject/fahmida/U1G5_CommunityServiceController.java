@@ -17,10 +17,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * User-1 Goal: Community Service Programs. Lists the programs and lets the
- * student sign up for the selected one as a volunteer.
- */
 public class U1G5_CommunityServiceController {
 
     @javafx.fxml.FXML
@@ -38,11 +34,11 @@ public class U1G5_CommunityServiceController {
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private TableColumn venueTC;
+    private TableColumn<CommunityServiceProgram,String> venueTC;
     @javafx.fxml.FXML
-    private TableColumn dateTC;
+    private TableColumn<CommunityServiceProgram,String> dateTC;
     @javafx.fxml.FXML
-    private TableColumn EventNameTC;
+    private TableColumn<CommunityServiceProgram,String> EventNameTC;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -67,14 +63,11 @@ public class U1G5_CommunityServiceController {
             return;
         }
 
-        // remember the chosen program so the form can auto-fill its name
         Session.setSelectedProgram(program);
 
         // open the volunteer registration form
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G5_CommunityServiceForm.fxml");
     }
-
-    // --- navigation ----------------------------------------------------------
 
     @javafx.fxml.FXML
     public void gotoDashboardOA(ActionEvent actionEvent) throws IOException {
@@ -114,16 +107,6 @@ public class U1G5_CommunityServiceController {
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G6_SubmitComplaints.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

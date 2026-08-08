@@ -3,9 +3,7 @@ package c213.dosaoopproject.fahmida.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * A complaint or report submitted by a student.
- */
+
 public class Complaint implements Serializable {
 
     private static final long serialVersionUID = 1L;

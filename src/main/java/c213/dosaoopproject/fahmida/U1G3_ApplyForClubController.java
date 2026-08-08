@@ -20,10 +20,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * User-1 Goal-3: Apply for Club Membership. Lists all clubs; clicking
- * "Apply to Join" remembers the chosen club and opens the application form.
- */
 public class U1G3_ApplyForClubController {
 
     @javafx.fxml.FXML
@@ -111,16 +107,6 @@ public class U1G3_ApplyForClubController {
     @javafx.fxml.FXML
     public void communityProgramOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G5_CommunityService.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

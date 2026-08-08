@@ -51,14 +51,12 @@ public class U1G5_CommunityServiceFormController
             eventNameCB.getItems().add(program.getProgramName());
         }
 
-        // pre-fill from the program picked on the previous screen, if any
         CommunityServiceProgram selected = Session.getSelectedProgram();
         if (selected != null) {
             eventNameCB.setValue(selected.getProgramName());
             campaignDurationTF.setText(selected.getCampaignDuration());
         }
 
-        // pre-fill from the logged-in student
         User user = Session.getCurrentUser();
         if (user != null) {
             studentNameTF.setText(user.getFullName());
@@ -87,10 +85,6 @@ public class U1G5_CommunityServiceFormController
             return;
         }
 
-        if (!phone.matches("\\d{7,15}")) {
-            ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Please enter a valid phone number.");
-            return;
-        }
 
         User user = Session.getCurrentUser();
         String department = (user instanceof Student student) ? student.getDepartment() : "";
@@ -149,16 +143,6 @@ public class U1G5_CommunityServiceFormController
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G6_SubmitComplaints.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

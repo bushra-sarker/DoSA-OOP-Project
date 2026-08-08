@@ -17,10 +17,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * Club Advisor Goal: Update Club Information. Loads the advisor's club into the
- * form and saves the edits back to the DataStore.
- */
 public class U2G1_updateClubinfoController {
 
     @javafx.fxml.FXML

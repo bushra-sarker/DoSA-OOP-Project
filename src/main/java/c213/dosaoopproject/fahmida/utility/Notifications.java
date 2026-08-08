@@ -10,10 +10,7 @@ import javafx.scene.control.Alert;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-/**
- * Shows the logged-in user's notifications in a dialog and marks them read.
- * Used by the "notification" button on every screen.
- */
+
 public final class Notifications {
 
     private Notifications() {

@@ -19,11 +19,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * Club Advisor Goal: Assign Student Volunteers to Events. Lists every student
- * sign-up recorded by the Community Service registration form and lets the
- * advisor pick one to finalize on the Assign Volunteer form.
- */
 public class U2G5_AssignVolunteerController {
 
     @javafx.fxml.FXML

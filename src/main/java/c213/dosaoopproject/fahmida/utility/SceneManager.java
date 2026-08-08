@@ -8,9 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Central helper for switching the window between FXML screens.
- */
+
 public class SceneManager {
 
     public static void navigate(ActionEvent actionEvent, String fxml) throws IOException {

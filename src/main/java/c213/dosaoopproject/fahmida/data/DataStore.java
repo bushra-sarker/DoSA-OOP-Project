@@ -18,30 +18,31 @@ import c213.dosaoopproject.fahmida.model.Student;
 import c213.dosaoopproject.fahmida.model.VolunteerAssignment;
 import c213.dosaoopproject.fahmida.utility.FileManager;
 
-import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- * The single source of data for the whole app.
- *
- * <p>Holds every list in memory and persists them together to one binary file
- * ({@code dosa.dat}) using Java object serialization — this satisfies the
- * specification's "read users from a binary file" requirement without needing a
- * database. It is a singleton: {@link #get()} loads the file on first use (or
- * seeds fresh sample data if the file does not exist yet).</p>
- *
- * <p>Controllers read the lists, mutate them, then call {@link #save()}.</p>
+ * The single source of data for the whole app. Each list is persisted to its
+ * own binary file (Object Stream), one file per data type.
  */
-public class DataStore implements Serializable {
+public class DataStore {
 
-    private static final long serialVersionUID = 1L;
-
-    /** Binary data file, created in the working directory on first save. */
-    private static final String FILE_NAME = "dosa.dat";
-    private static final Path FILE = Path.of(FILE_NAME);
+    private static final String USERS_FILE = "Users.bin";
+    private static final String NOTICES_FILE = "Notices.bin";
+    private static final String EVENTS_FILE = "Events.bin";
+    private static final String EVENT_REGISTRATIONS_FILE = "EventRegistrations.bin";
+    private static final String MEMBERSHIP_APPLICATIONS_FILE = "MembershipApplications.bin";
+    private static final String COMMUNITY_PROGRAMS_FILE = "CommunityPrograms.bin";
+    private static final String COMPLAINTS_FILE = "Complaints.bin";
+    private static final String VOLUNTEER_ASSIGNMENTS_FILE = "VolunteerAssignments.bin";
+    private static final String COMPLETION_REPORTS_FILE = "CompletionReports.bin";
+    private static final String CLUBS_FILE = "Clubs.bin";
+    private static final String CERTIFICATES_FILE = "Certificates.bin";
+    private static final String APPROVAL_LETTERS_FILE = "ApprovalLetters.bin";
+    private static final String HISTORY_FILE = "History.bin";
+    private static final String NOTIFICATIONS_FILE = "Notifications.bin";
 
     private static DataStore instance;
 
@@ -63,9 +64,6 @@ public class DataStore implements Serializable {
     private DataStore() {
     }
 
-    // ----- singleton / persistence -------------------------------------------
-
-    /** Returns the shared store, loading it from disk (or seeding) on first call. */
     public static DataStore get() {
         if (instance == null) {
             instance = load();
@@ -74,22 +72,51 @@ public class DataStore implements Serializable {
     }
 
     private static DataStore load() {
-        if (Files.exists(FILE)) {
-            DataStore loaded = FileManager.readFile(FILE_NAME);
-            if (loaded != null) {
-                return loaded;
-            }
-            System.err.println("Could not read " + FILE_NAME + " — starting with fresh seeded data.");
+        if (!Files.exists(Path.of(USERS_FILE))) {
+            DataStore fresh = new DataStore();
+            fresh.seed();
+            fresh.save();
+            return fresh;
         }
-        DataStore fresh = new DataStore();
-        fresh.seed();
-        fresh.save();
-        return fresh;
+        DataStore ds = new DataStore();
+        ds.users.addAll(loadOrEmpty(USERS_FILE));
+        ds.notices.addAll(loadOrEmpty(NOTICES_FILE));
+        ds.events.addAll(loadOrEmpty(EVENTS_FILE));
+        ds.eventRegistrations.addAll(loadOrEmpty(EVENT_REGISTRATIONS_FILE));
+        ds.membershipApplications.addAll(loadOrEmpty(MEMBERSHIP_APPLICATIONS_FILE));
+        ds.communityPrograms.addAll(loadOrEmpty(COMMUNITY_PROGRAMS_FILE));
+        ds.complaints.addAll(loadOrEmpty(COMPLAINTS_FILE));
+        ds.volunteerAssignments.addAll(loadOrEmpty(VOLUNTEER_ASSIGNMENTS_FILE));
+        ds.completionReports.addAll(loadOrEmpty(COMPLETION_REPORTS_FILE));
+        ds.clubs.addAll(loadOrEmpty(CLUBS_FILE));
+        ds.certificates.addAll(loadOrEmpty(CERTIFICATES_FILE));
+        ds.approvalLetters.addAll(loadOrEmpty(APPROVAL_LETTERS_FILE));
+        ds.history.addAll(loadOrEmpty(HISTORY_FILE));
+        ds.notifications.addAll(loadOrEmpty(NOTIFICATIONS_FILE));
+        return ds;
     }
 
-    /** Writes every list to the binary file. */
+    private static <T> ArrayList<T> loadOrEmpty(String fileName) {
+        ArrayList<T> loaded = FileManager.readFile(fileName);
+        return loaded != null ? loaded : new ArrayList<>();
+    }
+
+    /** Writes every list to its own binary file. */
     public void save() {
-        FileManager.writeFile(FILE_NAME, this);
+        FileManager.writeFile(USERS_FILE, users);
+        FileManager.writeFile(NOTICES_FILE, notices);
+        FileManager.writeFile(EVENTS_FILE, events);
+        FileManager.writeFile(EVENT_REGISTRATIONS_FILE, eventRegistrations);
+        FileManager.writeFile(MEMBERSHIP_APPLICATIONS_FILE, membershipApplications);
+        FileManager.writeFile(COMMUNITY_PROGRAMS_FILE, communityPrograms);
+        FileManager.writeFile(COMPLAINTS_FILE, complaints);
+        FileManager.writeFile(VOLUNTEER_ASSIGNMENTS_FILE, volunteerAssignments);
+        FileManager.writeFile(COMPLETION_REPORTS_FILE, completionReports);
+        FileManager.writeFile(CLUBS_FILE, clubs);
+        FileManager.writeFile(CERTIFICATES_FILE, certificates);
+        FileManager.writeFile(APPROVAL_LETTERS_FILE, approvalLetters);
+        FileManager.writeFile(HISTORY_FILE, history);
+        FileManager.writeFile(NOTIFICATIONS_FILE, notifications);
     }
 
     // ----- authentication -----------------------------------------------------
@@ -209,9 +236,12 @@ public class DataStore implements Serializable {
         clubs.add(new ClubInfo(1, "Robotics Club", "Technology", "Dr. Karim Uddin", 24,
                 "Builds robots and runs workshops.", "Sundays 3–5 PM",
                 "robotics@iub.edu", "01700000000", "Auditorium Lab"));
-        clubs.add(new ClubInfo(2, "Debate Club", "Cultural", "Ms. Nadia Islam", 30,
-                "Weekly debates and public-speaking practice.", "Tuesdays 4–6 PM",
-                "debate@iub.edu", "01800000000", "Room 4012"));
+        clubs.add(new ClubInfo(2, "Jukti Club", "Programming", "Dr. Karim Uddin", 30,
+                "Weekly Coding practice.", "Tuesdays 4–6 PM",
+                "jukti@iub.edu", "01800000000", "Room 4012"));
+        clubs.add(new ClubInfo(3, "Art Club", "Cultural", "Ms. Nadia Islam", 25,
+                "Creative Design & Art Exibitions.", "Sundays 3–5 PM",
+                "Arts@iub.edu", "01900000000", "Activity Area"));
 
         // Notices (posted by a club — visible to students)
         notices.add(new Notice(1, "Robotics Club", "Welcome Session",
@@ -225,7 +255,10 @@ public class DataStore implements Serializable {
         events.add(new ArrangeClubEvent(1, "Robotics Workshop",
                 "Hands-on Arduino session.", LocalDate.now().plusDays(7),
                 "Auditorium Lab", "Upcoming"));
-        events.add(new ArrangeClubEvent(2, "Career Fair",
+        events.add(new ArrangeClubEvent(2, "Annual Drama Production",
+                "Padmabati Drama produced by students.", LocalDate.now().plusDays(7),
+                "IUB Theatre ", "Upcoming"));
+        events.add(new ArrangeClubEvent(3, "Career Fair",
                 "Meet employers on campus.", LocalDate.now().plusDays(14),
                 "Main Ground", "Upcoming"));
 

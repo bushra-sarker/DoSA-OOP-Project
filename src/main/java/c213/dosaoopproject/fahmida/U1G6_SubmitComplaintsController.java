@@ -20,10 +20,6 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.time.LocalDate;
 
-/**
- * User-1 Goal: Submit Complaints or Reports (full sidebar screen). Creates a
- * {@link Complaint} from the form and stores it.
- */
 public class U1G6_SubmitComplaintsController {
 
     @javafx.fxml.FXML
@@ -80,8 +76,7 @@ public class U1G6_SubmitComplaintsController {
         ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, "Complaint submitted. Thank you.");
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
     }
-
-    // --- sidebar navigation --------------------------------------------------
+    
 
     @javafx.fxml.FXML
     public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
@@ -116,16 +111,6 @@ public class U1G6_SubmitComplaintsController {
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
         // already on this screen
-    }
-
-    @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

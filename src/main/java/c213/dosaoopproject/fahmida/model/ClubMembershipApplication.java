@@ -2,10 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import java.io.Serializable;
 
-/**
- * A student's application to join a club. The student submits it (status
- * "Pending"); the Club Advisor approves or rejects it under "Review Membership".
- */
+
 public class ClubMembershipApplication implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -3,11 +3,6 @@ package c213.dosaoopproject.fahmida.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * An in-app notification for one user. Raised automatically when a relevant
- * status change happens (membership approved, notice posted, ...) and shown on
- * the user's dashboard via the "notification" button.
- */
 public class Notification implements Serializable {
 
     private static final long serialVersionUID = 1L;

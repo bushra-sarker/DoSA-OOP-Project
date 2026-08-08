@@ -3,11 +3,7 @@ package c213.dosaoopproject.fahmida.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * A notice / announcement posted by a Club Advisor and read by Students.
- * Shared through the DataStore, so a notice an advisor posts appears
- * immediately in every student's "View Notices" list.
- */
+
 public class Notice implements Serializable {
 
     private static final long serialVersionUID = 1L;

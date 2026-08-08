@@ -50,7 +50,6 @@ public class U1G3_ApplyForClubFormController
         // major options
         majorCB.getItems().addAll("CSE", "EEE", "BBA");
 
-        // club name options (all clubs), then auto-select the one picked on the previous screen
         for (ClubInfo club : DataStore.get().getClubs()) {
             clubNameCB.getItems().add(club.getClubName());
         }
@@ -67,26 +66,22 @@ public class U1G3_ApplyForClubFormController
         String reason = QLabel1.getText().trim();
         String skills = QLabel2.getText().trim();
 
-        // 1) all fields must be filled
         if (clubNameCB.getValue() == null || majorCB.getValue() == null
                 || name.isEmpty() || id.isEmpty() || reason.isEmpty() || skills.isEmpty()) {
             ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Please fill in all required fields.");
             return;
         }
 
-        // 2) student name must be 30 characters or fewer
         if (name.length() > 30) {
             ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Student name must be 30 characters or fewer.");
             return;
         }
 
-        // 3) student ID must be exactly 7 digits
         if (id.length() != 7 || !id.matches("\\d{7}")) {
             ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Student ID must be 7 digits.");
             return;
         }
 
-        // save the application so the Club Advisor can review it later
         String clubName = clubNameCB.getValue().toString();
         String major = majorCB.getValue().toString();
         DataStore store = DataStore.get();
@@ -143,11 +138,6 @@ public class U1G3_ApplyForClubFormController
     }
 
     @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
     public void clubMembershipOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G3_ApplyForClub.fxml");
     }
@@ -155,11 +145,6 @@ public class U1G3_ApplyForClubFormController
     @javafx.fxml.FXML
     public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

@@ -18,11 +18,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * Club Advisor Goal: Post Club Notices. Shows the list of existing notices in a
- * table. The "Create Notice" button opens the separate create-notice screen
- * ({@link U2G2_CreateClubNoticeController}) where the new notice is entered.
- */
+
 public class U2G2_PostClubNoticeController {
 
     @javafx.fxml.FXML
@@ -56,13 +52,10 @@ public class U2G2_PostClubNoticeController {
                 FXCollections.observableArrayList(DataStore.get().getNotices()));
     }
 
-    // Opens the separate "Create Club Notice" screen.
     @javafx.fxml.FXML
     public void createNoticeButtonOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G2_CreateClubNotice.fxml");
     }
-
-    // --- navigation ----------------------------------------------------------
 
     @javafx.fxml.FXML
     public void backtoDashboardButtonOA(ActionEvent actionEvent) throws IOException {

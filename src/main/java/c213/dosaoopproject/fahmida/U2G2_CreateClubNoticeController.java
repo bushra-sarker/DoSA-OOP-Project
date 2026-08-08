@@ -21,11 +21,6 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.time.LocalDate;
 
-/**
- * Club Advisor Goal (create form): enter a new club notice and post it. The new
- * {@link Notice} is added to the shared DataStore, so it appears both on the
- * advisor's notice list and on every student's "View Notices" screen.
- */
 public class U2G2_CreateClubNoticeController {
 
     @javafx.fxml.FXML
@@ -47,15 +42,12 @@ public class U2G2_CreateClubNoticeController {
     public void initialize() {
         Ui.greet(nameLabel11, userIdLabel11);
 
-        // Fill the club dropdown with all club names.
         for (ClubInfo club : DataStore.get().getClubs()) {
             clubNameCB.getItems().add(club.getClubName());
         }
-        // Pre-select the advisor's own club.
         clubNameCB.setValue(currentClubName());
     }
 
-    // "Post Notice" button — saves the new notice, then goes back to the list.
     @javafx.fxml.FXML
     public void postNoticeOA(ActionEvent actionEvent) throws IOException {
         String club = clubNameCB.getValue();

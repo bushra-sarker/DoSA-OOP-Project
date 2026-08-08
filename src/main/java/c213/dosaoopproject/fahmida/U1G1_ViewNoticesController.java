@@ -19,13 +19,6 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-/**
- * User-1 Goal-1: View DoSA Notices and Announcements.
- *
- * <p>Shows all notices in a table. Each row has a "Read More" button that
- * opens that notice's details on the {@link U1G1_NoticeDetailsController}
- * screen.</p>
- */
 public class U1G1_ViewNoticesController {
 
     @javafx.fxml.FXML
@@ -54,14 +47,12 @@ public class U1G1_ViewNoticesController {
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Show the logged-in user's name and ID on the header.
         User user = Session.getCurrentUser();
         if (user != null) {
             nameLabel11.setText(user.getFullName());
             userIdLabel11.setText(user.getLoginId());
         }
 
-        // Tell each column which Notice field to read.
         noticeTitleTC.setCellValueFactory(new PropertyValueFactory<>("title"));
         postedByTC.setCellValueFactory(new PropertyValueFactory<>("clubName"));
         categoryTC.setCellValueFactory(new PropertyValueFactory<>("category"));
@@ -70,11 +61,9 @@ public class U1G1_ViewNoticesController {
         // Put a "Read More" button on every row.
         addReadMoreButton();
 
-        // Put all the notices into the table.
         noticeTV.setItems(FXCollections.observableArrayList(DataStore.get().getNotices()));
     }
 
-    /** Makes the last column show a "Read More" button on each row. */
     private void addReadMoreButton() {
         actionTC.setCellFactory(column -> new TableCell<Notice, Void>() {
             private final Button readMoreBtn = new Button("Read More");
@@ -146,18 +135,8 @@ public class U1G1_ViewNoticesController {
     }
 
     @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
-    }
-
-    @javafx.fxml.FXML
     public void clubMembershipOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G3_ApplyForClub.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML

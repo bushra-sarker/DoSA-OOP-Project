@@ -2,9 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import java.io.Serializable;
 
-/**
- * A community-service program a student can enrol in as a volunteer.
- */
+
 public class CommunityServiceProgram implements Serializable {
 
     private static final long serialVersionUID = 1L;

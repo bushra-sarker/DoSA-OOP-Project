@@ -2,12 +2,7 @@ package c213.dosaoopproject.fahmida.utility;
 
 import java.io.*;
 
-/**
- * Generic binary read/write helper — saves any {@link Serializable} object to
- * a file and reads it back, one file per call. Shared file format with
- * Nahin's {@code c213.dosaoopproject.Nahin.utility.FileManager}, so files she
- * writes (e.g. {@code campaigns.bin}) can be read here too.
- */
+
 public class FileManager {
 
     public static boolean writeFile(String fileName, Object data) {

@@ -4,10 +4,7 @@ import c213.dosaoopproject.fahmida.data.DataStore;
 
 import java.util.stream.Collectors;
 
-/**
- * Search process (spec Process-4): finds notices, events and clubs whose text
- * contains the keyword. Returns a formatted, human-readable result block.
- */
+
 public final class Search {
 
     private Search() {

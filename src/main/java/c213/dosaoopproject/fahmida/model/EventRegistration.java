@@ -2,10 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import java.io.Serializable;
 
-/**
- * A student's registration for an event. Created when a student clicks
- * "Register" and reviewed by the Club Advisor under "Registered Participants".
- */
+
 public class EventRegistration implements Serializable {
 
     private static final long serialVersionUID = 1L;

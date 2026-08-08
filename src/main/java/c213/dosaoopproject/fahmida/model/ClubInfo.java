@@ -2,11 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import java.io.Serializable;
 
-/**
- * Editable information about a club. The Club Advisor updates this under
- * "Update Club Info". (Named {@code ClubInfo}; corresponds to
- * {@code UpdateClubInfo} in the class diagram.)
- */
+
 public class ClubInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;

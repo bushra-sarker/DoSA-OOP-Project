@@ -6,13 +6,6 @@ import c213.dosaoopproject.fahmida.model.CommunityServiceProgram;
 import c213.dosaoopproject.fahmida.model.EventRegistration;
 import commonClass.User;
 
-/**
- * Holds the currently logged-in user for the lifetime of the running app.
- *
- * <p>A deliberately tiny replacement for the "session token / sessionsManager"
- * described in the specification — enough for a desktop app where only one user
- * is logged in at a time.</p>
- */
 public final class Session {
 
     private static User currentUser;

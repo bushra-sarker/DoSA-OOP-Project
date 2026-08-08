@@ -23,10 +23,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-/**
- * Club Advisor (User-2) dashboard. The advisor FXML reuses the student handler
- * names, so each handler below maps to the advisor goal shown on its button.
- */
 public class U2_DashboardController {
 
     @javafx.fxml.FXML

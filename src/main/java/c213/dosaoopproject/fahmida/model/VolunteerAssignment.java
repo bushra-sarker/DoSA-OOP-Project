@@ -2,9 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import java.io.Serializable;
 
-/**
- * A volunteer assigned by a Club Advisor to help run an event.
- */
+
 public class VolunteerAssignment implements Serializable {
 
     private static final long serialVersionUID = 1L;

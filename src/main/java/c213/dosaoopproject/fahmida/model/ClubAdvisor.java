@@ -2,10 +2,7 @@ package c213.dosaoopproject.fahmida.model;
 
 import commonClass.User;
 
-/**
- * User-2: a Club Advisor. Inherits identity fields from {@link User} and adds
- * {@code email} plus the id of the club this advisor manages.
- */
+
 public class ClubAdvisor extends User {
 
     private static final long serialVersionUID = 1L;
