@@ -100,23 +100,6 @@ public class InsuranceClaim implements Serializable {
         this.actionNote = actionNote;
     }
 
-    @Override
-    public String toString() {
-        return "InsuranceClaim{" +
-                "claimId='" + claimId + '\'' +
-                ", studentId='" + studentId + '\'' +
-                ", studentName='" + studentName + '\'' +
-                ", hospitalName='" + hospitalName + '\'' +
-                ", claimedAmount='" + claimedAmount + '\'' +
-                ", submissionDate='" + submissionDate + '\'' +
-                ", status='" + status + '\'' +
-                ", expenses='" + expenses + '\'' +
-                ", dischargeSummary=" + dischargeSummary +
-                ", hospitalBills=" + hospitalBills +
-                ", action='" + action + '\'' +
-                ", actionNote='" + actionNote + '\'' +
-                '}';
-    }
     public String toTxt() {
         return String.join(",",
                 claimId,
@@ -130,5 +113,10 @@ public class InsuranceClaim implements Serializable {
                 String.valueOf(dischargeSummary),
                 String.valueOf(hospitalBills)
         );
+    }
+
+    @Override
+    public String toString() {
+        return toTxt();
     }
 }

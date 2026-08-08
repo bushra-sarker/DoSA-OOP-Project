@@ -106,13 +106,13 @@ public class U07_HeadOfDoSAViewController {
     @FXML
     public void crisisViewOA(ActionEvent actionEvent) {
         setActiveButton(btnCrisisManagement);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G5_crisisView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G5_crisisDashboard.fxml");
     }
 
     @FXML
     public void exchangeViewOA(ActionEvent actionEvent) {
         setActiveButton(btnExchangePrograms);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G7_exchangeView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G6_exchangeProgramsList.fxml");
     }
 
     @FXML
