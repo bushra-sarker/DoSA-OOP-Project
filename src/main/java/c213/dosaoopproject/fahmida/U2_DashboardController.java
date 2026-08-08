@@ -107,7 +107,7 @@ public class U2_DashboardController {
     // "Arrange Club Events" — dedicated screen (feeds the students' event lists).
     @javafx.fxml.FXML
     public void viewScheduleOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G4_ArrangeEvent.fxml");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G4_ArrangeEducativeEvent.fxml");
     }
 
     // "Assign Student Volunteers to Events"

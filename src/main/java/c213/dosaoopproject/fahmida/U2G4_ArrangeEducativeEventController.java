@@ -24,7 +24,7 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class U2G4_ArrangeEventController {
+public class U2G4_ArrangeEducativeEventController {
 
     @javafx.fxml.FXML
     private Label userIdLabel11;

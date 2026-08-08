@@ -91,7 +91,7 @@ public class U2G5_AssignVolunteerController {
 
     @javafx.fxml.FXML
     public void viewScheduleOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G4_ArrangeEvent.fxml");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G4_ArrangeEducativeEvent.fxml");
     }
 
     @javafx.fxml.FXML

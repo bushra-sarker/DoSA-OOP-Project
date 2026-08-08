@@ -55,13 +55,12 @@ public class U1_DashboardController
             }
         }
         if (searchOFCRTF != null) {
-            // Search runs when the user presses Enter in the search box.
+
             searchOFCRTF.setOnAction(e -> ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, Search.query(searchOFCRTF.getText())));
         }
         showCardCounts(user);
     }
 
-    /** Fills the four summary cards with real counts from the data store. */
     private void showCardCounts(User user) {
         DataStore store = DataStore.get();
         int uid = user != null ? user.getUserId() : -1;

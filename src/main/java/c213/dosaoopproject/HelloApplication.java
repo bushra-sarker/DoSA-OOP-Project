@@ -7,12 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Application entry point.
- *
- * <p>Opens the shared Login screen. After a successful login the login controller
- * routes the user to their role-specific dashboard.</p>
- */
+
 public class HelloApplication extends Application {
 
     @Override

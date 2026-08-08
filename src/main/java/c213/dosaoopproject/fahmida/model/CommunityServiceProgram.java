@@ -9,10 +9,8 @@ public class CommunityServiceProgram implements Serializable {
 
     private int programId;
     private String programName;
-    private String type;
-    private String itemsNeeded;
-    private String campaignDuration;
-    private double amountRaised;
+    private String type;;
+    private String campaignDuration;;
     private String venue;
 
     public CommunityServiceProgram(int programId, String programName, String type,
@@ -21,9 +19,7 @@ public class CommunityServiceProgram implements Serializable {
         this.programId = programId;
         this.programName = programName;
         this.type = type;
-        this.itemsNeeded = itemsNeeded;
         this.campaignDuration = campaignDuration;
-        this.amountRaised = amountRaised;
         this.venue = venue;
     }
 
@@ -39,17 +35,11 @@ public class CommunityServiceProgram implements Serializable {
         return type;
     }
 
-    public String getItemsNeeded() {
-        return itemsNeeded;
-    }
 
     public String getCampaignDuration() {
         return campaignDuration;
     }
-
-    public double getAmountRaised() {
-        return amountRaised;
-    }
+    
 
     public String getVenue() {
         return venue;
