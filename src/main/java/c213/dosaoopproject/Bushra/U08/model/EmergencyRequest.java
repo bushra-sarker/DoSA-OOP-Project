@@ -29,20 +29,61 @@ public class EmergencyRequest {
         this.status = status;
     }
 
-    public String getRequestId() { return requestId; }
-    public String getStudentId() { return studentId; }
-    public String getStudentName() { return studentName; }
-    public String getDepartment() { return department; }
-    public String getCategory() { return category; }
-    public double getRequestedAmount() { return requestedAmount; }
-    public String getStatement() { return statement; }
-    public String getDocuments() { return documents; }
-    public String getDeptVerificationStatus() { return deptVerificationStatus; }
-    public void setDeptVerificationStatus(String deptVerificationStatus) { this.deptVerificationStatus = deptVerificationStatus; }
-    public double getApprovedAmount() { return approvedAmount; }
-    public void setApprovedAmount(double approvedAmount) { this.approvedAmount = approvedAmount; }
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public double getRequestedAmount() {
+        return requestedAmount;
+    }
+
+    public String getStatement() {
+        return statement;
+    }
+
+    public String getDocuments() {
+        return documents;
+    }
+
+    public String getDeptVerificationStatus() {
+        return deptVerificationStatus;
+    }
+
+    public double getApprovedAmount() {
+        return approvedAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setDeptVerificationStatus(String deptVerificationStatus) {
+        this.deptVerificationStatus = deptVerificationStatus;
+    }
+
+    public void setApprovedAmount(double approvedAmount) {
+        this.approvedAmount = approvedAmount;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String toFileFormat() {
         return requestId + ";" + studentId + ";" + studentName + ";" + department + ";" +

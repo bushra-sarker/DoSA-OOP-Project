@@ -3,7 +3,6 @@ package c213.dosaoopproject.Bushra.U07.controller;
 import c213.dosaoopproject.commonClass.data.TextFileUtil;
 import c213.dosaoopproject.commonClass.util.AlertUtil;
 import c213.dosaoopproject.commonClass.util.SubViewSwitcher;
-import c213.dosaoopproject.commonClass.util.ValidationUtil;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

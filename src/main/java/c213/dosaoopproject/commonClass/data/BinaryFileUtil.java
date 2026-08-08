@@ -1,6 +1,5 @@
 package c213.dosaoopproject.commonClass.data;
 
-import c213.dosaoopproject.commonClass.model.User;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -79,7 +78,7 @@ public class BinaryFileUtil {
     }
 
     // write object
-    public static <T> void writeObjects(String fileName, ArrayList<T> list) {
+    public static <T> void writeObjects(String fileName, List<Object> list) {
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
             oos.writeObject(list);

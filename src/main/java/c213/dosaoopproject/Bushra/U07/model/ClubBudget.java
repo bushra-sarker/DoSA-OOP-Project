@@ -20,19 +20,43 @@ public class ClubBudget {
         return clubName + "," + requestedAmount + "," + allocatedAmount + "," + status + "," + remarks;
     }
 
-    // Getters and Setters
-    public String getClubName() { return clubName; }
-    public void setClubName(String clubName) { this.clubName = clubName; }
+    public String getClubName() {
+        return clubName;
+    }
 
-    public double getRequestedAmount() { return requestedAmount; }
-    public void setRequestedAmount(double requestedAmount) { this.requestedAmount = requestedAmount; }
+    public void setClubName(String clubName) {
+        this.clubName = clubName;
+    }
 
-    public double getAllocatedAmount() { return allocatedAmount; }
-    public void setAllocatedAmount(double allocatedAmount) { this.allocatedAmount = allocatedAmount; }
+    public double getRequestedAmount() {
+        return requestedAmount;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public void setRequestedAmount(double requestedAmount) {
+        this.requestedAmount = requestedAmount;
+    }
 
-    public String getRemarks() { return remarks; }
-    public void setRemarks(String remarks) { this.remarks = remarks; }
+    public double getAllocatedAmount() {
+        return allocatedAmount;
+    }
+
+    public void setAllocatedAmount(double allocatedAmount) {
+        this.allocatedAmount = allocatedAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
 }

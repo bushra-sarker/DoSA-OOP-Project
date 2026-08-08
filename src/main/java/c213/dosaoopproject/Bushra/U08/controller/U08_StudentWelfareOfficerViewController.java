@@ -93,7 +93,7 @@ public class U08_StudentWelfareOfficerViewController {
     @FXML
     public void grievancesOA(ActionEvent event) {
         setActiveButton(btnGrievances);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G3_grievancesView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G3_grievanceManagement.fxml");
     }
 
     @FXML

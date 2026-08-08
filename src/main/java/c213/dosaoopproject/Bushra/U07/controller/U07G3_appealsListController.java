@@ -14,7 +14,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class U07G3_appealsListController {

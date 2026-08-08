@@ -3,7 +3,6 @@ package c213.dosaoopproject.Bushra.U08.controller;
 import c213.dosaoopproject.commonClass.util.AlertUtil;
 import c213.dosaoopproject.commonClass.util.SubViewSwitcher;
 import c213.dosaoopproject.commonClass.data.TextFileUtil;
-import c213.dosaoopproject.commonClass.util.ValidationUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G3GrievanceManagementController">
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G3_GrievanceManagementController">
     <padding>
         <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
     </padding>
-    <children>
 
+    <children>
         <!-- HEADER CARD -->
         <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;">
             <children>
@@ -36,10 +32,9 @@
             </children>
         </VBox>
 
-        <!-- SUMMARY CARDS SECTION -->
+        <!-- SUMMARY CARDS -->
         <HBox spacing="8.0">
             <children>
-                <!-- Academic Grievances Card -->
                 <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 4px;" HBox.hgrow="ALWAYS">
                     <children>
                         <Label fx:id="academicGrievanceCountLabel" text="0" textFill="#083c57">
@@ -55,7 +50,6 @@
                     </children>
                 </VBox>
 
-                <!-- Facility Grievances Card -->
                 <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 4px;" HBox.hgrow="ALWAYS">
                     <children>
                         <Label fx:id="facilityGrievanceCountLabel" text="0" textFill="#083c57">
@@ -71,7 +65,6 @@
                     </children>
                 </VBox>
 
-                <!-- Open Card -->
                 <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 4px;" HBox.hgrow="ALWAYS">
                     <children>
                         <Label fx:id="openGrievanceCountLabel" text="0" textFill="#d39e00">
@@ -87,7 +80,6 @@
                     </children>
                 </VBox>
 
-                <!-- Closed Card -->
                 <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 4px;" HBox.hgrow="ALWAYS">
                     <children>
                         <Label fx:id="closedGrievanceCountLabel" text="0" textFill="#1e7e34">
@@ -105,63 +97,19 @@
             </children>
         </HBox>
 
-        <!-- SEARCH & FILTER ROW CARD -->
-        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
-            <children>
-                <HBox alignment="CENTER_LEFT" spacing="8.0">
-                    <children>
-                        <TextField fx:id="searchGrievanceTextF" prefWidth="180.0" promptText="Search Grievance..." style="-fx-font-size: 11px;" />
-                        <ComboBox fx:id="categoryFilterComboBox" prefWidth="140.0" promptText="Category" style="-fx-font-size: 11px;">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="All Categories" />
-                                    <String fx:value="Grading / Exam" />
-                                    <String fx:value="Faculty Conduct" />
-                                    <String fx:value="Hostel / Facility" />
-                                    <String fx:value="Administrative" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                        <ComboBox fx:id="statusFilterComboBox" prefWidth="130.0" promptText="Status" style="-fx-font-size: 11px;">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="All Statuses" />
-                                    <String fx:value="Open" />
-                                    <String fx:value="Under Investigation" />
-                                    <String fx:value="Forwarded" />
-                                    <String fx:value="Closed" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Button fx:id="resetFilterButton" mnemonicParsing="false" onAction="#resetFilterOA" style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Reset">
-                            <font>
-                                <Font name="System Bold" size="11.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
-
-        <!-- ACADEMIC GRIEVANCES CARD -->
-        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" VBox.vgrow="ALWAYS">
+        <!-- ACADEMIC TABLE -->
+        <VBox prefHeight="318.0" prefWidth="696.0" spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" VBox.vgrow="ALWAYS">
             <children>
                 <Label text="Academic Grievances" textFill="#083c57">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Label>
-                <TableView fx:id="academicGrievancesTableView" VBox.vgrow="ALWAYS">
+                <TableView fx:id="academicGrievancesTableView" prefWidth="673.0" VBox.vgrow="ALWAYS">
                     <columns>
                         <TableColumn fx:id="academicGrievanceIdTableC" prefWidth="80.0" text="Grievance ID" />
-                        <TableColumn fx:id="academicComplainantIdTableC" prefWidth="90.0" text="Student ID" />
                         <TableColumn fx:id="academicCategoryTableC" prefWidth="110.0" text="Category" />
-                        <TableColumn fx:id="academicSubmissionDateTableC" prefWidth="85.0" text="Date" />
-                        <TableColumn fx:id="academicUrgencyLevelTableC" prefWidth="75.0" text="Urgency" />
-                        <TableColumn fx:id="academicAssignedUnitTableC" prefWidth="110.0" text="Assigned Unit" />
                         <TableColumn fx:id="academicGrievanceStatusTableC" prefWidth="80.0" text="Status" />
-                        <TableColumn fx:id="academicOpenGrievanceButtonTableC" prefWidth="70.0" text="Open" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -170,7 +118,7 @@
             </children>
         </VBox>
 
-        <!-- FACILITY GRIEVANCES CARD -->
+        <!-- FACILITY TABLE -->
         <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" VBox.vgrow="ALWAYS">
             <children>
                 <Label text="Facility Grievances" textFill="#083c57">
@@ -178,23 +126,19 @@
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Label>
-                <TableView fx:id="facilityGrievancesTableView" VBox.vgrow="ALWAYS">
+                <TableView fx:id="facilityGrievancesTableView" prefHeight="258.0" prefWidth="673.0" VBox.vgrow="ALWAYS">
                     <columns>
                         <TableColumn fx:id="facilityGrievanceIdTableC" prefWidth="80.0" text="Grievance ID" />
-                        <TableColumn fx:id="facilityComplainantIdTableC" prefWidth="90.0" text="Student ID" />
                         <TableColumn fx:id="facilityCategoryTableC" prefWidth="110.0" text="Category" />
-                        <TableColumn fx:id="facilitySubmissionDateTableC" prefWidth="85.0" text="Date" />
-                        <TableColumn fx:id="facilityUrgencyLevelTableC" prefWidth="75.0" text="Urgency" />
-                        <TableColumn fx:id="facilityAssignedUnitTableC" prefWidth="110.0" text="Assigned Unit" />
                         <TableColumn fx:id="facilityGrievanceStatusTableC" prefWidth="80.0" text="Status" />
-                        <TableColumn fx:id="facilityOpenGrievanceButtonTableC" prefWidth="70.0" text="Open" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
+            <Region prefHeight="29.0" prefWidth="673.0" />
+            <Button mnemonicParsing="false" onAction="#openGrievanceOA" prefHeight="25.0" prefWidth="209.0" text="Open Grievance" />
             </children>
         </VBox>
-
     </children>
 </VBox>

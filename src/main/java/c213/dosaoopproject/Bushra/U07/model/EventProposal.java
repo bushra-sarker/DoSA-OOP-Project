@@ -33,37 +33,91 @@ public class EventProposal implements Serializable {
         this.decisionRationale = "";
     }
 
-    // Getters and Setters
-    public String getEventName() { return eventName; }
-    public void setEventName(String eventName) { this.eventName = eventName; }
+    public String getEventName() {
+        return eventName;
+    }
 
-    public String getClubName() { return clubName; }
-    public void setClubName(String clubName) { this.clubName = clubName; }
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
 
-    public String getEventDate() { return eventDate; }
-    public void setEventDate(String eventDate) { this.eventDate = eventDate; }
+    public String getClubName() {
+        return clubName;
+    }
 
-    public String getVenue() { return venue; }
-    public void setVenue(String venue) { this.venue = venue; }
+    public void setClubName(String clubName) {
+        this.clubName = clubName;
+    }
 
-    public String getBudget() { return budget; }
-    public void setBudget(String budget) { this.budget = budget; }
+    public String getEventDate() {
+        return eventDate;
+    }
 
-    public String getScope() { return scope; }
-    public void setScope(String scope) { this.scope = scope; }
+    public void setEventDate(String eventDate) {
+        this.eventDate = eventDate;
+    }
 
-    public String getRiskLevel() { return riskLevel; }
-    public void setRiskLevel(String riskLevel) { this.riskLevel = riskLevel; }
+    public String getVenue() {
+        return venue;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public void setVenue(String venue) {
+        this.venue = venue;
+    }
 
-    public boolean isProposalPdfUploaded() { return proposalPdfUploaded; }
-    public void setProposalPdfUploaded(boolean proposalPdfUploaded) { this.proposalPdfUploaded = proposalPdfUploaded; }
+    public String getBudget() {
+        return budget;
+    }
 
-    public boolean isBudgetSheetUploaded() { return budgetSheetUploaded; }
-    public void setBudgetSheetUploaded(boolean budgetSheetUploaded) { this.budgetSheetUploaded = budgetSheetUploaded; }
+    public void setBudget(String budget) {
+        this.budget = budget;
+    }
 
-    public String getDecisionRationale() { return decisionRationale; }
-    public void setDecisionRationale(String decisionRationale) { this.decisionRationale = decisionRationale; }
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    public String getRiskLevel() {
+        return riskLevel;
+    }
+
+    public void setRiskLevel(String riskLevel) {
+        this.riskLevel = riskLevel;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public boolean isProposalPdfUploaded() {
+        return proposalPdfUploaded;
+    }
+
+    public void setProposalPdfUploaded(boolean proposalPdfUploaded) {
+        this.proposalPdfUploaded = proposalPdfUploaded;
+    }
+
+    public boolean isBudgetSheetUploaded() {
+        return budgetSheetUploaded;
+    }
+
+    public void setBudgetSheetUploaded(boolean budgetSheetUploaded) {
+        this.budgetSheetUploaded = budgetSheetUploaded;
+    }
+
+    public String getDecisionRationale() {
+        return decisionRationale;
+    }
+
+    public void setDecisionRationale(String decisionRationale) {
+        this.decisionRationale = decisionRationale;
+    }
 }
