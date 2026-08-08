@@ -50,7 +50,6 @@ public class U2G3_ReviewandapproveClubMembershipController {
         refresh();
     }
 
-    // Reloads the table from the shared data store.
     private void refresh() {
         applicationsTV.setItems(FXCollections.observableArrayList(
                 DataStore.get().getMembershipApplications()));
@@ -117,7 +116,6 @@ public class U2G3_ReviewandapproveClubMembershipController {
         }
     }
 
-    // --- navigation ----------------------------------------------------------
 
     @javafx.fxml.FXML
     public void backtoDashboardButtonOA(ActionEvent actionEvent) throws IOException {

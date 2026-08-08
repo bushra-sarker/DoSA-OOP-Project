@@ -80,7 +80,6 @@ public class U2G2_CreateClubNoticeController {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2_Dashboard.fxml");
     }
 
-    // --- helpers -------------------------------------------------------------
 
     private String currentClubName() {
         User user = Session.getCurrentUser();
@@ -100,7 +99,6 @@ public class U2G2_CreateClubNoticeController {
         }
     }
 
-    // --- navigation (sidebar) ------------------------------------------------
 
     @javafx.fxml.FXML
     public void studentdashboardOA(ActionEvent actionEvent) throws IOException {

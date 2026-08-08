@@ -71,7 +71,6 @@ public class U2G1_updateClubinfoController {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2_Dashboard.fxml");
     }
 
-    /** The club managed by the logged-in advisor. */
     private ClubInfo currentClub() {
         User user = Session.getCurrentUser();
         if (!(user instanceof ClubAdvisor advisor)) {
@@ -89,7 +88,6 @@ public class U2G1_updateClubinfoController {
         }
     }
 
-    // --- sidebar navigation --------------------------------------------------
 
     @javafx.fxml.FXML
     public void viewNoticesOA(ActionEvent actionEvent) {

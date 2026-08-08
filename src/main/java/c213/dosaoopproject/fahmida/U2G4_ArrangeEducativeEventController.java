@@ -4,6 +4,7 @@ import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
 import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
 import c213.dosaoopproject.fahmida.utility.ToShowAlert;
 import c213.dosaoopproject.fahmida.utility.Ui;
@@ -99,7 +100,6 @@ public class U2G4_ArrangeEducativeEventController {
         }
     }
 
-    // --- navigation ----------------------------------------------------------
 
     @javafx.fxml.FXML
     public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
@@ -136,7 +136,7 @@ public class U2G4_ArrangeEducativeEventController {
 
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignCommunityProgramVolunteer.fxml");
     }
 
     @javafx.fxml.FXML

@@ -3,21 +3,24 @@ package c213.dosaoopproject.fahmida;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.EventRegistration;
 import c213.dosaoopproject.fahmida.session.Session;
+import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
 import c213.dosaoopproject.fahmida.utility.ToShowAlert;
 import c213.dosaoopproject.fahmida.utility.Ui;
-import commonClass.User;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-public class U2G5_AssignVolunteerFormController
-{
+public class U2G5_AssignCommunityProgramVolunteerController {
+
     @javafx.fxml.FXML
     private Label userIdLabel11;
     @javafx.fxml.FXML
@@ -27,79 +30,42 @@ public class U2G5_AssignVolunteerFormController
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private TextField eventNameTF;
+    private TableView<EventRegistration> assignmentsTV;
     @javafx.fxml.FXML
-    private TextField studentNameTF;
+    private TableColumn<EventRegistration, String> eventNameTC;
     @javafx.fxml.FXML
-    private TextField volunteerIdTF;
+    private TableColumn<EventRegistration, Integer> volunteerIDTC;
     @javafx.fxml.FXML
-    private TextField emailTF;
+    private TableColumn<EventRegistration, String> deptTC;
     @javafx.fxml.FXML
-    private TextField phoneTF;
-    @javafx.fxml.FXML
-    private TextField responsibilityTF;
+    private TableColumn<EventRegistration, String> statusTC;
 
     @javafx.fxml.FXML
     public void initialize() {
         Ui.greet(nameLabel11, userIdLabel11);
+        eventNameTC.setCellValueFactory(new PropertyValueFactory<>("eventName"));
+        volunteerIDTC.setCellValueFactory(new PropertyValueFactory<>("studentId"));
+        deptTC.setCellValueFactory(new PropertyValueFactory<>("departmentName"));
+        statusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
+        refresh();
+    }
 
-        EventRegistration registration = Session.getSelectedRegistration();
-        if (registration == null) {
-            return;
-        }
-
-        eventNameTF.setText(registration.getEventName());
-        volunteerIdTF.setText(String.valueOf(registration.getStudentId()));
-        emailTF.setText(registration.getEmail());
-        phoneTF.setText(registration.getPhone());
-        responsibilityTF.setText(registration.getResponsibility());
-
-        String studentName = DataStore.get().getUsers().stream()
-                .filter(u -> u.getUserId() == registration.getStudentId())
-                .map(User::getFullName)
-                .findFirst().orElse("");
-        studentNameTF.setText(studentName);
+    private void refresh() {
+        assignmentsTV.setItems(FXCollections.observableArrayList(DataStore.get().getEventRegistrations()));
     }
 
     @javafx.fxml.FXML
     public void assignOA(ActionEvent actionEvent) throws IOException {
-        EventRegistration registration = Session.getSelectedRegistration();
-        if (registration == null) {
-            ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "No registrant selected.");
+        EventRegistration selected = assignmentsTV.getSelectionModel().getSelectedItem();
+        if (selected == null) {
+            ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Please select a registrant first.");
             return;
         }
 
-        String responsibility = responsibilityTF.getText().trim();
-        if (responsibility.isEmpty()) {
-            ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Please select a responsibility before confirming.");
-            return;
-        }
-
-        registration.setResponsibility(responsibility);
-        registration.updateStatus("Assigned");
-
-        DataStore store = DataStore.get();
-        store.save();
-
-        User user = Session.getCurrentUser();
-        if (user != null) {
-            store.logHistory(user.getUserId(), "Assigned volunteer (ID "
-                    + registration.getStudentId() + ") to " + registration.getEventName()
-                    + " as " + responsibility + ".");
-        }
-        store.notify(registration.getStudentId(), "You've been assigned as \""
-                + responsibility + "\" for " + registration.getEventName() + ".");
-
-        ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, "Volunteer assigned successfully.");
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
+        Session.setSelectedRegistration(selected);
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignCommunityProgramVolunteerForm.fxml");
     }
 
-    @javafx.fxml.FXML
-    public void backtoPreviousOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
-    }
-
-    // --- navigation ----------------------------------------------------------
 
     @javafx.fxml.FXML
     public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
@@ -127,8 +93,8 @@ public class U2G5_AssignVolunteerFormController
     }
 
     @javafx.fxml.FXML
-    public void submitComplaintsOA(ActionEvent actionEvent) throws IOException {
-        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
+    public void submitComplaintsOA(ActionEvent actionEvent) {
+        // already on Assign Community Program Volunteer
     }
 
     @javafx.fxml.FXML
