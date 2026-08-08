@@ -1,0 +1,3 @@
+CLM-001,21301001,Rahim Ahmed,Square Hospital,25000,2026-08-01,Pending,Cabin Rent: 15000; Medicine: 10000,true,true
+CLM-002,21301002,Fatima Khan,Popular Hospital,18000,2026-08-02,Need Documents,ICU Charges: 12000; Tests: 6000,true,false
+CLM-003,21301003,Nusrat Jahan,United Hospital,32000,2026-08-03,Approved,Consultation: 5000; Surgery: 27000,true,true

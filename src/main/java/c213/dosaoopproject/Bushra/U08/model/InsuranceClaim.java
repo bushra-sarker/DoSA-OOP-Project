@@ -1,91 +1,134 @@
 package c213.dosaoopproject.Bushra.U08.model;
 
-public class InsuranceClaim {
+import java.io.Serializable;
+
+public class InsuranceClaim implements Serializable {
 
     private String claimId;
     private String studentId;
     private String studentName;
-    private String claimType;
+    private String hospitalName;
+    private String claimedAmount;
     private String submissionDate;
     private String status;
-    private String documents;
-    private String explanation;
+    private String expenses;
+    private boolean dischargeSummary;
+    private boolean hospitalBills;
+    private String action;
+    private String actionNote;
 
-    public InsuranceClaim(String claimId, String studentId,
-                          String studentName, String claimType,
-                          String submissionDate, String status,
-                          String documents, String explanation) {
+    public InsuranceClaim(String claimId,
+                          String studentId,
+                          String studentName,
+                          String hospitalName,
+                          String claimedAmount,
+                          String submissionDate,
+                          String status,
+                          String expenses,
+                          boolean dischargeSummary,
+                          boolean hospitalBills) {
+
         this.claimId = claimId;
         this.studentId = studentId;
         this.studentName = studentName;
-        this.claimType = claimType;
+        this.hospitalName = hospitalName;
+        this.claimedAmount = claimedAmount;
         this.submissionDate = submissionDate;
         this.status = status;
-        this.documents = documents;
-        this.explanation = explanation;
+        this.expenses = expenses;
+        this.dischargeSummary = dischargeSummary;
+        this.hospitalBills = hospitalBills;
     }
 
     public String getClaimId() {
         return claimId;
     }
 
-    public void setClaimId(String claimId) {
-        this.claimId = claimId;
-    }
-
     public String getStudentId() {
         return studentId;
-    }
-
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
     }
 
     public String getStudentName() {
         return studentName;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
+    public String getHospitalName() {
+        return hospitalName;
     }
 
-    public String getClaimType() {
-        return claimType;
-    }
-
-    public void setClaimType(String claimType) {
-        this.claimType = claimType;
+    public String getClaimedAmount() {
+        return claimedAmount;
     }
 
     public String getSubmissionDate() {
         return submissionDate;
     }
 
-    public void setSubmissionDate(String submissionDate) {
-        this.submissionDate = submissionDate;
-    }
-
     public String getStatus() {
         return status;
+    }
+
+    public String getExpenses() {
+        return expenses;
+    }
+
+    public boolean isDischargeSummary() {
+        return dischargeSummary;
+    }
+
+    public boolean isHospitalBills() {
+        return hospitalBills;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public String getActionNote() {
+        return actionNote;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public String getDocuments() {
-        return documents;
+    public void setAction(String action) {
+        this.action = action;
     }
 
-    public void setDocuments(String documents) {
-        this.documents = documents;
+    public void setActionNote(String actionNote) {
+        this.actionNote = actionNote;
     }
 
-    public String getExplanation() {
-        return explanation;
+    @Override
+    public String toString() {
+        return "InsuranceClaim{" +
+                "claimId='" + claimId + '\'' +
+                ", studentId='" + studentId + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", hospitalName='" + hospitalName + '\'' +
+                ", claimedAmount='" + claimedAmount + '\'' +
+                ", submissionDate='" + submissionDate + '\'' +
+                ", status='" + status + '\'' +
+                ", expenses='" + expenses + '\'' +
+                ", dischargeSummary=" + dischargeSummary +
+                ", hospitalBills=" + hospitalBills +
+                ", action='" + action + '\'' +
+                ", actionNote='" + actionNote + '\'' +
+                '}';
     }
-
-    public void setExplanation(String explanation) {
-        this.explanation = explanation;
+    public String toTxt() {
+        return String.join(",",
+                claimId,
+                studentId,
+                studentName,
+                hospitalName,
+                claimedAmount,
+                submissionDate,
+                status,
+                expenses != null ? expenses : "None",
+                String.valueOf(dischargeSummary),
+                String.valueOf(hospitalBills)
+        );
     }
 }

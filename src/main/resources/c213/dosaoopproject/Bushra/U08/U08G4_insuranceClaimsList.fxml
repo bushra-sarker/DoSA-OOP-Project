@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G4InsuranceClaimsListController">
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G4_InsuranceClaimsListController">
     <padding>
         <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
     </padding>

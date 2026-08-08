@@ -188,16 +188,10 @@ public class U08G3_GrievanceManagementController {
 
     @FXML
     public void openGrievanceOA(ActionEvent actionEvent) {
-        Grievance selected = academicGrievancesTableView
-                .getSelectionModel()
-                .getSelectedItem();
-
+        Grievance selected = academicGrievancesTableView.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            selected = facilityGrievancesTableView
-                    .getSelectionModel()
-                    .getSelectedItem();
+            selected = facilityGrievancesTableView.getSelectionModel().getSelectedItem();
         }
-
         if (selected == null) {
             return;
         }

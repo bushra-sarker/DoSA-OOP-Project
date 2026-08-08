@@ -99,7 +99,7 @@ public class U08_StudentWelfareOfficerViewController {
     @FXML
     public void healthInsuranceOA(ActionEvent event) {
         setActiveButton(btnHealthInsurance);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G4_healthInsuranceView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G4_insuranceClaimsList.fxml");
     }
 
     @FXML

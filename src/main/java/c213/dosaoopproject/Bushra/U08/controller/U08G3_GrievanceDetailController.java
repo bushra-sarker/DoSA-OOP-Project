@@ -141,23 +141,14 @@ public class U08G3_GrievanceDetailController {
 
     private void backToGrievances(ActionEvent event) {
 
-        AnchorPane contentArea =
-                (AnchorPane) ((Button) event.getSource())
-                        .getScene()
-                        .lookup("#contentArea");
-
-        SubViewSwitcher.loadSubView(
-                contentArea,
-                "/c213/dosaoopproject/Bushra/U08/U08G3_grievanceManagement.fxml"
-        );
+        AnchorPane contentArea = (AnchorPane) ((Button) event.getSource()).getScene().lookup("#contentArea");
+        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G3_grievanceManagement.fxml");
     }
 
     @FXML
     public void backOA(ActionEvent event) {
         Button button = (Button) event.getSource();
-
         AnchorPane contentArea = (AnchorPane) button.getScene().lookup("#contentArea");
-        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G3_grievanceManagement.fxml"
-        );
+        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G3_grievanceManagement.fxml");
     }
 }
