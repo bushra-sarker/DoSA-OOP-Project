@@ -24,7 +24,7 @@ public class DoSACoordinatorDashboard
     @FXML
     private Button navServiceOpportunityBtn;
     @FXML
-    private Button navClubRegistrationBtn;
+    private Button navReviewEventFeedbackBtn;
     @FXML
     private Button navAnnouncementBtn;
     @FXML
@@ -71,8 +71,8 @@ public class DoSACoordinatorDashboard
     }
 
     @FXML
-    private void showClubRegistration(ActionEvent event) {
-        loadView("/c213/dosaoopproject/esha/u6_G5_ClubRegistrationApproval.fxml");
+    private void showReviewEventFeedback(ActionEvent event) {
+        loadView("/c213/dosaoopproject/esha/u6_G5_ReviewEventFeedback.fxml");
     }
 
     @FXML
