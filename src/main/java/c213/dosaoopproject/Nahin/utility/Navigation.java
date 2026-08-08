@@ -36,9 +36,9 @@ public class Navigation {
             DbinFile.generateNewClubRegistration();
     //
 //            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("c213/dosaoopproject/Nahin/fxmlView/u4_dashBoard.fxml"));
-    //        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u4_dashBoard.fxml"));
-//    //        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/commonFXML/LoginView.fxml"));
-////            Scene scene = new Scene(fxmlLoader.load());
+//            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u4_dashBoard.fxml"));
+//            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/commonFXML/LoginView.fxml"));
+//            Scene scene = new Scene(fxmlLoader.load());
 //            stage.setTitle("DoSA Management Simulation");
 //            stage.setScene(scene);
 //            stage.show();
