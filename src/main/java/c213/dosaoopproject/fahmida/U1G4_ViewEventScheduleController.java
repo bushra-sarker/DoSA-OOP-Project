@@ -34,8 +34,6 @@ public class U1G4_ViewEventScheduleController {
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private TableColumn<ArrangeClubEvent, String> timeTC;
-    @javafx.fxml.FXML
     private TableColumn<ArrangeClubEvent, String> activityNameTC;
     @javafx.fxml.FXML
     private TableColumn<ArrangeClubEvent, String> venueTC;

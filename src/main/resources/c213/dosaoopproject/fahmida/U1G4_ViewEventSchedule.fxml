@@ -186,7 +186,6 @@
                       <TableColumn fx:id="organizingClubTC" prefWidth="136.0" text="Organizing Club" />
                         <TableColumn fx:id="venueTC" prefWidth="136.0" text="Venue" />
                         <TableColumn fx:id="dateTC" prefWidth="146.0" text="Date" />
-                        <TableColumn fx:id="timeTC" prefWidth="106.0" text="Time" />
                     </columns>
                   </TableView>
                   <Button layoutX="667.0" layoutY="502.0" mnemonicParsing="false" onAction="#gotoDashboardOA" text="Go to Dashboard" />

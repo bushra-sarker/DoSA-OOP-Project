@@ -184,7 +184,6 @@
                     <columns>
                       <TableColumn fx:id="EventNameTC" prefWidth="200.0" text="Event" />
                       <TableColumn fx:id="typeTC" prefWidth="114.0" text="Type" />
-                        <TableColumn fx:id="dateTC" prefWidth="164.0" text="Date" />
                         <TableColumn fx:id="durationTC" prefWidth="153.0" text="Duration" />
                         <TableColumn fx:id="venueTC" minWidth="0.0" prefWidth="157.0" text="Venue" />
                     </columns>

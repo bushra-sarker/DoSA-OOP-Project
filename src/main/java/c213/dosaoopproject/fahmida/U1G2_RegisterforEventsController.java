@@ -1,5 +1,7 @@
 package c213.dosaoopproject.fahmida;
 
+import c213.dosaoopproject.fahmida.data.DataStore;
+import c213.dosaoopproject.fahmida.model.EventRegistration;
 import c213.dosaoopproject.fahmida.session.Session;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
 import c213.dosaoopproject.fahmida.utility.Ui;
@@ -58,28 +60,30 @@ public class U1G2_RegisterforEventsController
         if (name.isEmpty() || id.isEmpty() || phone.isEmpty() || email.isEmpty()
                 || deptCB.getValue() == null || eventNameCB.getValue() == null) {
             showAlert("Please fill in all fields.");
-            return;
-        }
-
-        if (name.length() > 30) {
+        } else if (name.length() > 30) {
             showAlert("Student name must be 30 characters or fewer.");
-            return;
-        }
-
-        if (id.length() != 7) {
+        } else if (!id.matches("\\d{7}")) {
             showAlert("Student ID must be 7 digits.");
-            return;
+        } else {
+            String eventName = eventNameCB.getValue();
+            String department = deptCB.getValue();
+
+            DataStore store = DataStore.get();
+            store.getEventRegistrations().add(new EventRegistration(
+                    Integer.parseInt(id), eventName, department, email, phone, "Pending"));
+            store.save();
+            store.notifyRole("Club Advisor", name + " registered for \"" + eventName + "\".");
+
+            // success alert
+            showAlert("You're registered for this event.");
+
+            studentNameTF.clear();
+            IDTF.clear();
+            phonneNumTF.clear();
+            emailTF.clear();
+            deptCB.setValue(null);
+            eventNameCB.setValue(null);
         }
-
-        // success alert
-        showAlert("You're registered for this event.");
-
-        studentNameTF.clear();
-        IDTF.clear();
-        phonneNumTF.clear();
-        emailTF.clear();
-        deptCB.setValue(null);
-        eventNameCB.setValue(null);
     }
 
     private void showAlert(String message) {

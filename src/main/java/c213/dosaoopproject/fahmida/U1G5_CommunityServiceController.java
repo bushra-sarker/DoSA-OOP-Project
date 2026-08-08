@@ -36,8 +36,6 @@ public class U1G5_CommunityServiceController {
     @javafx.fxml.FXML
     private TableColumn<CommunityServiceProgram,String> venueTC;
     @javafx.fxml.FXML
-    private TableColumn<CommunityServiceProgram,String> dateTC;
-    @javafx.fxml.FXML
     private TableColumn<CommunityServiceProgram,String> EventNameTC;
 
     @javafx.fxml.FXML
