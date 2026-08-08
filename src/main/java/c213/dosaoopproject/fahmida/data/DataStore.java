@@ -16,12 +16,8 @@ import c213.dosaoopproject.fahmida.model.Notice;
 import c213.dosaoopproject.fahmida.model.Notification;
 import c213.dosaoopproject.fahmida.model.Student;
 import c213.dosaoopproject.fahmida.model.VolunteerAssignment;
+import c213.dosaoopproject.fahmida.utility.FileManager;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -44,7 +40,8 @@ public class DataStore implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /** Binary data file, created in the working directory on first save. */
-    private static final Path FILE = Path.of("dosa.dat");
+    private static final String FILE_NAME = "dosa.dat";
+    private static final Path FILE = Path.of(FILE_NAME);
 
     private static DataStore instance;
 
@@ -78,13 +75,11 @@ public class DataStore implements Serializable {
 
     private static DataStore load() {
         if (Files.exists(FILE)) {
-            try (ObjectInputStream in =
-                         new ObjectInputStream(new FileInputStream(FILE.toFile()))) {
-                return (DataStore) in.readObject();
-            } catch (IOException | ClassNotFoundException e) {
-                System.err.println("Could not read " + FILE + " (" + e.getMessage()
-                        + ") — starting with fresh seeded data.");
+            DataStore loaded = FileManager.readFile(FILE_NAME);
+            if (loaded != null) {
+                return loaded;
             }
+            System.err.println("Could not read " + FILE_NAME + " — starting with fresh seeded data.");
         }
         DataStore fresh = new DataStore();
         fresh.seed();
@@ -94,12 +89,7 @@ public class DataStore implements Serializable {
 
     /** Writes every list to the binary file. */
     public void save() {
-        try (ObjectOutputStream out =
-                     new ObjectOutputStream(new FileOutputStream(FILE.toFile()))) {
-            out.writeObject(this);
-        } catch (IOException e) {
-            System.err.println("Could not save " + FILE + ": " + e.getMessage());
-        }
+        FileManager.writeFile(FILE_NAME, this);
     }
 
     // ----- authentication -----------------------------------------------------
