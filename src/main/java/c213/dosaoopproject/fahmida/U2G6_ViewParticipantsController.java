@@ -48,7 +48,6 @@ public class U2G6_ViewParticipantsController {
         prtStudentTC.setCellValueFactory(new PropertyValueFactory<>("studentId"));
         prtDeptTC.setCellValueFactory(new PropertyValueFactory<>("departmentName"));
         prtStatusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
-        participantsTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         participantsTV.setItems(FXCollections.observableArrayList(DataStore.get().getEventRegistrations()));
     }
 
@@ -74,7 +73,7 @@ public class U2G6_ViewParticipantsController {
         SceneManager.switchTo("U2G3_ReviewandapproveClubMembership");
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void communityProgramOA(ActionEvent actionEvent) {
         String programs = DataStore.get().getCommunityPrograms().stream()
                 .map(p -> "• " + p.getDetails())

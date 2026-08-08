@@ -23,8 +23,6 @@ public class U1G5_CommunityServiceController {
     @javafx.fxml.FXML
     private TableView<CommunityServiceProgram> programsTV;
     @javafx.fxml.FXML
-    private TableColumn<CommunityServiceProgram, String> programNameTC;
-    @javafx.fxml.FXML
     private TableColumn<CommunityServiceProgram, String> typeTC;
     @javafx.fxml.FXML
     private TableColumn<CommunityServiceProgram, String> durationTC;
@@ -40,10 +38,12 @@ public class U1G5_CommunityServiceController {
     private TableColumn venueTC;
     @javafx.fxml.FXML
     private TableColumn dateTC;
+    @javafx.fxml.FXML
+    private TableColumn EventNameTC;
 
     @javafx.fxml.FXML
     public void initialize() {
-        programNameTC.setCellValueFactory(new PropertyValueFactory<>("programName"));
+        EventNameTC.setCellValueFactory(new PropertyValueFactory<>("programName"));
         typeTC.setCellValueFactory(new PropertyValueFactory<>("type"));
         durationTC.setCellValueFactory(new PropertyValueFactory<>("campaignDuration"));
         venueTC.setCellValueFactory(new PropertyValueFactory<>("venue"));

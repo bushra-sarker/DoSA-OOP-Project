@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -18,7 +19,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G5_CommunityServiceFormController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G5_CommunityServiceFormController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -186,7 +187,7 @@
                <children>
                   <VBox layoutY="21.0" prefHeight="70.0" prefWidth="827.0">
                      <children>
-                        <Label prefHeight="70.0" prefWidth="539.0" text="Community Service Programs">
+                        <Label prefHeight="67.0" prefWidth="610.0" text="Community Service Programs">
                            <font>
                               <Font name="Book Antiqua" size="36.0" />
                            </font>
@@ -194,49 +195,46 @@
                         <Separator prefWidth="200.0" />
                      </children>
                   </VBox>
-                  <AnchorPane layoutX="17.0" layoutY="111.0" prefHeight="511.0" prefWidth="794.0">
+                  <AnchorPane layoutX="17.0" layoutY="102.0" prefHeight="511.0" prefWidth="794.0">
                      <children>
-                        <Button layoutX="585.0" layoutY="153.0" mnemonicParsing="false" onAction="#submitOA1" prefHeight="25.0" prefWidth="93.0" text="Submit" textAlignment="CENTER" wrapText="true" />
-                        <Button layoutX="643.0" layoutY="454.0" mnemonicParsing="false" onAction="#gotoDashboardOA" text="Go to Dashboard" />
-                        <Label layoutX="63.0" layoutY="34.0" text="Program Name ">
+                        <Button layoutX="478.0" layoutY="399.0" mnemonicParsing="false" onAction="#submitOA" prefHeight="25.0" prefWidth="93.0" text="Submit" textAlignment="CENTER" wrapText="true" />
+                        <Button layoutX="629.0" layoutY="399.0" mnemonicParsing="false" onAction="#gotoDashboardOA" text="Go to Dashboard" />
+                        <Label layoutX="64.0" layoutY="209.0" text="Event Name ">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="programNameTF1" layoutX="225.0" layoutY="32.0" prefHeight="25.0" prefWidth="173.0" promptText="Auto-Filled" />
-                        <Label layoutX="63.0" layoutY="80.0" text="Collection Date ">
+                        <Label layoutX="45.0" layoutY="266.0" text="Collection Date ">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="collectionDateDP1" layoutX="224.0" layoutY="77.0" />
-                        <Label layoutX="71.0" layoutY="331.0" text="Compaign Duration">
+                        <DatePicker fx:id="collectionDateDP" layoutX="204.0" layoutY="263.0" prefHeight="25.0" prefWidth="198.0" />
+                        <TextField fx:id="campaignDurationTF" layoutX="203.0" layoutY="334.0" prefHeight="25.0" prefWidth="202.0" />
+                        <Label layoutX="43.0" layoutY="336.0" text="Campaign Duration">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="durationTF1" layoutX="224.0" layoutY="128.0" prefHeight="25.0" prefWidth="179.0" />
-                        <Separator layoutX="7.0" layoutY="190.0" prefHeight="12.0" prefWidth="783.0" />
-                        <Label layoutX="63.0" layoutY="225.0" text="Program Name ">
+                        <TextField fx:id="emailTF" layoutX="189.0" layoutY="99.0" prefHeight="25.0" prefWidth="206.0" />
+                        <Label layoutX="56.0" layoutY="155.0" text="Phone Number">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="programName2" layoutX="225.0" layoutY="223.0" prefHeight="25.0" prefWidth="173.0" promptText="Auto-Filled" />
-                        <Label layoutX="63.0" layoutY="278.0" text="Collection Date ">
+                        <TextField fx:id="phoneNumberTF" layoutX="197.0" layoutY="152.0" prefHeight="25.0" prefWidth="203.0" />
+                        <Label layoutX="48.0" layoutY="48.0" text="Student Name ">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="collectionDateDP2" layoutX="224.0" layoutY="276.0" />
-                        <Label layoutX="52.0" layoutY="131.0" text="Compaign Duration">
+                        <TextField fx:id="studentNameTF" layoutX="189.0" layoutY="46.0" prefHeight="25.0" prefWidth="197.0" />
+                        <Label layoutX="69.0" layoutY="101.0" text="Email">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button layoutX="597.0" layoutY="329.0" mnemonicParsing="false" onAction="#submitaOA2" prefHeight="25.0" prefWidth="93.0" text="Submit" textAlignment="CENTER" wrapText="true" />
-                        <TextField fx:id="durationTF2" layoutX="225.0" layoutY="329.0" prefHeight="25.0" prefWidth="179.0" />
-                        <Separator layoutY="388.0" prefHeight="12.0" prefWidth="790.0" />
+                        <ComboBox fx:id="eventNameCB" layoutX="201.0" layoutY="207.0" prefHeight="25.0" prefWidth="196.0" />
                      </children>
                   </AnchorPane>
                </children>

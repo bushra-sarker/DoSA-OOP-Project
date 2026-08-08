@@ -6,22 +6,20 @@ import c213.dosaoopproject.fahmida.session.Session;
 import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
 import c213.dosaoopproject.fahmida.utility.Ui;
+import commonClass.User;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 /**
- * Club Advisor Goal: Assign Student Volunteers to Events. Lists every student
- * sign-up recorded by the Community Service registration form and lets the
- * advisor pick one to finalize on the Assign Volunteer form.
+ * Club Advisor Goal: finalize a volunteer assignment. Shows the registrant
+ * picked on the Assign Volunteer list (read-only) and lets the advisor enter
+ * a responsibility to confirm the assignment.
  */
-public class U2G5_AssignVolunteerController {
-
+public class U2G5_AssignVolunteerFormController
+{
     @javafx.fxml.FXML
     private Label userIdLabel11;
     @javafx.fxml.FXML
@@ -31,41 +29,76 @@ public class U2G5_AssignVolunteerController {
     @javafx.fxml.FXML
     private Label nameLabel11;
     @javafx.fxml.FXML
-    private TableView<EventRegistration> assignmentsTV;
+    private TextField eventNameTF;
     @javafx.fxml.FXML
-    private TableColumn<EventRegistration, String> eventNameTC;
+    private TextField studentNameTF;
     @javafx.fxml.FXML
-    private TableColumn<EventRegistration, Integer> volunteerIDTC;
+    private TextField volunteerIdTF;
     @javafx.fxml.FXML
-    private TableColumn<EventRegistration, String> deptTC;
+    private TextField emailTF;
     @javafx.fxml.FXML
-    private TableColumn<EventRegistration, String> statusTC;
+    private TextField phoneTF;
+    @javafx.fxml.FXML
+    private TextField responsibilityTF;
 
     @javafx.fxml.FXML
     public void initialize() {
         Ui.greet(nameLabel11, userIdLabel11);
-        eventNameTC.setCellValueFactory(new PropertyValueFactory<>("eventName"));
-        volunteerIDTC.setCellValueFactory(new PropertyValueFactory<>("studentId"));
-        deptTC.setCellValueFactory(new PropertyValueFactory<>("departmentName"));
-        statusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
-        assignmentsTV.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        refresh();
-    }
 
-    private void refresh() {
-        assignmentsTV.setItems(FXCollections.observableArrayList(DataStore.get().getEventRegistrations()));
+        EventRegistration registration = Session.getSelectedRegistration();
+        if (registration == null) {
+            return;
+        }
+
+        eventNameTF.setText(registration.getEventName());
+        volunteerIdTF.setText(String.valueOf(registration.getStudentId()));
+        emailTF.setText(registration.getEmail());
+        phoneTF.setText(registration.getPhone());
+        responsibilityTF.setText(registration.getResponsibility());
+
+        String studentName = DataStore.get().getUsers().stream()
+                .filter(u -> u.getUserId() == registration.getStudentId())
+                .map(User::getFullName)
+                .findFirst().orElse("");
+        studentNameTF.setText(studentName);
     }
 
     @javafx.fxml.FXML
     public void assignOA(ActionEvent actionEvent) {
-        EventRegistration selected = assignmentsTV.getSelectionModel().getSelectedItem();
-        if (selected == null) {
-            Ui.info("Please select a registrant first.");
+        EventRegistration registration = Session.getSelectedRegistration();
+        if (registration == null) {
+            Ui.info("No registrant selected.");
             return;
         }
 
-        Session.setSelectedRegistration(selected);
-        SceneManager.switchTo("U2G5_AssignVolunteerForm");
+        String responsibility = responsibilityTF.getText().trim();
+        if (responsibility.isEmpty()) {
+            Ui.info("Please select a responsibility before confirming.");
+            return;
+        }
+
+        registration.setResponsibility(responsibility);
+        registration.updateStatus("Assigned");
+
+        DataStore store = DataStore.get();
+        store.save();
+
+        User user = Session.getCurrentUser();
+        if (user != null) {
+            store.logHistory(user.getUserId(), "Assigned volunteer (ID "
+                    + registration.getStudentId() + ") to " + registration.getEventName()
+                    + " as " + responsibility + ".");
+        }
+        store.notify(registration.getStudentId(), "You've been assigned as \""
+                + responsibility + "\" for " + registration.getEventName() + ".");
+
+        Ui.info("Volunteer assigned successfully.");
+        SceneManager.switchTo("U2G5_AssignVolunteer");
+    }
+
+    @javafx.fxml.FXML
+    public void backtoPreviousOA(ActionEvent actionEvent) {
+        SceneManager.switchTo("U2G5_AssignVolunteer");
     }
 
     // --- navigation ----------------------------------------------------------
@@ -97,7 +130,7 @@ public class U2G5_AssignVolunteerController {
 
     @javafx.fxml.FXML
     public void submitComplaintsOA(ActionEvent actionEvent) {
-        // already on Assign Volunteer
+        SceneManager.switchTo("U2G5_AssignVolunteer");
     }
 
     @javafx.fxml.FXML

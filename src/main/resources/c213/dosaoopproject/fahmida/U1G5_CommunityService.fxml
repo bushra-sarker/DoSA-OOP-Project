@@ -18,7 +18,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G5_CommunityServiceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.fahmida.U1G5_CommunityServiceController">
     <top>
         <HBox alignment="CENTER" prefHeight="79.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
             <children>
@@ -196,7 +196,7 @@
                   </VBox>
                   <TableView fx:id="programsTV" layoutX="26.0" layoutY="123.0" prefHeight="268.0" prefWidth="793.0">
                     <columns>
-                      <TableColumn fx:id="programNameTC" prefWidth="200.0" text="Program" />
+                      <TableColumn fx:id="EventNameTC" prefWidth="200.0" text="Event" />
                       <TableColumn fx:id="typeTC" prefWidth="114.0" text="Type" />
                         <TableColumn fx:id="dateTC" prefWidth="164.0" text="Date" />
                         <TableColumn fx:id="durationTC" prefWidth="153.0" text="Duration" />

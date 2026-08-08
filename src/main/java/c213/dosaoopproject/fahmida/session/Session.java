@@ -3,6 +3,7 @@ package c213.dosaoopproject.fahmida.session;
 import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
 import c213.dosaoopproject.fahmida.model.ClubInfo;
 import c213.dosaoopproject.fahmida.model.CommunityServiceProgram;
+import c213.dosaoopproject.fahmida.model.EventRegistration;
 import commonClass.User;
 
 /**
@@ -18,6 +19,7 @@ public final class Session {
     private static ArrangeClubEvent selectedEvent;
     private static ClubInfo selectedClub;
     private static CommunityServiceProgram selectedProgram;
+    private static EventRegistration selectedRegistration;
 
     private Session() {
     }
@@ -56,6 +58,14 @@ public final class Session {
 
     public static CommunityServiceProgram getSelectedProgram() {
         return selectedProgram;
+    }
+
+    public static void setSelectedRegistration(EventRegistration registration) {
+        selectedRegistration = registration;
+    }
+
+    public static EventRegistration getSelectedRegistration() {
+        return selectedRegistration;
     }
 
     /** Ends the session (used by the Logout process). */
