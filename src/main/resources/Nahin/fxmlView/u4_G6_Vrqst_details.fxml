@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_6_VenueRqst_detail_details_Controller">
+   <children>
+      <Label prefHeight="30.0" prefWidth="632.0" text="Request Details">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <Separator layoutY="29.0" prefHeight="14.0" prefWidth="557.0" />
+      <VBox layoutY="54.0" minWidth="-Infinity" prefHeight="276.0" prefWidth="513.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="24.0">
+         <children>
+            <HBox prefHeight="73.0" prefWidth="530.0">
+               <children>
+                  <VBox prefHeight="63.0" prefWidth="266.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="174.0" text="Club Name :">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="clubNameLBL" prefHeight="30.0" prefWidth="247.0" style="-fx-background-color: #EBEBEB;" />
+                     </children>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="92.0" prefWidth="237.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="174.0" text="Start &amp; End time :">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="timeLBL" prefHeight="30.0" prefWidth="223.0" style="-fx-background-color: #EBEBEB;" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="62.0" prefWidth="586.0">
+               <children>
+                  <VBox prefHeight="62.0" prefWidth="346.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="135.0" text="Requested Venue  :">
+                           <padding>
+                              <Insets left="6.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="requestedVenueLBL" prefHeight="30.0" prefWidth="246.0" style="-fx-background-color: #EBEBEB;">
+                           <VBox.margin>
+                              <Insets left="7.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="68.0" prefWidth="325.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="135.0" text="Date :">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="dateLBL" prefHeight="29.0" prefWidth="222.0" style="-fx-background-color: #EBEBEB;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="66.0" prefWidth="586.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="527.0" text="Requested By :">
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="requestedBYLBL" prefHeight="30.0" prefWidth="284.0" style="-fx-background-color: #EBEBEB;">
+                     <VBox.margin>
+                        <Insets left="7.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="34.0" prefWidth="512.0" spacing="15.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#checkIFAvailableOA" prefHeight="27.0" prefWidth="182.0" text="Check Availability">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Region prefHeight="34.0" prefWidth="70.0" />
+                  <Button mnemonicParsing="false" onAction="#approveVrqstOA" prefHeight="26.0" prefWidth="116.0" text="Approve" textFill="#0044e1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#rejectVrqstOA" prefHeight="26.0" prefWidth="116.0" text="Reject" textFill="#940000">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="336.0" layoutY="409.0" prefHeight="38.0" prefWidth="254.0" spacing="25.0" />
+   </children>
+</AnchorPane>

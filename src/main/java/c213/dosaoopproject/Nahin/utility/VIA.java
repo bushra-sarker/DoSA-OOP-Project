@@ -38,9 +38,6 @@ public class VIA {
     }
 
 
-
-
-    //to show alert
     public static void showWaitAlert(Alert.AlertType type, String msg){
         Alert a = new Alert(type);
         a.setHeaderText(null);

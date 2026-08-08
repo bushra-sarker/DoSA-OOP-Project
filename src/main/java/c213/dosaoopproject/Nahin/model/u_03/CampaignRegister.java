@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import static c213.dosaoopproject.Nahin.utility.VIA.*;
 
-public class CampaignRegister extends Registration implements Serializable {
+public class CampaignRegister extends Registration {
     private final String campaignName;
     private final LocalDate date;
     private final String notes;

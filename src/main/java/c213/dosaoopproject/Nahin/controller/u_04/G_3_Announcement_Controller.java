@@ -1,13 +1,17 @@
 package c213.dosaoopproject.Nahin.controller.u_04;
 
 import c213.dosaoopproject.Nahin.model.u_04.Announcement;
-import c213.dosaoopproject.Nahin.utility.FileManager;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -27,13 +31,14 @@ public class G_3_Announcement_Controller {
     @javafx.fxml.FXML
     private TextField titleTF;
 
+
     @javafx.fxml.FXML
     public void initialize() {
         categoryCOMBO.getItems().addAll("General", "Academic", "Event", "SuspendClub", "Emergency");
     }
 
     @javafx.fxml.FXML
-    public void publishOA(ActionEvent actionEvent) throws IOException {
+    public void publishOA(ActionEvent actionEvent) {
 
         if (titleTF.getText().isEmpty() || categoryCOMBO.getValue() == null ||
                 detailsTXTAR.getText().isEmpty() || datePublishDP.getValue() == null) {
@@ -55,19 +60,25 @@ public class G_3_Announcement_Controller {
             return;
         }
 
+
+
         ArrayList<Announcement> list = readFile("Announcements.bin");
         if (list == null) {
             list = new ArrayList<>();
         }
         list.add(announcement);
-
         writeFile("Announcements.bin", list);
         System.out.println(list);
 
-        showAlert(Alert.AlertType.CONFIRMATION, "Announcement published successfully");
+        showAlert(Alert.AlertType.INFORMATION, "Announcement published successfully");
+
 
         //auto navigate to history page
-        navigate(actionEvent, "/Nahin/fxmlView/u4_G3_announcements_view.fxml");
+        try {
+            navigate(actionEvent, "/Nahin/fxmlView/u4_G3_announcements_history.fxml");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         titleTF.clear();categoryCOMBO.setValue(null);detailsTXTAR.clear();datePublishDP.setValue(null);
     }

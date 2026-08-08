@@ -8,7 +8,7 @@ public class NewClubRegister implements Serializable {
     private final String contactNumber;
     private final String category;
     private final String clubName;
-    private final String founderName;
+    private String founderName;
     private final String purpose;
     private String remarks;
     private String status;

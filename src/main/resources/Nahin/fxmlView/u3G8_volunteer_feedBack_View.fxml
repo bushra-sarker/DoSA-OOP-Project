@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_03.G_8_Feedback_view_Controller">
+   <top><fx:include source="u3_head.fxml" /></top>
+   <left><fx:include source="u3_sideMenuBar_view.fxml" /></left>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="record_Pane" prefHeight="200.0" prefWidth="100.0" visible="false">
+               <children>
+                  <Label prefHeight="43.0" prefWidth="718.0" text="Feedback History">
+                     <font>
+                        <Font name="Constantia" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="7.0" />
+                     </padding>
+                  </Label>
+                  <TableView fx:id="historyTableVIEW" prefHeight="194.0" prefWidth="724.0">
+                    <columns>
+                      <TableColumn fx:id="feedBackIdCOL" prefWidth="183.99996948242188" text="Feedback ID" />
+                      <TableColumn fx:id="activityNameCOL" prefWidth="368.0000305175781" text="Activity Name" />
+                        <TableColumn fx:id="dateCOL" prefWidth="172.0" text="Date" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="182.0">
+                           <children>
+                              <Label prefHeight="54.0" prefWidth="176.0" text="Select an activity name &amp; give new feedback :" wrapText="true" />
+                              <ComboBox fx:id="activityNameCOMBO" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                        <Button mnemonicParsing="false" onAction="#feedBackOA" prefHeight="26.0" prefWidth="205.0" text="+ New Feedback" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="form_Pane" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="710.0">
+               <children>
+                  <HBox prefHeight="36.0" prefWidth="710.0">
+                     <children>
+                        <Label minHeight="-Infinity" prefHeight="26.0" prefWidth="549.0" text="Volunteer FeedBack Survey" textFill="#797979">
+                           <font>
+                              <Font name="Cambria Math" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#historyOA" prefHeight="30.0" prefWidth="174.0" text="Go To History">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefHeight="6.0" prefWidth="666.0" />
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="606.0">
+                     <children>
+                        <VBox layoutX="14.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="231.0" spacing="6.0">
+                           <children>
+                              <Label text="Feedback ID" textFill="#919191">
+                                 <font>
+                                    <Font name="Candara Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="feedbackIdLBL" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #E3E3E3;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="338.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="231.0" spacing="6.0">
+                           <children>
+                              <Label text="Activity Name" textFill="#919191">
+                                 <font>
+                                    <Font name="Candara Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="activityNameLBL" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #E3E3E3;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="14.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="231.0" spacing="6.0">
+                           <children>
+                              <Label text="Date" textFill="#919191">
+                                 <font>
+                                    <Font name="Candara Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="dateLBL" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #E3E3E3;" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="338.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="231.0" spacing="6.0">
+                           <children>
+                              <Label text="Team Coordination Rating" textFill="#919191">
+                                 <font>
+                                    <Font name="Candara Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="ratingCOMBO" prefHeight="35.0" prefWidth="214.0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="17.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="570.0" spacing="6.0">
+                           <children>
+                              <Label text="Comments" textFill="#919191">
+                                 <font>
+                                    <Font name="Candara Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="commentTXTAREA" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="570.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="39.0" prefWidth="703.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#submitfeedbackOA" prefHeight="30.0" prefWidth="256.0" text="Submit Feedback">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#cancelFeedbackOA" prefHeight="26.0" prefWidth="256.0" text="Cancel" textFill="#9c0000">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

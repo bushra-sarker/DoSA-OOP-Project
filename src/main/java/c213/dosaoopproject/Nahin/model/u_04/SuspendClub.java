@@ -1,10 +1,9 @@
 package c213.dosaoopproject.Nahin.model.u_04;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class SuspendClub implements Serializable {
+public class SuspendClub {
 
     private int clubID;
     private String clubName;

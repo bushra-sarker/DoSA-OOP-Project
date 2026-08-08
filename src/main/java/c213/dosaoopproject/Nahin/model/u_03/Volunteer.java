@@ -1,28 +1,24 @@
 package c213.dosaoopproject.Nahin.model.u_03;
 import c213.dosaoopproject.commonClass.model.User;
+import c213.dosaoopproject.commonClass.util.SessionManager;
 
 import java.util.ArrayList;
 
 public class Volunteer extends User {
-    private final String volID;
     private final String email;
     private String phone;
-
     private double totalContributionHours;
     private int totalParticipation;
     private boolean isCertified;
 
-
-    //process
     private ArrayList<TeamJoin> teamRequests;
     private ArrayList<ClubEventRegister> clubEventRegister;
     private ArrayList<CampaignRegister> campaignRegistration;
     private ArrayList<ReportConcerns> reportIssues;
 
 
-    public Volunteer(String userId, String password, String fxmlPath, String volID, String email, String phone, double totalContributionHours, int totalParticipation, boolean isCertified) {
+    public Volunteer(String userId, String password, String fxmlPath, String email, String phone, double totalContributionHours, int totalParticipation, boolean isCertified) {
         super(userId, password, fxmlPath);
-        this.volID = volID;
         this.email = email;
         this.phone = phone;
         this.totalContributionHours = totalContributionHours;
@@ -33,10 +29,6 @@ public class Volunteer extends User {
         clubEventRegister = new ArrayList<>();
         campaignRegistration = new ArrayList<>();
         reportIssues = new ArrayList<>();
-    }
-
-    public String getVolID() {
-        return volID;
     }
 
     public String getEmail() {
@@ -60,9 +52,7 @@ public class Volunteer extends User {
         return totalParticipation;
     }
 
-    public boolean isCertified() {
-        return isCertified;
-    }
+    public boolean isCertified() {return isCertified;}
 
 
     public ArrayList<TeamJoin> getTeamRequests(){
