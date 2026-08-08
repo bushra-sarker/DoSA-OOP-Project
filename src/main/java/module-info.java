@@ -1,8 +1,8 @@
-module c213.dosaoopproject {
+open module c213.DoSA.OOP.Project {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
+    requires javafx.base;
 
-
-    opens c213.dosaoopproject to javafx.fxml;
     exports c213.dosaoopproject;
 }

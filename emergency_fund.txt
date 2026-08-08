@@ -1,0 +1,3 @@
+BALANCE;235000.0
+ER-101;21301001;Rahim Ahmed;CSE;Medical;15000.0;Emergency medical bills for injury;Medical_Receipt.pdf;Verified;15000.0;Approved
+ER-102;21301005;Sadia Islam;EEE;Family Loss;20000.0;Sudden loss of primary earning member;Death_Certificate.pdf;Pending;0.0;Pending

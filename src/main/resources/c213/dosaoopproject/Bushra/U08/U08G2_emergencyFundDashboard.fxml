@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G2_emergencyFundDashboardController">
+    <padding>
+        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+    </padding>
+    <children>
+        <!-- SUMMARY CARDS -->
+        <HBox spacing="10.0">
+            <children>
+                <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Available Fund Balance" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <Label fx:id="availableFundBalanceLabel" text="BDT 0" textFill="#1E7E34"><font><Font name="System Bold" size="16.0" /></font></Label>
+                    </children>
+                </VBox>
+                <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Pending Requests" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <Label fx:id="pendingCountLabel" text="0" textFill="#083C57"><font><Font name="System Bold" size="16.0" /></font></Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- TABLE CARD -->
+        <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px;" VBox.vgrow="ALWAYS">
+            <children>
+                <Label text="Emergency Financial Assistance Requests" textFill="#083C57">
+                    <font><Font name="System Bold" size="12.0" /></font>
+                </Label>
+                <TableView fx:id="emergencyRequestsTableView" prefHeight="350.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colRequestId" prefWidth="80.0" text="Request ID" />
+                        <TableColumn fx:id="colStudentId" prefWidth="90.0" text="Student ID" />
+                        <TableColumn fx:id="colStudentName" prefWidth="120.0" text="Student Name" />
+                        <TableColumn fx:id="colCategory" prefWidth="110.0" text="Category" />
+                        <TableColumn fx:id="colRequestedAmount" prefWidth="110.0" text="Requested" />
+                        <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT">
+                    <children>
+                        <Button fx:id="processRequestButton" mnemonicParsing="false" onAction="#processRequestOA" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Process Selected Request">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

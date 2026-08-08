@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07_HeadOfDoSAViewController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER_LEFT">
+            <children>
+                <VBox prefHeight="66.0" prefWidth="256.0">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="210.0" style="-fx-text-fill: white;" text="Division Of Student Affairs (DoSA)" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                            <font>
+                                <Font name="Constantia" size="12.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="14.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Head of DoSA Portal" textAlignment="CENTER" textFill="#e5e1e1" wrapText="true">
+                            <font>
+                                <Font name="Calibri Light" size="11.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="12.0" />
+                            </VBox.margin>
+                        </Label>
+                    </children>
+                </VBox>
+                <Region prefHeight="65.0" prefWidth="64.0" HBox.hgrow="ALWAYS" />
+                <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="66.0" prefWidth="181.0">
+                    <children>
+                        <ImageView fx:id="ppImageView" fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/images.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <VBox alignment="CENTER" minWidth="-Infinity" prefHeight="66.0" prefWidth="138.0">
+                            <children>
+                                <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="Head of DoSA">
+                                    <font>
+                                        <Font name="Arial Bold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="userIdLabel" prefHeight="18.0" prefWidth="204.0" style="-fx-text-fill: white;" text="ID : DOSA-101">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="7.0" />
+                            </HBox.margin>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="5.0" />
+            </padding>
+        </HBox>
+    </top>
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="530.0" prefWidth="183.0" style="-fx-background-color: #083C57;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnDashboard" mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #004675; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Dashboard">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="5.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnMajorEvents" mnemonicParsing="false" onAction="#majorEventViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Major Events">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnBudgetManagement" mnemonicParsing="false" onAction="#budgetManagementOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Budget Management">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnDisciplinaryAppeals" mnemonicParsing="false" onAction="#disciplinaryAppealsOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Disciplinary Appeals">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnReports" mnemonicParsing="false" onAction="#reportViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Reports &amp; Analytics">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnCrisisManagement" mnemonicParsing="false" onAction="#crisisViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Crisis Management">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnExchangePrograms" mnemonicParsing="false" onAction="#exchangeViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Exchange Programs">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnTranscriptRequests" mnemonicParsing="false" onAction="#transcriptViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Transcript Requests">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Button fx:id="btnPartnerships" mnemonicParsing="false" onAction="#partnershipViewOA" prefHeight="38.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="Partnerships &amp; MOUs">
+                    <VBox.margin><Insets left="5.0" right="5.0" top="3.0" /></VBox.margin>
+                </Button>
+                <Separator prefHeight="15.0" prefWidth="183.0">
+                    <VBox.margin><Insets top="3.0" /></VBox.margin>
+                </Separator>
+                <Region VBox.vgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="36.0" prefWidth="173.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-background-radius: 7; -fx-border-radius: 7;" text="logOut">
+                    <VBox.margin><Insets bottom="6.0" /></VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <ScrollPane fitToWidth="true" prefHeight="530.0" prefWidth="717.0" BorderPane.alignment="CENTER">
+            <content>
+                <AnchorPane fx:id="contentArea" prefHeight="527.0" prefWidth="719.0" />
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

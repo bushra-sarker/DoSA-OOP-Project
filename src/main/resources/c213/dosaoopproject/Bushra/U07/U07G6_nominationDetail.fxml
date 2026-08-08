@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="10.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G6_NominationDetailController">
+    <padding>
+        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+    </padding>
+    <children>
+
+        <!-- PAGE HEADER -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Back to Queue">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER" spacing="4.0" style="-fx-background-color: #FFF3CD; -fx-padding: 2 6 2 6; -fx-background-radius: 10; -fx-border-color: #FFEEBA; -fx-border-radius: 10;">
+                            <children>
+                                <Label text="Status:" textFill="#856404">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Label>
+                                <Label fx:id="statusLabel" text="Pending" textFill="#856404">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Label text="Exchange Nomination Review" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- STUDENT CREDENTIALS CARD -->
+        <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;">
+            <children>
+                <Label text="Student Credentials" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <Label text="Nomination ID" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="lblNominationId" text="EX-2026-01" textFill="#083c57"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <Label text="Student Name" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="lblStudentName" text="Tanvir Hasan"><font><Font size="11.0" /></font></Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <Label text="Host University" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="lblHostUniversity" text="University of Malaya"><font><Font size="11.0" /></font></Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <VBox>
+                                    <children>
+                                        <Label text="Cumulative GPA" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="lblCgpa" text="3.85" textFill="#1E7E34"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- DECISION FORM CARD -->
+        <VBox spacing="8.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;">
+            <children>
+                <Label text="Decision Action" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <VBox spacing="2.0">
+                    <children>
+                        <Label text="Select Status Action" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <ComboBox fx:id="cmbAction" prefWidth="250.0" promptText="Select Action..." />
+                    </children>
+                </VBox>
+                <VBox spacing="2.0">
+                    <children>
+                        <Label text="Decision / Revision Remarks" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                        <TextArea fx:id="txtComments" prefHeight="80.0" promptText="Enter decision justification or required additional information..." wrapText="true" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <!-- SUBMIT BUTTON -->
+        <HBox spacing="10.0">
+            <children>
+                <Button fx:id="confirmDecisionButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleConfirmDecision" prefHeight="32.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Confirm &amp; Save Decision" HBox.hgrow="ALWAYS">
+                    <font><Font name="System Bold" size="12.0" /></font>
+                </Button>
+            </children>
+        </HBox>
+
+    </children>
+</VBox>

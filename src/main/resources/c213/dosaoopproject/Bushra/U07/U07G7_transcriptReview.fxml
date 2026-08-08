@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="6.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G7_transcriptReviewController">
+    <padding>
+        <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+    </padding>
+    <children>
+
+        <!-- PAGE HEADER CARD -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Back to Requests">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER" spacing="6.0" style="-fx-background-color: #FFF3CD; -fx-padding: 2 8 2 8; -fx-background-radius: 10; -fx-border-color: #FFEEBA; -fx-border-radius: 10;">
+                            <children>
+                                <Label text="Status:" textFill="#856404">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Label>
+                                <Label fx:id="statusBadgeLabel" text="Pending Certification" textFill="#856404">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Label text="Review Student Co-Curricular Transcript" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- STUDENT INFORMATION CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Student Information" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label fx:id="studentInfoLabel" text="Name: Farhan Chowdhury | ID: 21101234 | Dept: CSE | CGPA: 3.75 | Graduation: Spring 2026" textFill="#333333" wrapText="true">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- ACTIVITIES & LEADERSHIP LISTS SECTION (EXPANDS DYNAMICALLY) -->
+        <HBox spacing="8.0" VBox.vgrow="ALWAYS">
+            <children>
+                <!-- Leadership Roles Card -->
+                <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Leadership Roles" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Label>
+                        <ListView fx:id="leadershipListView" prefHeight="65.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+
+                <!-- Club Activities Card -->
+                <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Club Activities" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Label>
+                        <ListView fx:id="clubActivitiesListView" prefHeight="65.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- TRANSCRIPT SUMMARY & VERIFICATION RESULTS CARD -->
+        <HBox spacing="8.0">
+            <children>
+                <!-- Summary Card -->
+                <VBox spacing="2.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Transcript Summary" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Label text="Total Activity Points:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="totalPointsLabel" text="85" textFill="#083c57"><font><Font name="System Bold" size="10.0" /></font></Label>
+                            </children>
+                        </HBox>
+                        <HBox spacing="10.0">
+                            <children>
+                                <Label text="Verification Status:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="verificationStatusLabel" text="Verified" textFill="#1E7E34"><font><Font name="System Bold" size="10.0" /></font></Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Verification Checks Card -->
+                <VBox spacing="2.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Verification Results" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <Label text="✔ Leadership records verified" textFill="#1E7E34"><font><Font size="10.0" /></font></Label>
+                        <Label text="✔ Club participation verified" textFill="#1E7E34"><font><Font size="10.0" /></font></Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- DISPUTE PANEL (ACCORDION) -->
+        <Accordion fx:id="disputeAccordion">
+            <panes>
+                <TitledPane animated="false" style="-fx-text-fill: #083C57; -fx-font-weight: bold;" text="Flag Activity Dispute">
+                    <content>
+                        <VBox spacing="4.0" style="-fx-padding: 6px; -fx-background-color: white;">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                    <children>
+                                        <ComboBox fx:id="disputedActivityComboBox" prefWidth="250.0" promptText="Select Activity to Dispute" style="-fx-font-size: 11px;" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Button fx:id="flagDisputeButton" mnemonicParsing="false" onAction="#flagDisputeOA" style="-fx-background-color: #BD2130; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Flag Dispute">
+                                            <font><Font name="System Bold" size="11.0" /></font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                                <TextArea fx:id="disputeNoteTextF" prefHeight="35.0" promptText="Enter reason for dispute..." wrapText="true">
+                                    <font><Font size="10.0" /></font>
+                                </TextArea>
+                            </children>
+                        </VBox>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+
+        <!-- BOTTOM ACTION BUTTONS CARD -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <HBox alignment="CENTER" spacing="15.0">
+                    <children>
+                        <Button fx:id="certifyTranscriptButton" mnemonicParsing="false" onAction="#certifyTranscriptOA" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: #1E7E34; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Certify Transcript">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="releaseToStudentButton" mnemonicParsing="false" onAction="#releaseToStudentOA" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 5;" text="Release to Student">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</VBox>

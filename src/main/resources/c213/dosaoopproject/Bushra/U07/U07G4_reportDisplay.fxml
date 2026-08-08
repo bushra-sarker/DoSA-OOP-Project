@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G4_reportDisplayController">
+    <padding>
+        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+    </padding>
+    <children>
+
+        <!-- PAGE HEADER -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 8px 12px;">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Reconfigure Parameters">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="Semester Activity Summary Report" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- METRIC SUMMARY CARDS -->
+        <HBox spacing="8.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 4px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="totalEventsLabel" text="0" textFill="#083c57"><font><Font name="System Bold" size="15.0" /></font></Label>
+                        <Label text="Total Events Organized" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 4px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="totalStudentsReachedLabel" text="0" textFill="#1e7e34"><font><Font name="System Bold" size="15.0" /></font></Label>
+                        <Label text="Total Students Reached" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- CHARTS SECTION (CRA Event 5: Event Category & Budget Utilization Pie Charts) -->
+        <HBox spacing="8.0" VBox.vgrow="ALWAYS">
+            <children>
+                <!-- EVENT CATEGORY PIE CHART -->
+                <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 8px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Event Distribution" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <PieChart fx:id="eventCategoryPieChart" legendSide="BOTTOM" prefHeight="220.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+
+                <!-- BUDGET UTILIZATION PIE CHART -->
+                <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 8px;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Budget Utilization" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <PieChart fx:id="budgetUtilizationpiechart" legendSide="BOTTOM" prefHeight="220.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- ACTION BUTTONS (Events 6 & 7) -->
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <children>
+                <Button fx:id="exportTXTButton" mnemonicParsing="false" onAction="#exportTXTOA" style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Export TXT">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Button>
+                <Button fx:id="submitToVCOfficeButton" mnemonicParsing="false" onAction="#submitToVCOfficeOA" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Submit to VC Office">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+
+    </children>
+</VBox>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" prefHeight="530.0" prefWidth="720.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G8SurveyBuilderController">
+    <content>
+        <VBox spacing="6.0" style="-fx-background-color: #F8F9FA;">
+            <padding>
+                <Insets bottom="10.0" left="12.0" right="12.0" top="8.0" />
+            </padding>
+            <children>
+
+                <!-- HEADER CARD -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Button fx:id="backButtonHeader" mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand; -fx-padding: 0 0 4 0;" text="← Back to Analytics">
+                                    <font>
+                                        <Font name="System Bold" size="11.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <Label text="Survey Builder" textFill="#083c57">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label text="Create and publish a new student feedback survey." textFill="GRAY">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- SURVEY INFORMATION CARD -->
+                <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <Label text="Survey Information" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <GridPane hgap="10.0" vgap="4.0">
+                            <children>
+                                <Label text="Survey Title :" textFill="GRAY" GridPane.columnIndex="0" GridPane.rowIndex="0"><font><Font size="10.0" /></font></Label>
+                                <TextField fx:id="surveyTitleTextF" prefWidth="220.0" promptText="e.g. Dining Hall Quality Q2" style="-fx-font-size: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label text="Department :" textFill="GRAY" GridPane.columnIndex="0" GridPane.rowIndex="1"><font><Font size="10.0" /></font></Label>
+                                <ComboBox fx:id="departmentComboB" prefWidth="220.0" style="-fx-font-size: 10px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label text="Deadline :" textFill="GRAY" GridPane.columnIndex="2" GridPane.rowIndex="0"><font><Font size="10.0" /></font></Label>
+                                <DatePicker fx:id="surveyDeadlineDateP" prefWidth="180.0" style="-fx-font-size: 10px;" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+
+                <!-- SURVEY QUESTIONS CARD -->
+                <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <Label text="Survey Questions" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                            <children>
+                                <Label text="Question :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <TextField fx:id="questionPromptTextF" promptText="Enter question prompt..." style="-fx-font-size: 10px;" HBox.hgrow="ALWAYS" />
+                                <Button fx:id="addQuestionButton" mnemonicParsing="false" onAction="#addQuestionOA" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Add Question">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <ListView fx:id="questionsListV" prefHeight="80.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+
+                <!-- VALIDATION & TARGET AUDIENCE ROW -->
+                <HBox spacing="8.0">
+                    <children>
+                        <!-- Target Audience Box -->
+                        <VBox prefWidth="250.0" spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                            <children>
+                                <Label text="Target Audience" textFill="#083c57">
+                                    <font><Font name="System Bold" size="11.0" /></font>
+                                </Label>
+                                <ComboBox fx:id="targetAudienceComboBox" prefWidth="230.0" style="-fx-font-size: 10px;">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="All Students" />
+                                            <String fx:value="Undergraduate" />
+                                            <String fx:value="Postgraduate" />
+                                            <String fx:value="Residential Students" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Validation Warning Box -->
+                        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Validation" textFill="#083c57">
+                                    <font><Font name="System Bold" size="11.0" /></font>
+                                </Label>
+                                <Label fx:id="validationWarningLabel" text="Please complete survey title and deadline." textFill="#BD2130" wrapText="true">
+                                    <font><Font name="System Bold" size="10.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- SURVEY PREVIEW CARD -->
+                <VBox spacing="4.0" style="-fx-background-color: #F1F5F9; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #CBD5E1; -fx-padding: 6px 10px;">
+                    <children>
+                        <Label text="Survey Preview" textFill="#083c57">
+                            <font><Font name="System Bold" size="11.0" /></font>
+                        </Label>
+                        <GridPane hgap="12.0" vgap="2.0">
+                            <children>
+                                <HBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Title :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="previewSurveyTitleLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Department :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="previewDepartmentLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+
+                                <HBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Deadline :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="previewDeadlineLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="Questions :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="totalQuestionsLabel" text="0" textFill="#083c57"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+
+                                <HBox spacing="4.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Audience :" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                        <Label fx:id="previewAudienceLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+
+                <!-- BOTTOM BUTTONS CARD -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+                    <children>
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                            <children>
+                                <Button fx:id="distributeSurveyButton" mnemonicParsing="false" onAction="#distributeSurveyOA" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #1E7E34; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Distribute Survey">
+                                    <font>
+                                        <Font name="System Bold" size="10.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="backButton" mnemonicParsing="false" onAction="#backOA" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Back">
+                                    <font>
+                                        <Font name="System Bold" size="10.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

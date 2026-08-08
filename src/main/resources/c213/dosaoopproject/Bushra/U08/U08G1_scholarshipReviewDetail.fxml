@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="6.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U08.controller.U08G1_scholarshipReviewDetailController">
+    <padding>
+        <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+    </padding>
+    <children>
+
+        <!-- PAGE HEADER CARD -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#backOA" style="-fx-background-color: transparent; -fx-text-fill: #083C57; -fx-cursor: hand;" text="← Back to Applications">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label text="Scholarship Application Review" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- STUDENT INFORMATION CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Student Information" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <HBox spacing="15.0">
+                    <children>
+                        <VBox spacing="2.0">
+                            <children>
+                                <Label text="Student Profile:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label text="Current CGPA:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label text="Monthly Family Income:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label text="Transcript Summary:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                            </children>
+                        </VBox>
+                        <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label fx:id="studentProfileLabel" text="--" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                <Label fx:id="cgpaLabel" text="0.00" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                <Label fx:id="familyIncomeLabel" text="BDT 0" textFill="#333333"><font><Font name="System Bold" size="10.0" /></font></Label>
+                                <Label fx:id="transcriptSummaryLabel" text="--" textFill="#083c57" wrapText="true"><font><Font name="System Bold" size="10.0" /></font></Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- ELIGIBILITY STATUS CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Eligibility Status" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <HBox spacing="15.0">
+                    <children>
+                        <HBox spacing="4.0">
+                            <children>
+                                <Label text="Calculated Eligibility:" textFill="GRAY"><font><Font size="10.0" /></font></Label>
+                                <Label fx:id="calculatedEligibilityLabel" text="Pending Analysis" textFill="#1E7E34"><font><Font name="System Bold" size="10.0" /></font></Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Label fx:id="eligibilityWarningLabel" text="⚠ Note: Income exceeds standard threshold or CGPA below criteria." textFill="#BD2130" visible="false" managed="false">
+                    <font>
+                        <Font name="System Bold" size="10.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- DECISION SELECTION CARD -->
+        <VBox spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <Label text="Decision" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <children>
+                        <RadioButton fx:id="recommendedRadio" mnemonicParsing="false" selected="true" text="Recommend for Approval" textFill="#1e7e34">
+                            <font>
+                                <Font name="System Bold" size="10.0" />
+                            </font>
+                            <toggleGroup>
+                                <ToggleGroup fx:id="decisionGroup" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="needMoreInfoRadio" mnemonicParsing="false" text="Need More Information" textFill="#d39e00" toggleGroup="$decisionGroup">
+                            <font>
+                                <Font name="System Bold" size="10.0" />
+                            </font>
+                        </RadioButton>
+                        <RadioButton fx:id="notEligibleRadio" mnemonicParsing="false" text="Reject Application" textFill="#bd2130" toggleGroup="$decisionGroup">
+                            <font>
+                                <Font name="System Bold" size="10.0" />
+                            </font>
+                        </RadioButton>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- REVIEW NOTES PANEL (Made Visible & Managed) -->
+        <VBox fx:id="inlineReviewNotesVBox" managed="true" spacing="4.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;" visible="true" VBox.vgrow="ALWAYS">
+            <children>
+                <Label text="Review Notes &amp; Justification" textFill="#083c57">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="reviewNotesTextF" promptText="Enter detailed justification or reasons here..." wrapText="true" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </TextArea>
+            </children>
+        </VBox>
+
+        <!-- SUBMIT ASSESSMENT BUTTON CARD -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Button fx:id="submitAssessmentButton" mnemonicParsing="false" onAction="#submitAssessmentOA" prefHeight="28.0" prefWidth="200.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Submit Assessment">
+                            <font>
+                                <Font name="System Bold" size="11.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</VBox>

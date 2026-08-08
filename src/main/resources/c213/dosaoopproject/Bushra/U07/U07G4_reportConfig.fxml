@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G4_reportConfigController">
+    <padding>
+        <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
+    </padding>
+    <children>
+
+        <!-- PAGE HEADER (Matches U07 Standard Header Card) -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 8px 12px;">
+            <children>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <VBox spacing="2.0">
+                            <children>
+                                <Label text="Generate Semester Activity Report" textFill="#083c57">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Configure parameters to review student engagement and budget statistics." textFill="GRAY">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- MAIN CONFIGURATION CARD -->
+        <VBox alignment="CENTER" prefHeight="368.0" prefWidth="696.0" spacing="16.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 30px 20px;" VBox.vgrow="ALWAYS">
+            <children>
+                  <Label prefHeight="11.0" prefWidth="115.0" text="Report Parameters" textFill="#083c57">
+                      <font>
+                          <Font name="System Bold" size="13.0" />
+                      </font>
+                  </Label>
+
+                <VBox alignment="CENTER" spacing="4.0">
+                    <children>
+                        <Label prefHeight="0.0" prefWidth="262.0" text="Select the target semester and academic year to parse logs." textFill="GRAY">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <HBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <!-- Semester Selection -->
+                        <VBox spacing="4.0">
+                            <children>
+                                <Label text="Semester" textFill="GRAY">
+                                    <font><Font size="10.0" /></font>
+                                </Label>
+                        <ComboBox fx:id="semesterComboBox" prefWidth="150.0" promptText="Select Semester" />
+                            </children>
+                        </VBox>
+
+                        <!-- Year Selection -->
+                        <VBox spacing="4.0">
+                            <children>
+                                <Label text="Academic Year" textFill="GRAY">
+                                    <font><Font size="10.0" /></font>
+                                </Label>
+                        <ComboBox fx:id="yearComboBox" prefWidth="150.0" promptText="Select Year" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <Region prefHeight="80.0" prefWidth="653.0" />
+
+                <!-- SUBMIT / GENERATE BUTTON -->
+                <Button fx:id="generateReportButton" mnemonicParsing="false" onAction="#generateReportOA" prefHeight="15.0" prefWidth="240.0" style="-fx-background-color: #083C57; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 6;" text="Generate Report">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+
+            </children>
+        </VBox>
+
+    </children>
+</VBox>
