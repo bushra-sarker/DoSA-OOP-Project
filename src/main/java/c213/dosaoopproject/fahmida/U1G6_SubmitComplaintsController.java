@@ -6,15 +6,18 @@ import c213.dosaoopproject.fahmida.model.Complaint;
 import c213.dosaoopproject.fahmida.session.Session;
 import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.ToShowAlert;
 import c213.dosaoopproject.fahmida.utility.Ui;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 /**
@@ -53,17 +56,18 @@ public class U1G6_SubmitComplaintsController {
                 "Academic", "Facilities", "Harassment", "Other"));
         if (searchOFCRTF != null) {
             searchOFCRTF.setOnAction(e ->
-                    Ui.info(c213.dosaoopproject.fahmida.utility.Search.query(searchOFCRTF.getText())));
+                    ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION,
+                            c213.dosaoopproject.fahmida.utility.Search.query(searchOFCRTF.getText())));
         }
     }
 
     @javafx.fxml.FXML
-    public void submitsComplaintOA(ActionEvent actionEvent) {
+    public void submitsComplaintOA(ActionEvent actionEvent) throws IOException {
         String category = categoryCB.getValue();
         String title = titleTF.getText();
         String description = describeTF.getText();
         if (category == null || description == null || description.isBlank()) {
-            Ui.info("Please choose a category and describe your complaint.");
+            ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Please choose a category and describe your complaint.");
             return;
         }
         User user = Session.getCurrentUser();
@@ -73,40 +77,40 @@ public class U1G6_SubmitComplaintsController {
                 store.getComplaints().size() + 1, user.getUserId(),
                 category, details, LocalDate.now()));
         store.logHistory(user.getUserId(), "Submitted a " + category + " complaint");
-        Ui.info("Complaint submitted. Thank you.");
-        SceneManager.switchTo("U1_Dashboard");
+        ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, "Complaint submitted. Thank you.");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
     }
 
     // --- sidebar navigation --------------------------------------------------
 
     @javafx.fxml.FXML
-    public void studentdashboardOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+    public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
     }
 
     @javafx.fxml.FXML
-    public void viewNoticesOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G1_ViewNotices");
+    public void viewNoticesOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G1_ViewNotices.fxml");
     }
 
     @javafx.fxml.FXML
-    public void registerEventsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G2_EventList");
+    public void registerEventsOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G2_EventList.fxml");
     }
 
     @javafx.fxml.FXML
-    public void clubMembershipOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G3_ApplyForClub");
+    public void clubMembershipOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G3_ApplyForClub.fxml");
     }
 
     @javafx.fxml.FXML
-    public void viewScheduleOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G4_ViewEventSchedule");
+    public void viewScheduleOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G4_ViewEventSchedule.fxml");
     }
 
     @javafx.fxml.FXML
-    public void communityProgramOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G5_CommunityService");
+    public void communityProgramOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G5_CommunityService.fxml");
     }
 
     @javafx.fxml.FXML
@@ -115,13 +119,13 @@ public class U1G6_SubmitComplaintsController {
     }
 
     @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G7_DownloadApproval");
+    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
     }
 
     @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G8_TrackHistory");
+    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML
@@ -130,8 +134,8 @@ public class U1G6_SubmitComplaintsController {
     }
 
     @javafx.fxml.FXML
-    public void logOutOA(ActionEvent actionEvent) {
+    public void logOutOA(ActionEvent actionEvent) throws IOException {
         Session.clear();
-        SceneManager.switchTo("LoginView");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/LoginView.fxml");
     }
 }

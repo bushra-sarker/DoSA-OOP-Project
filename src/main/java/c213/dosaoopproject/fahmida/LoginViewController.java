@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 /**
  * Controller for the login screen (shared Login process from the spec).
  *
@@ -33,7 +35,7 @@ public class LoginViewController {
     }
 
     @FXML
-    public void loginOA(ActionEvent actionEvent) {
+    public void loginOA(ActionEvent actionEvent) throws IOException {
         String userId = userIdTF.getText() == null ? "" : userIdTF.getText().trim();
         String password = passwordTF.getText() == null ? "" : passwordTF.getText();
 
@@ -77,6 +79,6 @@ public class LoginViewController {
         user.resetFailedAttempts();
         store.save();
         Session.setCurrentUser(user);
-        SceneManager.switchTo(user.getDashboardFxml());
+        SceneManager.navigate(actionEvent, user.getDashboardFxml());
     }
 }

@@ -9,6 +9,7 @@ import c213.dosaoopproject.fahmida.session.Session;
 import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
 import c213.dosaoopproject.fahmida.utility.Search;
+import c213.dosaoopproject.fahmida.utility.ToShowAlert;
 import c213.dosaoopproject.fahmida.utility.Ui;
 
 import javafx.event.ActionEvent;
@@ -18,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -56,7 +58,7 @@ public class U2_DashboardController {
             welcomeUserLabel.setText("Welcome, " + user.getFullName() + "!");
         }
         if (searchOFCRTF != null) {
-            searchOFCRTF.setOnAction(e -> Ui.info(Search.query(searchOFCRTF.getText())));
+            searchOFCRTF.setOnAction(e -> ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, Search.query(searchOFCRTF.getText())));
         }
         showCardCounts(user);
     }
@@ -90,55 +92,55 @@ public class U2_DashboardController {
 
     // "Update Club Information"
     @javafx.fxml.FXML
-    public void viewNoticesOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G1_updateClubinfo");
+    public void viewNoticesOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G1_updateClubinfo.fxml");
     }
 
     // "Post Club Notices and Announcements"
     @javafx.fxml.FXML
-    public void registerEventsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G2_PostClubNotice");
+    public void registerEventsOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G2_PostClubNotice.fxml");
     }
 
     // "Review and Approve Club Membership Requests"
     @javafx.fxml.FXML
-    public void clubMembershipOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G3_ReviewandapproveClubMembership");
+    public void clubMembershipOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G3_ReviewandapproveClubMembership.fxml");
     }
 
     // "Arrange Club Events" — dedicated screen (feeds the students' event lists).
     @javafx.fxml.FXML
-    public void viewScheduleOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G4_ArrangeEvent");
+    public void viewScheduleOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G4_ArrangeEvent.fxml");
     }
 
     // "Assign Student Volunteers to Events"
     @javafx.fxml.FXML
-    public void submitComplaintsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G5_AssignVolunteer");
+    public void submitComplaintsOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
     }
 
     // "View Registered Participants for Events"
     @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G6_ViewParticipants");
+    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G6_ViewParticipants.fxml");
     }
 
     // "Advisor Submit Student's Event Completion Report"
     @javafx.fxml.FXML
-    public void submitCompletionReportOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G7_CompletionReport");
+    public void submitCompletionReportOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G7_CompletionReport.fxml");
     }
 
     // "View Club Activity History"
     @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G8_ActivityHistory");
+    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G8_ActivityHistory.fxml");
     }
 
     @javafx.fxml.FXML
-    public void studentdashboardOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2_Dashboard");
+    public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2_Dashboard.fxml");
     }
 
     @javafx.fxml.FXML
@@ -154,7 +156,11 @@ public class U2_DashboardController {
         confirm.showAndWait().ifPresent(choice -> {
             if (choice == ButtonType.YES) {
                 Session.clear();
-                SceneManager.switchTo("LoginView");
+                try {
+                    SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/LoginView.fxml");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }

@@ -40,7 +40,7 @@ public class ClubAdvisor extends User {
 
     @Override
     public String getDashboardFxml() {
-        return "U2_Dashboard";
+        return "/c213/dosaoopproject/fahmida/U2_Dashboard.fxml";
     }
 
     @Override

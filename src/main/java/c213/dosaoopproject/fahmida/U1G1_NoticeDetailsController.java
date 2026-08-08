@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 /**
  * User-1 Goal-1 (details): shows the full text of the notice the student picked
  * on the "View Notices" screen ("Read More").
@@ -68,24 +70,24 @@ public class U1G1_NoticeDetailsController {
     }
 
     @javafx.fxml.FXML
-    public void viewNoticesOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G1_ViewNotices");
+    public void viewNoticesOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G1_ViewNotices.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goDashboardOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+    public void goDashboardOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
     }
 
     @javafx.fxml.FXML
-    public void studentdashboardOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+    public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
     }
 
     @javafx.fxml.FXML
-    public void logOutOA(ActionEvent actionEvent) {
+    public void logOutOA(ActionEvent actionEvent) throws IOException {
         Session.clear();
-        SceneManager.switchTo("LoginView");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/LoginView.fxml");
     }
 
     // --- remaining navigation buttons (wired in later phases) ---------------

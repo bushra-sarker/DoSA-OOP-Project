@@ -5,13 +5,17 @@ import c213.dosaoopproject.fahmida.model.EventRegistration;
 import c213.dosaoopproject.fahmida.session.Session;
 import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
+import c213.dosaoopproject.fahmida.utility.ToShowAlert;
 import c213.dosaoopproject.fahmida.utility.Ui;
 import commonClass.User;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+
+import java.io.IOException;
 
 /**
  * Club Advisor Goal: finalize a volunteer assignment. Shows the registrant
@@ -64,16 +68,16 @@ public class U2G5_AssignVolunteerFormController
     }
 
     @javafx.fxml.FXML
-    public void assignOA(ActionEvent actionEvent) {
+    public void assignOA(ActionEvent actionEvent) throws IOException {
         EventRegistration registration = Session.getSelectedRegistration();
         if (registration == null) {
-            Ui.info("No registrant selected.");
+            ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "No registrant selected.");
             return;
         }
 
         String responsibility = responsibilityTF.getText().trim();
         if (responsibility.isEmpty()) {
-            Ui.info("Please select a responsibility before confirming.");
+            ToShowAlert.showWaitAlert(Alert.AlertType.WARNING, "Please select a responsibility before confirming.");
             return;
         }
 
@@ -92,60 +96,60 @@ public class U2G5_AssignVolunteerFormController
         store.notify(registration.getStudentId(), "You've been assigned as \""
                 + responsibility + "\" for " + registration.getEventName() + ".");
 
-        Ui.info("Volunteer assigned successfully.");
-        SceneManager.switchTo("U2G5_AssignVolunteer");
+        ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, "Volunteer assigned successfully.");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
     }
 
     @javafx.fxml.FXML
-    public void backtoPreviousOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G5_AssignVolunteer");
+    public void backtoPreviousOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
     }
 
     // --- navigation ----------------------------------------------------------
 
     @javafx.fxml.FXML
-    public void studentdashboardOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2_Dashboard");
+    public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2_Dashboard.fxml");
     }
 
     @javafx.fxml.FXML
-    public void viewNoticesOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G1_updateClubinfo");
+    public void viewNoticesOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G1_updateClubinfo.fxml");
     }
 
     @javafx.fxml.FXML
-    public void registerEventsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G2_PostClubNotice");
+    public void registerEventsOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G2_PostClubNotice.fxml");
     }
 
     @javafx.fxml.FXML
-    public void clubMembershipOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G3_ReviewandapproveClubMembership");
+    public void clubMembershipOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G3_ReviewandapproveClubMembership.fxml");
     }
 
     @javafx.fxml.FXML
-    public void viewScheduleOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G4_ArrangeEvent");
+    public void viewScheduleOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G4_ArrangeEvent.fxml");
     }
 
     @javafx.fxml.FXML
-    public void submitComplaintsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G5_AssignVolunteer");
+    public void submitComplaintsOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G5_AssignVolunteer.fxml");
     }
 
     @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G6_ViewParticipants");
+    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G6_ViewParticipants.fxml");
     }
 
     @javafx.fxml.FXML
-    public void submitCompletionReportOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G7_CompletionReport");
+    public void submitCompletionReportOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G7_CompletionReport.fxml");
     }
 
     @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U2G8_ActivityHistory");
+    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U2G8_ActivityHistory.fxml");
     }
 
     @javafx.fxml.FXML
@@ -154,8 +158,8 @@ public class U2G5_AssignVolunteerFormController
     }
 
     @javafx.fxml.FXML
-    public void logOutOA(ActionEvent actionEvent) {
+    public void logOutOA(ActionEvent actionEvent) throws IOException {
         Session.clear();
-        SceneManager.switchTo("LoginView");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/LoginView.fxml");
     }
 }

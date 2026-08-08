@@ -17,6 +17,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 /**
  * User-1 Goal-1: View DoSA Notices and Announcements.
  *
@@ -82,7 +84,11 @@ public class U1G1_ViewNoticesController {
                     // Find the notice on this row and open its details.
                     Notice notice = getTableView().getItems().get(getIndex());
                     U1G1_NoticeDetailsController.setSelectedNotice(notice);
-                    SceneManager.switchTo("U1G1_NoticeDetails");
+                    try {
+                        SceneManager.navigate(e, "/c213/dosaoopproject/fahmida/U1G1_NoticeDetails.fxml");
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 });
             }
 
@@ -99,13 +105,13 @@ public class U1G1_ViewNoticesController {
     }
 
     @javafx.fxml.FXML
-    public void goDashboardOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+    public void goDashboardOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
     }
 
     @javafx.fxml.FXML
-    public void studentdashboardOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1_Dashboard");
+    public void studentdashboardOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml");
     }
 
     @javafx.fxml.FXML
@@ -114,8 +120,8 @@ public class U1G1_ViewNoticesController {
     }
 
     @javafx.fxml.FXML
-    public void registerEventsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G2_EventList");
+    public void registerEventsOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G2_EventList.fxml");
     }
 
     @javafx.fxml.FXML
@@ -124,38 +130,38 @@ public class U1G1_ViewNoticesController {
     }
 
     @javafx.fxml.FXML
-    public void viewScheduleOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G4_ViewEventSchedule");
+    public void viewScheduleOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G4_ViewEventSchedule.fxml");
     }
 
     @javafx.fxml.FXML
-    public void communityProgramOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G5_CommunityService");
+    public void communityProgramOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G5_CommunityService.fxml");
     }
 
     @javafx.fxml.FXML
-    public void logOutOA(ActionEvent actionEvent) {
+    public void logOutOA(ActionEvent actionEvent) throws IOException {
         Session.clear();
-        SceneManager.switchTo("LoginView");
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/LoginView.fxml");
     }
 
     @javafx.fxml.FXML
-    public void downloadApprovalOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G7_DownloadApproval");
+    public void downloadApprovalOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G7_DownloadApproval.fxml");
     }
 
     @javafx.fxml.FXML
-    public void clubMembershipOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G3_ApplyForClub");
+    public void clubMembershipOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G3_ApplyForClub.fxml");
     }
 
     @javafx.fxml.FXML
-    public void trackHistoryOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G8_TrackHistory");
+    public void trackHistoryOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G8_TrackHistory.fxml");
     }
 
     @javafx.fxml.FXML
-    public void submitComplaintsOA(ActionEvent actionEvent) {
-        SceneManager.switchTo("U1G6_SubmitComplaints");
+    public void submitComplaintsOA(ActionEvent actionEvent) throws IOException {
+        SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G6_SubmitComplaints.fxml");
     }
 }

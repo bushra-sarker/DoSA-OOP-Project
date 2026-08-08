@@ -43,7 +43,7 @@ public class Student extends User {
 
     @Override
     public String getDashboardFxml() {
-        return "U1_Dashboard";
+        return "/c213/dosaoopproject/fahmida/U1_Dashboard.fxml";
     }
 
     @Override

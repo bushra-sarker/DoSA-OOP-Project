@@ -5,6 +5,8 @@ import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.model.Notification;
 import c213.dosaoopproject.fahmida.session.Session;
 
+import javafx.scene.control.Alert;
+
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -27,7 +29,7 @@ public final class Notifications {
                 .collect(Collectors.toCollection(ArrayList::new));
 
         if (mine.isEmpty()) {
-            Ui.info("No new notifications.");
+            ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, "No new notifications.");
             return;
         }
 
@@ -36,7 +38,7 @@ public final class Notifications {
                 .sorted((a, b) -> b.getDate().compareTo(a.getDate()))
                 .map(n -> (n.isRead() ? "   " : "• ") + n.getDate() + " — " + n.getMessage())
                 .collect(Collectors.joining("\n"));
-        Ui.info(text);
+        ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, text);
 
         mine.forEach(Notification::markRead);
         DataStore.get().save();
