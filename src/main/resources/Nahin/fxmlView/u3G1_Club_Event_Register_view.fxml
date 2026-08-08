@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_03.G_1_Club_RegisterEvent_Controller">
+   <top><fx:include source="u3_head.fxml" /></top>
+   <left><fx:include source="u3_sideMenuBar_view.fxml" /></left>
+      <center>
+         <StackPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="696.0" BorderPane.alignment="CENTER"><children>
+            <VBox fx:id="pane_1" prefHeight="462.0" prefWidth="673.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="696.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="556.0" text="Available Events">
+                           <font>
+                              <Font name="Cambria Math" size="17.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets left="12.0" />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#registerButtonOA" prefHeight="25.0" prefWidth="137.0" style="-fx-background-radius: 6; -fx-border-radius: 6;" text="+ Register New">
+                           <font>
+                              <Font name="Cambria Math" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="availableEventsTABLEVIEW" minWidth="-Infinity" prefHeight="230.0" prefWidth="718.0">
+                     <columns>
+                        <TableColumn fx:id="eventNameCol" prefWidth="150.39996910095215" text="Event Name" />
+                        <TableColumn fx:id="clubNameCOL" prefWidth="181.60006713867188" text="Club Name" />
+                        <TableColumn fx:id="dateCOL" prefWidth="116.0" text="Date" />
+                        <TableColumn fx:id="timeCOL" prefWidth="130.39999389648438" text="Time" />
+                        <TableColumn fx:id="venueCOL" prefWidth="138.4000244140625" text="Venue" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets left="8.0" right="8.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <VBox prefHeight="77.0" prefWidth="929.0">
+                     <children>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="66.0" prefWidth="742.0">
+                           <children>
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backDashOA" prefHeight="29.0" prefWidth="89.0" text="Back">
+                                 <font>
+                                    <Font name="Californian FB" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="12.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Region prefHeight="73.0" prefWidth="37.0" />
+                              <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshEventOA" prefHeight="29.0" prefWidth="89.0" text="Refresh">
+                                 <font>
+                                    <Font name="Californian FB" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox fx:id="pane_2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="736.0" visible="false">
+               <children>
+                  <ScrollPane prefHeight="522.0" prefWidth="736.0" style="-fx-border-color: white;">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <content>
+                        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="731.0">
+                           <children>
+                              <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="678.0" spacing="10.0">
+                                 <children>
+                                    <HBox prefHeight="58.0" prefWidth="614.0" spacing="30.0">
+                                       <children>
+                                          <VBox prefHeight="54.0" prefWidth="243.0">
+                                             <children>
+                                                <Label prefHeight="27.0" prefWidth="170.0" text="RegistrationID   :" />
+                                                <Label fx:id="registerIDLABEL" prefHeight="27.0" prefWidth="215.0" text="System-generated ID" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="70.0" prefWidth="276.0">
+                                             <children>
+                                                <Label prefHeight="27.0" prefWidth="170.0" text="Club Name :" />
+                                                <Label fx:id="clubNameLBL" prefHeight="33.0" prefWidth="288.0" text="System" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="684.0" spacing="30.0">
+                                       <children>
+                                          <Label prefHeight="27.0" prefWidth="75.0" text="Event Name :" />
+                                          <Label fx:id="eventNameLBL" prefHeight="25.0" prefWidth="158.0" text="System" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="30.0" prefWidth="684.0" spacing="30.0">
+                                       <children>
+                                          <HBox prefHeight="26.0" prefWidth="253.0">
+                                             <children>
+                                                <Label prefHeight="26.0" prefWidth="81.0" text="User ID   :" />
+                                                <TextField fx:id="userIDTF" prefHeight="26.0" prefWidth="195.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="26.0" prefWidth="242.0">
+                                             <children>
+                                                <Label prefHeight="27.0" prefWidth="54.0" text="Phone :" />
+                                                <TextField fx:id="phoneTF" prefHeight="26.0" prefWidth="183.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="42.0" prefWidth="684.0" spacing="30.0">
+                                       <children>
+                                          <HBox prefHeight="38.0" prefWidth="258.0">
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="82.0" text="Name     : " />
+                                                <TextField fx:id="nameTF" prefHeight="27.0" prefWidth="194.0" style="-fx-border-color: lightgray;" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="38.0" prefWidth="233.0">
+                                             <children>
+                                                <Label prefHeight="32.0" prefWidth="61.0" text="Date    :" />
+                                                <Label fx:id="registrationDateLBL" prefHeight="34.0" prefWidth="175.0" text="System" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="32.0" prefWidth="684.0">
+                                       <children>
+                                          <Label prefHeight="26.0" prefWidth="70.0" text="E-mail    : " />
+                                          <TextField fx:id="mailTF" prefHeight="26.0" prefWidth="183.0" />
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="74.0" prefWidth="562.0">
+                                       <children>
+                                          <Label prefHeight="61.0" prefWidth="214.0" text="Experience    :" />
+                                          <TextArea fx:id="experienceTXTAR" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="525.0">
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" />
+                                             </VBox.margin></TextArea>
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="524.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#submitFormOA" prefHeight="30.0" prefWidth="90.0" text="Submit" textFill="BLUE">
+                                             <font>
+                                                <Font name="Candara" size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <Region minHeight="-Infinity" prefHeight="50.0" prefWidth="226.0" />
+                                          <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirstOA" prefHeight="30.0" prefWidth="90.0" text="Back">
+                                             <font>
+                                                <Font name="Candara" size="13.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Region prefHeight="109.0" prefWidth="26.0" />
+                                          <Button mnemonicParsing="false" onAction="#clearOA" prefHeight="30.0" prefWidth="90.0" text="Clear" textFill="#a60000">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="Candara" size="13.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

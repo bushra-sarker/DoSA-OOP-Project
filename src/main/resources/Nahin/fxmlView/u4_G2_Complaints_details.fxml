@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_2_Complaints_details_Controller">
+   <children>
+      <Label prefHeight="30.0" prefWidth="632.0" text="Complaints Details">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <Separator layoutY="29.0" prefHeight="14.0" prefWidth="632.0" />
+      <VBox layoutY="54.0" minWidth="-Infinity" prefHeight="298.0" prefWidth="571.0" style="-fx-border-color: lightgray;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="24.0">
+         <children>
+            <HBox prefHeight="102.0" prefWidth="570.0">
+               <children>
+                  <VBox prefHeight="62.0" prefWidth="207.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="174.0" text="Complaint ID :">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="complainIDLBL" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #EBEBEB;" />
+                     </children>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="62.0" prefWidth="202.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="174.0" text="User ID :">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="userIDLBL" prefHeight="30.0" prefWidth="160.0" style="-fx-background-color: #EBEBEB;" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="62.0" prefWidth="202.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="174.0" text="Complaint Date :">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="complaintDate" prefHeight="30.0" prefWidth="172.0" style="-fx-background-color: #EBEBEB;" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="76.0" prefWidth="570.0">
+               <children>
+                  <VBox prefHeight="68.0" prefWidth="345.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="135.0" text="Category :">
+                           <padding>
+                              <Insets left="6.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="categoryLBL" prefHeight="38.0" prefWidth="318.0" style="-fx-background-color: #EBEBEB;">
+                           <VBox.margin>
+                              <Insets left="7.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="40.0" prefWidth="90.0" />
+                  <VBox prefHeight="68.0" prefWidth="325.0">
+                     <children>
+                        <Label prefHeight="35.0" prefWidth="174.0" text="Incident Date :">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="incidentDateLBL" prefHeight="30.0" prefWidth="246.0" style="-fx-background-color: #EBEBEB;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="118.0" prefWidth="570.0">
+               <children>
+                  <Label prefHeight="42.0" prefWidth="527.0" text="Description :">
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="descriptionLBL" alignment="TOP_LEFT" prefHeight="68.0" prefWidth="543.0" style="-fx-background-color: #EBEBEB;">
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox layoutX="20.0" layoutY="381.0" prefHeight="73.0" prefWidth="176.0">
+         <children>
+            <Label prefHeight="37.0" prefWidth="150.0" text="Select Decision :" />
+            <ComboBox fx:id="decisionSelection" prefHeight="26.0" prefWidth="175.0" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="336.0" layoutY="409.0" prefHeight="38.0" prefWidth="254.0" spacing="25.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#statusUpdateOA" prefHeight="26.0" prefWidth="116.0" text="Update Status" textFill="#0044e1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#cancelOA" prefHeight="26.0" prefWidth="104.0" text="Cancel" textFill="#940000">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

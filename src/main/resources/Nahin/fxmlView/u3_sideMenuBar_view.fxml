@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="540.0" prefWidth="176.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_03.SideMenuBar_Controller">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="540.0" prefWidth="176.0" spacing="5.0" style="-fx-background-color: #EDE8CC;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#dashboardViewOA" prefHeight="0.0" prefWidth="195.0" text="Dashboard">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#registerViewOA" prefHeight="0.0" prefWidth="179.0" text="Register">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#contributionViewOA" prefHeight="0.0" prefWidth="216.0" text="Contribution">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#reportViewOA" prefHeight="0.0" prefWidth="192.0" text="Report">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#leaveRqstViewOA" prefHeight="0.0" prefWidth="178.0" text="Leave Request">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#certificateApplyOA" prefHeight="0.0" prefWidth="182.0" text="Certificate">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#feedbackShareOA" prefHeight="0.0" prefWidth="175.0" text="Feedback">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Separator prefHeight="21.0" prefWidth="154.0">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </Separator>
+            <Region prefHeight="234.0" prefWidth="176.0" />
+            <Button mnemonicParsing="false" onAction="#logOutOA" prefHeight="0.0" prefWidth="249.0" text="logOut">
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

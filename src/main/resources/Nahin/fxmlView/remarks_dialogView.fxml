@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="241.0" prefWidth="416.0" style="-fx-background-color: #EBEBEB;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.reject_remark_dialog_Controller">
+   <children>
+      <Label alignment="BOTTOM_LEFT" prefHeight="48.0" prefWidth="608.0" text="Remarks :">
+         <VBox.margin>
+            <Insets left="40.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Italic" size="11.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="remarksTXTAR" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="329.0" promptText="reason for rejection">
+         <VBox.margin>
+            <Insets left="40.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextArea>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="59.0" prefWidth="416.0" spacing="40.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#cancelRejectionOA" prefHeight="26.0" prefWidth="97.0" text="Cancel" />
+            <Button mnemonicParsing="false" onAction="#confirmationOFrejectionOA" prefHeight="26.0" prefWidth="97.0" text="Confirm Reject" textFill="#790000" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

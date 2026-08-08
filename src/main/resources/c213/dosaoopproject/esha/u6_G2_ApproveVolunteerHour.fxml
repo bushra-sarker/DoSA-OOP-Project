@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.esha.controller.u6_G2_ApproveVolunteerHour">
+
+    <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+
+    <Label style="-fx-font-size:20px; -fx-font-weight:bold;" text="Approve Volunteer Hours" />
+
+    <TableView fx:id="hoursTable" prefHeight="280">
+        <columns>
+            <TableColumn fx:id="approvalIdColumn" prefWidth="90" text="Approval ID" />
+            <TableColumn fx:id="volunteerIdColumn" prefWidth="100" text="Volunteer ID" />
+            <TableColumn fx:id="totalHoursColumn" prefWidth="100" text="Total Hours" />
+            <TableColumn fx:id="statusColumn" prefWidth="120" text="Status" />
+        </columns>
+    </TableView>
+
+    <Label fx:id="statusLabel" />
+
+    <HBox spacing="10">
+        <Button fx:id="approveHoursBtn" onAction="#handleApproveHours" text="Approve Hours" />
+        <Button fx:id="checkEligibilityBtn" onAction="#handleCheckEligibility" text="Check Certificate Eligibility" />
+    </HBox>
+
+</VBox>

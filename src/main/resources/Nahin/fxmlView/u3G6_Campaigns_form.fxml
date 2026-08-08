@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="604.0" spacing="16.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_03.G6_campaigns_FORM_Controller">
+   <children>
+      <Label minHeight="-Infinity" prefHeight="28.0" prefWidth="588.0" text="Campaign Register" textFill="#797979">
+         <font>
+            <Font name="Cambria Math" size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="8.0" />
+         </VBox.margin>
+      </Label>
+      <VBox alignment="CENTER" prefHeight="420.0" prefWidth="609.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="503.0" spacing="60.0">
+               <children>
+                  <VBox prefHeight="69.0" prefWidth="326.0" spacing="6.0">
+                     <children>
+                        <Label text="Registration ID" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="registerIDLBL" prefHeight="35.0" prefWidth="214.0" text="REGC-2026-0037" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="69.0" prefWidth="340.0" spacing="6.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="46.0" text="User ID" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="userIdTF" prefHeight="34.0" prefWidth="210.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="81.0" prefWidth="503.0" spacing="60.0">
+               <children>
+                  <VBox prefHeight="92.0" prefWidth="214.0" spacing="6.0">
+                     <children>
+                        <Label text="User Name" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="userNameTF" prefHeight="34.0" prefWidth="432.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="92.0" prefWidth="232.0" spacing="6.0">
+                     <children>
+                        <Label text="Location" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="campaignLocationLBL" prefHeight="35.0" prefWidth="214.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="76.0" prefWidth="565.0" spacing="60.0">
+               <children>
+                  <VBox prefHeight="71.0" prefWidth="284.0" spacing="6.0">
+                     <children>
+                        <Label text="User email" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="mailTF" prefHeight="34.0" prefWidth="210.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="71.0" prefWidth="297.0" spacing="6.0">
+                     <children>
+                        <Label text="Phone Number" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="phoneTF" prefHeight="34.0" prefWidth="210.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="71.0" prefWidth="566.0" spacing="60.0">
+               <children>
+                  <VBox prefHeight="60.0" prefWidth="258.0" spacing="6.0">
+                     <children>
+                        <Label text="Campaign Name" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="campaignNameLBL" prefHeight="32.0" prefWidth="214.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="66.0" prefWidth="272.0" spacing="6.0">
+                     <children>
+                        <Label text="Date" textFill="#919191">
+                           <font>
+                              <Font name="Candara Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="dateLBL" prefHeight="32.0" prefWidth="214.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="75.0" prefWidth="566.0">
+               <children>
+                  <Label prefHeight="22.0" prefWidth="60.0" text="Notes" textFill="#919191">
+                     <font>
+                        <Font name="Candara Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="notesTXTAR" prefHeight="66.0" prefWidth="565.0" wrapText="true" />
+               </children>
+            </VBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="50.0" prefWidth="565.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#submitButtonOA" prefHeight="30.0" prefWidth="90.0" text="Submit" />
+                  <Button mnemonicParsing="false" onAction="#cancelButtonOA" prefHeight="30.0" prefWidth="90.0" text="Cancel" textFill="#890000" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="40.0" left="50.0" right="50.0" top="15.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

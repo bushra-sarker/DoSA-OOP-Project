@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.esha.controller.DoSACoordinatorDashboard">
+   <children>
+      <BorderPane prefHeight="650" prefWidth="1000">
+      
+          <!-- ===================== TOP HEADER ===================== -->
+          <top>
+              <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color:#432D57;" BorderPane.alignment="CENTER">
+                  <padding>
+                  <Insets bottom="12" left="20" right="20" top="12" />
+               </padding>
+                  <Label fx:id="titleLabel" style="-fx-text-fill:white; -fx-font-size:18px; -fx-font-weight:bold;" text="DoSA Coordinator Dashboard" />
+                  <HBox HBox.hgrow="ALWAYS" />
+                  <Label fx:id="welcomeLabel" style="-fx-text-fill:white;" text="Welcome, Coordinator" />
+                  <Button fx:id="logoutBtn" onAction="#handleLogout" text="Logout" />
+              </HBox>
+          </top>
+      
+          <!-- ===================== LEFT NAV MENU ===================== -->
+          <left>
+              <VBox prefWidth="230" spacing="8" style="-fx-background-color:#76608a; -fx-padding:15;" BorderPane.alignment="TOP_CENTER">
+                  <Button fx:id="navPendingRequestsBtn" maxWidth="Infinity" onAction="#showPendingRequests" text="📋 Pending Requests" style="-fx-background-color:#FF9800; -fx-text-fill:white; -fx-font-weight:bold;" />
+                  <Separator />
+                  <Button fx:id="navServiceOpportunityBtn" maxWidth="Infinity" onAction="#showServiceOpportunity" text="Post Service Opportunity" />
+                  <Button fx:id="navVolunteerHoursBtn" maxWidth="Infinity" onAction="#showVolunteerHours" text="Approve Volunteer Hours" />
+                  <Button fx:id="navAssignVolunteersBtn" maxWidth="Infinity" onAction="#showAssignVolunteers" text="Assign Volunteers" />
+                  <Button fx:id="navGenerateCertificateBtn" maxWidth="Infinity" onAction="#showGenerateCertificate" text="Generate Certificate" />
+                  <Button fx:id="navReviewEventFeedbackBtn" maxWidth="Infinity" onAction="#showReviewEventFeedback" text="Review Event Feedback" />
+                  <Button fx:id="navManageClubsBtn" maxWidth="Infinity" onAction="#showManageClubs" text="Budget Approval" />
+                  <Button fx:id="navImpactReportBtn" maxWidth="Infinity" onAction="#showImpactReport" text="Impact Report" />
+                  <Button fx:id="navAnnouncementBtn" maxWidth="Infinity" onAction="#showAnnouncement" text="Post Announcement" />
+                  <Button fx:id="navTaskCompletionReportBtn" maxWidth="Infinity" onAction="#showTaskCompletionReport" text="Volunteer Task Completion Report" />
+                  <Separator />
+              </VBox>
+          </left>
+      
+          <!-- ===================== CENTER CONTENT AREA ===================== -->
+          <center>
+              <StackPane fx:id="contentArea" style="-fx-padding:20;">
+                  <Label style="-fx-font-size:14px; -fx-text-fill:#666;" text="Select an option from the left menu to get started." />
+              </StackPane>
+          </center>
+      
+      </BorderPane>
+   </children>
+</AnchorPane>

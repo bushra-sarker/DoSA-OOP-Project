@@ -1,0 +1,43 @@
+package c213.dosaoopproject.fahmida.utility;
+
+import commonClass.User;
+import c213.dosaoopproject.fahmida.data.DataStore;
+import c213.dosaoopproject.fahmida.model.Notification;
+import c213.dosaoopproject.fahmida.session.Session;
+
+import javafx.scene.control.Alert;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+
+public final class Notifications {
+
+    private Notifications() {
+    }
+
+    public static void showForCurrentUser() {
+        User user = Session.getCurrentUser();
+        if (user == null) {
+            return;
+        }
+        ArrayList<Notification> mine = DataStore.get().getNotifications().stream()
+                .filter(n -> n.getUserId() == user.getUserId())
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        if (mine.isEmpty()) {
+            ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, "No new notifications.");
+            return;
+        }
+
+        // newest first
+        String text = mine.stream()
+                .sorted((a, b) -> b.getDate().compareTo(a.getDate()))
+                .map(n -> (n.isRead() ? "   " : "• ") + n.getDate() + " — " + n.getMessage())
+                .collect(Collectors.joining("\n"));
+        ToShowAlert.showWaitAlert(Alert.AlertType.INFORMATION, text);
+
+        mine.forEach(Notification::markRead);
+        DataStore.get().save();
+    }
+}
