@@ -6,9 +6,7 @@ import c213.dosaoopproject.fahmida.model.ArrangeClubEvent;
 import c213.dosaoopproject.fahmida.model.ClubAdvisor;
 import c213.dosaoopproject.fahmida.model.ClubInfo;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
-import c213.dosaoopproject.fahmida.utility.Search;
 import c213.dosaoopproject.fahmida.utility.ToShowAlert;
 import c213.dosaoopproject.fahmida.utility.Ui;
 

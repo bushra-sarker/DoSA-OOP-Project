@@ -11,7 +11,6 @@ public final class Ui {
     private Ui() {
     }
 
-    /** Fills the standard header name/id labels from the current session. */
     public static void greet(Label nameLabel, Label idLabel) {
         User user = Session.getCurrentUser();
         if (user == null) {

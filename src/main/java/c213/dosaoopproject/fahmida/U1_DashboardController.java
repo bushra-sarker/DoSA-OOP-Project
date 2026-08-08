@@ -3,9 +3,7 @@ package c213.dosaoopproject.fahmida;
 import commonClass.User;
 import c213.dosaoopproject.fahmida.data.DataStore;
 import c213.dosaoopproject.fahmida.session.Session;
-import c213.dosaoopproject.fahmida.utility.Notifications;
 import c213.dosaoopproject.fahmida.utility.SceneManager;
-import c213.dosaoopproject.fahmida.utility.Search;
 import c213.dosaoopproject.fahmida.utility.ToShowAlert;
 
 import javafx.event.ActionEvent;
@@ -84,11 +82,6 @@ public class U1_DashboardController
     @javafx.fxml.FXML
     public void registerEventsOA(ActionEvent actionEvent) throws IOException {
         SceneManager.navigate(actionEvent, "/c213/dosaoopproject/fahmida/U1G2_EventList.fxml");
-    }
-
-    @javafx.fxml.FXML
-    public void notificationOA(ActionEvent actionEvent) {
-        Notifications.showForCurrentUser();
     }
 
     @javafx.fxml.FXML
