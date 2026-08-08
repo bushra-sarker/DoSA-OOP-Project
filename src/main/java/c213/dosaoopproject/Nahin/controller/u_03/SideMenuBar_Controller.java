@@ -11,7 +11,8 @@ public class SideMenuBar_Controller
     }
 
     @javafx.fxml.FXML
-    public void certificateApplyOA(ActionEvent actionEvent) {
+    public void certificateApplyOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent, "/Nahin/fxmlView/u3G7_Apply_certificateView.fxml");
     }
 
     @javafx.fxml.FXML
@@ -29,7 +30,8 @@ public class SideMenuBar_Controller
     }
 
     @javafx.fxml.FXML
-    public void feedbackShareOA(ActionEvent actionEvent) {
+    public void feedbackShareOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent, "/Nahin/fxmlView/u3G8_volunteer_feedBack_View.fxml");
     }
 
     @javafx.fxml.FXML

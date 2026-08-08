@@ -1,6 +1,6 @@
 package c213.dosaoopproject.Nahin.utility;
 
-import c213.dosaoopproject.Application;
+import c213.dosaoopproject.Nahin.nonUser.DbinFile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,5 +26,24 @@ public class Navigation {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static class Application extends javafx.application.Application {
+        @Override
+        public void start(Stage stage) throws IOException {
+
+            DbinFile.generateCampaign();
+            DbinFile.generateNewClubRegistration();
+    //
+//            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("c213/dosaoopproject/Nahin/fxmlView/u4_dashBoard.fxml"));
+    //        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u4_dashBoard.fxml"));
+//    //        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/commonFXML/LoginView.fxml"));
+////            Scene scene = new Scene(fxmlLoader.load());
+//            stage.setTitle("DoSA Management Simulation");
+//            stage.setScene(scene);
+//            stage.show();
+
+
+        }
     }
 }

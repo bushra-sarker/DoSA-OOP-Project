@@ -2,8 +2,7 @@ package c213.dosaoopproject.Nahin.controller.u_04;
 
 import c213.dosaoopproject.Nahin.model.u_04.Announcement;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -22,19 +21,18 @@ public class G_3_Announcement_History_Controller
     private TableView<Announcement>historyTABLEVIEW;
     @javafx.fxml.FXML
     private TableColumn<Announcement,LocalDate> publishedDATECOL;
-    @javafx.fxml.FXML
-    private SideMenuBar_Controller nullController;
+
 
     @javafx.fxml.FXML
     public void initialize() {
         announcementIdCOL.setCellValueFactory(new PropertyValueFactory<>("announcementId"));
         titleCOL.setCellValueFactory(new PropertyValueFactory<>("title"));
         publishedDATECOL.setCellValueFactory(new PropertyValueFactory<>("publishDate"));
-
         loadHistory();
     }
 
-    private void loadHistory(){
+
+    void loadHistory(){
         ArrayList<Announcement> list = readFile("Announcements.bin");
         historyTABLEVIEW.getItems().clear();
 
@@ -46,7 +44,6 @@ public class G_3_Announcement_History_Controller
 
     @javafx.fxml.FXML
     public void refreshOA(ActionEvent actionEvent) {
-        historyTABLEVIEW.getItems().clear();
         loadHistory();
     }
 

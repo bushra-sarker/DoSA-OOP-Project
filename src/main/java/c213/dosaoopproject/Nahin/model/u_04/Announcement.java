@@ -3,7 +3,7 @@ package c213.dosaoopproject.Nahin.model.u_04;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Announcement implements Serializable {
+public class Announcement implements Serializable{
 
         private final int announcementId;
         private final String title;

@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ import static c213.dosaoopproject.Nahin.utility.FileManager.readFile;
 import static c213.dosaoopproject.Nahin.utility.FileManager.writeFile;
 import static c213.dosaoopproject.Nahin.utility.Navigation.navigate;
 import static c213.dosaoopproject.Nahin.utility.VIA.*;
-public class G_1_Club_RegisterEvent_Controller {
+public class G_1_Club_RegisterEvent_Controller implements Serializable {
     @javafx.fxml.FXML
     private TextField userIDTF;
     @javafx.fxml.FXML
@@ -49,8 +50,7 @@ public class G_1_Club_RegisterEvent_Controller {
     private Label clubNameLBL;
     @javafx.fxml.FXML
     private Label eventNameLBL;
-    @javafx.fxml.FXML
-    private SideMenuBar_Controller nullController;
+
 
     @javafx.fxml.FXML
     public void initialize() {
