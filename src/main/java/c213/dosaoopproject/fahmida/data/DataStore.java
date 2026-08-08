@@ -23,18 +23,15 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-/**
- * The single source of data for the whole app. Each list is persisted to its
- * own binary file (Object Stream), one file per data type.
- */
+
 public class DataStore {
 
-    private static final String USERS_FILE = "Users.bin";
-    private static final String NOTICES_FILE = "Notices.bin";
-    private static final String EVENTS_FILE = "Events.bin";
+    private static final  String USERS_FILE = "Users.bin";
+    private static final String NOTICES_FILE = "Announcements.bin";
+    private static final String EVENTS_FILE = "AvailableEvents.bin";
     private static final String EVENT_REGISTRATIONS_FILE = "EventRegistrations.bin";
     private static final String MEMBERSHIP_APPLICATIONS_FILE = "MembershipApplications.bin";
-    private static final String COMMUNITY_PROGRAMS_FILE = "CommunityPrograms.bin";
+    private static final String COMMUNITY_PROGRAMS_FILE = "campaigns.bin";
     private static final String COMPLAINTS_FILE = "Complaints.bin";
     private static final String VOLUNTEER_ASSIGNMENTS_FILE = "VolunteerAssignments.bin";
     private static final String COMPLETION_REPORTS_FILE = "CompletionReports.bin";
@@ -140,7 +137,6 @@ public class DataStore {
         return null;
     }
 
-    // ----- list accessors -----------------------------------------------------
 
     public ArrayList<User> getUsers() {
         return users;
@@ -194,7 +190,6 @@ public class DataStore {
         return history;
     }
 
-    /** Records an activity-history line and saves. */
     public void logHistory(int userId, String action) {
         history.add(new HistoryEntry(userId, action, LocalDate.now()));
         save();
@@ -222,7 +217,6 @@ public class DataStore {
 
     // ----- sample data --------------------------------------------------------
 
-    /** Populates the store with a small, realistic set of example records. */
     private void seed() {
         // Users (password == lower-case login id, for easy testing)
         users.add(new Student("Ayesha Rahman", "stu01", 1001, "STU01",
