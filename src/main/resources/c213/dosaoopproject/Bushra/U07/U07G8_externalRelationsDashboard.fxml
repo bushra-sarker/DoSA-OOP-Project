@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G8_externalRelationsDashboardController">
+<VBox prefHeight="530.0" prefWidth="720.0" spacing="8.0" style="-fx-background-color: #F8F9FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Bushra.U07.controller.U07G8_externalRelationsDashboardController">
     <padding>
         <Insets bottom="10.0" left="12.0" right="12.0" top="10.0" />
     </padding>
@@ -104,45 +100,6 @@
                 </VBox>
             </children>
         </HBox>
-
-        <!-- SEARCH & FILTER ROW CARD -->
-        <VBox style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E0E0E0; -fx-padding: 6px 10px;">
-            <children>
-                <HBox alignment="CENTER_LEFT" spacing="8.0">
-                    <children>
-                        <TextField fx:id="searchOrganizationTextF" prefWidth="180.0" promptText="Search Organization..." style="-fx-font-size: 11px;" />
-                        <ComboBox fx:id="partnershipTypeFilterComboBox" prefWidth="140.0" promptText="Partnership Type" style="-fx-font-size: 11px;">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="All Types" />
-                                    <String fx:value="Academic" />
-                                    <String fx:value="Corporate / Industry" />
-                                    <String fx:value="Research" />
-                                    <String fx:value="Community / NGO" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                        <ComboBox fx:id="statusFilterComboBox" prefWidth="130.0" promptText="Status" style="-fx-font-size: 11px;">
-                            <items>
-                                <FXCollections fx:factory="observableArrayList">
-                                    <String fx:value="All Statuses" />
-                                    <String fx:value="Draft" />
-                                    <String fx:value="Pending Legal Review" />
-                                    <String fx:value="Active" />
-                                    <String fx:value="Expired" />
-                                </FXCollections>
-                            </items>
-                        </ComboBox>
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Button fx:id="resetFilterButton" mnemonicParsing="false" onAction="#resetFilterOA" style="-fx-background-color: #6C757D; -fx-text-fill: white; -fx-cursor: hand; -fx-background-radius: 4;" text="Reset">
-                            <font>
-                                <Font name="System Bold" size="11.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
 
         <!-- TABLE CARD (EXPANDS DYNAMICALLY) -->
         <VBox spacing="6.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E0E0E0; -fx-padding: 8px 10px;" VBox.vgrow="ALWAYS">
