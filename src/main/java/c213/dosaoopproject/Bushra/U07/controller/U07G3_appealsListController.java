@@ -25,11 +25,9 @@ public class U07G3_appealsListController {
     @FXML private TableColumn<DisciplinaryAppeal, String> originalPenaltyTableC;
     @FXML private TableColumn<DisciplinaryAppeal, Object> submissionDateTableC;
 
-    @FXML private Label pendingAppealsLabel;
-    @FXML private Label totalAppealsLabel;
-
     private static final String FILE_PATH = "student_cases.dat";
     private static DisciplinaryAppeal selectedAppeal;
+
 
     public static DisciplinaryAppeal getSelectedAppeal() {
         return selectedAppeal;
@@ -66,12 +64,6 @@ public class U07G3_appealsListController {
 
         appealsTableView.setItems(appealsList);
 
-        if (totalAppealsLabel != null) {
-            totalAppealsLabel.setText(String.valueOf(appealsList.size()));
-        }
-        if (pendingAppealsLabel != null) {
-            pendingAppealsLabel.setText(String.valueOf(pendingCount));
-        }
     }
 
     @FXML

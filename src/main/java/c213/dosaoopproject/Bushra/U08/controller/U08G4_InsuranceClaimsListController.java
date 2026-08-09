@@ -37,14 +37,6 @@ public class U08G4_InsuranceClaimsListController {
     @FXML
     private TableColumn<InsuranceClaim, String> claimStatusTableC;
     @FXML
-    private Label pendingClaimsLabel;
-    @FXML
-    private Label approvedClaimsLabel;
-    @FXML
-    private Label needDocumentsLabel;
-    @FXML
-    private Label rejectedClaimsLabel;
-    @FXML
     private Button processClaimButton;
 
     private final ObservableList<InsuranceClaim> claimList = FXCollections.observableArrayList();
@@ -132,10 +124,6 @@ public class U08G4_InsuranceClaimsListController {
             }
         }
 
-        pendingClaimsLabel.setText(String.valueOf(pending));
-        approvedClaimsLabel.setText(String.valueOf(approved));
-        needDocumentsLabel.setText(String.valueOf(documents));
-        rejectedClaimsLabel.setText(String.valueOf(rejected));
     }
 
     @FXML
