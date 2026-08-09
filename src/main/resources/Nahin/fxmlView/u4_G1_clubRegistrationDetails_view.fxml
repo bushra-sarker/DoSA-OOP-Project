@@ -11,7 +11,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c213.dosaoopproject.Nahin.controller.u_04.G_1_clubRegistrationDETAILS_Controller">
    <children>
-      <Label prefHeight="16.0" prefWidth="514.0" style="-fx-background-color: #FFFCF5;" text="Application Details">
+      <Label prefHeight="16.0" prefWidth="514.0" style="-fx-background-color: #FFFCF5;" text="c213.dosaoopproject.Application Details">
          <font>
             <Font size="11.0" />
          </font>
@@ -24,7 +24,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="652.0" spacing="15.0">
                <children>
-                  <Label prefHeight="43.0" prefWidth="142.0" text="Application ID :" textFill="#6e6e6e">
+                  <Label prefHeight="43.0" prefWidth="142.0" text="c213.dosaoopproject.Application ID :" textFill="#6e6e6e">
                      <font>
                         <Font name="Cambria Math" size="14.0" />
                      </font>

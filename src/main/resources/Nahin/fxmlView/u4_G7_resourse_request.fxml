@@ -30,7 +30,7 @@
                         </Label>
                         <TableView fx:id="resourceTableVIEW" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn fx:id="applicationIdCOL" prefWidth="130.40000915527344" text="Application ID" />
+                            <TableColumn fx:id="applicationIdCOL" prefWidth="130.40000915527344" text="c213.dosaoopproject.Application ID" />
                             <TableColumn fx:id="clubNameCol" prefWidth="367.20001220703125" text="Club Name" />
                               <TableColumn fx:id="categoryCOL" prefWidth="196.7999267578125" text="Resource Category" />
                           </columns>

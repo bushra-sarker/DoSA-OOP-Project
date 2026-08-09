@@ -40,8 +40,8 @@ public class SessionManager {
             userList.add(new User("HOD07", "1234", "/c213/dosaoopproject/Bushra/U07/U07_HeadOfDoSADashboardView.fxml"));
             userList.add(new User("CLUB201", "1234", "/c213/dosaoopproject/commonFXML/ClubPresidentDashboard.fxml"));
             userList.add(new User("STU301", "1234", "/c213/dosaoopproject/commonFXML/StudentDashboard.fxml"));
-            userList.add(new User("OFC401","1234","/Nahin/fxmlView/u4_dashBoard.fxml"));
-            userList.add(new User("VOL101","1234","/Nahin/fxmlView/u3_dashBoard_view.fxml"));
+            userList.add(new User("OFC401","1234", "/c213/dosaoopproject/Nahin/fxmlView/u4_dashBoard.fxml"));
+            userList.add(new User("VOL101","1234", "/c213/dosaoopproject/Nahin/fxmlView/u3_dashBoard_view.fxml"));
             saveUserDatabase();
         }
     }

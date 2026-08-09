@@ -58,7 +58,7 @@
             <Separator prefHeight="31.0" prefWidth="740.0" />
             <TableView fx:id="ApplicationHistoryVIEW" prefHeight="301.0" prefWidth="740.0">
               <columns>
-                <TableColumn fx:id="applicationIDCOL" prefWidth="149.60005795955658" text="Application  ID" />
+                <TableColumn fx:id="applicationIDCOL" prefWidth="149.60005795955658" text="c213.dosaoopproject.Application  ID" />
                 <TableColumn fx:id="activityNameCOL" prefWidth="199.99993896484375" text="Activity Name" />
                   <TableColumn fx:id="leaveReasonCOL" prefWidth="154.39996337890625" text="Leave Reason" />
                   <TableColumn fx:id="applicationDATE" prefWidth="130.39993286132812" text="Date" />

@@ -12,22 +12,23 @@ public class SideMenuBar_Controller {
     }
 
     @javafx.fxml.FXML
-    public void resourcesOA(ActionEvent actionEvent) {
+    public void resourcesOA(ActionEvent actionEvent) throws IOException {
+        navigate(actionEvent, "/Nahin/fxmlView/u4_G7_resourse_request.fxml");
     }
 
     @javafx.fxml.FXML
     public void dashboardVwOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/Nahin/fxmlView/u4_dashBoard.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u4_dashBoard.fxml");
     }
 
     @javafx.fxml.FXML
     public void announcementsOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/Nahin/fxmlView/u4_G3_announcements.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u4_G3_announcements.fxml");
     }
 
     @javafx.fxml.FXML
     public void complaintsOA(ActionEvent actionEvent) throws IOException {
-        navigate(actionEvent,"/Nahin/fxmlView/u4_G2_Complaints_List.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u4_G2_Complaints_List.fxml");
 
     }
 
@@ -37,7 +38,7 @@ public class SideMenuBar_Controller {
 
     @javafx.fxml.FXML
     public void venueRqstOA(ActionEvent actionEvent) throws IOException{
-        navigate(actionEvent,"/Nahin/fxmlView/u4_G6_VenueRequests.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u4_G6_VenueRequests.fxml");
     }
 
     @javafx.fxml.FXML

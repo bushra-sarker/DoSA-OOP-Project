@@ -17,7 +17,7 @@
    <center>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="703.0" BorderPane.alignment="CENTER">
          <children>
-            <Label minHeight="-Infinity" prefHeight="26.0" prefWidth="599.0" text="Volunteer Certificate Application" textFill="#797979">
+            <Label minHeight="-Infinity" prefHeight="26.0" prefWidth="599.0" text="Volunteer Certificate c213.dosaoopproject.Application" textFill="#797979">
                <font>
                   <Font name="Cambria Math" size="14.0" />
                </font>
@@ -30,7 +30,7 @@
                <children>
                   <VBox layoutX="14.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="62.0" prefWidth="231.0" spacing="6.0">
                      <children>
-                        <Label text="Application ID" textFill="#919191">
+                        <Label text="c213.dosaoopproject.Application ID" textFill="#919191">
                            <font>
                               <Font name="Candara Bold" size="12.0" />
                            </font>

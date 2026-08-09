@@ -71,7 +71,7 @@ public class G_6_Venue_Rqst_Controller {
 
 
 
-    
+
     //Dummy Data
     private void loadDummyData() {
         ArrayList<VenueRequestApprove> venueRequestList = new ArrayList<>();

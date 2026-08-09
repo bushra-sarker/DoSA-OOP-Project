@@ -123,7 +123,7 @@ public class G_2_Complaints_List_Controller
 
     @javafx.fxml.FXML
     public void backOA(ActionEvent actionEvent)throws IOException {
-        navigate(actionEvent,"/Nahin/fxmlView/u4_dashBoard.fxml");
+        navigate(actionEvent, "/Nahin/fxmlView/u4_dashBoard.fxml");
     }
 
     @javafx.fxml.FXML

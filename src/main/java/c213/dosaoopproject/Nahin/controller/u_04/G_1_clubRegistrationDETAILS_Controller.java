@@ -8,12 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import java.io.IOException;
+
 import java.util.ArrayList;
 
 import static c213.dosaoopproject.Nahin.utility.FileManager.readFile;
 import static c213.dosaoopproject.Nahin.utility.FileManager.writeFile;
-import static c213.dosaoopproject.Nahin.utility.Navigation.newStage;
 import static c213.dosaoopproject.Nahin.utility.VIA.showAlert;
 
 public class G_1_clubRegistrationDETAILS_Controller

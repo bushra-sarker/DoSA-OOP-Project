@@ -68,7 +68,7 @@
                                  </font>
                               </Button>
                               <Region prefHeight="117.0" prefWidth="12.0" />
-                              <Button mnemonicParsing="false" onAction="#detailsViewOA" prefHeight="27.0" prefWidth="157.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="View Application Details">
+                              <Button mnemonicParsing="false" onAction="#detailsViewOA" prefHeight="27.0" prefWidth="157.0" style="-fx-background-color: #004675; -fx-text-fill: white;" text="View Details">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
