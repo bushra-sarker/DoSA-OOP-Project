@@ -117,20 +117,20 @@ public class U08_StudentWelfareOfficerViewController {
     @FXML
     public void studentFacilityAccessOA(ActionEvent event) {
         setActiveButton(btnFacilityAccess);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G7_facilityAccessView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G7_facilityDashboard.fxml");
     }
 
     @FXML
     public void studentFeedbackOA(ActionEvent event) {
         setActiveButton(btnStudentFeedback);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G8_studentFeedbackView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U08/U08G8_feedbackAnalytics.fxml");
     }
 
     @FXML
     public void logOutOA(ActionEvent event) {
         try {
             SessionManager.getInstance().logout();
-            navigate(event, "/c213/dosaoopproject/LoginView.fxml");
+            navigate(event, "/commonFXML/LoginView.fxml");
         } catch (IOException e) {
             AlertUtil.showError("Navigation Error", "Could not return to the login screen.");
         }

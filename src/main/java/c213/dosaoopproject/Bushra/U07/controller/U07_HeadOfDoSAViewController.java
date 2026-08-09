@@ -118,20 +118,20 @@ public class U07_HeadOfDoSAViewController {
     @FXML
     public void transcriptViewOA(ActionEvent actionEvent) {
         setActiveButton(btnTranscriptRequests);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G8_transcriptView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G7_transcriptRequestsList.fxml");
     }
 
     @FXML
     public void partnershipViewOA(ActionEvent actionEvent) {
         setActiveButton(btnPartnerships);
-        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G8_partnershipView.fxml");
+        loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G8_externalRelationsDashboard.fxml");
     }
 
     @FXML
     public void logOutOA(ActionEvent actionEvent) {
         try {
             SessionManager.getInstance().logout();
-            navigate(actionEvent, "/c213/dosaoopproject/LoginView.fxml");
+            navigate(actionEvent, "/commonFXML/LoginView.fxml");
         } catch (IOException e) {
             AlertUtil.showError("Navigation Error", "Could not return to the login screen.");
         }

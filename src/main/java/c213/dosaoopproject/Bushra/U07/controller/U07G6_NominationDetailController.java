@@ -104,18 +104,12 @@ public class U07G6_NominationDetailController
         AlertUtil.showSuccess("Success", "Nomination decision saved successfully.");
 
         AnchorPane contentArea = (AnchorPane) txtComments.getScene().lookup("#contentArea");
-        SubViewSwitcher.loadSubView(
-                contentArea,
-                "/c213/dosaoopproject/Bushra/U07/view/U07G6_exchangeProgramsList.fxml"
-        );
+        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G6_exchangeProgramsList.fxml");
     }
 
     @FXML
     private void handleBack(ActionEvent event) {
         AnchorPane contentArea = (AnchorPane) txtComments.getScene().lookup("#contentArea");
-        SubViewSwitcher.loadSubView(
-                contentArea,
-                "/c213/dosaoopproject/Bushra/U07/view/U07G6_exchangeProgramsList.fxml"
-        );
+        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G6_exchangeProgramsList.fxml");
     }
 }

@@ -68,7 +68,6 @@ public class U08G4_ClaimDetailController {
     public void initialize() {
 
         claimActionComboB.setItems(FXCollections.observableArrayList("Forward", "Request Docs", "Reject"));
-
         claim = U08G4_InsuranceClaimsListController.getSelectedClaim();
 
         if (claim != null) {

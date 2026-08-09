@@ -101,9 +101,6 @@ public class U07G6_ExchangeProgramsListController
         }
 
         AnchorPane contentArea = (AnchorPane) nominationsTableView.getScene().lookup("#contentArea");
-        SubViewSwitcher.loadSubView(
-                contentArea,
-                "/c213/dosaoopproject/Bushra/U07/view/U07G6_nominationDetail.fxml"
-        );
+        SubViewSwitcher.loadSubView(contentArea, "/c213/dosaoopproject/Bushra/U07/U07G6_nominationDetail.fxml");
     }
 }

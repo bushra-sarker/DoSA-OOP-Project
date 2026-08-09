@@ -1,6 +1,7 @@
 package c213.dosaoopproject.commonClass.controller;
 
 import c213.dosaoopproject.commonClass.model.User;
+import c213.dosaoopproject.commonClass.util.AlertUtil;
 import c213.dosaoopproject.commonClass.util.Navigation;
 import c213.dosaoopproject.commonClass.util.SessionManager;
 import javafx.event.ActionEvent;
@@ -100,11 +101,7 @@ public class LoginController {
 
     @FXML
     public void setForgotPasswordLabel(MouseEvent event) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Password Reset");
-        alert.setHeaderText("Forgot Password");
-        alert.setContentText("Please contact DoSA IT Support to reset your credentials.");
-        alert.showAndWait();
+        AlertUtil.showInformation("Password Reset", "Please contact DoSA IT to Reset.");
     }
 
 
@@ -116,11 +113,7 @@ public class LoginController {
     }
 
     private void showLockoutAlert() {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Account Locked");
-        alert.setHeaderText("Access Denied");
-        alert.setContentText("Your DoSA account has been locked due to multiple failed login attempts.");
-        alert.showAndWait();
+        AlertUtil.showError("Account Locked", "Your DoSA account has been locked.");
     }
 
 
