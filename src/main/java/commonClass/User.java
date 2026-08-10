@@ -2,17 +2,7 @@ package commonClass;
 
 import java.io.Serializable;
 
-/**
- * Abstract base class for every kind of DoSA user.
- *
- * <p>This is the root of the role hierarchy ({@code Student}, {@code ClubAdvisor},
- * {@code HeadOfDoSA}, ...). It holds the fields every user shares and defines the
- * behaviour that differs per role via {@link #getRole()} and
- * {@link #getDashboardFxml()} (polymorphism).</p>
- *
- * <p>Implements {@link Serializable} so users can be written to / read from the
- * binary data file by {@code DataStore}.</p>
- */
+
 public abstract class User implements Serializable {
 
     private static final long serialVersionUID = 1L;

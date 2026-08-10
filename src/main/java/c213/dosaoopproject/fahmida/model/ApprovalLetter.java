@@ -3,10 +3,7 @@ package c213.dosaoopproject.fahmida.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * An approval letter a student can download. To keep the project simple the
- * "PDF" is generated as a plain text file (see {@code generateTextFile}).
- */
+
 public class ApprovalLetter implements Serializable {
 
     private static final long serialVersionUID = 1L;
