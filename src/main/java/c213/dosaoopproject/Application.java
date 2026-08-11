@@ -14,8 +14,8 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-//        generateCampaign();
-//        generateNewClubRegistration();
+        generateCampaign();
+        generateNewClubRegistration();
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u3_dashBoard_view.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("/Nahin/fxmlView/u4_dashBoard.fxml"));

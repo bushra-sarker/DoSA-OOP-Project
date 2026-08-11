@@ -36,6 +36,7 @@ public class G6_campaign_register_Controller
         datECOL.setCellValueFactory(new PropertyValueFactory<>("date"));
         locationCOL.setCellValueFactory(new PropertyValueFactory<>("location"));
         statusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
+        loadCampaigns();
     }
 
     //load data at upcoming campaign table (Dummy)

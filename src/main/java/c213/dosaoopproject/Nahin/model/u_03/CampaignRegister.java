@@ -2,7 +2,6 @@ package c213.dosaoopproject.Nahin.model.u_03;
 
 import c213.dosaoopproject.Nahin.nonUser.Registration;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import static c213.dosaoopproject.Nahin.utility.VIA.*;
 

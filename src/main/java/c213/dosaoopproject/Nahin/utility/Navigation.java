@@ -10,22 +10,14 @@ import java.io.IOException;
 
 public class Navigation {
 
-    public static void navigate(ActionEvent actionEvent, String fxml) throws IOException {
+    public static void navigate(ActionEvent actionEvent, String fxml) {
         try {
-            FXMLLoader fxmlLoader =
-                    new FXMLLoader(Navigation.class.getResource(fxml));
-
+            FXMLLoader fxmlLoader = new FXMLLoader(Navigation.class.getResource(fxml));
             if (fxmlLoader.getLocation() == null) {
-                System.err.println("FXML not found: " + fxml);
                 return;
             }
-
             Scene scene = new Scene(fxmlLoader.load());
-
-            Stage stage = (Stage) ((Node) actionEvent.getSource())
-                    .getScene()
-                    .getWindow();
-
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("DoSA Management Simulation");
             stage.setScene(scene);
             stage.show();
@@ -35,11 +27,9 @@ public class Navigation {
         }
     }
 
-    public static void newStage(ActionEvent actionEvent, String fxml) throws IOException {
+    public static void newStage(ActionEvent actionEvent, String fxml) {
         try {
-            FXMLLoader fxmlLoader =
-                    new FXMLLoader(Navigation.class.getResource(fxml));
-
+            FXMLLoader fxmlLoader = new FXMLLoader(Navigation.class.getResource(fxml));
             Scene scene = new Scene(fxmlLoader.load());
 
             Stage stage = new Stage();
