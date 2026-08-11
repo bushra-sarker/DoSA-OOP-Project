@@ -38,7 +38,7 @@ public class U07G6_NominationDetailController
 
 
     private ExchangeNomination currentNomination;
-    private static final String FILE_PATH = "exchange_data.TXT";
+    private static final String FILE_PATH = "exchange_data.dat";
 
     @FXML
     public void initialize() {

@@ -38,9 +38,11 @@ public class U07G5_CrisisDashboardController
     @javafx.fxml.FXML
     private Button viewCaseButton;
 
+    //part of loading the table
     private static CrisisInterventionRecord selectedRecord;
     private static final String FILE_PATH = "crisis_records.dat";
 
+    //select the raw
     public static CrisisInterventionRecord getSelectedRecord() {
         return selectedRecord;
     }
@@ -108,6 +110,7 @@ public class U07G5_CrisisDashboardController
         BinaryFileUtil.writeObjects(FILE_PATH, data);
     }
 
+    //populate the table
     private void loadTableData() {
         ArrayList<Object> rawList = BinaryFileUtil.readObjects("crisis_records.dat");
         ObservableList<CrisisInterventionRecord> records = FXCollections.observableArrayList();
@@ -124,6 +127,7 @@ public class U07G5_CrisisDashboardController
         totalCountLabel.setText("Total: " + records.size() + " items");
     }
 
+    //open details of the selected row + view
     @FXML
     public void handleViewCaseOA(ActionEvent actionEvent) {
         selectedRecord = activeCrisisTableView.getSelectionModel().getSelectedItem();

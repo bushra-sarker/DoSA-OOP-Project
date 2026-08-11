@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class U08G3_GrievanceDetailController {
@@ -41,6 +42,7 @@ public class U08G3_GrievanceDetailController {
     private final String FILE_PATH = "grievances_data.dat";
     @FXML
     private ComboBox forwardUnitComboB;
+
 
     @FXML
     public void initialize() {
@@ -124,7 +126,7 @@ public class U08G3_GrievanceDetailController {
 
 
     private void saveGrievance() {
-        List<Object> list = BinaryFileUtil.readObjects("grievances_data.dat");
+        ArrayList<Object> list = BinaryFileUtil.readObjects("grievances_data.dat");
 
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) instanceof Grievance) {

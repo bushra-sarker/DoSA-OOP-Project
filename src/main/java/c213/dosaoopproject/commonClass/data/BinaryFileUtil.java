@@ -34,6 +34,10 @@ public class BinaryFileUtil {
         }
     }
 
+
+    // the below code is which is mostly used.
+
+
     // Read all objects stored one after another
     public static <T> ArrayList<T> readObjects(String fileName) {
         File file = new File(fileName);

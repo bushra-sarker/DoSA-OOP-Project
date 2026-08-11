@@ -1,0 +1,286 @@
+#### Binary file implementation:
+```java
+//updating the file -->
+
+private static final String FILE_PATH = "sth.dat";   //this one at the top, before initialize()
+
+private void updateBinaryFile() {
+    ArrayList<Object> list = BinaryFileUtil.readList(FILE_PATH);
+    if (list == null) {
+        list = new ArrayList<>();
+    }
+
+    // Common Logic starting
+    boolean updated = false;
+
+	//find target
+    for (Object obj : list) {
+        if (obj instanceof ModelClass) { // Replace ModelClass with actual model
+            ModelClass mc = (ModelClass) obj;
+            if (/* custom condition */) {
+                // CUSTOM UPDATE
+                //mc.setSomething(...);
+                updated = true;
+                break;
+            }
+        }
+    }
+
+    // Guard condition
+    if (!updated) {
+        AlertUtil.showError("Update Failed", "Target record could not be found.");
+        return;
+    }
+
+    // Save the updated list back to the file
+    BinaryFileUtil.saveList(FILE_PATH, list); // or writeObjects(FILE_PATH, list)
+
+    // Success alert
+    AlertUtil.showSuccess("Success", "Successfully Added!");
+
+    // Auto navigate back to previous scene
+    AnchorPane contentArea = (AnchorPane) certainFinal_button.getScene().lookup("#contentArea");
+    SubViewSwitcher.loadSubView(contentArea, "FXML_PATH");
+}
+
+```
+
+####  Text file implementation:
+```java
+private static final String FILE_PATH = "emergency_fund.txt"; // this one at the top, before initialize()
+
+private void loadTextFileData(){
+    requestList.clear(); // Clear existing collection / list
+
+    List<String> lines = TextFileUtil.readLines(FILE_PATH);
+
+    if (lines != null) {
+        for (String line : lines) {
+            if (line == null || line.trim().isEmpty()) {
+                continue; // Skip empty lines
+            }
+
+            String[] parts = line.split(","); // or line.split(";") depending on delimiter
+
+            // common Logic starting:
+            if (parts.length >= REQUIRED_PARTS_COUNT) {
+
+                // Parse strings into model object attributes
+                ModelClass mc = new ModelClass(
+                    parts[0].trim(),
+                    parts[1].trim(),
+                    parts[2].trim(),
+                    Double.parseDouble(parts[3].trim()),
+                    Boolean.parseBoolean(parts[4].trim())
+                    // ... custom logic parsing here
+                );
+
+                requestList.add(mc);
+            }
+        }
+    }
+
+    // Attach loaded list to TableView
+    tableView.setItems(requestList);
+}
+```
+
+#### selection + navigation
+```java
+@FXML
+public void processSelectionOA(ActionEvent event) {
+	selectedItem =tableView.getSelectionModel().getSelectedItem();
+
+    if (selectedItem == null) {
+        AlertUtil.showWarning("No Selection", "Please select a row first.");
+		return;
+    }
+
+    AnchorPane contentArea = (AnchorPane) tableView.getScene().lookup("#contentArea");
+
+    SubViewSwitcher.loadSubView( contentArea,"FXML_PATH");
+}
+```
+#### PieChart
+```java
+@FXML
+private PieChart eventCategoryPieChart;
+
+ArrayList<Object> events = BinaryFileUtil.readObjects("events_data.dat");
+
+ObservableList<PieChart.Data> data = FXCollections.observableArrayList(
+
+	data.add(new PieChart.Data("Category1", value1),
+	data.add(new PieChart.Data("Category2", value2),
+	data.add(new PieChart.Data("Category3", value3)
+);
+
+pieChartFXML.setData()
+
+```
+
+#### MASTER TABLE --> SceneA
+```java
+@FXML
+private TableView<ModelClass> tableView;
+
+@FXML
+private TableColumn<ModelClass, String> FXidTableCC;
+
+private static final String FILE_PATH = "data_file.dat";
+
+//Static field + getter to share the data with sceneB
+private static modelClass selectedItems;
+private static modelClass getSelectedItems(){
+	return selectedItems;
+}
+
+public void initialize(){
+	 FXidTableCC.setCellValueFactory(new PropertyValueFactory<> ());
+
+	 File file = new File (FILE_PATH);
+	 if (!file.exist() || file.length() == 0){
+		 generateDummyData();
+	 }
+
+	 loadTableDate();
+}
+
+//generate rhe data for row accordingly to the tableCC
+private void generateDummyDate(){
+	list<Objects> data = new ArrayList<>();
+	data.add(new modelClass)(
+		A,
+		B,
+		C,
+		D
+	));
+
+	BinaryFileUtil>writeObjects(FILE_PATH, data);
+}
+
+private void loadTableDate(){
+	ArrayList<Object> rawList = BinaryFileUtil.readObbjects(FILE_PATH);
+	observableList<modelClass> list = FXCollections.observableArrayList():
+
+	if (rawList != null){
+		for (object obj : rawList){
+			if (obj instanceof modelClass){
+				list.add((modeClass) obj);
+			}
+		}
+	}
+	tableView.setItems(list);
+
+	// OnAction Button
+	private handleViewDetails(ActionEvent event){
+		selectedItems = tableView.getSelectionModel().getSeclectedItems();
+
+		if (selectedItems = = null){
+			AlertUtil.showWarning("Warning!", "Please select an iteam first");
+			return;
+		}
+	AnchorPane contentArea = (AnchoePane) tableView.getsource().lookup(#contentArea);
+	SubViewSwitcher.loadSubView(contentArea, FXML_path);
+
+	}
+}
+```
+
+#### Data Passing + VL  --> SceneB
+```java
+@FXML
+private TextField inputField;
+
+@FXML
+private TextArea commentsTextArea;
+
+@FXML
+private ComboBox<Type> FXidComboBox;
+
+private static final String FILE_PATH = "data_file.dat";
+private modelClass currentItem;
+
+public void initialize(){
+	FXidComboBox.getItems().addAll("A", "B", "C");
+
+	//grab the slected item from sceneA
+	currnetItem = PrimaryController.getSelectedItem();
+
+	//safety check & pre-fill fields
+	if (currentItem != null){
+		inputField.setText( currentItems.getname());
+	}
+}
+
+```
+
+#### VL and Alert
+
+a. Empty Text VL, use for;
+- remarks
+- rationale
+- logs
+- comments
+- required text fields
+```java
+if (ValidationUtil.isEmpty( textArea.getText())){
+	AlertUtil.showError("VL error", "require field can not be empty");
+	return;
+}
+```
+
+b. Numeric VL, use for:
+- budget
+- financial amount
+- numeric input
+```java
+String amount = amountTextField.getText().trim();
+
+if (!ValidationUtil.isNumeric(amount)) {
+    AlertUtil.showError("Validation Error", "Enter a valid number.");
+    return;
+}
+```
+
+c. ComboBox VL
+```java
+if (ValidationUtil.isComboUnselected(FxidComboBox)) {
+	AlertUtil.showError("Validation Error", "Please select an action.");
+	return;
+}
+String action = FxidComboBox.getValue();
+
+// Proceed with decision / business logic
+ if (action.equals("Approve")) {
+	  // handle approval...
+  } else if (action.equals("Reject")) {
+	  // handle rejection...
+  }
+```
+
+d. RadioButton
+```java
+// Check if no radio button is selected in the ToggleGroup
+if (toggleGroup.getSelectedToggle() == null) {
+
+    AlertUtil.showError("Validation Error", "Please select an option.");
+    return;
+}
+
+//Safe to extract the selected RadioButton and its text
+RadioButton selectedRadio = (RadioButton) toggleGroup.getSelectedToggle();
+String decision = selectedRadio.getText();
+```
+
+#### conditional VL
+```java
+if (rejectRadio.isSelected()) {
+
+    if (ValidationUtil.isEmpty( reviewNotesTextArea.getText() )) {
+
+        AlertUtil.showError("Validation Error", "Reason is required.");
+        return;
+    }
+}
+```
